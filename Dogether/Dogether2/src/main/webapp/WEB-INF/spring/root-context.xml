@@ -24,19 +24,7 @@
 	  <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
 	    <property name="typeAliases">
 	  	<list>
-	  		<value>com.dogether.domain.AdminVO</value>
 	  		<value>com.dogether.domain.BoardVO</value>
-	  		<value>com.dogether.domain.GymManagerVO</value>
-	  		<value>com.dogether.domain.GymTicketVO</value>
-	  		<value>com.dogether.domain.GymTrainerVO</value>
-	  		<value>com.dogether.domain.HealthCareCenterVO</value>
-	  		<value>com.dogether.domain.MemberVO</value>
-	  		<value>com.dogether.domain.OrderVO</value>
-	  		<value>com.dogether.domain.Runninggoo_EvaluationVO</value>
-	  		<value>com.dogether.domain.Runninggoo_replyVO</value>
-	  		<value>com.dogether.domain.RunninggooVO</value>
-	  		<value>com.dogether.domain.Shopping_cartVO</value>
-	  		<value>com.dogether.domain.SportsVO</value>
 	  	</list>
 	  </property>
 	 </bean>
