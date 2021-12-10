@@ -4,10 +4,8 @@
 <mapper namespace="BoardDAO">
 	
 	<select id="getBoardList" resultType="com.dogether.domain.BoardVO" >
-			
 			SELECT *
 			FROM BOARD
-		
 	</select> 
 	
 	
