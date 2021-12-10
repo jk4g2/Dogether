@@ -8,13 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dogether.domain.BoardVO;
-import com.dogether.service.TestService;
+import com.dogether.service.TestServiceImpl;
 
 @Controller
 public class testController {
 	
 	@Autowired
-	public TestService testService;
+	public TestServiceImpl testService;
 	
 	@RequestMapping("test.do")
 	public void test(Model m) {
