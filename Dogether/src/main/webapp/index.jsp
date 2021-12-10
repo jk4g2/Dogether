@@ -8,5 +8,6 @@
 </head>
 <body>
 	Hello World!
+	<a href="test.do">test</a>
 </body>
 </html>
