@@ -4,14 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Dogether</title>
 </head>
 <body>
-
-
-d
-집에좀 가쟈~~~~
-ㅋㄷㅋㄷ
-제발되라
+	Hello World!
 </body>
 </html>
