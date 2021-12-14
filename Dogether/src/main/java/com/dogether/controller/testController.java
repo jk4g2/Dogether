@@ -25,4 +25,9 @@ public class testController {
 		System.out.println(vo.getMemberID());
 		m.addAttribute("serverTime",new Date());
 	}
+	
+	@RequestMapping("Mypage")
+	public void goMypage() {
+		
+	}
 }
