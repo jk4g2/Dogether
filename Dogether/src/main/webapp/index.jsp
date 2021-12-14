@@ -97,7 +97,7 @@ Highway Template https://templatemo.com/tm-520-highway
 		<div class="container-fluid">
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="runninggoo.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -114,7 +114,7 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="gym.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -131,7 +131,7 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="aihometraining.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -148,7 +148,7 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="boast.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -165,7 +165,7 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="shoppingmall.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -182,7 +182,7 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="sleep.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>

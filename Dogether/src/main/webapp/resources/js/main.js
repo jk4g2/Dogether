@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
 
-  			
 	'use strict';
 
         $(function() {
@@ -10,7 +9,7 @@ jQuery(document).ready(function($) {
 		
 			}); //click
 			$("#joining").on('click', function(){
-				window.location.href="join.do"
+				window.location.href="joinuser.do"
 			});
 	
          
