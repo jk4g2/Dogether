@@ -26,6 +26,12 @@ body, html {
   overflow-x: hidden;
 }
 
+/*login button*/
+.mainlog {
+  margin-top: 30px;
+  margin-right: 30px;
+  font-weight: bold;
+}
 
 .page-heading {
   background-image: url(../img/heading_bg.jpg);
