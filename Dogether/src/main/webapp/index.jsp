@@ -273,7 +273,7 @@ Highway Template https://templatemo.com/tm-520-highway
 						<li><a href="about.html">About Us</a></li>
 						<li><a href="blog.html">Blog Entries</a></li>
 						<li><a href="single-post.html">Single Post</a></li>
-						<li><a href="Mypage">마이페이지</a></li>
+						<li><a href="Mypage.do">마이페이지</a></li>
 					</ul>
 					<p>We create awesome templates for you.</p>
 				</div>
