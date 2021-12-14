@@ -1,10 +1,19 @@
 jQuery(document).ready(function($) {
 
+  			
 	'use strict';
 
         $(function() {
-  
-          // Vars
+        	$('.login').hide();
+			$("#login").click(function() {
+				$('.login').toggle();
+		
+			}); //click
+			$("#joining").on('click', function(){
+				window.location.href="join.do"
+			});
+	
+         
           var modBtn  = $('#modBtn'),
               modal   = $('#modal'),
               close   = modal.find('.close-btn img'),
@@ -62,5 +71,6 @@ jQuery(document).ready(function($) {
           $(this).toggleClass("active");
           $(".overlay-menu").toggleClass("open");
         });
+
 
 });

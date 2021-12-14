@@ -29,22 +29,18 @@ Highway Template https://templatemo.com/tm-520-highway
 
 <script src="./resources/js/vendor/jquery-1.11.2.min.js"></script>
 <script src="./resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="./resources/js/main.js"></script>
+ 
 <style>
 .image>img {
 	width: 100%;
 	height: 400px;
 }
+
 </style>
-<script>
-	$(function() {
-		$('.login').hide();
-		$("#login").click(function() {
-			$('.login').toggle();
 
-		}); //click
 
-	}); //$function
-</script>
 </head>
 
 <body>
@@ -59,17 +55,21 @@ Highway Template https://templatemo.com/tm-520-highway
 	<div class="login">
 		<h2>Log-in</h2>
 		<div class="login_id">
-			<h4>E-mail</h4>
-			<input type="email" name="" id="" placeholder="Email">
+			<h4>ID</h4>
+			<input type="text" name="" id="" placeholder="id">
 		</div>
 		<div class="login_pw">
 			<h4>Password</h4>
-			<input type="password" name="" id="" placeholder="Password">
+			<input type="password" name="" id="z" placeholder="Password">
 		</div>
 		<div class="submit">
-			<input type="submit" value="submit">
+			<input type="submit" value="로그인하기"><br>
+			<br>
+			
+			<input type="button" id="joining" value="회원가입하러가기" >
+			
 		</div>
-	</div>
+    </div>
 
 
 	<div id="video-container">
@@ -281,18 +281,7 @@ Highway Template https://templatemo.com/tm-520-highway
 		</div>
 	</section>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-	</script>
 
-	<script src="js/vendor/bootstrap.min.js"></script>
-
-	<script src="js/plugins.js"></script>
-	<script src="js/main.js"></script>
 
 
 </body>
