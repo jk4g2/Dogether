@@ -33,11 +33,10 @@ Highway Template https://templatemo.com/tm-520-highway
 <script src="./resources/js/main.js"></script>
  
 <style>
-.image>img {
-	width: 100%;
-	height: 400px;
-}
-
+	.image>img {
+		width: 100%;
+		height: 400px;
+	}
 </style>
 
 
