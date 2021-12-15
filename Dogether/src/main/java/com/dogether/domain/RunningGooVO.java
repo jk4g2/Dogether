@@ -1,22 +1,24 @@
 package com.dogether.domain;
+import java.util.Date;
 
-public class RunninggooVO {
+public class RunningGooVO {
 	private int roomNumber;
 	private String location;
 	private String memberID;
-	private int memberPendingStatus;
+	private String memberPendingStatusYN;
 	private int currentMembers;
-	private int maxNumbers;
-	private char hostYN;
-	private int sportsCode;
+	private int maxMembers;
+	private String hostYN;
+	private int sportsType;
 	private int runningDistance;
 	private int ageGeneration;
 	private int sportsTime;
 	private float locationLat;
 	private float locationLong;
 	private String hostComment;
-	private String meetingTime;
+	private Date meetingTime;
 	private int deposit;
+	
 	
 	public int getRoomNumber() {
 		return roomNumber;
@@ -36,11 +38,11 @@ public class RunninggooVO {
 	public void setMemberID(String memberID) {
 		this.memberID = memberID;
 	}
-	public int getMemberPendingStatus() {
-		return memberPendingStatus;
+	public String getMemberPendingStatusYN() {
+		return memberPendingStatusYN;
 	}
-	public void setMemberPendingStatus(int memberPendingStatus) {
-		this.memberPendingStatus = memberPendingStatus;
+	public void setMemberPendingStatusYN(String memberPendingStatusYN) {
+		this.memberPendingStatusYN = memberPendingStatusYN;
 	}
 	public int getCurrentMembers() {
 		return currentMembers;
@@ -48,23 +50,23 @@ public class RunninggooVO {
 	public void setCurrentMembers(int currentMembers) {
 		this.currentMembers = currentMembers;
 	}
-	public int getMaxNumbers() {
-		return maxNumbers;
+	public int getMaxMembers() {
+		return maxMembers;
 	}
-	public void setMaxNumbers(int maxNumbers) {
-		this.maxNumbers = maxNumbers;
+	public void setMaxMembers(int maxMembers) {
+		this.maxMembers = maxMembers;
 	}
-	public char getHostYN() {
+	public String getHostYN() {
 		return hostYN;
 	}
-	public void setHostYN(char hostYN) {
+	public void setHostYN(String hostYN) {
 		this.hostYN = hostYN;
 	}
-	public int getSportsCode() {
-		return sportsCode;
+	public int getSportsType() {
+		return sportsType;
 	}
-	public void setSportsCode(int sportsCode) {
-		this.sportsCode = sportsCode;
+	public void setSportsType(int sportsType) {
+		this.sportsType = sportsType;
 	}
 	public int getRunningDistance() {
 		return runningDistance;
@@ -102,10 +104,10 @@ public class RunninggooVO {
 	public void setHostComment(String hostComment) {
 		this.hostComment = hostComment;
 	}
-	public String getMeetingTime() {
+	public Date getMeetingTime() {
 		return meetingTime;
 	}
-	public void setMeetingTime(String meetingTime) {
+	public void setMeetingTime(Date meetingTime) {
 		this.meetingTime = meetingTime;
 	}
 	public int getDeposit() {
@@ -116,4 +118,6 @@ public class RunninggooVO {
 	}
 	
 	
+	
+
 }
