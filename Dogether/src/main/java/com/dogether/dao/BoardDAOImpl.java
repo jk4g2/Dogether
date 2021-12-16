@@ -21,7 +21,7 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
-	public List<Board_ReplyVO> getReplyList(Board_ReplyVO vo) {
+	public List<Board_ReplyVO> getReplyList() {
 		return mybatis.selectList("BoardDAO.getReplyList");
 	}
 

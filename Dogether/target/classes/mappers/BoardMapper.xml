@@ -8,5 +8,10 @@
 			FROM BOARD
 	</select> 
 	
+	<select id="getReplyList" resultType="Board_ReplyVO">
+		SELECT * 
+		FROM board_reply
+	</select>
+	
 	
 </mapper>

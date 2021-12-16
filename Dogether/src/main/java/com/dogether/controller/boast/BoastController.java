@@ -21,17 +21,10 @@ public class BoastController {
 	private BoardServiceImpl boardService;
 	
 	@RequestMapping("boast.do")
-	public void getboardList(Model m) {
-		
+	public void getboardList(Model m) {	
 		List<BoardVO> list = boardService.getBoardList();
-		/*for(int i = 0;i < list.size(); i++) {
-			Board_ReplyVO result = new Board_ReplyVO();
-			result.setBoardID(list.get(i).getBoardID());
-			String stri = Integer.toString(i);
-			List<Board_ReplyVO> reply_list = boardService.getReplyList(result);
-			m.addAttribute(stri, reply_list);
-			reply_list.clear();
-		}*/
+		List<Board_ReplyVO> reply_list = boardService.getReplyList();
+		m.addAttribute("reply_list",reply_list);
 		m.addAttribute("list",list);
 	}
 	

@@ -21,7 +21,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<Board_ReplyVO> getReplyList(Board_ReplyVO vo){
-		return boardDAO.getReplyList(vo);
+	public List<Board_ReplyVO> getReplyList(){
+		return boardDAO.getReplyList();
 	}
 }

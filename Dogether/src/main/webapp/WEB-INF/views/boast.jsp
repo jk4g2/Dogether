@@ -78,10 +78,39 @@
 						<p id="usernameforcontent">${item.memberID }</p>
 						<p id="boardContent">${item.boardContent }</p>
 						<div id="likeCount">좋아요 ${item.board_like_count }개</div>
-						
-						<!-- 댓글 부분 -->
-						
-					
+
+						<!-- 댓글 불러오는 부분 -->
+						<c:set var="count" value="0" />
+						<c:forEach var="reply" items="${reply_list}">
+							<c:if test="${reply.boardID eq item.boardID }">
+
+								<c:if test="${count lt 2}">
+									<div class="comments">
+										<ul id="forid">
+											<li id="commentwriter" class="reply">${reply.replyer}</li>
+											<li class="reply">${reply.reply }</li>
+										</ul>
+									</div>
+								</c:if>
+
+								<c:if test="${count gt 1 }">
+									<c:if test="${count eq 2 }">
+										<span id="more" style="cursor:pointer">더보기...</span><br>
+									</c:if>
+									<div class="comments" style="display: none;">
+										<ul id="forid">
+											<li id="commentwriter" class="reply">${reply.replyer}</li>
+											<li class="reply">${reply.reply }</li>
+										</ul>
+									</div>
+								</c:if>
+								
+								<c:set var="count" value="${count+1}" />
+							</c:if>
+						</c:forEach>
+
+
+						<!-- 댓글 다는부분 -->
 						<div id="commentside">
 							<div id="writernameforcomment">USERNAME</div>
 							<input type="text" class="comment">
@@ -90,43 +119,6 @@
 					</div>
 				</div>
 			</c:forEach>
-
-			<!-- 
-			<div class="card">
-				<div id="userdiv">
-					<img src="resources/img/imgforboard/default_person.png"
-						id="userpic"> USERNAME
-				</div>
-				<div id="content">
-					<div id="pic"
-						style='background-image: url(./resources/img/imgforboard/img.png)'></div>
-				</div>
-				<div id="cardContent">
-					<button class="likeButton">좋아요♡</button>
-					<p id="usernameforcontent">USERNAME</p>
-					<p id="boardContent">내가 우리학교 짱 내가 우리학교 짱 내가 우리학교 짱 내가 우리학교 짱 내가
-						우리학교 짱</p>
-					<div id="likeCount">좋아요 0개</div>
-					<div class="comments">
-						<ul id="forid">
-							<li id="commentwriter" class="reply">홍길동</li>
-							<li class="reply">ㅄㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</li>
-						</ul>
-						<ul id="forid">
-							<li id="commentwriter" class="reply">김길동</li>
-							<li class="reply">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</li>
-						</ul>
-					</div>
-					<div id="commentside">
-						<div id="writernameforcomment">Writer</div>
-						<input type="text" class="comment">
-						<button id="commentbutton">댓글달기</button>
-					</div>
-				</div>
-			</div>
- -->
- 
- 
 		</div>
 	</div>
 	<footer id="footer">
