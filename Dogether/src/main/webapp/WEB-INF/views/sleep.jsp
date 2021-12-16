@@ -34,11 +34,11 @@
             <div class="col-md-4 col-sm-4">	
                 <div class="table-item" style="height:400px;">
                     <h4>일어나야 할<br>시간을 알려주세요!</h4>
-                    <span style="border-bottom: none;">잠자리에 들 시간을<br>추천해드릴게요:)</span>
+                    <span style="border-bottom: none; height:100px;" >잠자리에 들 시간을<br>추천해드릴게요:)</span>
                     <!-- 시간/분 선택 select박스 -->
                     <div style="text-align: center; margin-top: -20px;">
-                        <select id="hour" style="background-color:  #333333; color:#aaaaaa;" >
-                            <option>(hour)</option>
+                        <select id="hour" style="background-color:  #333333; color:#aaaaaa; height:30px;" >
+                            <option>hour</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -52,8 +52,8 @@
                             <option>11</option>
                             <option>12</option>
                         </select>
-                        <select id="minute" style="background-color: #333333; color:#aaaaaa;">
-                            <option>(minute)</option>
+                        <select id="minute" style="background-color: #333333; color:#aaaaaa; height:30px;">
+                            <option>minute</option>
                             <option>00</option>
                             <option>05</option>
                             <option>10</option>
@@ -67,7 +67,7 @@
                             <option>50</option>
                             <option>55</option>
                         </select>
-                        <select id="ampm" style="background-color: #333333; color:#aaaaaa;">
+                        <select id="ampm" style="background-color: #333333; color:#aaaaaa; height:30px;">
                             <option>AM</option>
                             <option>PM</option>
                         </select>
@@ -94,11 +94,11 @@
             <div class="col-md-4 col-sm-4">
                 <div class="table-item" style="height:400px;">
                     <h4>잠자리에 들<br>시간을 알려주세요!</h4>
-                    <span style="border-bottom: none;">기분 좋게 일어날 시간을<br>추천해드릴게요:)</span>
+                    <span style="border-bottom: none; height:100px;">기분 좋게 일어날 시간을<br>추천해드릴게요:)</span>
                     <!-- 시간/분 선택 select박스 -->
                     <div style="text-align: center; margin-top: -20px;">
-                        <select id="hour2" style="background-color: #333333; color:#aaaaaa;">
-                            <option>(hour)</option>
+                        <select id="hour2" style="background-color: #333333; color:#aaaaaa; height:30px;">
+                            <option>hour</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -112,8 +112,8 @@
                             <option>11</option>
                             <option>12</option>
                         </select>
-                        <select id="minute2" style="background-color: #333333; color:#aaaaaa;">
-                            <option>(minute)</option>
+                        <select id="minute2" style="background-color: #333333; color:#aaaaaa; height:30px;">
+                            <option>minute</option>
                             <option>00</option>
                             <option>05</option>
                             <option>10</option>
@@ -127,7 +127,7 @@
                             <option>50</option>
                             <option>55</option>
                         </select>
-                        <select id="ampm2" style="background-color: #333333; color:#aaaaaa;">
+                        <select id="ampm2" style="background-color: #333333; color:#aaaaaa; height:30px;">
                             <option>AM</option>
                             <option>PM</option>
                         </select>

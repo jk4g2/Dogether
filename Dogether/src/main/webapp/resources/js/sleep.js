@@ -65,6 +65,7 @@ $(document).ready(function() {
         } // end hour/minute check if
         else {
             alert("일어날 시간을 선택해주세요!");
+            window.location.replace("sleep.do");
         } // end not-filled check
         
 //      ######################################################
@@ -153,6 +154,7 @@ $(document).ready(function() {
         } // end hour/minute check if
         else {
             alert("자러갈 시간을 선택해주세요!");
+            window.location.replace("sleep.do");
         } // end not-filled check
         
 //      ######################################################
