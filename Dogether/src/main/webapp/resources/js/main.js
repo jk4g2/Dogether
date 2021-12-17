@@ -1,15 +1,19 @@
 jQuery(document).ready(function($) {
 
 	'use strict';
-
+	alert("hello")
         $(function() {
         	$('.login').hide();
-			$("#login").click(function() {
+			$(document).on('click',"#login",function(){
 				$('.login').toggle();
 		
 			}); //click
 			$("#joining").on('click', function(){
-				window.location.href="joinuser.do"
+				window.location.href="joinuser.do";
+			});
+			
+			$(document).on('click',"#logout",function(){
+				window.location.href="logout.do";
 			});
 	
          
