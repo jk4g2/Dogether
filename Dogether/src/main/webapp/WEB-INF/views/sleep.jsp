@@ -2,23 +2,23 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <!-- 반응형 웹사이트  -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <title>Best Sleep Time in Dogether!</title>
 
     <!-- Dogether 공통 템플릿 -->
     <link rel="stylesheet" href="./resources/css/templatemo-style.css">
+    <!-- 반응형 웹사이트  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 카드형 리스트 템플릿 -->
     <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 	<!-- ajax -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"	type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
     <script type="text/javascript" src="./resources/js/sleep.js"></script>
 </head>
 <body>
 	<!-- 상단 배경이미지 -->
     <div class="more-about-us"style="background-image:url('./resources/img/sleep/sleep.jpg'); height:500px;">
         <div class="container" >
+        <!-- 상단 이미지 내 효과주기 -->
             <div class="col-md-5 col-md-offset-7">
                 <div class="content" style="background: none;"></div>
             </div>
@@ -72,6 +72,7 @@
                             <option>PM</option>
                         </select>
                     </div> 
+                    <!-- #results의 display를 none에서 show로 변경  -->
                     <div class="simple-btn">
                         <a id="calculate" href="#">추천받기</a>
                     </div>
@@ -84,6 +85,7 @@
                     <h4>지금 잘까!<br></h4>
                     <span style="border-bottom: none;">졸려...(zzZ)</span>  
                     <br><br><br><br> 
+                    <!-- #resultsNow의 display를 none에서 show로 변경  -->
                     <div class="simple-btn">
                         <a id="zzz" href="#">추천받기</a>
                     </div>
@@ -132,6 +134,7 @@
                             <option>PM</option>
                         </select>
                         <br/>
+                        <!-- #results의 display를 none에서 show로 변경  -->
 	                    <div class="simple-btn">
 	                        <a id="calc" href="#">추천받기</a>
 	                    </div>
@@ -141,7 +144,7 @@
     	</div> <!-- end container -->
     </div> <!-- 수면시간 추천받기 end -->
 
-    <!-- 시간 입력할 때 -->	
+    <!-- 시간 입력할 때 수면시간 추천 -->	
     <div id="results" style="display:none; text-align: center; background-color: #333333; height:auto">
         <br><br><br>
         <h2 style="text-align: center; font-size:300%; color:#aaaaaa">Dogether에서 최적의 수면시간을 추천해드릴게요! </h2>
@@ -158,7 +161,7 @@
         <br><br>
     </div><!-- end results (시간을 입력했을 때 결과)-->
     
-    <!-- 지금 잘까! -->
+    <!-- 지금 잘까!의 수면시간 추천 -->
     <div id="resultsNow" style="display:none; text-align: center; background-color: #333333; height:auto;">
         <br><br><br>
         <h2 style="text-align: center; font-size:300%; color:#aaaaaa">Dogether에서 최적의 수면시간을 추천해드릴게요! </h2>

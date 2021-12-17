@@ -20,12 +20,12 @@ $(document).ready(function() {
 
             setTime.setMinutes($('#minute').val());
 
-            var res1 = new Date(setTime.getTime() - 270*60000);
+            var res1 = new Date(setTime.getTime() - 270*60000);						// 잠든 시간에서 가장 먼 시간
             var res2 = new Date(res1.getTime() - 90*60000);
             var res3 = new Date(res2.getTime() - 90*60000);
             var res4 = new Date(res3.getTime() - 90*60000);
             var res5 = new Date(res4.getTime() - 90*60000);
-            var res6 = new Date(res5.getTime() - 90*60000);
+            var res6 = new Date(res5.getTime() - 90*60000);							// 잠든 시간에서 가장 가까운 시간
 
             function retDate(dateObj) {
                 var formatted = '';
@@ -41,8 +41,8 @@ $(document).ready(function() {
                     formatted = "12";												//12시를 hour	
                     pm = true;														//pm을 true로
                 }
-                if(dateObj.getMinutes() < 10) {										//시간이 한자리 수 라면
-                    formatted = formatted + ":0" + dateObj.getMinutes();
+                if(dateObj.getMinutes() < 10) {										//분이 한자리 수 라면
+                    formatted = formatted + ":0" + dateObj.getMinutes();			//앞에 0을 붙여서 00:00으로 포맷
                 } else {
                     formatted = formatted + ":" + dateObj.getMinutes();
                 }
@@ -54,17 +54,18 @@ $(document).ready(function() {
                 return formatted;
             }
             
-            $('#result6').html(String(retDate(res1)));
+            $('#result6').html(String(retDate(res1)));		//가까운 시간부터 출력
             $('#result5').html(String(retDate(res2))); 
             $('#result4').html(String(retDate(res3)));
             $('#result3').html(String(retDate(res4)));
             $('#result2').html(String(retDate(res5)));
             $('#result1').html(String(retDate(res6)));
     
-            $('#results').show();
+            $('#results').show();							//display가  none인 results를 show함
         } // end hour/minute check if
         else {
             alert("일어날 시간을 선택해주세요!");
+            window.location.replace("sleep.do");									
         } // end not-filled check
         
 //      ######################################################
@@ -153,6 +154,7 @@ $(document).ready(function() {
         } // end hour/minute check if
         else {
             alert("자러갈 시간을 선택해주세요!");
+            window.location.replace("sleep.do");
         } // end not-filled check
         
 //      ######################################################
@@ -182,12 +184,12 @@ $(document).ready(function() {
         $('.pricing-tables').hide();
         var zDate = new Date();
 
-        var res1 = new Date(zDate.getTime() + 104*60000);
+        var res1 = new Date(zDate.getTime() + 104*60000);		//잠든 시간에서 가장 가까운 시간
         var res2 = new Date(res1.getTime() + 90*60000);
         var res3 = new Date(res2.getTime() + 90*60000);
         var res4 = new Date(res3.getTime() + 90*60000);
         var res5 = new Date(res4.getTime() + 90*60000);
-        var res6 = new Date(res5.getTime() + 90*60000);
+        var res6 = new Date(res5.getTime() + 90*60000);			//잠든 시간에서 가장 먼 시간
 
         function retDate(dateObj) {
             var formatted = '';
@@ -216,7 +218,7 @@ $(document).ready(function() {
             return formatted;
         }
 
-        $('#resultNow1').html(String(retDate(res1)));
+        $('#resultNow1').html(String(retDate(res1)));				//시간 순서대로 출력
         $('#resultNow2').html(String(retDate(res2)));
         $('#resultNow3').html(String(retDate(res3)));
         $('#resultNow4').html(String(retDate(res4)));

@@ -9,7 +9,7 @@ public class SleepController {
 	
 	@RequestMapping("sleep.do")
 	public String sleep() {
-		System.out.println("잘받음!!");
+		System.out.println("수면시간계산기 페이지로 이동!!");
 		return "sleep";
 	}
 	
