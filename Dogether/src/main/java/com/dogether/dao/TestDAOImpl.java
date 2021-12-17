@@ -21,24 +21,24 @@ public class TestDAOImpl implements TestDAO{
 	
 	
 	public MemberVO idCheck_Login(MemberVO vo) {
-		return mybatis.selectOne("MemberDAO.id_check",vo);
+		return mybatis.selectOne("testDAO.id_check",vo);
 	}
 	
 	@Override
 	public MemberVO nickName_Check(MemberVO vo) {
-		return mybatis.selectOne("MemberDAO.nickName_check",vo);
+		return mybatis.selectOne("testDAO.nickName_check",vo);
 	}
 
 
 
 	@Override
 	public int memberinsert(MemberVO vo) {
-		return mybatis.insert("MemberDAO.memberinsert", vo);
+		return mybatis.insert("testDAO.memberinsert", vo);
 	}
 
 	@Override
 	public MemberVO memberLogin(MemberVO vo) {
-		return mybatis.selectOne("MemberDAO.memberLogin",vo);
+		return mybatis.selectOne("testDAO.memberLogin",vo);
 	}
 
 
