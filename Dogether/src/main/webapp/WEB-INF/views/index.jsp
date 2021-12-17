@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!--  -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,54 +29,47 @@ Highway Template https://templatemo.com/tm-520-highway
 
 <script src="./resources/js/vendor/jquery-1.11.2.min.js"></script>
 <script src="./resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="./resources/js/main.js"></script>
-
+ 
 <style>
 .image>img {
 	width: 100%;
 	height: 400px;
 }
+
 </style>
 
 
 </head>
 
 <body>
-
 	<nav>
 		<div class="logo">
 			<a href="index.jsp">Do<em>gether</em></a>
 		</div>
-		<c:if test="${empty sessionScope}">
-			<button id="login" class="btn btn mainlog" style="float: right;">Login</button>
-		</c:if>
-		<c:if test="${not empty sessionScope}">
-			<button id="logout" class="btn btn mainlog" style="float: right;">Logout</button>
-		</c:if>
+		<button id="login" class="btn btn mainlog" style="float: right;">Login</button>
 	</nav>
 
-	<c:if test="${empty sessionScope}">
-		<div class="login">
-			<h2>Log-in</h2>
-			<form method="post" action="login.do">
-				<div class="login_id">
-					<h4>ID</h4>
-					<input type="text" name="memberID" id="memberID" placeholder="id">
-				</div>
-				<div class="login_pw">
-					<h4>Password</h4>
-					<input type="password" name="pw" id="pw" placeholder="Password">
-				</div>
-				<div class="submit">
-					<input type="submit" value="로그인하기"><br> <br> <input
-						type="button" id="joining" value="회원가입하러가기">
-		
-				</div>
-			</form>
+
+	<div class="login">
+		<h2>Log-in</h2>
+		<div class="login_id">
+			<h4>ID</h4>
+			<input type="text" name="" id="" placeholder="id">
 		</div>
-	</c:if>
+		<div class="login_pw">
+			<h4>Password</h4>
+			<input type="password" name="" id="z" placeholder="Password">
+		</div>
+		<div class="submit">
+			<input type="submit" value="로그인하기"><br>
+			<br>
+			
+			<input type="button" id="joining" value="회원가입하러가기" >
+			
+		</div>
+    </div>
 
 
 	<div id="video-container">
@@ -89,7 +80,7 @@ Highway Template https://templatemo.com/tm-520-highway
 					Welcome to <em>Dogether</em>
 				</h1>
 				<p>Let's work out Together</p>
-				<p>Enjoy your life with the Dogether</p>
+				<p>Enjoy your life with Dogether</p>
 				<div class="scroll-icon">
 					<a class="scrollTo" data-scrollTo="portfolio" href="#"><img
 						src="./resources/img/imgformain/scroll-icon.png" alt=""></a>
@@ -106,25 +97,25 @@ Highway Template https://templatemo.com/tm-520-highway
 		<div class="container-fluid">
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="runninggoo.do" data-lightbox="image-1"><div
-							class="thumb">
+					<a href="#" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
+								
 									<h1>
-										런닝구 <em>runninggoo</em>
+									런닝구 <em>runninggoo</em>
 									</h1>
 									<p>같이 뛰기</p>
 								</div>
 							</div>
 							<div class="image">
-								<img src="./resources/img/imgformain/runz.jpg">
+								<img src="./resources/img/imgformain/run.jpg">
 							</div>
 						</div></a>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="gym.do" data-lightbox="image-1"><div class="thumb">
+					<a href="#" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -134,32 +125,31 @@ Highway Template https://templatemo.com/tm-520-highway
 								</div>
 							</div>
 							<div class="image">
-								<img src="./resources/img/imgformain/gym.jpg">
+								<img src="./resources/img/imgformain/gym1.jpg">
 							</div>
 						</div></a>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="aihometraining.do" data-lightbox="image-1"><div
-							class="thumb">
+					<a href="#" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
-										홈피티 <em>home pt</em>
+										AI홈트레이너 <em>AI home PT</em>
 									</h1>
 									<p>집에서도 간편하게 운동하기</p>
 								</div>
 							</div>
 							<div class="image">
-								<img src="./resources/img/imgformain/homept.jpg">
+								<img src="./resources/img/imgformain/2.jpg">
 							</div>
 						</div></a>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="boast.do" data-lightbox="image-1"><div class="thumb">
+					<a href="#" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -169,15 +159,14 @@ Highway Template https://templatemo.com/tm-520-highway
 								</div>
 							</div>
 							<div class="image">
-								<img src="./resources/img/imgformain//horn.jpg">
+								<img src="./resources/img/imgformain/boast.jpg">
 							</div>
 						</div></a>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="shoppingmall.do" data-lightbox="image-1"><div
-							class="thumb">
+					<a href="#" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -187,14 +176,14 @@ Highway Template https://templatemo.com/tm-520-highway
 								</div>
 							</div>
 							<div class="image">
-								<img src="./resources/img/imgformain/shop.jpg">
+								<img src="./resources/img/imgformain/ShoppingOnline.png">
 							</div>
 						</div></a>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="sleep.do" data-lightbox="image-1"><div class="thumb">
+					<a href="#" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
@@ -204,11 +193,14 @@ Highway Template https://templatemo.com/tm-520-highway
 								</div>
 							</div>
 							<div class="image">
-								<img src="./resources/img/imgformain//health check.png">
-							</div>
-						</div></a>
+								<img src="./resources/img/imgformain/health check.png">
+							</div>						
+							
 				</div>
 			</div>
+			
+	
+			
 		</div>
 	</div>
 
@@ -221,12 +213,58 @@ Highway Template https://templatemo.com/tm-520-highway
 	</footer>
 
 	<!-- Modal button -->
+
 	<div class="popup-icon">
 		<!--<button id="modBtn" class="modal-btn"></button>-->
- 
 		<a href="mailto:mickuc0.gmail.com"><img
 			src="./resources/img/imgformain/contact-icon.png" alt=""></a></a>
 	</div>
+
+	<!-- Modal -->
+	<!--<div id="modal" class="modal">-->
+	<!-- Modal Content -->
+	<!--  <div class="modal-content">-->
+	<!-- Modal Header -->
+	<!--
+        <div class="modal-header">
+          <h3 class="header-title">1:1 <em>문의하기</em></h3>
+          <div class="close-btn"><img src="img/close_contact.png" alt=""></div>    
+        </div>
+
+        -->
+	<!-- Modal Body -->
+	<!--<div class="modal-body">
+          <div class="col-md-6 col-md-offset-3">
+            <form id="contact" action="" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="이름" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="이메일" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="궁금한 문의사항" required></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-md-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="btn">Send Message Now</button>
+                      </fieldset>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+
 
 	<section class="overlay-menu">
 		<div class="container">
@@ -239,15 +277,15 @@ Highway Template https://templatemo.com/tm-520-highway
 						<li><a href="about.html">About Us</a></li>
 						<li><a href="blog.html">Blog Entries</a></li>
 						<li><a href="single-post.html">Single Post</a></li>
-						<li><a href="Mypage.do">마이페이지</a></li>
+						<li><a href="Mypage">마이페이지</a></li>
 					</ul>
 					<p>We create awesome templates for you.</p>
 				</div>
 			</div>
 		</div>
 	</section>
- 
-	
+
+
 
 
 </body>
