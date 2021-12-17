@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
 	'use strict';
-	alert("hello")
+	
         $(function() {
         	$('.login').hide();
 			$(document).on('click',"#login",function(){
