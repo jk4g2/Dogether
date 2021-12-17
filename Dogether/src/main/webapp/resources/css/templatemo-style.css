@@ -6,11 +6,28 @@ https://templatemo.com/tm-520-highway
 
 */
 
-/*login button*/
-.mainlog {
-  margin-top: 30px;
-  margin-right: 30px;
-  font-weight: bold;
+
+/*후버시 배경 반투명해는 효과*/
+.hover-content {
+width:100%;
+height:100%;
+margin: 0 0 0 0;
+/*마우스가 빠졌을 때에도 서서히 변하기 위해 div에도 변형 속성을 줍니다*/
+/*배경색 변형 선언*/
+transition-property: background-color;
+/*변형 완료 1초*/
+transition-duration: 1s;
+/*빠른 시작 서서히 감속*/
+transition-timing-function: ease-out;
+}
+
+/*hover시 있을 변형을 입력합니다*/
+.hover-content:hover {
+
+/*rgb컬러a알파 0~1까지 화이트 0.3만큼 알파 혹은 반투명*/
+background: rgba(0, 0, 0, 0.5);
+/* 변형할 것은 배경 1초, 빠른 시작 서서히 감속*/
+transition: background 1s ease-out;
 }
 
 
@@ -40,6 +57,7 @@ body, html {
   margin-right: 30px;
   font-weight: bold;
 }
+
 
 .page-heading {
   background-image: url(../img/heading_bg.jpg);
@@ -224,7 +242,7 @@ nav {
 }
 
 .overlay-menu ul li a {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 300;
   color: #fff;
   margin-left : 20px;  
@@ -351,7 +369,8 @@ nav {
 .full-screen-portfolio .portfolio-item h1 {
   position: relative;
   font-size: 40px;
-  font-family : Verdana;
+  font-family : BlackHan;
+  font-weight : bold;
   text-transform: uppercase;
   color: white;
   display: inline-block;
@@ -361,11 +380,12 @@ nav {
   transform: translateY(25px);
   transition: .5s ease-in-out;
   letter-spacing: 0.5px;
+  vertical-align: bottom;
  }
 
  .full-screen-portfolio .portfolio-item em {
-  font-style: normal;
-  font-weight: 200;
+  font-style: BlackHan;
+  font-weight: bold;
  }
 
 .full-screen-portfolio .portfolio-item:hover h1 {
@@ -374,9 +394,9 @@ nav {
 
 .full-screen-portfolio .portfolio-item p {
   padding-left: 20px;
-  font-weight: 300!important;
+  font-weight: bold;
   letter-spacing: 0.5px;
-  font-size: 15px;
+  font-size: 17px;
   color: #fff;
   opacity: 0;
   transform: translateY(10px);
