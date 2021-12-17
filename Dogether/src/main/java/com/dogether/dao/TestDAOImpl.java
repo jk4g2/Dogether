@@ -19,7 +19,6 @@ public class TestDAOImpl implements TestDAO{
 	}
 	
 	
-	
 	public MemberVO idCheck_Login(MemberVO vo) {
 		return mybatis.selectOne("testDAO.id_check",vo);
 	}

@@ -26,6 +26,7 @@
 	  	<list>
 	  		<value>com.dogether.domain.AdminVO</value>
 	  		<value>com.dogether.domain.BoardVO</value>
+	  		<value>com.dogether.domain.Board_LikeVO</value>
 	  		<value>com.dogether.domain.Board_ReplyVO</value>
 	  		<value>com.dogether.domain.GymManagerVO</value>
 	  		<value>com.dogether.domain.GymTicketVO</value>

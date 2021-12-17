@@ -63,6 +63,8 @@
 			<c:forEach var="item" items="${list}">
 				<c:set var="count" value="${count + 1}" />
 				<input type="hidden" value="${item.boardID }">
+
+				<!-- 게시글 div -->
 				<div class="card">
 					<div id="userdiv">
 						<img src="resources/img/imgforboard/default_person.png"
@@ -73,8 +75,21 @@
 							style='background-image: url(./resources/img/imgforboard/img.png)'></div>
 					</div>
 
+					<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 -->
 					<div id="cardContent">
-						<button class="likeButton">좋아요♡</button>
+
+						<c:set var="found" value="0" />
+						<c:forEach var="like" items="${like_list}">
+							<c:if test="${like.boardID eq item.boardID}">
+								<c:set var="found" value="1" />
+								<button class="likeButton">좋아요♥</button>
+							</c:if>
+						</c:forEach>
+						
+						<c:if test="${found eq 0 }">
+							<button class="likeButton">좋아요♡</button>
+						</c:if>
+						
 						<p id="usernameforcontent">${item.memberID }</p>
 						<p id="boardContent">${item.boardContent }</p>
 						<div id="likeCount">좋아요 ${item.board_like_count }개</div>
@@ -82,8 +97,10 @@
 						<!-- 댓글 불러오는 부분 -->
 						<c:set var="count" value="0" />
 						<c:forEach var="reply" items="${reply_list}">
+							<!-- reply for문시작 -->
 							<c:if test="${reply.boardID eq item.boardID }">
-
+								
+								<!-- count가 2보다 작을떄는 모든 게시물 다 싹뜨게함 -->
 								<c:if test="${count lt 2}">
 									<div class="comments">
 										<ul id="forid">
@@ -92,10 +109,13 @@
 										</ul>
 									</div>
 								</c:if>
-
+								
+								<!-- count가 2보다 같거나 크면 나머지는 display : none로 감추기 -->
 								<c:if test="${count gt 1 }">
+									<!-- count가  2보다 같거나 크고 count가 2일경우 더보기 칸 추가. -->
 									<c:if test="${count eq 2 }">
-										<span id="more" style="cursor:pointer">더보기...</span><br>
+										<span id="more" style="cursor: pointer">더보기...</span>
+										<br>
 									</c:if>
 									<div class="comments" style="display: none;">
 										<ul id="forid">
@@ -104,20 +124,29 @@
 										</ul>
 									</div>
 								</c:if>
-								
+
 								<c:set var="count" value="${count+1}" />
 							</c:if>
 						</c:forEach>
+						<!-- reply for문 끝 -->
 
 
 						<!-- 댓글 다는부분 -->
 						<div id="commentside">
-							<div id="writernameforcomment">USERNAME</div>
+							<div id="writernameforcomment">${sessionScope.username }</div>
 							<input type="text" class="comment">
 							<button id="commentbutton">댓글달기</button>
 						</div>
+						<!-- 댓글 다는부분 끝 -->
+
+
 					</div>
+					<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 끝-->
+
+
+
 				</div>
+				<!-- 게시글 div end-->
 			</c:forEach>
 		</div>
 	</div>

@@ -2,16 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BoardDAO">
-	
-	<select id="getBoardList" resultType="BoardVO" >
-			SELECT *
-			FROM BOARD
-	</select> 
-	
+
+	<select id="getBoardList" resultType="BoardVO">
+		SELECT *
+		FROM BOARD
+	</select>
+
 	<select id="getReplyList" resultType="Board_ReplyVO">
-		SELECT * 
+		SELECT *
 		FROM board_reply
 	</select>
-	
-	
+
+	<select id="getLikeList" parameterType="Board_LikeVO" resultType="Board_LikeVO">
+		SELECT *
+		FROM board_like
+		WHERE LIKER = #{liker}
+	</select>
+
 </mapper>

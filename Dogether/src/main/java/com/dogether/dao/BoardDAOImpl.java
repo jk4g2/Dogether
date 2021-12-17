@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.dogether.domain.BoardVO;
+import com.dogether.domain.Board_LikeVO;
 import com.dogether.domain.Board_ReplyVO;
 
 @Repository("boardDAO")
@@ -24,5 +25,13 @@ public class BoardDAOImpl implements BoardDAO{
 	public List<Board_ReplyVO> getReplyList() {
 		return mybatis.selectList("BoardDAO.getReplyList");
 	}
+	
+	@Override
+	public List<Board_LikeVO> getLikeList(Board_LikeVO vo) { 
+		System.out.println("mapper 들어가기전.. >" + vo.getLiker()+"<");
+		return mybatis.selectList("BoardDAO.getLikeList", vo);
+	}
+	
+	
 
 }

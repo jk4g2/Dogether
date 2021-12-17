@@ -78,12 +78,12 @@ public class testController {
 	//로그인이 되었을 때 로그아웃버튼 있는 index, 로그인 되지 않았을 때 login버튼 있는 index, Mapper에 id=memberLogin
 	@PostMapping(value = "login.do", produces = "application/text; charset=UTF-8")
 	public String login(MemberVO vo, HttpSession session ,Model m) {
-		System.out.println(vo.getMemberID());
+		//System.out.println(vo.getMemberID());
 		MemberVO result = testService.login(vo);
 		String message = "님 로그인되었습니다.";
 		// 로그인이 됬으면
 		if (result != null) {
-			session.setAttribute("current", result);
+			session.setAttribute("username", result.getMemberID());
 			m.addAttribute("message",message);
 			return "index";
 		} else {
