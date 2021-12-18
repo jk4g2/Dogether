@@ -35,8 +35,17 @@ Highway Template https://templatemo.com/tm-520-highway
 <style>
 .image>img {
 	width: 100%;
-	height: 400px;
+	height: 400px;	
 }
+
+div.col-md-4.col-sm-6.test6{
+	width: 16.6%;
+}
+
+.full-screen-portfolio .portfolio-item h1#test8 {
+  font-size: 30px;
+ }
+
 
 </style>
 
@@ -97,14 +106,14 @@ Highway Template https://templatemo.com/tm-520-highway
 		<div class="container-fluid">
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="runninggoo.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 								
 									<h1>
-									런닝구 <em>runninggoo</em>
+									<em>runninggoo</em>
 									</h1>
-									<p>같이 뛰기</p>
+									<p>스포츠 메이트 매칭하기</p>
 								</div>
 							</div>
 							<div class="image">
@@ -115,11 +124,12 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="gym.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
+
 									<h1>
-										짐 <em>gym</em>
+										<em>gym Reservation</em>
 									</h1>
 									<p>근거리 헬스장 일일권 예약하러 가기</p>
 								</div>
@@ -132,13 +142,13 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="aihomept.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
-										AI홈트레이너 <em>AI home PT</em>
+										<em>AI home Trainer</em>
 									</h1>
-									<p>집에서도 간편하게 운동하기</p>
+									<p>인공지능 홈 트레이너 서비스</p>
 								</div>
 							</div>
 							<div class="image">
@@ -149,11 +159,11 @@ Highway Template https://templatemo.com/tm-520-highway
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="boast.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
-										자랑하기 <em>boast</em>
+										 <em>show off</em>
 									</h1>
 									<p>나의 건강한 라이프 스타일 뽐내기</p>
 								</div>
@@ -164,41 +174,82 @@ Highway Template https://templatemo.com/tm-520-highway
 						</div></a>
 				</div>
 			</div>
+			
+			
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="shoppingmall.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>
-										쇼핑몰 <em>shoppingmall</em>
+										 <em>shopping mall</em>
 									</h1>
-									<p>쇼핑하러 가기</p>
+									<p>쇼핑몰</p>
 								</div>
 							</div>
 							<div class="image">
 								<img src="./resources/img/imgformain/ShoppingOnline.png">
 							</div>
 						</div></a>
-				</div>
+				</div>				
 			</div>
-			<div class="col-md-4 col-sm-6">
+			
+			
+			
+						<!--  추가한 사진박스 시작!! 11111-->
+			<div class="col-md-4 col-sm-6 test6">
 				<div class="portfolio-item">
-					<a href="#" data-lightbox="image-1"><div class="thumb">
+					<a href="inbody.do" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
+								<!-- 
 									<h1>
-										보건소 & 수면시간 <em>check</em>
+										보건소 
 									</h1>
-									<p>전국 인바디 측정 센터 확인하기 | 수면시간 계산하기</p>
+									 -->
+									
+									<h1 id="test8">
+									<em>public</em>
+									</h1>
+									<h1 id="test8">
+									<em>medical center</em>
+									</h1>
+									<p>인바디 측정 가능한 보건소 찾기</p>
 								</div>
 							</div>
 							<div class="image">
-								<img src="./resources/img/imgformain/health check.png">
-							</div>						
-							
-				</div>
+								<img src="./resources/img/imgformain/bmi.jpg" id="test5">
+							</div>
+						</div></a>
+				</div>				
 			</div>
+			<!--  사진박스 끝!! -->
 			
+			
+			
+							<!--  추가한 사진박스 시작!! 2222-->
+			<div class="col-md-4 col-sm-6 test6">
+				<div class="portfolio-item test6">
+					<a href="sleep.do" data-lightbox="image-1"><div class="thumb">
+							<div class="hover-effect">
+								<div class="hover-content">
+						
+									<h1 id="test8">
+										<em>rem sleep </em>
+									</h1>
+									<h1 id="test8">
+										<em>calculator</em>
+									</h1>
+									<p>램수면 계산기</p>
+								</div>
+							</div>
+							<div class="image">
+								<img src="./resources/img/imgformain/sleep.jpg" id="test5">
+							</div>
+						</div></a>
+				</div>				
+			</div>
+			<!--  사진박스 끝!! -->
 	
 			
 		</div>
