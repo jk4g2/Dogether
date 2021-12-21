@@ -28,7 +28,10 @@
 		WHERE MemberID = #{memberID} AND pw = #{pw}
 	</select>
 	
-	
+	<select id="getMemberList" resultType="MemberVO" parameterType="MemberVO">
+		SELECT *
+		FROM Member
+	</select> 
 	
 	
 </mapper>
