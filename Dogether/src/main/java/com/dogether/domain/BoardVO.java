@@ -16,6 +16,7 @@ public class BoardVO {
 	private long board_fsize;
 	private int board_like_count;
 	private MultipartFile file;
+	private int sortTypeBST;	// 0이면 default / 1이면 좋아요순 
 	
 	public MultipartFile getFile() {
 		return file;
@@ -102,4 +103,11 @@ public class BoardVO {
 	public void setBoard_like_count(int board_like_count) {
 		this.board_like_count = board_like_count;
 	}
+	public int getSortTypeBST() {
+		return sortTypeBST;
+	}
+	public void setSortTypeBST(int sortTypeBST) {
+		this.sortTypeBST = sortTypeBST;
+	}
+	
 }

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,14 +24,14 @@ public class BoastController {
 	
 	
 	@RequestMapping("boast.do")
-	public String getboardList(Model m, HttpSession session) {
+	public String getboardList(Model m, HttpSession session, BoardVO bVO) {
 		//임의로만들어놓은 세션 "hong"
 		session.setAttribute("username", "hong");
 		Board_LikeVO vo = new Board_LikeVO();
 		vo.setLiker(session.getAttribute("username").toString().trim());
 
 		//mapper까지 찍고 갔다오기..
-		List<BoardVO> list = boardService.getBoardList();
+		List<BoardVO> list = boardService.getBoardList(bVO);
 		List<Board_ReplyVO> reply_list = boardService.getReplyList();
 		List<Board_LikeVO> like_list = boardService.getLikeList(vo);
 		

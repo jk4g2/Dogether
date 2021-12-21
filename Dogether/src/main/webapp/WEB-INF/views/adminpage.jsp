@@ -57,30 +57,30 @@
                             	<!-- 런닝구 정렬 -->
                             	<div class="sortRNG divHide" style="display:none;">
 	                                <label class="pro-lab">Sort By</label>
-	                                <select class="styled" >
-	                                    <option id="recentRoom" value="recentRoom">작성일 최신순</option>
-	                                    <option id="recentMeeting" value="recentMeeting">미팅 날짜순</option>
+	                                <select class="sortTypeRNG" name="sortTypeRNG">
+	                                    <option id="recentRoom" value="0">작성일 최신순</option>
+	                                    <option id="recentMeeting" value="1">미팅 날짜순</option>
 	                                </select>
-	                                <a id="RNGSort" href="RNGSort.do">조회</a>
+	                                <a id="rngSort" href="#rngSort">정렬하기</a>
                                 </div>
                                 <!-- 자랑하기 정렬 -->
                                 <div class="sortBST divHide" style="display:none;">
 	                                <label class="pro-lab">Sort By</label>
-	                                <select class="styled" >
-	                                    <option id="recentBoard" value="recentBoard">작성일 최신순</option>
-	                                    <option id="topLike" value="topLike">좋아요순</option>
+	                                <select class="sortTypeBST" name="sortTypeBST">
+	                                    <option id="recentBoard" value="0">작성일 최신순</option>
+	                                    <option id="topLike" value="1">좋아요순</option>
 	                                </select>
-	                                <a id="BSTSort" href="BSTSort.do">조회</a>
+	                                <a id="bstSort" href="#bstSort">정렬하기</a>
                                 </div>
                                 <!-- 회원 정렬 -->
                                 <div class="sortMember divHide" style="display:none;">
 	                                <label class="pro-lab">Sort By</label>
-	                                <select class="styled" >
-	                                    <option id="nameAcs" value="nameAcs">이름순</option>
-	                                    <option id="ageAcs" value="ageAcs">나이순</option>
-	                                    <option id="blackList" value="blackList">블랙리스트만</option>
+	                                <select class="sortTypeMember" name="sortTypeMember">
+	                                    <option id="nameAcs" value="0">이름순</option>
+	                                    <option id="ageAcs" value="1">나이순</option>
+	                                    <option id="blackList" value="2">블랙리스트만</option>
 	                                </select>
-	                                <a id="memberSort" href="memberSort.do">조회</a>
+	                                <a id="memberSort" href="#memberSort">정렬하기</a>
                                 </div>
                                 <!-- 주문 정렬 -->
                                 <div class="sortOrder divHide" style="display:none;">
@@ -92,7 +92,7 @@
 	                                    <option id="return2" value="return2">반품처리중만</option>
 	                                    <option id="return3" value="return3">반품완료만</option>
 	                                </select>
-	                                <a id="orderSort" href="orderSort.do">조회</a>
+	                                <a id="orderSort" href="#orderSort">정렬하기</a>
                                 </div>
                                 
                             </div>  

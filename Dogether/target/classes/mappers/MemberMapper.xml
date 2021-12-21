@@ -31,6 +31,11 @@
 	<select id="getMemberList" resultType="MemberVO" parameterType="MemberVO">
 		SELECT *
 		FROM Member
+		<choose>
+			<when test="sortTypeMember==0">ORDER BY userName </when>
+			<when test="sortTypeMember==1">ORDER BY birthday </when>
+			<when test="sortTypeMember==2">WHERE blackListYN = 'Y'</when>
+		</choose>
 	</select> 
 	
 	

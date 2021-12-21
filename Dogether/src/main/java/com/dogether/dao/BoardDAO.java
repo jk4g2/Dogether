@@ -7,7 +7,7 @@ import com.dogether.domain.Board_LikeVO;
 import com.dogether.domain.Board_ReplyVO;
 
 public interface BoardDAO {
-	public List<BoardVO> getBoardList();
+	public List<BoardVO> getBoardList(BoardVO vo);
 	public List<Board_ReplyVO> getReplyList();
 	public List<Board_LikeVO> getLikeList(Board_LikeVO vo);
 	public int deleteLike(Board_LikeVO vo);

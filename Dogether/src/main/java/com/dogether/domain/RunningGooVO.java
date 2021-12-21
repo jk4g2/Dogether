@@ -16,9 +16,10 @@ public class RunningGooVO {
 	private float locationLat;
 	private float locationLong;
 	private String hostComment;
-	private Date meetingTime;
+	private String meetingTime;
 	private int deposit;
-	
+	private int sortTypeRNG;	// 0이면 default / 1이면 미팅날짜순 
+
 	
 	public int getRoomNumber() {
 		return roomNumber;
@@ -104,10 +105,10 @@ public class RunningGooVO {
 	public void setHostComment(String hostComment) {
 		this.hostComment = hostComment;
 	}
-	public Date getMeetingTime() {
+	public String getMeetingTime() {
 		return meetingTime;
 	}
-	public void setMeetingTime(Date meetingTime) {
+	public void setMeetingTime(String meetingTime) {
 		this.meetingTime = meetingTime;
 	}
 	public int getDeposit() {
@@ -116,8 +117,11 @@ public class RunningGooVO {
 	public void setDeposit(int deposit) {
 		this.deposit = deposit;
 	}
+	public int getSortTypeRNG() {
+		return sortTypeRNG;
+	}
+	public void setSortTypeRNG(int sortTypeRNG) {
+		this.sortTypeRNG = sortTypeRNG;
+	}
 	
-	
-	
-
 }

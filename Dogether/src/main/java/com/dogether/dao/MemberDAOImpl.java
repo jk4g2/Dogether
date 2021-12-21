@@ -15,8 +15,8 @@ public class MemberDAOImpl implements MemberDAO{
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public List<MemberVO> getMemberList() {
-		return mybatis.selectList("testDAO.getMemberList");
+	public List<MemberVO> getMemberList(MemberVO vo) {
+		return mybatis.selectList("testDAO.getMemberList", vo);
 	}
 
 }
