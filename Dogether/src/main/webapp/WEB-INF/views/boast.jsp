@@ -82,24 +82,28 @@
 						<c:forEach var="like" items="${like_list}">
 							<c:if test="${like.boardID eq item.boardID}">
 								<c:set var="found" value="1" />
-								<button class="likeButton">좋아요♥</button>
+								<div id='ajaxlikebutton'>
+									<button class="likeButton" value="Y">좋아요♥</button>
+								</div>
 							</c:if>
 						</c:forEach>
-						
+
 						<c:if test="${found eq 0 }">
-							<button class="likeButton">좋아요♡</button>
+							<div id='ajaxlikebutton'>
+								<button class="likeButton" value="N">좋아요♡</button>
+							</div>
 						</c:if>
-						
+
 						<p id="usernameforcontent">${item.memberID }</p>
 						<p id="boardContent">${item.boardContent }</p>
-						<div id="likeCount">좋아요 ${item.board_like_count }개</div>
+						<div id="likeCount">좋아요 ${item.board_like_count}개</div>
 
 						<!-- 댓글 불러오는 부분 -->
 						<c:set var="count" value="0" />
 						<c:forEach var="reply" items="${reply_list}">
 							<!-- reply for문시작 -->
 							<c:if test="${reply.boardID eq item.boardID }">
-								
+
 								<!-- count가 2보다 작을떄는 모든 게시물 다 싹뜨게함 -->
 								<c:if test="${count lt 2}">
 									<div class="comments">
@@ -109,7 +113,7 @@
 										</ul>
 									</div>
 								</c:if>
-								
+
 								<!-- count가 2보다 같거나 크면 나머지는 display : none로 감추기 -->
 								<c:if test="${count gt 1 }">
 									<!-- count가  2보다 같거나 크고 count가 2일경우 더보기 칸 추가. -->

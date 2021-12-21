@@ -19,4 +19,27 @@
 		WHERE LIKER = #{liker}
 	</select>
 
+	<delete id="deleteLike" parameterType="Board_LikeVO">
+		DELETE 
+		FROM board_like
+		WHERE liker = #{liker}
+		AND boardID=#{boardID}
+	</delete>
+	
+	<insert id="insertLike" parameterType="Board_LikeVO">
+		insert into board_like (BoardID,liker) 
+		values (#{boardID},#{liker})
+	
+	</insert>
+	
+	<update id="updateCount" parameterType="Board_LikeVO">
+		UPDATE board
+		set Board_like_count = #{board_like_no}
+		WHERE boardID = #{boardID};
+	</update>
+	
+	<insert id="insertBoard" parameterType="BoardVO">
+		INSERT INTO BOARD(MemberID, BoardContent ,Board_fname, Board_realfname ,BOARD_FSIZE)
+		VALUE(#{memberID},#{boardContent},#{board_fname},#{board_realfname},#{board_fsize})
+	</insert>
 </mapper>

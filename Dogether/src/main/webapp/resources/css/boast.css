@@ -96,6 +96,7 @@ nav {
 	padding-bottom: 50px;
 	margin-top:	7%;
 	margin-bottom: 5%;
+	border-radius:20px;
 }
 
 .plusButton {
@@ -109,6 +110,7 @@ nav {
 	margin: 10px;
 	height: 40px;
 	text-align: left;
+
 }
 
 .card {
@@ -117,6 +119,8 @@ nav {
 	margin-left: -1px;
 	margin-right: 0px;
 	position: relative;
+	border-radius:20px;
+
 }
 
 #userpic {
@@ -125,7 +129,8 @@ nav {
 }
 
 #userdiv {
-	margin: 10px;
+	margin: 15px;
+	margin-left:30px;
 	display: block;
 	font-size: 20px;
 	font-weight: bold;
@@ -187,6 +192,8 @@ nav {
 
 #likeCount {
 	font-weight: bold;
+	margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 #cardContent {
@@ -196,7 +203,8 @@ nav {
 }
 
 #commentside {
-	display: inline;
+	margin-top:5px;
+	display: inline-block;
 	width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
@@ -222,6 +230,7 @@ nav {
 
 ul#forid{
 	padding-left: 0px;
+	margin-bottom:3px;
 }
 
 li.reply{
@@ -243,7 +252,7 @@ input.comment {
 }
 
 #writernameforcomment {
-	display: inline;
+	display: inline-flex;
 	width: 15%;
 	font-weight: bold;
 }

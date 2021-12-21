@@ -10,4 +10,7 @@ public interface BoardDAO {
 	public List<BoardVO> getBoardList();
 	public List<Board_ReplyVO> getReplyList();
 	public List<Board_LikeVO> getLikeList(Board_LikeVO vo);
+	public int deleteLike(Board_LikeVO vo);
+	public int insertLike(Board_LikeVO vo);
+	public int insertBoard(BoardVO vo);
 }

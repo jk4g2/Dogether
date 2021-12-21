@@ -30,4 +30,18 @@ public class BoardServiceImpl implements BoardService{
 	public List<Board_LikeVO> getLikeList(Board_LikeVO vo) {
 		return boardDAO.getLikeList(vo);
 	}
+
+	@Override
+	public int deleteLike(Board_LikeVO vo) {
+		return boardDAO.deleteLike(vo);
+	}
+
+	@Override
+	public int insertLike(Board_LikeVO vo) {
+		return boardDAO.insertLike(vo);
+	}
+	@Override
+	public int insertBoard(BoardVO vo) {
+		return boardDAO.insertBoard(vo);
+	}
 }

@@ -3,7 +3,8 @@ package com.dogether.domain;
 public class Board_LikeVO {
 	private int boardID;
 	private String liker;
-	private String likeYN;
+	private String likeY;
+	private int board_like_no;
 	
 	public int getBoardID() {
 		return boardID;
@@ -17,11 +18,17 @@ public class Board_LikeVO {
 	public void setLiker(String liker) {
 		this.liker = liker;
 	}
-	public String getLikeYN() {
-		return likeYN;
+	public String getLikeY() {
+		return likeY;
 	}
-	public void setLikeYN(String likeYN) {
-		this.likeYN = likeYN;
+	public void setLikeY(String likeY) {
+		this.likeY = likeY;
+	}
+	public int getBoard_like_no() {
+		return board_like_no;
+	}
+	public void setBoard_like_no(int board_like_no) {
+		this.board_like_no = board_like_no;
 	}
 	
 	

@@ -31,7 +31,33 @@ public class BoardDAOImpl implements BoardDAO{
 		System.out.println("mapper 들어가기전.. >" + vo.getLiker()+"<");
 		return mybatis.selectList("BoardDAO.getLikeList", vo);
 	}
+
+	@Override
+	public int deleteLike(Board_LikeVO vo) {
+		
+		int result = mybatis.update("BoardDAO.updateCount",vo);
+		//좋아요 취소..
+		if(result==1) {
+			System.out.println("좋아요 수 업데이트 완료 +++++++");
+			System.out.println();
+		}
+		return mybatis.delete("BoardDAO.deleteLike",vo);
+	}
+
+	@Override
+	public int insertLike(Board_LikeVO vo) {
+		int result = mybatis.update("BoardDAO.updateCount",vo);
+		if(result==1) {
+			System.out.println("좋아요 수 업데이트 완료-------------");
+			System.out.println();
+		}
+		return mybatis.insert("BoardDAO.insertLike",vo);
+	}
 	
+	@Override
+	public int insertBoard(BoardVO vo) {
+		return mybatis.insert("BoardDAO.insertBoard",vo);
+	}
 	
 
 }
