@@ -46,6 +46,18 @@ div.col-md-4.col-sm-6.test6{
   font-size: 30px;
  }
 
+.login{
+position: fixed;
+z-index: 100;
+    right: 0;
+    top: 0;
+width: 15%;
+}
+
+h4#font-color_st{
+	color:white;
+}
+
 
 </style>
 
@@ -62,20 +74,20 @@ div.col-md-4.col-sm-6.test6{
 
 
 	<div class="login">
-		<h2>Log-in</h2>
+		<h2 id="login_bold">Log-in</h2>
 		<div class="login_id">
-			<h4>ID</h4>
+			<h4 id="font-color_st">ID</h4>
 			<input type="text" name="" id="" placeholder="id">
 		</div>
 		<div class="login_pw">
-			<h4>Password</h4>
+			<h4 id="font-color_st">Password</h4>
 			<input type="password" name="" id="z" placeholder="Password">
 		</div>
 		<div class="submit">
-			<input type="submit" value="로그인하기"><br>
+			<input type="submit" value="Login"><br>
 			<br>
 			
-			<input type="button" id="joining" value="회원가입하러가기" >
+			<input type="button" id="joining" value="Go Join" >
 			
 		</div>
     </div>
