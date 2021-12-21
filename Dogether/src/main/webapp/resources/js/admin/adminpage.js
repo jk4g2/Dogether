@@ -236,8 +236,8 @@ $(document).ready(function() {
 					tr.append(memberID);
 					var productID = $("<td width='400' />").html(row.productID);
 					tr.append(productID);
-					var buyingConfrimYN = $("<td width='100' />").html(row.buyingConfrimYN);			
-					tr.append(buyingConfrimYN); 													
+					var buyingConfirmYN = $("<td width='100' />").html(row.buyingConfirmYN);			
+					tr.append(buyingConfirmYN); 													
 					var returnYN = $("<td width='100' />").text(row.returnYN);	
 					tr.append(returnYN);
 					var returnStatus = $("<td width='100' />").html(row.returnStatus);
