@@ -171,6 +171,13 @@ $(document).ready(function() {
 					tr.append(phoneNumber); 													
 					var birthday = $("<td width='100' />").text(row.birthday);	
 					tr.append(birthday);
+					
+					if(row.gender==1) {
+						row.gender = '남자';
+					} else {
+						row.gender = '여자';
+					}
+					
 					var gender = $("<td width='100' />").html(row.gender);
 					tr.append(gender);
 					var fullAddress = $("<td width='100' />").html(row.zipCode + "&nbsp;" + row.basicAddress + "&nbsp;" + row.restAddress);
@@ -273,37 +280,7 @@ $(document).ready(function() {
 	 }); //end click 
  
 	// ################################################
-	// 정렬하기 
-/*	function rngSortRoom(){
-		$.ajax({
-			type : 'get',
-			url : 'adminRNG.do',
-		    dataType : 'json',											// db(서버)에서 받을 때 데이터 타입
-			success : function(sortRNG){
-				
-			},	// end success
-			error : function(err){
-				alert('전송실패');
-				console.log(err);
-			} //end error		
-		}) // end ajax
-	} // end function rngSortRoom()
 	
-	function rngSortMeeting(){
-		$.ajax({
-			type : 'get',
-			url : 'adminRNG.do',
-		    dataType : 'json',											// db(서버)에서 받을 때 데이터 타입
-			success : function(sortRNG){
-				
-			},	// end success
-			error : function(err){
-				alert('전송실패');
-				console.log(err);
-			} //end error		
-		}) // end ajax
-	} // end function rngSortRoom()
-*/
 	 // ############ 런닝구 정렬하기를 클릭했을 때  ############
 	 $('#rngSort').click(function(evt){
 		 evt.preventDefault();				// a태그 링크 기능 무력화
@@ -325,5 +302,6 @@ $(document).ready(function() {
 		 adminMemberList();
 	 }); //end click 
 	 
-	 
+	// ################################################
+
 });	// end ready

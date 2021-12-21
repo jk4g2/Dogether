@@ -77,7 +77,7 @@
 	                                <label class="pro-lab">Sort By</label>
 	                                <select class="sortTypeMember" name="sortTypeMember">
 	                                    <option id="nameAcs" value="0">이름순</option>
-	                                    <option id="ageAcs" value="1">나이순</option>
+	                                    <option id="ageAcs" value="1">생년월일순</option>
 	                                    <option id="blackList" value="2">블랙리스트만</option>
 	                                </select>
 	                                <a id="memberSort" href="#memberSort">정렬하기</a>
@@ -112,12 +112,12 @@
                     <div class="row product-list">
                         <div class="col-md-12">
                             <section class="card">
-                                <div class="card-body text-center">
+                                <div class="card-body text-center" style="margin:auto;">
                                     <!-- 런닝구  -->
                                     <div class="runninggooManageList">
                                        	이 글은 나중에 삭제될 예정입니다.<br><br>
 	                                    <!-- ########## 런닝구 리스트  ########## -->
-										<table id="adminRNGList" border="2" style="display:none";>
+										<table id="adminRNGList" border="2" style="display:none;">
 	                                    <!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
                                     </div>
@@ -133,7 +133,7 @@
                                     <div class="memberManageList">
                                        	이 글은 나중에 삭제될 예정입니다.<br><br>
 	                                    <!-- ########## 회원 리스트  ########## -->
-										<table id="adminMemberList" border="2" style="display:none";>
+										<table id="adminMemberList" border="2" style="display:none;">
 	                                    <!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
                                     </div>
@@ -141,7 +141,7 @@
                                     <div class="orderManageList">
                                        	이 글은 나중에 삭제될 예정입니다.<br><br>
 	                                    <!-- ########## 회원 리스트  ########## -->
-										<table id="adminOrderList" border="2" style="display:none";>
+										<table id="adminOrderList" border="2" style="display:none;">
 	                                    <!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
                                     </div>
