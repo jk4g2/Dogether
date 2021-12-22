@@ -283,7 +283,8 @@
 												</td>
 												<td class="pr-remove"><a href="shoppingCart.do"
 													id="removeBtn"><i class="fa fa-times"
-														style="cursor: pointer"></i></a></td>
+														style="cursor: pointer"></i></a>
+												</td>
 											</tr>
 											<c:set var="totalprice"
 												value="${totalprice + (cart['ProductPrice'] * cart['ProductQuantity']) }" />

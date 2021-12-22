@@ -23,10 +23,9 @@ $(document).ready(function(){
 
 
 
-
 //장바구니에서 삭제--------------------
   $(document).on('click', '#removeBtn', function(){
-    let ID = $("#ProductID").text();
+    let ID = $(".productID").val();
     let Name = $("#ProductName").text()
 
     $.ajax({
@@ -36,7 +35,7 @@ $(document).ready(function(){
     	url : 'deletefromjanbaguni.do',
     	success : function(result){
     		alert(Name+" "+result);
-
+			window.location.replace("shoppingCart.do");
     	},//end success
     	error : function(err){
     		alert("에러발생--------------");
