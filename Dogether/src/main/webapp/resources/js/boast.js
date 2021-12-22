@@ -117,7 +117,7 @@ $(function() {
      })
    });
 
-   $(document).on("click","#more",function(){
+   $(document).on("click",".more",function(){
      $(this).nextUntil("#commentside").css({"display":"block"});
      $(this).css({"display":"none"});
    });
