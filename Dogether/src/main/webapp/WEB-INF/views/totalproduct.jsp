@@ -83,14 +83,16 @@
       <div class="main">
       
       	<!-- 상단 큰부분 -->
-        <section class="module bg-dark-60 shop-page-header" data-background="./resources/img/shoppingmall/images/shop/product-page-bg.jpg">
+        <section class="module bg-dark-60 shop-page-header" data-background="./resources/img/shoppingmall/shoppingmall/shoppingmall/ShoppingmallMainIMG.jpg">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
                 <h2 class="module-title font-alt">DOGETHER PRODUCTS</h2>
                 <div class="module-subtitle font-serif">인기상품 특가상품을 만나보세요.</div>
-                <a class="section-scroll btn btn-border-w btn-round" href="shoppingmall.do">Home</a>
-                <a class="section-scroll btn btn-border-w btn-round" href="shoppingCart.do">내 장바구니</a>
+	                <div id="mainBtn">
+	                	<a class="section-scroll btn btn-border-w btn-round" href="shoppingmall.do">Home</a>
+	                	<a class="section-scroll btn btn-border-w btn-round" href="shoppingCart.do">내 장바구니</a>
+	              	</div>
               </div>
             </div>
           </div>
