@@ -77,12 +77,15 @@
       <!-- 섹션시작---------------------------------------------------------- -->
       
       
-     <section class="bg-dark-30 showcase-page-header module parallax-bg" data-background="./resources/img/shoppingmall/images/shop/showcase_bg.jpg">
+     <section class="bg-dark-30 showcase-page-header module parallax-bg" data-background="./resources/img/shoppingmall/shoppingmall/shoppingmall/ShoppingmallMainIMG.jpg">
         <div class="titan-caption">
           <div class="caption-content">
             <div class="font-alt mb-30 titan-title-size-1">다양한 건강식품을 할인된 가격에 만나보세요.</div>
             <div class="font-alt mb-40 titan-title-size-4">DOGETHER MALL</div>
-            <a class="section-scroll btn btn-border-w btn-round" href="totalproduct.do">All Products</a>
+              <div id="mainBtn">
+	                	<a class="section-scroll btn btn-border-w btn-round" href="totalproduct.do">모든 상품</a>
+	                	<a class="section-scroll btn btn-border-w btn-round" href="shoppingCart.do">내 장바구니</a>
+	           </div>
           </div>
         </div>
       </section>

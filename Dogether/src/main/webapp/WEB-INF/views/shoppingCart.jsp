@@ -237,6 +237,10 @@
 							<div class="col-sm-6 col-sm-offset-3">
 								<h1 class="module-title font-alt">장바구니</h1>
 							</div>
+						<div id="mainBtn">
+	                	<a class="section-scroll btn btn-border-w btn-round detailBtn" href="totalproduct.do">모든 상품</a>
+	                	<a class="section-scroll btn btn-border-w btn-round detailBtn" href="shoppingmall.do">HOME</a>
+	     				 </div>
 							<a id="Homebtn" class="section-scroll btn btn-border-w btn-round"
 								href="shoppingmall.do">Home</a>
 						</div>

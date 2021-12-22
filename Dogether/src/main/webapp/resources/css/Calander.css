@@ -15,7 +15,19 @@ htmp,body{
 section{
 	padding-bottom: 100px;
 }
- 
+
+
+#mainBtn{
+	text-align: center;
+}
+#mainBtn > a{
+	width: 150px;
+}
+#mainBtn > .detailBtn{
+	background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    color: floralwhite;
+}
  
 /* nav바-------------------------------------------------------------------------------------------*/
 

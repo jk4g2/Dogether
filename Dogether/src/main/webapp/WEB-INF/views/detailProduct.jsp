@@ -85,14 +85,17 @@
       
 		<p id="productIDvalue" style="display:none;">${product.productID}</p>
 	
-	
       <div class="main">
         <section class="module">
           <div class="container">
             <div class="row">
-              <div class="col-sm-6 mb-sm-40"><a class="gallery" href="./resources/img/shoppingmall/images/shop/product-7.jpg">
-              						<img src="./resources/img/shoppingmall/productimgs/${product.product_realfname}" width="665" height="750" alt="상품사진"></a>
-                  
+	
+		  <div id="mainBtn">
+	                	<a class="section-scroll btn btn-border-w btn-round detailBtn" href="totalproduct.do">모든 상품</a>
+	                	<a class="section-scroll btn btn-border-w btn-round detailBtn" href="shoppingCart.do">내 장바구니</a>
+	      </div>
+              <div class="col-sm-6 mb-sm-40">
+              		<img src="./resources/img/shoppingmall/productimgs/${product.product_realfname}" width="665" height="750" alt="상품사진">				
               </div>
               <div class="col-sm-6">
                 <div class="row">
