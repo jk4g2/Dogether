@@ -12,8 +12,12 @@ p{
     padding: 15px;
     margin: 0 auto;
     margin-bottom: 30px;
-    max-width: 440px;
+	max-width: 440px;
     border: 1px solid #000000;
+}
+
+.runninggoo_card_inner.create{
+    max-width: 40%;
 }
 
 .rn_card_user_profile{
@@ -32,15 +36,34 @@ p{
     margin-bottom: 20px;
 }
 
+#map{
+	margin-bottom: 10px;
+}
+
 .rn_room_hashtag{
 	margin:0;
     color: blue;
+}
+
+#jeonsong{
+	display:inline-block;
+	width:70px;
+	padding:5px;
+	background-color:black;
+	color:white;
+	text-align:center;
+	border-radius: 7px;
+	margin-left:10px;
 }
 
 .rn_card_host_comment_box{
 	position: absolute;
 	bottom: 90px;
 	left:80px;
+}
+
+.create_host_comment{
+	width: 400px;
 }
 
 .balloon {  
@@ -61,6 +84,11 @@ p{
  position:absolute;
  top:-10px;
  left:200px;  
+}
+
+#mbPoint{
+	display:inline-block;
+	width:50px;
 }
 
 .rn_plus_btn{
@@ -88,4 +116,13 @@ p{
     top: 100px;
     color: black;
     text-decoration: none;
+}
+
+/* INPUT 태그 WIDTH 또는 HEIGHT 설정 */
+#keyword,#meeting-time{
+	max-width:40%;
+}
+#create_host_comment{
+	max-width:50%;
+	height: 60px;
 }

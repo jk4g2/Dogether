@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dogether.dao.RunningGooDAO;
+import com.dogether.domain.MemberVO;
 import com.dogether.domain.RunningGooVO;
 
 @Service
@@ -30,6 +31,11 @@ public class RunningGooServiceImpl implements RunningGooService {
 	public int getRNRoomCount(RunningGooVO vo) {
 		// 런닝구 방 갯수 얻어오기
 		return runningGooDAO.getRunningGooRoomCount(vo);
+	}
+	
+	@Override
+	public int getMemberJoinRunningGoo(MemberVO vo){
+	    return runningGooDAO.getRngMemberPoints(vo);
 	}
 
 }

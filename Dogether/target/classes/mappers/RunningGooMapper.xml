@@ -14,5 +14,11 @@
 	<select id="getRunningGooRoomCount" resultType="integer">
 		SELECT COUNT(*) FROM runninggoo;
 	</select>
-
+	
+	<select id="getMemberJoinRngList" resultType="integer" parameterType="com.dogether.domain.MemberVO">
+      SELECT point
+      FROM runninggoo NATURAL JOIN member
+      WHERE MemberID = 'member1'
+      GROUP BY MemberID;
+   </select>
 </mapper>
