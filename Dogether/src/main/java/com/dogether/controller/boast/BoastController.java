@@ -75,8 +75,8 @@ public class BoastController {
 	}
 
 	@RequestMapping("insertBoards.do")
-	public String insertBoard(BoardVO vo) {
-		vo.setMemberID("zero-mook");
+	public String insertBoard(BoardVO vo, HttpSession session) {
+		vo.setMemberID(session.getAttribute("username").toString().trim());
 		System.out.println(vo.getBoard_fsize());
 		System.out.println(vo.getBoard_fname());
 		System.out.println(vo.getBoard_realfname());
