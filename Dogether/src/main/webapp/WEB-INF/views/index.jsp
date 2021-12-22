@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,19 +70,30 @@ h4#font-color_st{
 		<div class="logo">
 			<a href="index.jsp">Do<em>gether</em></a>
 		</div>
-		<button id="login" class="btn btn mainlog" style="float: right;">Login</button>
+		
+		<c:if test="${empty sessionScope}">
+			<button id="login" class="btn btn mainlog" style="float: right;">Login</button>
+		</c:if>
+		<c:if test="${not empty sessionScope}">
+			<button id="logout" class="btn btn mainlog" style="float: right;">Logout</button>
+		</c:if>
+		
+	
 	</nav>
+	
+	<c:if test="${empty sessionScope}">
 
 
 	<div class="login">
 		<h2 id="login_bold">Log-in</h2>
+			<form method="post" action="login.do">
 		<div class="login_id">
 			<h4 id="font-color_st">ID</h4>
-			<input type="text" name="" id="" placeholder="id">
+			<input type="text" name="memberID" id="memberID" placeholder="id">
 		</div>
 		<div class="login_pw">
 			<h4 id="font-color_st">Password</h4>
-			<input type="password" name="" id="z" placeholder="Password">
+			<input type="password" name="pw" id="pw" placeholder="Password">
 		</div>
 		<div class="submit">
 			<input type="submit" value="Login"><br>
@@ -90,7 +102,9 @@ h4#font-color_st{
 			<input type="button" id="joining" value="Go Join" >
 			
 		</div>
+		</form>
     </div>
+    	</c:if>
 
 
 	<div id="video-container">

@@ -15,6 +15,8 @@ jQuery(document).ready(function($) {
 			$(document).on('click',"#logout",function(){
 				window.location.href="logout.do";
 			});
+			
+			
 	
          
           var modBtn  = $('#modBtn'),
