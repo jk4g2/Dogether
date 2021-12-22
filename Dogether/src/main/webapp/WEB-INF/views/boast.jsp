@@ -120,7 +120,7 @@
 								<c:if test="${count gt 1 }">
 									<!-- count가  2보다 같거나 크고 count가 2일경우 더보기 칸 추가. -->
 									<c:if test="${count eq 2 }">
-										<span id="more" style="cursor: pointer">더보기...</span>
+										<span class="more" style="cursor: pointer">더보기...</span>
 										<br>
 									</c:if>
 									<div class="comments" style="display: none;">
