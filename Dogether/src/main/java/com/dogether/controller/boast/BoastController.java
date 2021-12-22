@@ -30,7 +30,13 @@ public class BoastController {
 	public String getboardList(@RequestParam(value="sortType", required=false) 
 		String sortTypeBST, Model m, HttpSession session, BoardVO bVO) {
 		//임의로만들어놓은 세션 "hong"
-		session.setAttribute("username", "hong");
+		//session.setAttribute("username", "hong");
+		System.out.println("나오나?");
+		String sessionok = (String) session.getAttribute("username");
+		if(sessionok == null){
+			m.addAttribute("msg","로그인이 필요한 서비스입니다.");
+			return "redirect";
+		}
 		
 		Board_LikeVO vo = new Board_LikeVO();//좋아요를 위한 vo
 		vo.setLiker(session.getAttribute("username").toString().trim());
