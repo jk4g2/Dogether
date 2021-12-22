@@ -13,4 +13,5 @@ public interface BoardDAO {
 	public int deleteLike(Board_LikeVO vo);
 	public int insertLike(Board_LikeVO vo);
 	public int insertBoard(BoardVO vo);
+	public int insertReply(Board_ReplyVO vo);
 }

@@ -46,4 +46,8 @@
 		INSERT INTO BOARD(MemberID, BoardContent ,Board_fname, Board_realfname ,BOARD_FSIZE)
 		VALUE(#{memberID},#{boardContent},#{board_fname},#{board_realfname},#{board_fsize})
 	</insert>
+		<insert id="insertReply" parameterType="Board_ReplyVO">
+		INSERT INTO BOARD_REPLY(BOARDID,REPLYER, REPLY) 
+		VALUE(#{boardID},#{replyer},#{reply})
+	</insert>
 </mapper>

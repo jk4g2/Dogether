@@ -59,5 +59,9 @@ public class BoardDAOImpl implements BoardDAO{
 		return mybatis.insert("BoardDAO.insertBoard",vo);
 	}
 	
+	@Override
+	public int insertReply(Board_ReplyVO vo) {
+		return mybatis.insert("BoardDAO.insertReply",vo);
+	}
 
 }

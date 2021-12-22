@@ -11,9 +11,11 @@
 <link rel="stylesheet" href="./resources/css/boast.css">
 <link rel="stylesheet" href="./resources/css/boast2.css">
 
+
 <script src="./resources/js/plugins.js"></script>
 <script src="./resources/js/boast.js"></script>
 <script src="./resources/js/main.js"></script>
+
 <title>자랑하기</title>
 </head>
 <body>
@@ -51,11 +53,11 @@
 				<img src="resources/img/imgforboard/plus_icon.png" alt="plus.png"
 					class="plusButton" style="cursor: pointer;">
 				<div class="postdiv">
-					<div>
-						<button>인기순</button>
+					<div style="margin-top: 3px">
+						 <a href="boast.do?sortType=0" class="myButton1">최신순</a>
+						 <a href="boast.do?sortType=1" class="myButton1">인기순</a>
 					</div>
 					<div>
-						<button>최신순</button>
 					</div>
 				</div>
 			</div>
@@ -83,7 +85,7 @@
 							<c:if test="${like.boardID eq item.boardID}">
 								<c:set var="found" value="1" />
 								<div id='ajaxlikebutton'>
-									<button class="likeButton" value="Y">좋아요♥</button>
+									<button class="likeButton" value="Y">좋아요♥ 취소</button>
 								</div>
 							</c:if>
 						</c:forEach>

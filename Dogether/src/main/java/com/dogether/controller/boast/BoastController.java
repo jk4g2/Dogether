@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dogether.domain.BoardVO;
@@ -24,12 +27,18 @@ public class BoastController {
 	
 	
 	@RequestMapping("boast.do")
-	public String getboardList(Model m, HttpSession session, BoardVO bVO) {
+	public String getboardList(@RequestParam(value="sortType", required=false) 
+		String sortTypeBST, Model m, HttpSession session, BoardVO bVO) {
 		//임의로만들어놓은 세션 "hong"
 		session.setAttribute("username", "hong");
-		Board_LikeVO vo = new Board_LikeVO();
+		
+		Board_LikeVO vo = new Board_LikeVO();//좋아요를 위한 vo
 		vo.setLiker(session.getAttribute("username").toString().trim());
-
+		if(sortTypeBST != null) {
+			bVO.setSortTypeBST(Integer.parseInt(sortTypeBST));
+		}
+		System.out.println(bVO.getSortTypeBST());
+		
 		//mapper까지 찍고 갔다오기..
 		List<BoardVO> list = boardService.getBoardList(bVO);
 		List<Board_ReplyVO> reply_list = boardService.getReplyList();
@@ -43,7 +52,8 @@ public class BoastController {
 		
 		return "boast";
 	}
-
+	
+	
 	@GetMapping(value = "updateLike.do", produces = "application/text; charset=UTF-8")
 	@ResponseBody
 	public String updateBoardLike(Board_LikeVO vo) {
@@ -53,6 +63,7 @@ public class BoastController {
 			System.out.println(vo.getBoard_like_no());
 			System.out.println();
 			result = boardService.deleteLike(vo);
+			
 		//좋아요를 안한상태에서 좋아요를 눌렀을 때,
 		}else if(vo.getLikeY().equals("N")) {
 			System.out.println(vo.getBoard_like_no());
@@ -72,4 +83,15 @@ public class BoastController {
 		int result = boardService.insertBoard(vo);
 		return "redirect:boast.do";
 	}
+	
+	@PostMapping(value="reply.do", produces = "application/text; charset=UTF-8")
+	@ResponseBody
+	public void insert(Board_ReplyVO vo,HttpSession session) {
+		System.out.println(vo.getBoardID());
+		System.out.println(vo.getReply());
+		vo.setReplyer(session.getAttribute("username").toString().trim());
+		
+		boardService.insertReply(vo);
+	}
+	
 }
