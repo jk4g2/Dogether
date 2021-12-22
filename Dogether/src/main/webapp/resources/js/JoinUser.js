@@ -72,9 +72,10 @@ $("#idCheckResult2").click(function(){
          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
          success : function(result){
             alert(result)
-            if(result == "중복된 아이디입니다"){
+            if(result == "중복된 닉네임입니다"){
             	$("#userId").val("")
             }//end of if
+           	$('#idCheckResult2').val(result);
          },
          error : function(err){
             alert("error");
@@ -107,25 +108,6 @@ $("#nNCheckResult2").click(function(){
 //------------------------------------------------------------------
 
 // 프로필사진 업로드하자잉///////////////////////////////////////미리보기 버튼 삭제하였음
-$("#imgPreview").click(function(){
-		alert("aaaaaaaa")
-		alert(document.getElementById('fileselectBtn').files[0].name)
-		var fname = document.getElementById('fileselectBtn').files[0].name;
-     $.ajax({
-        type : 'post',
-        url : 'imgUpload.do',
-        data : { filename : fname },
-        // 한글처리
-        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        success : function(result){
-           alert("good")
-					 $("#profileIMG").attr("src","./resources/upload/"+rersult);
-        },
-        error : function(err){
-           alert(err);
-        }
- 	 })
-})
 
 //-----------------------------------------------------------
 
@@ -179,6 +161,12 @@ $("#imgPreview").click(function(){
           return;
        }
 
+		if($.trim($('#idCheckResult2').val())=='중복된 아이디입니다'){
+	      alert("아이디를 중복확인해주세요.");
+	      console.log(1)
+	      return;
+	   }
+	   
 			 if(btnClickCount < 2){
 				 alert("중복확인 버튼을 클릭해주세요.")
 				 return;
@@ -188,7 +176,7 @@ $("#imgPreview").click(function(){
 
 
         // 자료를 전송합니다.
-        document.userinput.submit();
+        $('#userinput').submit();
    });
 //-------------------------------------------------------
 

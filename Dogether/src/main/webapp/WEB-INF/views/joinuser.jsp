@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="./resources/css/light-box.css">
 <link rel="stylesheet" href="./resources/css/templatemo-style.css">
 <link rel="stylesheet" href="./resources/css/JoinUser.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="./resources/js/vendor/bootstrap.min.js"></script>
@@ -49,15 +50,41 @@
 		</div>
 	</nav>
 
+	<section class="overlay-menu">
+      <div class="container">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+              
+                  <li>
+                      <a href="#">런닝구</a>
+                  </li>
+                  <li>
+                      <a href="#">Gym 예약할까</a>
+                  </li>
+                  <li>
+                      <a href="#">온라인 PT</a>
+                  </li>
+                  <li>
+                      <a href="#">자랑하기</a>
+                  </li>
+                  <li>
+                      <a href="#">BMI 측정가능 보건소</a>
+                  </li>
+                  <li>
+                      <a href="#">쇼핑몰</a>
+                  </li>
+                  
+                  
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
 	
 <!-- 상단 소개말--------------------------------------------------------- -->
-	<table class='table1'>
-	  <tr bgcolor="#3399CC"> 
-	    <td height="30" class="normalbold"><font color="#FFFFFF">사용자 정보입력</font></td>
-	  </tr>
-	  
-	</table>
+	
 
 
 
@@ -66,6 +93,12 @@
 
 <!-- 회원가입 형식--------------------------------------------------------- -->
 	<form method="post" action="userInsert.do" id="userinput" enctype="multipart/form-data">
+	  <table class='table1'>
+		  <tr bgcolor="#3399CC"> 
+		    <td height="30" class="normalbold tb_ttl"><font color="#FFFFFF">사용자 정보입력</font></td>
+		  </tr>
+	  
+	  </table>
 	  <table class='table2' >
 	  	<tr>
 	  		<td class="normalbold tb_ttl">
@@ -190,7 +223,7 @@
 	    <tr>
 	      	<td colspan="4" class="normal" width="70%" height="5%"> 
 	        	<div align="center"> 
-	          	<input type="submit" id="confirm" class="submitBtn" value="등   록">
+	          	<button type="button" form="userinput" id="confirm" class="submitBtn" value="등   록">등 록</button>
 	          	<input type="reset" class="submitBtn" value="취   소">
 	        	</div>
 	      	</td>

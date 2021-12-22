@@ -1,7 +1,7 @@
-fgfgjfghfghjfgfgjfg@charset "UTF-8";
+@charset "UTF-8";
 
 
-htmp,body{
+html,body{
 	margin: 0;
 	padding: 0;
 
@@ -115,7 +115,7 @@ nav {
 
 /*FOOTER-------------------------------------------------------------*/
 #footer{
-   position:relative;
+   position:fixed;
    bottom:0px;
    left:0;
    width:100%; 
@@ -135,6 +135,7 @@ font-weight:normal;
 text-decoration: none;
 border:1px solid #c0c0c0;
 }
+.introduce{position:relative}
 
 
 
@@ -152,14 +153,14 @@ input {font-size: 9pt; color: #000000; text-decoration: none;
 
 table{ width:60%;  margin:auto; } /* 테이블 가운데 정렬  */
 
-.table1 {  width:60%; border:0px; cellspacing:0px; cellpadding:5px; position:relative; top:14%; }
-.table2 {  width:60%;  cellspacing:0; cellpadding:3px; height:100%; }
+.table1 {  width:60%; border:0px; cellspacing:0px; cellpadding:5px;  top:14%; height:10% }
+.table2 {  width:60%;  cellspacing:0; cellpadding:3px; height:20%; }
 
 .tb_ttl {  background:dodgerblue;  width:185px; color: floralwhite; height:0px;}
 .tb_ttl > img{width:100%;}
 .sidetd{height: 10px; width:50px;}
 #userinput{ margin-top:7%; height:80%; }
 input{width:180px;}
-.submitBtn{width:50px;}
+.submitBtn{width:50px; height:30px; border:0;}
 #btnAddress{width:69.31px;}
 #fileselectBtn{margin-top:0; border:0;}
