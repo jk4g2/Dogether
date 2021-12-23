@@ -113,7 +113,7 @@
 	        	<div align="center">ID</div>
 	      	</td>
 	      	<td colspan="3" class="normal"> 
-	        	<input type="text" name="memberID" id="userId" size="20"> 
+	        	<input type="text" name="memberID" id="userId" autocomplete="off" size="20"> 
 	        	<button type="button" id="idCheckResult2" >중복확인</button>
 	      	</td>
 	    </tr>
@@ -136,7 +136,7 @@
 	        	<div align="center">사용자 이름</div>
 	      	</td>
 	      	<td colspan="3" height="23" class="normal"> 
-	        	<input type="text" name="userName" id="userName">
+	        	<input type="text" name="userName" id="userName" autocomplete="off">
 	      	</td>
 	    </tr>
 	    <tr>
@@ -144,7 +144,7 @@
 	        	<div align="center">닉네임</div>
 	      	</td>
 	      	<td colspan="3" height="23" class="normal"> 
-	        	<input type="text" name="nickName" id="usernickN">
+	        	<input type="text" name="nickName" id="usernickN" autocomplete="off">
 	        	<button type="button" id="nNCheckResult2" >중복확인</button>
 	      	</td>
 	    </tr>
@@ -153,7 +153,7 @@
 	        	<div align="center">이메일</div>
 	      	</td>
 	      	<td class="normal" colspan="3">
-		    	<input type="email" placeholder="이메일" name="email" id="email" maxlength="30">
+		    	<input type="email" placeholder="이메일" name="email" id="email" maxlength="30" autocomplete="off">
 				<div id="error_mail" class="result-email result-check"></div>
 			</td>
 		    <!-- <td class="normalbold tb_ttl">
@@ -173,7 +173,7 @@
 	    		<div align="center">전화번호</div>
 	    	</td>
 	    	<td class="normal" colspan="3">
-	    		<input type="text" name="phoneNumber" class="phone" maxlength="13" placeholder="핸드폰번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+	    		<input type="text" name="phoneNumber" class="phone" maxlength="13" placeholder="핸드폰번호" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 
 	    		<div class="eheck_font" id="phone_check"></div>
 	    	</td>
@@ -183,7 +183,7 @@
 				<div align="center">생년월일</div>
 			</td>
 			<td class="normal">
-				<input type="date" name="birthday" id="Birthday">
+				<input type="date" name="birthday" id="Birthday" autocomplete="off">
 			</td>
 			<td class="sidetd tb_ttl">
 	    		<div align="center">성별</div>
@@ -201,7 +201,7 @@
 	    		<div align="center">우편번호</div>
 	    	</td>
 	    	<td colspan="3" class="normal">
-	    		<input type="text" size="20" value="" name="zipCode" id="Zipcode">
+	    		<input type="text" size="20" value="" name="zipCode" id="Zipcode" autocomplete="off">
 	    	
 	    		<input type="button" value="주소검색" id="btnAddress" >
 	    	</td>
@@ -211,8 +211,8 @@
 	    		<div align="center">주소</div>
 	    	</td>
 	    	<td class="normal" colspan="3">
-	    		<input type="text" name="basicAddress" id="BasicAddress" size="30">
-	    		<input type="text" name="restAddress" id="RestAddress" size="10"  placeholder="상세주소를 입력해주세요.">
+	    		<input type="text" name="basicAddress" id="BasicAddress" size="30" autocomplete="off">
+	    		<input type="text" name="restAddress" id="RestAddress" size="10"  autocomplete="off" placeholder="상세주소를 입력해주세요.">
 	    	</td>
 	    </tr>
 	    
