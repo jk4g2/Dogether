@@ -7,6 +7,7 @@
 	 현재 프로젝트명에서 user 경로를 더한 상태이기에 상위경로를 올라갔다가 resources를 찾음.
  -->
 
+
 <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
 <link rel="stylesheet" href="./resources/css/fontAwesome.css">
 <link rel="stylesheet" href="./resources/css/light-box.css">
@@ -43,7 +44,7 @@
 <!-- nav상단바--------------------------------------------------------- -->
 	<nav>
 		<div class="logo">
-			<a href="">High<em>way</em></a>
+			<a href="index.do">DO<em>GETHER</em></a>
 		</div>
 		<div class="menu-icon">
 			<span></span>
@@ -83,19 +84,15 @@
     </section>
 
 	
-<!-- 상단 소개말--------------------------------------------------------- -->
+
 	
-
-
-
-
-
 
 <!-- 회원가입 형식--------------------------------------------------------- -->
 	<form method="post" action="userInsert.do" id="userinput" enctype="multipart/form-data">
+<!-- 상단 소개말--------------------------------------------------------- -->
 	  <table class='table1'>
 		  <tr bgcolor="#3399CC"> 
-		    <td height="30" class="normalbold tb_ttl"><font color="#FFFFFF">사용자 정보입력</font></td>
+		    <td height="30" class="normalbold tb_ttl" align="center"><font color="#FFFFFF" font size=100px>사용자 정보입력</font></td>
 		  </tr>
 	  
 	  </table>
@@ -193,9 +190,9 @@
 	    	</td>
 	    	<td class="normal">
 				<select id="sel">
-					<option value="">성별 선택</option>
-					<option id="Male" value="0" name="gender">남</option>	<!-- option에 value 값 없어도 됨 -->
-					<option id="Female" value="1" name="gender">여</option>
+					<option value="999">성별 선택</option>
+					<option value="0" name="gender">남</option>	<!-- option에 value 값 없어도 됨 -->
+					<option value="1" name="gender">여</option>
 				</select>
 			</td>
     	</tr>
@@ -231,8 +228,8 @@
 	    
 	  </table>
 	</form>
-
-
+	
+	
 
 
 

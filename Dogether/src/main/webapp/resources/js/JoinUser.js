@@ -167,6 +167,12 @@ $("#nNCheckResult2").click(function(){
 	      return;
 	   }
 	   
+	   if(($('#sel').val())==999){
+	  	  alert("성별을 선택해주세요.");
+		  console.log($('#sel').val());
+	  	  return;
+	}
+		
 			 if(btnClickCount < 2){
 				 alert("중복확인 버튼을 클릭해주세요.")
 				 return;
