@@ -88,10 +88,6 @@ ul.filter.font-alt.test_filter{
 	margin-bottom:30px;
 }    
 
-div#label-container{
-	font-size : 50px;
-}
-
 img#sub_slider_img{
 
     width: 203.99px;
@@ -682,56 +678,7 @@ img#sub_slider_img{
  	</div>
 
         
-  <!-- 미니 슬라이더 끝 -->      
-
-
-
-<!--  각 메뉴별 리스트 시작 -->      
-             
-       
-             
-        <section class="module test_module module_2" id ="last_menulist">
-          <div class="container">
-  
-            <div class="row" id="demos2">
-             
-   
-                 <div class="owl-item ">
-                  <div class="col-sm-12 test_sub_simg">
-                    <div class="ex-product"><a href="#"><img id ="sub_slider_img" src="../resources/ai_home_trainer_resources/images/3-leglaz.jpg" alt="Leather belt"/></a>
-                      <h4 class="shop-item-title font-alt"><a href="#">Plank</a></h4>
-                    </div>
-                  </div>
-                </div>             
-
-                          
-          
-                <div class="owl-item belly_2">
-                  <div class="col-sm-12 test_sub_simg">
-                    <div class="ex-product"><a href="#"><img id ="sub_slider_img"  src="../resources/ai_home_trainer_resources/images/3-keep.jpg" alt="Derby shoes"/></a>
-                      <h4 class="shop-item-title font-alt"><a href="#">Lungy</a></h4>
-                    </div>
-                  </div>
-                </div>       
-                     
-                
-                <div class="owl-item ">
-                  <div class="col-sm-12 test_sub_simg">
-                    <div class="ex-product"><a href="#"><img id ="sub_slider_img" src="../resources/ai_home_trainer_resources/images/3-leglaz.jpg" alt="Leather belt"/></a>
-                      <h4 class="shop-item-title font-alt"><a href="#">Plank</a></h4>
-                    </div>
-                  </div>
-                </div>
-                              
-
-             
-              </div>
-            </div>
-        </section>
- 
-
-        
-  <!-- 각 메뉴별  끝 -->      
+  <!-- 미니 슬라이더 끝 -->       
 
 
 
