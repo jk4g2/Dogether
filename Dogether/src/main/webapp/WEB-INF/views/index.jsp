@@ -68,7 +68,7 @@ h4#font-color_st{
 <body>
 	<nav>
 		<div class="logo">
-			<a href="index.jsp">Do<em>gether</em></a>
+			<a href="index.do">Do<em>gether</em></a>
 		</div>
 		
 		<c:if test="${empty sessionScope}">
@@ -76,6 +76,7 @@ h4#font-color_st{
 		</c:if>
 		<c:if test="${not empty sessionScope}">
 			<button id="logout" class="btn btn mainlog" style="float: right;">Logout</button>
+			<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'userMyPage/myPage.do' " style="float: right;">MyPage</button>
 		</c:if>
 		
 	
@@ -89,11 +90,11 @@ h4#font-color_st{
 			<form method="post" action="login.do">
 		<div class="login_id">
 			<h4 id="font-color_st">ID</h4>
-			<input type="text" name="memberID" id="memberID" placeholder="id" autocomplete="off">
+			<input type="text" name="memberID" id="memberID" placeholder="id">
 		</div>
 		<div class="login_pw">
 			<h4 id="font-color_st">Password</h4>
-			<input type="password" name="pw" id="pw" placeholder="Password" autocomplete="off">
+			<input type="password" name="pw" id="pw" placeholder="Password">
 		</div>
 		<div class="submit">
 			<input type="submit" value="Login"><br>
@@ -104,7 +105,7 @@ h4#font-color_st{
 		</div>
 		</form>
     </div>
-    	</c:if>
+    </c:if>
 
 
 	<div id="video-container">
