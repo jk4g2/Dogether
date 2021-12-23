@@ -4,7 +4,6 @@ public class HealthCareCenterVO {
 	private String centerName;
 	private String centerAddress;
 	private String centerPhoneNumber;
-	private String centerLink;
 	
 	public String getCenterName() {
 		return centerName;
@@ -24,12 +23,7 @@ public class HealthCareCenterVO {
 	public void setCenterPhoneNumber(String centerPhoneNumber) {
 		this.centerPhoneNumber = centerPhoneNumber;
 	}
-	public String getCenterLink() {
-		return centerLink;
-	}
-	public void setCenterLink(String centerLink) {
-		this.centerLink = centerLink;
-	}
+
 	
 	
 }

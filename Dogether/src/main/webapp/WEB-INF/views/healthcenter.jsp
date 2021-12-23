@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE HTML>
 <html>
@@ -87,21 +87,6 @@
 													
 													</ul>
 													
-
-													<h4>Pagination</h4>
-													<ul class="pagination">
-														<li><span class="button disabled">Prev</span></li>
-														<li><a href="#" class="page active">1</a></li>
-														<li><a href="#" class="page">2</a></li>
-														<li><a href="#" class="page">3</a></li>
-														<li><span>&hellip;</span></li>
-														<li><a href="#" class="page">8</a></li>
-														<li><a href="#" class="page">9</a></li>
-														<li><a href="#" class="page">10</a></li>
-														<li><a href="#" class="button">Next</a></li>
-													</ul>
-
-
 												<!-- Table -->
 													<h3>Table</h3>
 
@@ -110,38 +95,25 @@
 														<table>
 															<thead>
 																<tr>
-																	<th>Name</th>
-																	<th>Description</th>
-																	<th>Price</th>
+																	<th>보건소 이름</th>
+																	<th>주소</th>
+																	<th>건화번호</th>
 																</tr>
 															</thead>
 															<tbody>
+															<c:forEach var="item" items="${list}">
 																<tr>
-																	<td>Item1</td>
-																	<td>Ante turpis integer aliquet porttitor.</td>
-																	<td>29.99</td>
+																	<td>${item.centerName}</td>
+																	<td>${item.centerAddress}</td>
+																	<td>${item.centerPhoneNumber}</td>
 																</tr>
-																<tr>
-																	<td>Item2</td>
-																	<td>Vis ac commodo adipiscing arcu aliquet.</td>
-																	<td>19.99</td>
-																</tr>
-																<tr>
-																	<td>Item3</td>
-																	<td> Morbi faucibus arcu accumsan lorem.</td>
-																	<td>29.99</td>
-																</tr>
-																<tr>
-																	<td>Item4</td>
-																	<td>Vitae integer tempus condimentum.</td>
-																	<td>19.99</td>
-																</tr>
-																<tr>
-																	<td>Item5</td>
-																	<td>Ante turpis integer aliquet porttitor.</td>
-																	<td>29.99</td>
-																</tr>
+															</c:forEach>		
+															
+															
 															</tbody>
+															
+															
+															
 															<tfoot>
 																<tr>
 																	<td colspan="2"></td>
@@ -152,6 +124,20 @@
 													</div>
 
 											</div>
+
+													<h4>Pagination</h4>
+													
+													<ul class="pagination">
+														<li><span class="button disabled">Prev</span></li>
+														<li><a href="#" class="page active">1</a></li>
+														<li><a href="#" class="page">2</a></li>
+														<li><a href="#" class="page">3</a></li>
+														<li><span>&hellip;</span></li>
+														<li><a href="#" class="page">8</a></li>
+														<li><a href="#" class="page">9</a></li>
+														<li><a href="#" class="page">10</a></li>
+														<li><a href="#" class="button">Next</a></li>
+													</ul>											
 											
 														
 
