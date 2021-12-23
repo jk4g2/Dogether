@@ -1,3 +1,54 @@
+function validateFileType() {
+  let fileName = document.getElementById("fileName").value;
+  let idxDot = fileName.lastIndexOf(".") + 1;
+  let extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+  if (extFile != "jpg" && extFile != "jpeg" && extFile != "png") {
+    alert("jpg/jpeg/png 파일로 다시 올려주세요!!");
+    return 0;
+  }
+  return 1;
+}
+
+function setThumbnail(event) {
+  validateFileType();
+  let reader = new FileReader();
+  reader.onload = function(event) {
+    $("#image_container").empty();//일단 비우자
+    let img = document.createElement("img");
+    img.setAttribute("src", event.target.result);
+    document.querySelector("div#image_container").appendChild(img);
+  };
+  reader.readAsDataURL(event.target.files[0]);
+}
+
+
+function submitstuff(){
+  let fileName = document.getElementById("fileName").value;
+  if(! $('#content').val().replace(/(^\s*)|(\s*$)/gi, "") && fileName =='') {
+     alert("올릴게 없는데요..?");
+     return;
+  }
+  
+  if(fileName==''){
+  	alert("파일을 올려주세요");
+  	return;
+  }
+
+  let result = validateFileType();
+  if(result == 0){
+    return;
+  }
+
+  if(! $('#content').val().replace(/(^\s*)|(\s*$)/gi, "")) {
+     alert("뭐라도 좀 적어주세요!");
+     return;
+  }
+
+
+
+  document.myform.submit();
+}
+
 $(function() {
   //좋아요 버튼을 눌렀을 때,
 
@@ -71,6 +122,14 @@ $(function() {
      let reply = $(this).prev().val();
      let boardID =  $(this).parent().parent().parent().prev().val();
      let replyer = $(this).prev().prev().text();
+     
+     ///아무것도없을시..
+     if($(thiss).val()===''){
+       alert("뭐라도 좀 적어주세요");
+       return;
+     }
+     
+     
      $.ajax({
        type: "post",
        url: "reply.do",

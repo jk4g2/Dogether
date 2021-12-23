@@ -17,41 +17,6 @@
 <script src="./resources/js/plugins.js"></script>
 <script src="./resources/js/boast.js"></script>
 <script src="./resources/js/main.js"></script>
-<script>
-<!--프로필사진 미리보기--------------------------------------------------------------------------------------------------------- -->
-	function validateFileType() {
-		var fileName = document.getElementById("fileName").value;
-		var idxDot = fileName.lastIndexOf(".") + 1;
-		var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-		if (extFile != "jpg" && extFile != "jpeg" && extFile != "png") {
-			alert("jpg/jpeg/png 파일로 다시 올려주세요!!");
-			return 0;
-		}
-		return 1;
-	}
-
-	function setThumbnail(event) {
-		validateFileType();
-		var reader = new FileReader();
-		reader.onload = function(event) {
-			$("#image_container").empty();//일단 비우자
-			var img = document.createElement("img");
-			img.setAttribute("src", event.target.result);
-			document.querySelector("div#image_container").appendChild(img);
-		};
-		reader.readAsDataURL(event.target.files[0]);
-	}
-	
-	function submitstuff(){
-		var result = validateFileType();
-		if(result==0){
-			return;
-		}
-		document.myform.submit();
-	}
-</script>
-
-
 <title>자랑하기 - 글올리기</title>
 
 </head>
