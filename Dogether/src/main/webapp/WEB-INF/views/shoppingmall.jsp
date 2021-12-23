@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,21 +11,8 @@
     Favicons
     =============================================
     -->
-    <link rel="apple-touch-icon" sizes="57x57" href="./resources/img/shoppingmall/images/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./resources/img/shoppingmall/images/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./resources/img/shoppingmall/images/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./resources/img/shoppingmall/images/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./resources/img/shoppingmall/images/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./resources/img/shoppingmall/images/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./resources/img/shoppingmall/images/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./resources/img/shoppingmall/images/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./resources/img/shoppingmall/images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./resources/img/shoppingmall/images/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./resources/img/shoppingmall/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./resources/img/shoppingmall/images/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./resources/img/shoppingmall/images/favicons/favicon-16x16.png">
+   
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./resources/img/shoppingmall/images/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!--  
     Stylesheets
@@ -76,8 +64,8 @@
       <!-- nav바---------------------------------------------------------- -->
       <!-- 섹션시작---------------------------------------------------------- -->
       
-      
-     <section class="bg-dark-30 showcase-page-header module parallax-bg" data-background="./resources/img/shoppingmall/shoppingmall/shoppingmall/ShoppingmallMainIMG.jpg">
+      <!-- data-background="./resources/img/shoppingmall/main/ShoppingmallMainIMG.jpg" -->
+     <section class="bg-dark-30 showcase-page-header module parallax-bg" id="mainSection" >
         <div class="titan-caption">
           <div class="caption-content">
             <div class="font-alt mb-30 titan-title-size-1">다양한 건강식품을 할인된 가격에 만나보세요.</div>
@@ -105,41 +93,18 @@
             <div class="row multi-columns-row">
             
             
+            <c:forEach items="${bestProduct}" var="product">
               <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="shop-item">
-                  <div class="shop-item-image"><img src="./resources/img/shoppingmall/productimgs/리셋 도시락.PNG" width="262" height="259" />
-                    <div class="shop-item-detail"><a class="btn btn-round btn-b" src="detailProduct.do"><span class="icon-basket">Add To Cart</span></a></div>
-                  </div>
-                  <h4 class="shop-item-title font-alt"><a href="detailProduct.do">더 가벼운 리셋 도시락</a></h4>18,500₩
-                </div>
-              </div>
+	                <div class="shop-item">
+	                  <div class="shop-item-image"><img src="./resources/img/shoppingmall/productimgs/${product.product_realfname}" width="262" height="259" />
+	                    <div class="shop-item-detail"><a class="btn btn-round btn-b" href="detailProduct.do?ProductID=${product.productID}"><span class="icon-basket">Add To Cart</span></a></div>
+	                  </div>
+	                  <h4 class="shop-item-title font-alt"><a href="detailProduct.do?ProductID=${product.productID}">${product.productName}</a></h4>${product.productPrice}₩
+	                </div>
+	              </div>	
+              </c:forEach>
               
               
-              <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="shop-item">
-                  <div class="shop-item-image"><img src="./resources/img/shoppingmall/productimgs/샐러드 도시락.PNG" width="262" height="259" />
-                    <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-                  </div>
-                  <h4 class="shop-item-title font-alt"><a href="#">한스푼 샐러드 도시락</a></h4>24,500₩
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="shop-item">
-                  <div class="shop-item-image"><img src="./resources/img/shoppingmall/productimgs/단백질 바.PNG" width="262" height="259" />
-                    <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-                  </div>
-                  <h4 class="shop-item-title font-alt"><a href="#">고단백 통곡물바</a></h4>14,900₩
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3 col-lg-3">
-                <div class="shop-item">
-                  <div class="shop-item-image"><img src="./resources/img/shoppingmall/productimgs/닭가슴살 소시지.PNG" width="262" height="259"/>
-                    <div class="shop-item-detail"><a class="btn btn-round btn-b"><span class="icon-basket">Add To Cart</span></a></div>
-                  </div>
-                  <h4 class="shop-item-title font-alt"><a href="#">닭가슴살 소시지</a></h4>9,000₩
-                </div>
-              </div>
-            </div>
             <div class="row mt-30">
               <div class="col-sm-12 align-center"><a class="btn btn-b btn-round" href="totalproduct.do">모든 상품보기</a></div>
             </div>

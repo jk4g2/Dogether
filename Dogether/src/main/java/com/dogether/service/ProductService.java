@@ -10,7 +10,8 @@ import com.dogether.domain.Shopping_cartVO;
 
 public interface ProductService {
 
-	
+	//쇼핑몰들어갈때 베스트 상품 가져오기
+	List<ProductsVO> bestProductsList();
 	//유저의 정보를 가져오기
 	MemberVO showUserInfo(MemberVO vo);
 	//모든 상품목록 가져오기

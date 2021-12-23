@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-@charset "UTF-8";
 
 htmp,body{
 	margin: 0;
@@ -10,15 +9,18 @@ htmp,body{
  #totalwrap{
  	min-height: 100vh;
  	position: relative;
- 	width: 100%;
+ 	width: 100%; 
  }
 section{
 	padding-bottom: 100px;
 }
-
+#mainSection{
+	background-image: url("../img/shoppingmall/shoppingmall/main/ShoppingmallMainIMG.jpg");
+}
 
 #mainBtn{
 	text-align: center;
+	margin-bottom: 30px;
 }
 #mainBtn > a{
 	width: 150px;

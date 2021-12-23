@@ -128,7 +128,7 @@ public class MemberVO {
 		this.sortTypeMember = sortTypeMember;
 	}
 
-
+	
 	MultipartFile file;
 	
 	public MultipartFile getFile() {

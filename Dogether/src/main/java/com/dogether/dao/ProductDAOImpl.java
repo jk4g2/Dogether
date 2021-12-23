@@ -95,6 +95,11 @@ public class ProductDAOImpl implements ProductDAO {
 		return mybatis.selectList("ProductsDAO.afterGetShoppingCartList", memberid);
 	}
 
+	@Override
+	public List<ProductsVO> bestProductsList() {
+		return mybatis.selectList("ProductsDAO.bestProductsList");
+	}
+
 	
 	
 	

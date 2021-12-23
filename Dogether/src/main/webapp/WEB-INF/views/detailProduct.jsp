@@ -118,7 +118,7 @@
                   <div class="col-sm-4 mb-sm-20">
                     <input id="productCnt" class="form-control input-lg" type="number" name="coun" value="1" max="40" min="1" required="required"/>
                   </div>
-                  <div class="col-sm-8"><button id="cartBtn" class="btn btn-lg btn-block btn-round btn-b" href="Cart">Add To Cart</button></div>
+                  <div class="col-sm-8"><button id="cartBtn" class="btn btn-lg btn-block btn-round btn-b" href="shoppingCartInsert.do">Add To Cart</button></div>
                 </div>
                 <div class="row mb-20">
                 </div>

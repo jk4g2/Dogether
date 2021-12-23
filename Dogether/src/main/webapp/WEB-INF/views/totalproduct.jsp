@@ -83,7 +83,7 @@
       <div class="main">
       
       	<!-- 상단 큰부분 -->
-        <section class="module bg-dark-60 shop-page-header" data-background="./resources/img/shoppingmall/shoppingmall/shoppingmall/ShoppingmallMainIMG.jpg">
+        <section class="module bg-dark-60 shop-page-header" data-background='./resources/img/shoppingmall/shoppingmall/main/ShoppingmallMainIMG.jpg' >
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">

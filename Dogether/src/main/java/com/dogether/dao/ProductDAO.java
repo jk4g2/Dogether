@@ -11,6 +11,8 @@ import com.dogether.domain.Shopping_cartVO;
 
 
 public interface ProductDAO {
+	//메인쇼핑몰들어갈때 베스트상품 가져오기
+	public List<ProductsVO> bestProductsList();
 	//유저 정보 가져오기
 	public MemberVO showUserInfo(MemberVO vo);
 	//토탈상품전체로 불러오기

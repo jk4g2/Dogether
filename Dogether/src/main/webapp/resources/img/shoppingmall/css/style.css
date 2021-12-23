@@ -160,6 +160,7 @@ a,
 }
 
 .main {
+  background-image: url("./resources/img/shoppingmall/shoppingmall/shoppingmall/ShoppingmallMainIMG.jpg");
   position: relative;
   background-color: #fff;
   z-index: 1;
@@ -310,6 +311,7 @@ a,
 }
 
 .parallax-bg {
+  background-image: url("./resources/img/shoppingmall/shoppingmall/shoppingmall/ShoppingmallMainIMG.jpg");
   background-attachment: fixed;
   background-size: cover;
 }

@@ -68,6 +68,11 @@ public class ProductServiceImpl implements ProductService {
 		return productsDAO.afterGetShoppingCartList(memberid);
 	}
 
+	@Override
+	public List<ProductsVO> bestProductsList() {
+		return productsDAO.bestProductsList();
+	}
+
 
 
 }
