@@ -15,10 +15,11 @@ public class RunningGooServiceImpl implements RunningGooService {
 	@Autowired
 	RunningGooDAO runningGooDAO;
 
+	// 런닝구 방 생성
 	@Override
-	public void insertRNRoomInfo() {
+	public void insertRNRoomInfo(RunningGooVO vo) {
 		// TODO Auto-generated method stub
-		
+		runningGooDAO.createRngRoom(vo);
 	}
 
 	@Override

@@ -15,6 +15,22 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
+	// 런닝구 방 생성
+	@Override
+	public void createRngRoom(RunningGooVO vo) {
+		System.out.println("런닝구 방 생성");
+		// 룸넘버 생성
+		mybatis.insert("runningGooDAOMapper.createRunningGooRoomNumber");
+		System.out.println("checkpoint1");
+		// 룸넘버 select 변수저장
+		int roomNumber = mybatis.selectOne("runningGooDAOMapper.getRunningGooRoomNumber");
+		vo.setRoomNumber(roomNumber);
+		System.out.println("checkpoint2");
+		//런닝구 방 생성
+		mybatis.insert("runningGooDAOMapper.createRunningGooRoom", vo);
+		System.out.println("checkpoint3");
+	}
+	
 	@Override
 	public List<RunningGooVO> getRNRoomList(RunningGooVO vo) {
 		System.out.println("런닝구 방 리스트 불러오는 함수 호출");

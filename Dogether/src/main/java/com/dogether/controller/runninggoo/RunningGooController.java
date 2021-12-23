@@ -2,6 +2,8 @@ package com.dogether.controller.runninggoo;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +18,26 @@ import com.dogether.service.RunningGooService;
 public class RunningGooController {
 	@Autowired
 	RunningGooService runningGooService;
-		// 런닝구 방 생성 및 정보 입력하기
 	
+	// 런닝구 방 생성 및 정보 입력하기
+	@RequestMapping("rngInsert.do")
+	public String CreateRngRoom(RunningGooVO vo, HttpSession session) {
+		// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
+		System.out.println((String) session.getAttribute("username"));
+		vo.setMemberID(session.getAttribute("username").toString());
+		runningGooService.insertRNRoomInfo(vo);
+		System.out.println(vo.getRoomNumber());
+		return "redirect:runninggoo.do";
+	}
 	
 		// 런닝구 방 리스트 얻어오기
 		@RequestMapping("runninggoo.do")
-		public String runningGooList(RunningGooVO vo, Model m) {
+		public String runningGooList(RunningGooVO vo, Model m, HttpSession session) {
+			String isSession = (String) session.getAttribute("username");
+			if(isSession == null){
+				m.addAttribute("msg","로그인이 필요한 서비스입니다.");
+				return "redirect";
+			}
 			List<RunningGooVO> result = runningGooService.getRNRoomList(vo);
 			int listCount = runningGooService.getRNRoomCount(vo);
 			System.out.println(listCount);

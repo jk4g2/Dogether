@@ -22,13 +22,48 @@
 <body>
 	<!-- header -->
 	<nav>
-		<div class="logo">
-			<a href="index.jsp">DO<em>GETHER</em></a>
-		</div>
-		<div class="menu-icon">
-			<span></span>
-		</div>
-	</nav>
+   <div class="logo">
+       <a href="index.jsp">DO<em>GETHER</em></a>
+   </div>
+    <div class="menu-icon">
+       <span></span>
+    </div>
+</nav>
+
+
+ <section class="overlay-menu">
+      <div class="container">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+              
+                  <li>
+                      <a href="#">런닝구</a>
+                  </li>
+                  <li>
+                      <a href="#">Gym 예약할까</a>
+                  </li>
+                  <li>
+                      <a href="#">온라인 PT</a>
+                  </li>
+                  <li>
+                      <a href="#">자랑하기</a>
+                  </li>
+                  <li>
+                      <a href="#">BMI 측정가능 보건소</a>
+                  </li>
+                  <li>
+                      <a href="#">쇼핑몰</a>
+                  </li>
+                  <li>
+                      <a href="Mypage">마이페이지</a>
+                  </li>
+                  
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
 	<!-- DB에서 forEach 돌며 값 불러오기 -->
 	<div class="col-12 rn_room_list_wrap">
@@ -52,13 +87,14 @@
         				</div>
         				<ul id="placesList"></ul>
         				<div id="pagination"></div>
-						<input id="getLat" name="locationLat" style="display:none">
-						<input id="getLong" name="locationLong" style="display:none">
 					</div>
 					
 					<div class="col-12 rn_card_check_box">
 						
 						<form action="rngInsert.do" method="post">
+							<input id="getLat" name="locationLat" style="display:none">
+							<input id="getLong" name="locationLong" style="display:none">
+							<input id="getFullAddress" name="location" style="display:none">
 							<p class="rn_room_hashtag">#만나는 날짜</p>
 							<input type="datetime-local" id="meeting-time" name="meetingTime">
 							<!-- <input type="datetime-local" id="meeting-time"
@@ -101,7 +137,7 @@
 							<div class="col-4 rn_card_sports_age_choice">
 								<p class="rn_room_hashtag">#연령대</p>
 								<span>20대</span>
-  								<input type="range" id="maxMembers" class="slider_range" name="maxMembers" min="20" max="50" value="20" step="10" 
+  								<input type="range" id="maxMembers" class="slider_range" name="ageGeneration" min="20" max="50" value="20" step="10" 
   										oninput="document.getElementById('slider_value_view3').innerHTML=this.value+'대';">
   								<span>50대</span>
   								<font size=2 id="slider_value_view3">0</font>

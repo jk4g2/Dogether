@@ -2,6 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="runningGooDAOMapper">
+
+	<insert id="createRunningGooRoom" parameterType="com.dogether.domain.RunningGooVO">
+		INSERT INTO runninggoo(roomnumber, location, memberid, MaxMembers, SportsType,RunningDistance,AgeGeneration,SportsTime,LocationLat,LocationLong,HostComment,meetingTime, deposit)
+		VALUES(#{roomNumber},#{location},#{memberID}, #{maxMembers},#{sportsType}, #{runningDistance}, #{ageGeneration}, #{sportsTime}, #{locationLat}, #{locationLong}, #{hostComment},#{meetingTime},5000)
+	</insert>
+	
+	<insert id="createRunningGooRoomNumber"  parameterType="com.dogether.domain.RunningGooVO">
+		INSERT INTO runninggoo_number VALUE(RoomNumber);
+	</insert>
+	
+	<select id="getRunningGooRoomNumber" resultType="integer">
+		SELECT * FROM runninggoo_number ORDER BY RoomNumber DESC LIMIT 1;
+	</select>
 	
 	<select id="getRunningGooList" resultType="com.dogether.domain.RunningGooVO">
 		SELECT * FROM runninggoo GROUP BY RoomNumber 
