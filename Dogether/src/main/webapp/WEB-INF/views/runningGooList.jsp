@@ -71,7 +71,7 @@
 						<div class="col-0 rn_profile_picture">
 							<img src="resources/img/runninggooimage/default_profile.png" alt="(DB에서)">
 						</div>
-						<div class="col-0 rn_profile_nickname">${sessionScope.username }</div>
+						<div class="col-0 rn_profile_nickname">${runninggoo.memberID }</div>
 						<div class="col-0 rn_profile_eval">별점</div>
 					</div>
 					<div class="col-12 kakao_map">
