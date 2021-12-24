@@ -69,12 +69,10 @@ td#t_title_td1    {
  	width : 400px;
 }
 td#t_title_td2    {
- 	width : 200px;
- 	font-size : 30px;
+ 	width : 1000px;
 }
 td#t_title_td3    {
  	width : 100px;
- 	font-size : 30px;
 }
 td#t_title_td4    {
  	width : 200px;
@@ -98,15 +96,6 @@ img#sub_slider_img{
    width: 23%; 
 }
 
-#table_center{
-    margin-left:auto; 
-    margin-right:auto;
-}
-
-
-td#t_title_td5{
-	 	width : 300px;
-}
 
 
     
@@ -373,43 +362,35 @@ td#t_title_td5{
 		        
 		        
 					        // ##############
-
-		        
-		        
-				 if(prediction[1].probability.toFixed(2) == 1.00){
-					 
-		        	if(status = "class3"){
-		        		
-		        		 count = count+1;
-		        		 t_title_td3.innerHTML = count;
-		        		 console.log(count);
-							
-			        		var audio = new Audio(URL + count%10 + '.mp3');
-			        		audio.play();
-		        		 
-		        		 
-		        		 if(parseInt(count)==parseInt("5")){   // 목표숫자가 '  ' 이면  //  inputbox로 바꿈
-		        			 console.log(1);
-		        			 
-		       				count = 0;   // 카운트 초기화 되고,
-		        			 
-		        			var audio = new Audio(URL + 'success2.mp3');  
-				        	audio.play();				// 1.mp3 음성이 나옴. (수고하셨습니다 라는 음성이 나옴)
-		        		 }				        		 
-;
-		        	}	
-		        	status = "class2";  
-		        	
-		        }
-		        else if (prediction[2].probability.toFixed(2) == 0.80) {
-		        	
-		        	status = "class3";
-		        }      
-		        else if (prediction[0].probability.toFixed(2) == 1.00) {
-		          
-
-		        	status = "class1";
-		        }  
+					        
+							 if(prediction[0].probability.toFixed(2) > 0.80){
+					        	if(status = "class2"){
+					        		 count = count+1;
+					        		 t_title_td3.innerHTML = count;
+					        		 console.log(count);
+					        		
+					        		//var audio = new Audio( count%10 + '1.mp3');
+					        		//audio.play();
+					        	}
+					        	status = "class1";  
+					        	
+					        }
+					        else if (prediction[1].probability.toFixed(2) == 0.80) {
+					        	
+					        	status = "class2";
+					        }      
+					        else if (prediction[2].probability.toFixed(2) == 1.00) {
+					          
+					        	if(status == "class1" || status == "class2"){
+					        		
+					        		//var audio = new Audio('wrong.mp3');
+					        		//audio.play();
+					        	}
+					        	
+					        	
+					        	
+					        	status = "class3";
+					        }  
 					        // ################
 					        
 					        
@@ -457,28 +438,23 @@ td#t_title_td5{
 
 
 		
-				<table id ="table_center">
+				<table>
 				
-				<!-- 
+				
 				<colgroup>
-						<col style="width:50%">
+						<col style="width:70%">
 						<col style="width:15%">
 						<col style="width:15%">
 				</colgroup>
-			 -->
+				
 				
 			<tr  id="t_title_tr2">
 				<td id="t_title_td2">
 				<!-- 카운트 관련된 css를 넣을 부분 -->
-				<p id="count_id"> COUNT </p>
+				
 				</td>
 				
 				<td id="t_title_td3">
-				<!-- <h4>정확도</h4>  -->
-				<!-- <script>document.write(count)</script> -->
-				</td>
-				
-				<td id="t_title_td5">
 				<!-- <h4>정확도</h4>  -->
 				<!-- <script>document.write(count)</script> -->
 				</td>
@@ -545,10 +521,10 @@ td#t_title_td5{
                   			 <p>- 블라블라 몸을 조심하고</p><br>
                   			 
                   			  <h5 id="test_h5">주의사항</h5>
-                  			     
+                  			  
                   			<p>굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
                   		
-                      		      
+                      		
                       		</td>
                       
                       	</tr>
