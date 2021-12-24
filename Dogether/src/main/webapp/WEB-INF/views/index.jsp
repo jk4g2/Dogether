@@ -90,11 +90,11 @@ h4#font-color_st{
 			<form method="post" action="login.do">
 		<div class="login_id">
 			<h4 id="font-color_st">ID</h4>
-			<input type="text" name="memberID" id="memberID" placeholder="id">
+			<input type="text" name="memberID" id="memberID" placeholder="id" autocomplete="off">
 		</div>
 		<div class="login_pw">
 			<h4 id="font-color_st">Password</h4>
-			<input type="password" name="pw" id="pw" placeholder="Password">
+			<input type="password" name="pw" id="pw" placeholder="Password" autocomplete="off">
 		</div>
 		<div class="submit">
 			<input type="submit" value="Login"><br>
