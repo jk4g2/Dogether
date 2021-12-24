@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="resources/css/runninggooMain.css">
 <link rel="stylesheet" href="resources/css/navandfooter.css">
+<link href="resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
 <!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
  -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -193,6 +194,7 @@
 
 	<script type="text/javascript" src="resources/js/kakaoMapCreate.js"></script>
 	<script src="resources/js/RunningGoo.js"></script>
-	
+	<script src="resources/js/plugins.js"></script>
+	<script src="resources/js/main.js"></script>
 </body>
 </html>
