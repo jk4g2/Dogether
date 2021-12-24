@@ -18,13 +18,20 @@
 <link href="../resources/css/admin/bootstrap.min.css" rel="stylesheet">
 <link href="../resources/css/admin/style.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"
-	type="text/javascript"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script> -->
 <script src="../resources/js/admin/common-scripts.js"></script>
 <script src="../resources/js/admin/usermypage.js"></script>
 <link rel="stylesheet" href="../resources/css/usermypage/mypage.css">
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<link rel="stylesheet" href="../resources/css/boast.css">
+<link rel="stylesheet" href="../resources/css/boast2.css">
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script> window.jQuery || document .write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="../resources/js/vendor/bootstrap.min.js"></script>
+<script src="../resources/js/plugins.js"></script>
+<script src="../resources/js/main.js"></script>
+<script src="../resources/js/boast.js"></script>
+
 <!-- 	<script src="../resources/js/boast.js"></script> -->
 <!-- 	<link rel="stylesheet" href="../resources/css/boast.css">
 	<link rel="stylesheet" href="../resources/css/boast2.css"> -->
@@ -326,16 +333,7 @@
 		</div>
 	</footer>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-	</script>
-	<script src="resources/js/vendor/bootstrap.min.js"></script>
-	<script src="resources/js/plugins.js"></script>
-	<script src="resources/js/main.js"></script>
+
 
 </body>
 </html>
