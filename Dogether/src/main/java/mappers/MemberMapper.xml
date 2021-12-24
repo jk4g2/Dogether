@@ -16,6 +16,17 @@
 	</select>
 	
 	
+	<select id="getMemberInfo" resultType="MemberVO" parameterType="string">
+			SELECT *
+			FROM MEMBER
+			WHERE MemberID = #{memberID} 
+	</select>
+	
+	<update id="updatePoint" parameterType="hashmap">
+		UPDATE member SET Point = Point + #{price} WHERE MemberID = #{memberID};
+	</update>
+	
+	
 	<insert id="memberinsert" parameterType="MemberVO">
 		INSERT INTO member(MemberID,PW,Email,NickName,UserName,PhoneNumber,
 							Birthday,Gender,Zipcode,BasicAddress,RestAddress,Member_fname,Member_realfname,Member_fsize)
@@ -37,6 +48,13 @@
 			<when test="sortTypeMember==2">WHERE blackListYN = 'Y'</when>
 		</choose>
 	</select> 
+	
+	
+	<select id="myBoardList" resultType="BoardVO" parameterType="string">
+			SELECT *
+			FROM BOARD 
+			WHERE MemberID = #{memberID}	
+	</select>
 	
 	
 </mapper>
