@@ -77,4 +77,16 @@
 		VALUES (#{orderID},#{memberID},#{productID})
 	</insert>
 	
+	<!-- ########## 관리자페이지 상품 추가하기 ########## -->
+	<insert id="productsInsert" parameterType="com.dogether.domain.ProductsVO">
+		INSERT INTO products (ProductID,ProductName,ProductPrice,ProductContent,Product_fname,Product_realfname,Product_fsize)
+		VALUES (#{productID},#{productName},#{productPrice},#{productContent},#{product_fname},#{product_realfname},#{product_fsize})
+	</insert>
+	
+	<!-- ########## 관리자페이지 상품 수정하기 ########## -->
+	<update id="productsUpdate" parameterType="com.dogether.domain.ProductsVO">
+		INSERT INTO products(ProductName,ProductPrice,ProductContent)
+		VALUES (#{ProductName},#{ProductPrice},#{ProductContent})
+	</update>
+	
 </mapper>

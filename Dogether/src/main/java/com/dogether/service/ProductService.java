@@ -32,4 +32,9 @@ public interface ProductService {
 	public int insertOrderList(List<Shopping_cartVO> vo,String OrderID);
 	//결제할때 장바구니에서 값 가져오기
 	public List<Shopping_cartVO> afterGetShoppingCartList(String memberid);
+	//관리자페이지 상품 추가하기
+	public int productsInsert(ProductsVO vo);
+	//관리자페이지 상품 수정하기
+	public void productsUpdate(ProductsVO vo);
+
 }

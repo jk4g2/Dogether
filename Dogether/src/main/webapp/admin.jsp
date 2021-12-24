@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>관리자 페이지입니다.</title>
+    <title>첫페이지를 클릭하세여!!!!!!!!!!!!!</title>
     <!-- 공통 적용 -->
     <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
     <link rel="stylesheet" href="./resources/css/templatemo-style.css">
@@ -30,6 +30,7 @@
                     <li><a id="adminRNG">런닝구 관리2</a></li>
                     <li><a href="boastmng.do">자랑하기 관리</a></li>
                     <li><a href="membermng.do">회원 관리</a></li>
+                    <li><a href="shoppingmng">쇼핑몰 관리</a></li>
                     <li><a href="shoppingmng">쇼핑몰 관리</a></li>
                     <li><a href="gymmanagermng.do">Gym매니저 관리</a></li>
                 </ul>

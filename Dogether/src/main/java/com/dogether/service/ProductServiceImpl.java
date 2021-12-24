@@ -73,6 +73,14 @@ public class ProductServiceImpl implements ProductService {
 		return productsDAO.bestProductsList();
 	}
 
-
+	@Override
+	public int productsInsert(ProductsVO vo) {
+		return productsDAO.productsInsert(vo);
+	}
+	
+	@Override
+	public void productsUpdate(ProductsVO vo) {
+		System.out.println("Service에서 상품수정 호출함");
+	}
 
 }

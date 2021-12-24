@@ -13,7 +13,7 @@ $(document).ready(function() {
 				adminRNGList.empty();									// 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
 				adminRNGList.append(									// list 테이블 헤더
 					"<tr>"
-//					+ "<th width='200'>프로필사진</th>"
+					+ "<th width='200'>프로필사진</th>"
 					+ "<th width='100'>호스트명</th>"
 					+ "<th width='400'>방설명</th>"
 					+ "<th width='150'>미팅날짜</th>"
@@ -23,8 +23,8 @@ $(document).ready(function() {
 					// console.log(row);								// 데이터가 잘 넘어왔는지 확인
 					var tr = $("<tr/>");								// <tr/> 객체 생성
 					// ######### 프로필사진 출력 (디비 완성 전까지는 방번호 출력하기)
-//					var roomNumber = $("<td id='roomNumber' width='200' />").html(row.roomNumber);		// td객체를 생성 ==> roomNumber를 td에 담는다
-//					tr.append(roomNumber); 																// tr에 roomNumber를 담은 td를 추가
+					var roomNumber = $("<td id='roomNumber' width='200' />").html(row.roomNumber);		// td객체를 생성 ==> roomNumber를 td에 담는다
+					tr.append(roomNumber); 																// tr에 roomNumber를 담은 td를 추가
 					// ##### 호스트명, 방설명(호스트한마디), 미팅날짜, 삭제 출력 #####
 					var memberID = $("<td width='100' />").text(row.memberID);	
 					tr.append(memberID);
@@ -58,7 +58,6 @@ $(document).ready(function() {
 
 		 $(".divHide").hide();				// 모든 정렬 안보이게 변경
 		 $(".sortRNG").show();				// 런닝구 정렬만 보이게 변경
-		 $(".float-right").hide();				// 상품 추가하기 보이게 변경
 //		 $(".sortBST").css("display","none");	// 왼쪽 상단에 sort 콤보박스 안보이게 css 변경
 //		 $(".sortRNG").css("display","block");	// 왼쪽 상단에 sort 콤보박스 보이게 css 변경
 		adminRNGList();							// 리스트 출력 함수 호출
@@ -78,7 +77,7 @@ $(document).ready(function() {
 				adminBSTList.empty();									// 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
 				adminBSTList.append(									// list 테이블 헤더
 					"<tr>"
-					+ "<th width='200'>게시글사진</th>"
+					+ "<th width='200'>프로필사진</th>"
 					+ "<th width='100'>작성자</th>"
 					+ "<th width='400'>글내용</th>"
 					+ "<th width='150'>좋아요수</th>"
@@ -87,7 +86,7 @@ $(document).ready(function() {
 				for(row of resultBST){									// 향상된 for문 (list row : resultBST) ==> 변수명은 상관없음
 					console.log(row);									// 데이터가 잘 넘어왔는지 확인
 					var tr = $("<tr/>");								// <tr/> 객체 생성
-					// ######### 게시글사진 출력 (디비 완성 전까지는 방번호 출력하기)
+					// ######### 프로필사진 출력 (디비 완성 전까지는 방번호 출력하기)
 					var boardID = $("<td id='boardID' width='200' />").html(row.boardID);		// td객체를 생성 ==> boardID를 td에 담는다
 					tr.append(boardID); 														// tr에 boardID를 담은 td를 추가
 					// ##### 작성자, 글내용, 좋아요수, 삭제 출력 #####
@@ -123,7 +122,6 @@ $(document).ready(function() {
 		 $("#adminBSTList").show();		// 런닝구 리스트 테이블만 보이게 변경
 
 		 $(".divHide").hide();			// 모든 정렬 안보이게 변경
-		 $(".float-right").hide();				// 상품 추가하기 보이게 변경
 		 $(".sortBST").show();			// 자랑하기 정렬만 보이게 변경
 		 
 		adminBSTList();					// 리스트 출력 함수 호출
@@ -145,13 +143,13 @@ $(document).ready(function() {
 					"<tr>"
 					//+ "<th width='200'>프로필사진</th>"
 					+ "<th width='100'>ID</th>"
-					+ "<th width='300'>EMAIL</th>"
+					+ "<th width='400'>EMAIL</th>"
 					+ "<th width='100'>닉네임</th>"
 					+ "<th width='100'>회원명</th>"
 					+ "<th width='200'>이동전화번호</th>"
-					+ "<th width='150'>생일</th>"
+					+ "<th width='100'>생일</th>"
 					+ "<th width='100'>성별</th>"
-					+ "<th width='450'>주소</th>"
+					+ "<th width='400'>주소</th>"
 					+ "<th width='150'>블랙리스트</th>"
 					+ "<th width='100'>삭제</th>"
 					+"</tr>");
@@ -163,7 +161,7 @@ $(document).ready(function() {
 //							tr.append(member_realfname);
 					var memberID = $("<td id='memberID' width='100' />").html(row.memberID);	// td객체를 생성 ==> memberID를 td에 담는다
 					tr.append(memberID); 														// tr에 memberID를 담은 td를 추가
-					var email = $("<td width='300' />").text(row.email);	
+					var email = $("<td width='400' />").text(row.email);	
 					tr.append(email);
 					var nickName = $("<td width='100' />").html(row.nickName);
 					tr.append(nickName);
@@ -171,19 +169,11 @@ $(document).ready(function() {
 					tr.append(userName);
 					var phoneNumber = $("<td width='200' />").html(row.phoneNumber);			
 					tr.append(phoneNumber); 													
-					var birthday = $("<td width='150' />").text(row.birthday);	
+					var birthday = $("<td width='100' />").text(row.birthday);	
 					tr.append(birthday);
-					// 성별 int ==> String으로 변경
-					if(row.gender==1) {
-						row.gender = '남자';
-						var gender = $("<td width='100' />").html(row.gender);
-					} else {
-						row.gender = '여자';
-						var gender = $("<td width='100' />").html(row.gender);
-					}
+					var gender = $("<td width='100' />").html(row.gender);
 					tr.append(gender);
-					
-					var fullAddress = $("<td width='450' />").html(row.zipCode + "&nbsp;" + row.basicAddress + "&nbsp;" + row.restAddress);
+					var fullAddress = $("<td width='100' />").html(row.zipCode + "&nbsp;" + row.basicAddress + "&nbsp;" + row.restAddress);
 					tr.append(fullAddress);
 					var blackListYN = $("<td width='150' />").html(row.blackListYN);
 					tr.append(blackListYN);
@@ -213,7 +203,6 @@ $(document).ready(function() {
 		 $("#adminMemberList").show();		// 회원 리스트 테이블만 보이게 변경
 		 
 		 $(".divHide").hide();				// 모든 정렬 안보이게 변경
-		 $(".float-right").hide();				// 상품 추가하기 보이게 변경
 		 $(".sortMember").show();			// 회원 정렬만 보이게 변경
 		 adminMemberList();					// 리스트 출력 함수 호출
 	 }); //end click 
@@ -232,42 +221,29 @@ $(document).ready(function() {
 				adminOrderList.append(								// list 테이블 헤더
 					"<tr>"
 					+ "<th width='200'>주문일자</th>"
-					+ "<th width='300'>주문번호</th>"
+					+ "<th width='400'>주문번호</th>"
 					+ "<th width='200'>주문자</th>"
 					+ "<th width='400'>상품번호</th>"
-					+ "<th width='150'>구매확정여부</th>"
-					+ "<th width='150'>반품여부</th>"
-					+ "<th width='150'>반품상태</th>"
+					+ "<th width='100'>구매확정여부</th>"
+					+ "<th width='100'>반품여부</th>"
+					+ "<th width='100'>반품상태</th>"
 					+"</tr>");
 				for(row of resultOrder){											// 향상된 for문 (list row : resultMember) ==> 변수명은 상관없음
 					console.log(row);												// 데이터가 잘 넘어왔는지 확인
 					var tr = $("<tr/>");											// <tr/> 객체 생성
 					var orderDate = $("<td width='200' />").html(row.orderDate);	// td객체를 생성 ==> orderDate를 td에 담는다
 					tr.append(orderDate); 											// tr에 orderDate를 담은 td를 추가
-					var orderID = $("<td width='300' />").text(row.orderID);	
+					var orderID = $("<td width='400' />").text(row.orderID);	
 					tr.append(orderID);
 					var memberID = $("<td width='200' />").html(row.memberID);
 					tr.append(memberID);
 					var productID = $("<td width='400' />").html(row.productID);
 					tr.append(productID);
-					var buyingConfirmYN = $("<td width='150' />").html(row.buyingConfirmYN);			
+					var buyingConfirmYN = $("<td width='100' />").html(row.buyingConfirmYN);			
 					tr.append(buyingConfirmYN); 													
-					var returnYN = $("<td width='150' />").text(row.returnYN);	
+					var returnYN = $("<td width='100' />").text(row.returnYN);	
 					tr.append(returnYN);
-					// 반품상태 int ==> String 변경
-					if(row.returnStatus==0) {
-						row.returnStatus = '주문완료';
-						var returnStatus = $("<td width='150' />").html(row.returnStatus);
-					} else if (row.returnStatus==1) {
-						row.returnStatus = '반품신청';
-						var returnStatus = $("<td width='150' />").html(row.returnStatus);
-					} else if (row.returnStatus==2) {
-						row.returnStatus = '반품진행중';
-						var returnStatus = $("<td width='150' />").html(row.returnStatus);
-					} else {
-						row.returnStatus = '반품처리완료';
-						var returnStatus = $("<td width='150' />").html(row.returnStatus);
-					}
+					var returnStatus = $("<td width='100' />").html(row.returnStatus);
 					tr.append(returnStatus);
 					
 					adminOrderList.append(tr);			// 모든 컬럼 정보를 append한 tr을 list에 append
@@ -285,108 +261,49 @@ $(document).ready(function() {
 		 evt.preventDefault();				//a태그 기능 무력화
 		 evt.stopPropagation();				//a태그 기능 무력화
 		 //alert("쇼핑몰 주문 관리 클릭");
-		 $("h1").hide();								// 페이지명 안보이게 변경
+		 $("h1").hide();					// 페이지명 안보이게 변경
 		 $("#h1Order").show();				// 페이지명 보이게 변경
 		 
-		 $("table").hide();								// 모든 테이블 숨기기
+		 $("table").hide();					// 모든 테이블 숨기기
 		 $("#adminOrderList").show();		// 쇼핑몰 주문 리스트 테이블만 보이게 변경
 		 
 		 $(".divHide").hide();				// 모든 정렬 안보이게 변경
-		 $(".float-right").hide();				// 상품 추가하기 보이게 변경
-		 $(".sortOrder").show();		// 쇼핑몰 주문 정렬만 보이게 변경
+		 $(".sortOrder").show();			// 쇼핑몰 주문 정렬만 보이게 변경
 		 adminOrderList();					// 리스트 출력 함수 호출
 	 }); //end click 
-	 
-	 // ############ 쇼핑몰 상품 관리 메뉴를 클릭했을 때  ############
-	 function totalProductList(){ 			// 모든 상품 리스트 출력 함
-		 $("h1").hide();								// 페이지명 안보이게 변경
-		 $("#h1Products").show();			// 페이지명 보이게 변경
-		 $("table").hide();							// 모든 테이블 숨기기
-		 $("#totalProductList").show();	// 쇼핑몰 상품 리스트 테이블만 보임으로 변경
-		 $(".divHide").hide();						// 모든 정렬 안보이게 변경
-		 $(".float-right").show();				// 상품 추가하기 보이게 변경
-	 } //end function totalProductList()
-		 $('#adminProduct').click(function(evt){
-			 evt.preventDefault();				//a태그 기능 무력화
-			 evt.stopPropagation();				//a태그 기능 무력화
-			 totalProductList();
-		 }); //end click 
-	 
-	 // ############ 상품 추가하기를 클릭했을 때  ############
-	 $('.adminProductInsert').click(function(evt){
-		 evt.preventDefault();				//a태그 기능 무력화
-		 evt.stopPropagation();				//a태그 기능 무력화
-		 $("h1").hide();							// 페이지명 안보이게 변경
-		 $("#h1Products").show();		// 페이지명 보이게 변경
-		 $("table").hide();						// 모든 테이블 숨기기
-		 $(".table2").show();					// 상품 추가하기 테이블만 보임으로 변경
-		 $(".divHide").hide();					// 모든 정렬 안보이게 변경
-		 $(".float-right").hide();				// 상품 추가하기 안보이게 변경
-	 }); //end click 
-	 
-	// ############ 상품 추가하기에서 등록 버튼을 클릭했을 때  ############
-	 $('.submitBtn').click(function(evt){
-//		 evt.preventDefault();				// 
-//		 evt.stopPropagation();				//
-		 totalProductList();
-	 }); //end click 
-	 
-	// ############ 상품 수정 버튼을 클릭했을 때  ############
-	 let isEditing = 0;
-//	 $('#updateProduct').click(function(){
-		   $(document).on("click","#updateProduct",function(){
-		      //수정다하고나서
-		      if(isEditing==1){
-		         if($(this).text()==="확인"){
-		            isEditing = 0;
-		            var productIDtext = $(".productID").text()
-		            var text = $('.productPrice').val();
-		            $.ajax({
-		                 type: 'get',
-		                 url: 'updateProduct.do',
-		                 data : {productPrice : text, productID : productIDtext },
-		                 //한글처리
-		                 contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-		                 
-		                 success : function(result){
-		                	 totalProductList();
-		                 },
-		                 error : function(err){
-		                    alert('fail');
-		                 }
-		              });
-		           }
-		      }
-		      //수정하기전에..
-		      else{
-		         isEditing = 1;
-		         let productPrice = $(this).parent().prev();
-		         let productName = $(this).parent().prev().prev();
-		         let productContect = $(this).parent().prev().prev().prev();
-		         
-		         let productPriceText = $(this).parent().prev().text();
-		         let productNameText = $(this).parent().prev().prev().text();
-		         let productContectText = $(this).parent().prev().prev().prev().text();
-		         console.log(productName);
-		         productPrice.val('');
-		         productName.val('');
-		         productContect.val('');
-		         productPrice.html("<input type='text' name='productPrice' class='productPrice'>");
-		         productName.html("<input type='text' name='productName' class='productName'>");
-		         productContect.html("<input type='text' name='productContect' class='productContect'>");
-		         $(this).text('확인')
-		      }
-		      
-		      
-		   })
-		 
-		 
-//	 }); //end click 
-	 
-	 
-	 
+ 
 	// ################################################
+	// 정렬하기 
+/*	function rngSortRoom(){
+		$.ajax({
+			type : 'get',
+			url : 'adminRNG.do',
+		    dataType : 'json',											// db(서버)에서 받을 때 데이터 타입
+			success : function(sortRNG){
+				
+			},	// end success
+			error : function(err){
+				alert('전송실패');
+				console.log(err);
+			} //end error		
+		}) // end ajax
+	} // end function rngSortRoom()
 	
+	function rngSortMeeting(){
+		$.ajax({
+			type : 'get',
+			url : 'adminRNG.do',
+		    dataType : 'json',											// db(서버)에서 받을 때 데이터 타입
+			success : function(sortRNG){
+				
+			},	// end success
+			error : function(err){
+				alert('전송실패');
+				console.log(err);
+			} //end error		
+		}) // end ajax
+	} // end function rngSortRoom()
+*/
 	 // ############ 런닝구 정렬하기를 클릭했을 때  ############
 	 $('#rngSort').click(function(evt){
 		 evt.preventDefault();				// a태그 링크 기능 무력화
@@ -408,6 +325,5 @@ $(document).ready(function() {
 		 adminMemberList();
 	 }); //end click 
 	 
-	// ################################################
-
+	 
 });	// end ready

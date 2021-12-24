@@ -16,7 +16,7 @@ public class MemberDAOImpl implements MemberDAO{
 	
 	@Override
 	public List<MemberVO> getMemberList(MemberVO vo) {
-		return mybatis.selectList("testDAO.getMemberList", vo);
+		return mybatis.selectList("MemberDAO.getMemberList", vo);
 	}
 
 }
