@@ -44,9 +44,9 @@ public class testController {
 	@ResponseBody // ************************************* 비동기통신을 의미 ajax
 	public String idCheck(MemberVO vo) {
 		System.out.println("아이디체크-------------------------------------------------------------");
-		MemberVO result = testService.idCheck_Login(vo);
+		MemberVO memberidcheck = testService.idCheck_Login(vo);
 		String message = "사용가능한 아이디입니다";
-		if (result != null)
+		if (memberidcheck != null)
 			return "중복된 아이디입니다";
 		return message;
 	}
