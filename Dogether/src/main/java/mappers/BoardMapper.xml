@@ -6,6 +6,11 @@
 	<select id="getBoardList" resultType="BoardVO" parameterType="BoardVO">
 			SELECT *
 			FROM BOARD 
+			
+		<if test="memberID!=null">
+			WHERE memberID = #{memberID}
+		</if>
+		
 		<choose>
 			<when test="sortTypeBST==0">ORDER BY BoardID DESC</when>
 			<when test="sortTypeBST==1">ORDER BY board_like_count DESC</when>

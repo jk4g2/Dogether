@@ -28,7 +28,7 @@ function submitstuff(){
      alert("올릴게 없는데요..?");
      return;
   }
-  
+
   if(fileName==''){
   	alert("파일을 올려주세요");
   	return;
@@ -122,14 +122,14 @@ $(function() {
      let reply = $(this).prev().val();
      let boardID =  $(this).parent().parent().parent().prev().val();
      let replyer = $(this).prev().prev().text();
-     
+
      ///아무것도없을시..
      if($(thiss).val()===''){
        alert("뭐라도 좀 적어주세요");
        return;
      }
-     
-     
+
+
      $.ajax({
        type: "post",
        url: "reply.do",
@@ -180,6 +180,19 @@ $(function() {
      $(this).nextUntil("#commentside").css({"display":"block"});
      $(this).css({"display":"none"});
    });
+
+
+
+  $(document).on("click","#clickID",function(){
+     let memberID = $(this).first().html().split('>')[1].trim();
+	   window.location.href = "boast.do?memberID=" + memberID;
+   });
+
+   $(document).on("click","#commentwriter",function(){
+      let memberID = $(this).text().trim();
+      window.location.href="boast.do?memberID=" + memberID;
+    });
+
 
 
 });
