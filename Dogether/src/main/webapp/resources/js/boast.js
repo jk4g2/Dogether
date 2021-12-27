@@ -157,7 +157,7 @@ $(function() {
           console.log($(thiss).parent().siblings('.comments').length);
           if($(thiss).parent().siblings('.comments').length >= 2){
             console.log(1);
-            let more = '<span id="more" style="cursor: pointer">더보기...</span>'
+            let more = '<span class="more" style="cursor: pointer">더보기...</span>'
             $(thiss).parent().before(more);
             let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
             $(thiss).parent().before(textt);
