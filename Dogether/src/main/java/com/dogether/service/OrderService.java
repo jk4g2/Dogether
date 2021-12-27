@@ -5,4 +5,6 @@ import com.dogether.domain.OrderVO;
 
 public interface OrderService {
 	List<OrderVO> getOrderList();
+	List<OrderVO> getMyOrderList(String memberID);
+	
 }

@@ -18,23 +18,22 @@
 <link href="../resources/css/admin/bootstrap.min.css" rel="stylesheet">
 <link href="../resources/css/admin/style.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+	type="text/javascript"></script>
 <script src="../resources/js/admin/common-scripts.js"></script>
 <script src="../resources/js/admin/usermypage.js"></script>
-<link rel="stylesheet" href="../resources/css/usermypage/mypage.css">
+
+<script type="text/javascript"
+	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script src="../resources/js/boast.js"></script>
 <link rel="stylesheet" href="../resources/css/boast.css">
 <link rel="stylesheet" href="../resources/css/boast2.css">
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script> window.jQuery || document .write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="../resources/js/vendor/bootstrap.min.js"></script>
-<script src="../resources/js/plugins.js"></script>
-<script src="../resources/js/main.js"></script>
-<script src="../resources/js/boast.js"></script>
-
-<!-- 	<script src="../resources/js/boast.js"></script> -->
-<!-- 	<link rel="stylesheet" href="../resources/css/boast.css">
-	<link rel="stylesheet" href="../resources/css/boast2.css"> -->
+<!-- <script src="../resources/js/JoinUser.js"></script> -->
+<script
+	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script
+	src="../resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<link rel="stylesheet" href="../resources/css/usermypage/mypage.css">
 <script>
 	$(function() {
 		var IMP = window.IMP;
@@ -86,6 +85,17 @@
 			}
 		})//end of ajax
 	}//end of paypoint
+
+	function setThumbnail(event) {
+		var reader = new FileReader();
+		reader.onload = function(event) {
+			$("#image_container").empty();//일단 비우자
+			var img = document.createElement("img");
+			img.setAttribute("src", event.target.result);
+			document.querySelector("div#image_container").appendChild(img);
+		};
+		reader.readAsDataURL(event.target.files[0]);
+	}
 </script>
 
 
@@ -99,9 +109,9 @@
 			<!-- sidebar menu start-->
 			<ul class="sidebar-menu" id="nav-accordion">
 				<ul class="sidebar-menu" style="padding: 25px;">
-					<li><a href="myPage.do">마이 페이지</a></li>
+					<li><a href="#" id="mainmypage">마이 페이지</a></li>
 					<li><a href="#" id="myRNG">내 런닝구 현황</a></li>
-					<li><a href="#" id="myBST">내 정보 수정</a></li>
+					<li><a href="#" id="myINFO">내 정보 수정</a></li>
 					<li><a href="#" id="myMember">내 게시글 관리</a></li>
 					<li><a href="#" id="myOrder">쇼핑몰 주문내역</a></li>
 				</ul>
@@ -122,9 +132,9 @@
 					<!-- 상단 메뉴 -->
 					<section class="card">
 						<div class="card-body">
-							<h1 id="h1Admin">${member.userName}님안녕하세요.</h1>
+							<h1 id="h1Admin">${member.userName}님 안녕하세요.</h1>
 							<h1 id="h1RNG" style="display: none;">내 런닝구 현황</h1>
-							<h1 id="h1BST" style="display: none;">내 정보 수정</h1>
+							<h1 id="h1INFO" style="display: none;">내 정보 수정</h1>
 							<h1 id="h1Member" style="display: none;">내 게시글 관리</h1>
 							<h1 id="h1Order" style="display: none;">쇼핑몰 주문 내역</h1>
 						</div>
@@ -135,11 +145,14 @@
 					<div class="row product-list">
 						<div class="col-md-12">
 							<section class="card">
-								<div class="card-body text-center" style="margin: auto;">
+								<div class="card-body text-center"
+									style="margin: auto; width: 90%;">
 
 
 
-									<div id="myPageMain">
+
+
+									<div id="myPageMain" class="sese">
 										<div class="myImgPoint">
 											<!-- 마이페이지 기본화면 -->
 											<div id="profileimage">
@@ -163,153 +176,245 @@
 												<p>※포인트는 런닝구 매칭의 예약금으로 사용됩니다.</p>
 											</div>
 										</div>
-
-
 									</div>
+
+
+
+
+
+
+
 
 
 
 									<!-- 런닝구  -->
-									<div class="runninggooManageList">
+									<div id="MyRunninggo" class="sese">
 										<!-- ########## 런닝구 리스트  ########## -->
 										<table id="userRNGList" border="2" style="display: none;">
 											<!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->
 										</table>
-										런닝구는 일단 대기............
 									</div>
+
+
+
+
+
+
+
+									<!-- 내 정보 수정 -->
+									<div id="UpdateMyInfo" class="sese" style="display: none;">
+										<!--###################### 내정보 수정 폼 ###################### -->
+										<form method="post" action="updateMemberInfo.do"
+											enctype="multipart/form-data" id="userinput">
+											<!-- 상단 소개말--------------------------------------------------------- -->
+											<table class='updatetable'>
+												<tr>
+													<td class="normalbold tb_ttl">
+														<div align="center">프로필사진</div>
+													</td>
+													<td colspan="3" class="normal" id="profileTD">
+														<div id="image_container"></div> <input type="file"
+														onchange="setThumbnail(event);" id="fileselectBtn"
+														name='file' maxlength="60" size="30"
+														accept="image/jpeg,.jpg,.png" required> <input
+														type="hidden" name="memberID" value="${member.memberID}" />
+													</td>
+												</tr>
+												<tr>
+													<td class="normalbold tb_ttl">
+														<div align="center">PW 변경</div>
+													</td>
+													<td class="normal"><input type="password" name="pw"
+														id="userPass" placeholder="변경하실 PW.">
+														<div id="pwcheck" style="color: red;"></div></td>
+													<td class="normalbold tb_ttl">
+														<div align="center">PW 확인</div>
+													</td>
+													<td class="normal"><input type="password"
+														id="userPass2" placeholder="한번더 입력해주세요.">
+														<div id="pwcheck2" style="color: red;"></div></td>
+												</tr>
+												<tr>
+													<td class="normalbold tb_ttl">
+														<div align="center">닉네임</div>
+													</td>
+													<td colspan="3" height="23" class="normal"><input
+														type="text" name="nickName" id="usernickN"
+														placeholder="변경하실 닉네임">
+														<button type="button" id="nNCheckResult2">중복확인</button> <span
+														id="nNCheckResult" style="width: 150px; color: red"></span>
+														<div id="ncheck" style="color: red;"></div></td>
+												</tr>
+												<tr>
+													<td class="normalbold tb_ttl">
+														<div align="center">전화번호</div>
+													</td>
+													<td class="normal" colspan="3"><input type="text"
+														name="phoneNumber" class="phone" maxlength="13"
+														placeholder="변경하실 번호"
+														oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+
+														<div class="eheck_font" id="phone_check"></div></td>
+												</tr>
+												<tr>
+													<td colspan="1" class="normalbold tb_ttl">
+														<div align="center">우편번호</div>
+													</td>
+													<td colspan="3" class="normal"><input type="text"
+														size="20" value="" name="zipCode" id="Zipcode"> <input
+														type="button" value="주소검색" id="btnAddress"></td>
+												</tr>
+												<tr>
+													<td colspan="1" class="normalbold tb_ttl">
+														<div align="center">주소</div>
+													</td>
+													<td class="normal" colspan="3"><input type="text"
+														name="basicAddress" id="BasicAddress" size="30"> <input
+														type="text" name="restAddress" id="RestAddress" size="10"
+														placeholder="상세주소를 입력해주세요."></td>
+												</tr>
+
+
+
+												<tr>
+													<td colspan="4" class="normal" width="70%" height="5%">
+														<div align="center">
+															<button type="button" id="submitBtn">수정</button>
+														</div>
+													</td>
+												</tr>
+
+											</table>
+										</form>
+									</div>
+
+
+
 
 
 									<!-- 자랑하기 -->
-									<div class="boastManageList" style="display: none;">
-										<!-- ########## 자랑하기 리스트  ########## -->
-										<c:set var="count" value="0" />
-										<c:forEach var="item" items="${list}">
-											<c:set var="count" value="${count + 1}" />
-											<input type="hidden" value="${item.boardID }">
+									<div id="MyBoard" class="sese" style="display: none;">
+										<c:if test="${not empty nullCheck }">
+											<h2>${nullCheck}</h2>
+										</c:if>
+										<c:if test="${empty nullCheck}">
 
-											<!-- 게시글 div -->
-											<div class="card">
-												<div id="userdiv">
-													<img src="../resources/img/imgforboard/default_person.png"
-														id="userpic"> ${item.memberID}
-												</div>
-												<div id="content">
-													<div id="pic"
-														style='background-image: url(../resources/img/imgforboard/img.png)'></div>
-												</div>
+											<div id="ontheside">
+												<div class="mainContainer">
 
-												<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 -->
-												<div id="cardContent">
-
-													<c:set var="found" value="0" />
-													<c:forEach var="like" items="${like_list}">
-														<c:if test="${like.boardID eq item.boardID}">
-															<c:set var="found" value="1" />
-															<div id='ajaxlikebutton'>
-																<button class="likeButton" value="Y">좋아요♥ 취소</button>
-															</div>
-														</c:if>
-													</c:forEach>
-
-													<c:if test="${found eq 0 }">
-														<div id='ajaxlikebutton'>
-															<button class="likeButton" value="N">좋아요♡</button>
-														</div>
-													</c:if>
-
-													<p id="usernameforcontent">${item.memberID }</p>
-													<p id="boardContent">${item.boardContent }</p>
-													<div id="likeCount">좋아요 ${item.board_like_count}개</div>
-
-													<!-- 댓글 불러오는 부분 -->
 													<c:set var="count" value="0" />
-													<c:forEach var="reply" items="${reply_list}">
-														<!-- reply for문시작 -->
-														<c:if test="${reply.boardID eq item.boardID }">
+													<c:forEach var="item" items="${list}">
+														<c:set var="count" value="${count + 1}" />
+														<input type="hidden" value="${item.boardID }">
 
-															<!-- count가 2보다 작을떄는 모든 게시물 다 싹뜨게함 -->
-															<c:if test="${count lt 2}">
-																<div class="comments">
-																	<ul id="forid">
-																		<li id="commentwriter" class="reply">${reply.replyer}</li>
-																		<li class="reply">${reply.reply }</li>
-																	</ul>
-																</div>
-															</c:if>
+														<!-- 게시글 div -->
+														<div class="card">
+															<div id="userdiv">
+																<img
+																	src="../resources/img/imgforboard/default_person.png"
+																	id="userpic"> ${item.memberID}
+															</div>
+															<div id="content">
+																<div id="pic"
+																	style='background-image: url(../resources/img/imgforboard/img.png)'></div>
+															</div>
 
-															<!-- count가 2보다 같거나 크면 나머지는 display : none로 감추기 -->
-															<c:if test="${count gt 1 }">
-																<!-- count가  2보다 같거나 크고 count가 2일경우 더보기 칸 추가. -->
-																<c:if test="${count eq 2 }">
-																	<span class="more" style="cursor: pointer">더보기...</span>
-																	<br>
+															<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 -->
+															<div id="cardContent"
+																style="text-align: left; color: black;">
+
+																<c:set var="found" value="0" />
+																<c:forEach var="like" items="${like_list}">
+																	<c:if test="${like.boardID eq item.boardID}">
+																		<c:set var="found" value="1" />
+																		<div id='ajaxlikebutton'>
+																			<button class="likeButton" value="Y">좋아요♥ 취소</button>
+																		</div>
+																	</c:if>
+																</c:forEach>
+
+																<c:if test="${found eq 0 }">
+																	<div id='ajaxlikebutton'>
+																		<button class="likeButton" value="N">좋아요♡</button>
+																	</div>
 																</c:if>
-																<div class="comments" style="display: none;">
-																	<ul id="forid">
-																		<li id="commentwriter" class="reply">${reply.replyer}</li>
-																		<li class="reply">${reply.reply }</li>
-																	</ul>
+
+																<p id="usernameforcontent">${item.memberID }</p>
+																<p id="boardContent">${item.boardContent }</p>
+																<div id="likeCount" style="color: blue;">좋아요 ${item.board_like_count}개</div>
+
+																<!-- 댓글 불러오는 부분 -->
+																<c:set var="count" value="0" />
+																<c:forEach var="reply" items="${reply_list}">
+																	<!-- reply for문시작 -->
+																	<c:if test="${reply.boardID eq item.boardID }">
+
+																		<!-- count가 2보다 작을떄는 모든 게시물 다 싹뜨게함 -->
+																		<c:if test="${count lt 2}">
+																			<div class="comments">
+																				<ul id="forid">
+																					<li id="commentwriter" class="reply">${reply.replyer}</li>
+																					<li class="reply">${reply.reply }</li>
+																				</ul>
+																			</div>
+																		</c:if>
+
+																		<!-- count가 2보다 같거나 크면 나머지는 display : none로 감추기 -->
+																		<c:if test="${count gt 1 }">
+																			<!-- count가  2보다 같거나 크고 count가 2일경우 더보기 칸 추가. -->
+																			<c:if test="${count eq 2 }">
+																				<span class="more" style="cursor: pointer">더보기...</span>
+																				<br>
+																			</c:if>
+																			<div class="comments" style="display: none;">
+																				<ul id="forid">
+																					<li id="commentwriter" class="reply">${reply.replyer}</li>
+																					<li class="reply">${reply.reply }</li>
+																				</ul>
+																			</div>
+																		</c:if>
+
+																		<c:set var="count" value="${count+1}" />
+																	</c:if>
+																</c:forEach>
+																<!-- reply for문 끝 -->
+
+
+																<!-- 댓글 다는부분 -->
+																<div id="commentside">
+																	<div id="writernameforcomment">${sessionScope.username }</div>
+																	<input type="text" class="comment">
+																	<button id="commentbutton">댓글달기</button>
 																</div>
-															</c:if>
+																<!-- 댓글 다는부분 끝 -->
 
-															<c:set var="count" value="${count+1}" />
-														</c:if>
+
+															</div>
+															<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 끝-->
+
+
+
+														</div>
+														<!-- 게시글 div end-->
 													</c:forEach>
-													<!-- reply for문 끝 -->
-
-
-													<!-- 댓글 다는부분 -->
-													<div id="commentside">
-														<div id="writernameforcomment">${sessionScope.username }</div>
-														<input type="text" class="comment">
-														<button id="commentbutton">댓글달기</button>
-													</div>
-													<!-- 댓글 다는부분 끝 -->
-
-
 												</div>
-												<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 끝-->
-
-
-
 											</div>
-											<!-- 게시글 div end-->
-										</c:forEach>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+										</c:if>
 									</div>
-									<!-- 회원  -->
-									<div class="memberManageList">
-										<!-- ########## 회원 리스트  ########## -->
-										<table id="adminMemberList" border="2" style="display: none;">
-											<!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->
-										</table>
-									</div>
+
+
+
+
+
 									<!-- 쇼핑몰  -->
-									<div class="orderManageList">
+									<div id="myorderList" class="sese" style="display: none;">
 										<!-- ########## 회원 리스트  ########## -->
-										<table id="adminOrderList" border="2" style="display: none;">
+										<table id="userOrderList" border="2">
 											<!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->
 										</table>
 									</div>
-								</div>
 							</section>
 						</div>
 					</div>
@@ -333,7 +438,16 @@
 		</div>
 	</footer>
 
-
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+		window.jQuery
+				|| document
+						.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+	</script>
+	<script src="resources/js/vendor/bootstrap.min.js"></script>
+	<script src="resources/js/plugins.js"></script>
+	<script src="resources/js/main.js"></script>
 
 </body>
 </html>

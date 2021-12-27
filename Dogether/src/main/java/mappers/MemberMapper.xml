@@ -56,5 +56,10 @@
 			WHERE MemberID = #{memberID}	
 	</select>
 	
+	<update id="updateMemberInfo" parameterType="MemberVO">
+			UPDATE member SET PW = #{pw},NickName = #{nickName},phoneNumber = #{phoneNumber},Zipcode = #{zipCode},
+			basicAddress = #{basicAddress},restAddress = #{restAddress},member_fname = #{member_fname},
+			member_realfname = #{member_realfname},member_fsize = #{member_fsize} WHERE MemberID = #{memberID}
+	</update>
 	
 </mapper>

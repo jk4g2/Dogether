@@ -19,4 +19,9 @@ public class OrderDAOImpl implements OrderDAO{
 		return mybatis.selectList("OrderDAO.getOrderList");
 	}
 
+	@Override
+	public List<OrderVO> getMyOrderList(String memberID) {
+		return mybatis.selectList("OrderDAO.getMyOrderList",memberID);
+	}
+
 }

@@ -8,4 +8,11 @@
 		FROM orders
 	</select> 
 	
+	<select id="getMyOrderList" resultType="OrderVO" parameterType="string">
+		SELECT *
+		FROM orders where MemberID = #{memberID}
+	</select>
+	
+	
+	
 </mapper>
