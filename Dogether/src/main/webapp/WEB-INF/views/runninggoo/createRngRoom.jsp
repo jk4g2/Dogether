@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="resources/css/runninggooMain.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/runninggoo/runninggooMain.css">
 <link rel="stylesheet" href="resources/css/navandfooter.css">
 <link href="resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
 <!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
@@ -189,11 +189,11 @@
 	
 	
 	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b002992ff5db3facd06fff2ffcf08711"></script>
-	<script type="text/javascript" src="resources/js/services.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/services.js"></script>
 
 
-	<script type="text/javascript" src="resources/js/kakaoMapCreate.js"></script>
-	<script src="resources/js/RunningGoo.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/kakaoMapCreate.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/runninggoo/RunningGoo.js"></script>
 	<script src="resources/js/plugins.js"></script>
 	<script src="resources/js/main.js"></script>
 </body>
