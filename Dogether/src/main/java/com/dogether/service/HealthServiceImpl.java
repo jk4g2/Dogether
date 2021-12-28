@@ -15,8 +15,8 @@ public class HealthServiceImpl implements HealthService{
 	public HealthDAOImpl healthDAO;
 	
 	@Override
-	public List<HealthCareCenterVO> getHealthList() {
-		return healthDAO.getHealthList();
+	public List<HealthCareCenterVO> getHealthList(HealthCareCenterVO vo) {
+		return healthDAO.getHealthList(vo);
 	}
 	
 }

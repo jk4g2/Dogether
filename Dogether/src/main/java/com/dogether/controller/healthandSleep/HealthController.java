@@ -17,18 +17,24 @@ import com.dogether.domain.Board_ReplyVO;
 import com.dogether.domain.HealthCareCenterVO;
 import com.dogether.service.BoardServiceImpl;
 import com.dogether.service.HealthServiceImpl;
+
 @Controller
 public class HealthController {
 	
 	@Autowired
 	private HealthServiceImpl healthService;
 	
-	@RequestMapping("healthcenter.do")
-	public void getHealthList(Model m) {
-		List<HealthCareCenterVO> list = healthService.getHealthList();
-		for(int i =0;i<list.size();i++) {
-			System.out.println(list.get(i));
+	@RequestMapping(value="healthcenter.do",produces="application/text; charset=UTF-8")
+	public void getHealthList(@RequestParam(value="centerAddress", required = false) String centerAddress,
+			Model m) {
+		HealthCareCenterVO vo = new HealthCareCenterVO();
+		if(centerAddress!=null) {
+			vo.setCenterAddress("%" + centerAddress +"%");			
 		}
+		
+		
+		List<HealthCareCenterVO> list = healthService.getHealthList(vo); 
 		m.addAttribute("list",list);
 	}
+	
 }

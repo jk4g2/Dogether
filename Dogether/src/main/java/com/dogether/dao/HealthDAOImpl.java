@@ -15,8 +15,8 @@ public class HealthDAOImpl implements HealthDAO{
 	private SqlSessionTemplate mybatis;
 	
 	@Override
-	public List<HealthCareCenterVO> getHealthList() {
-		return mybatis.selectList("HealthcenterDAO.getHealthcenterList");
+	public List<HealthCareCenterVO> getHealthList(HealthCareCenterVO vo) {
+		return mybatis.selectList("HealthcenterDAO.getHealthcenterList",vo);
 	
 	}
 

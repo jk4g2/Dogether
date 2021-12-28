@@ -17,6 +17,21 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 </head>
+
+<style>
+
+.is-preload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+
+</style>
+
 <body class="is-preload">
 
 	<!-- Wrapper -->
@@ -28,13 +43,15 @@
 
 				<!-- Header -->
 				<header id="header">
-					<class="logo"> <strong>체성분 측정 가능 보건소 검색</strong>
+					<class="logo"> 
+						<img src="./resources/img/imgformain/header logo.png">			
 				</header>
 
 				<!-- Content -->
 				<section>
 					<header class="main">
-						<h1>Inbody check</h1>
+						<h2>Inbody check</h2>
+						<img src="./resources/img/imgformain/3.jpg" class="img-fluid" alt="인바디 측정" style="width:1400px; height:450px;">
 					</header>
 
 					<!-- Content -->
@@ -77,28 +94,31 @@
 					<hr class="major" /> -->
 
 					<!-- Elements -->
-					<h2 id="elements">* Find public medical centers *</h2>
+					<!-- <h2 id="elements">* Find public medical centers *</h2> -->
 					<div class="row gtr-200">
 						<div class="col-6 col-12-medium">
 
 							<h4>지역별 인바디 측정 가능 보건소를 찾아보세요.</h4>
 							<ul class="actions">
-								<li><a href="#" class="button primary">서울특별시</a></li>
-								<li><a href="#" class="button">부산광역시</a></li>
-								<li><a href="#" class="button primary">인천광역시</a></li>
-								<li><a href="#" class="button">대전광역시</a></li>
-								<li><a href="#" class="button primary">대구광역시</a></li>
-								<li><a href="#" class="button">광주광역시</a></li>
+								<li><a href="healthcenter.do?centerAddress=서울특별시" class="button primary">서울특별시</a></li>
+								<li><a href="healthcenter.do?centerAddress=부산광역시" class="button">부산광역시</a></li>
+								<li><a href="healthcenter.do?centerAddress=인천광역시" class="button primary">인천광역시</a></li>
+								<li><a href="healthcenter.do?centerAddress=대전광역시" class="button">대전광역시</a></li>
+								<li><a href="healthcenter.do?centerAddress=대구광역시" class="button primary">대구광역시</a></li>
+								<li><a href="healthcenter.do?centerAddress=광주광역시" class="button">광주광역시</a></li>
+								<li><a href="healthcenter.do?centerAddress=울산광역시" class="button primary">울산광역시</a></li>
+								<li><a href="healthcenter.do?centerAddress=경기도" class="button">경기도</a></li>
 
 							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary">울산광역시</a></li>
-								<li><a href="#" class="button">경기도</a></li>
-								<li><a href="#" class="button primary">전라도</a></li>
-								<li><a href="#" class="button">경상도</a></li>
-								<li><a href="#" class="button primary">강원도</a></li>
-								<li><a href="#" class="button">충청도</a></li>
-								<li><a href="#" class="button primary">제주도</a></li>
+							<ul class="actions">	
+								<li><a href="healthcenter.do?centerAddress=전라남도" class="button primary">전라남도</a></li>
+								<li><a href="healthcenter.do?centerAddress=전라북도" class="button">전라북도</a></li>
+								<li><a href="healthcenter.do?centerAddress=경상남도" class="button primary">경상남도</a></li>
+								<li><a href="healthcenter.do?centerAddress=경상북도" class="button">경상북도</a></li>
+								<li><a href="healthcenter.do?centerAddress=충청남도" class="button primary">충청남도</a></li>
+								<li><a href="healthcenter.do?centerAddress=충청북도" class="button">충청북도</a></li>
+								<li><a href="healthcenter.do?centerAddress=강원도" class="button primary">강원도</a></li>
+								<li><a href="healthcenter.do?centerAddress=제주도" class="button">제주도</a></li>
 
 							</ul>
 
@@ -110,7 +130,7 @@
 										<tr>
 											<th>보건소 이름</th>
 											<th>주소</th>
-											<th>건화번호</th>
+											<th>전화번호</th>
 										</tr>
 									</thead>
 									<tbody>
