@@ -14,6 +14,7 @@
 <link href="../resources/css/admin/bootstrap.min.css" rel="stylesheet">
 <link href="../resources/css/admin/style.css" rel="stylesheet">
 <link rel="stylesheet" href="../resources/css/NAVandFOOTER.css">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
