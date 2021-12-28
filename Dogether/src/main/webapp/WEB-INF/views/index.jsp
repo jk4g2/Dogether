@@ -226,7 +226,7 @@ h4#font-color_st{
 						<!--  추가한 사진박스 시작!! 11111-->
 			<div class="col-md-4 col-sm-6 test6">
 				<div class="portfolio-item">
-					<a href="healthcenter.do" data-lightbox="image-1"><div class="thumb">
+					<a href="healthcenter/" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 								<!-- 

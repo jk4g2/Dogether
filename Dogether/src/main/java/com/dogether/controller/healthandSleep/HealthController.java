@@ -19,22 +19,27 @@ import com.dogether.service.BoardServiceImpl;
 import com.dogether.service.HealthServiceImpl;
 
 @Controller
+@RequestMapping("healthcenter")
 public class HealthController {
 	
 	@Autowired
 	private HealthServiceImpl healthService;
 	
-	@RequestMapping(value="healthcenter.do",produces="application/text; charset=UTF-8")
-	public void getHealthList(@RequestParam(value="centerAddress", required = false) String centerAddress,
+	@RequestMapping(value="/",produces="application/text; charset=UTF-8")
+	public String getHealthList(@RequestParam(value="centerAddress", required = false) String centerAddress,
 			Model m) {
 		HealthCareCenterVO vo = new HealthCareCenterVO();
 		if(centerAddress!=null) {
 			vo.setCenterAddress("%" + centerAddress +"%");			
+		}else {
+			vo.setCenterAddress("%서울특별시%");
 		}
 		
 		
 		List<HealthCareCenterVO> list = healthService.getHealthList(vo); 
 		m.addAttribute("list",list);
+		
+		return "healthcenter/healthcenter";
 	}
 	
 }
