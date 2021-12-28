@@ -30,28 +30,27 @@
     
     -->
     <!-- Default stylesheets-->
-  	<link href="../resources/ai_home_trainer_resources/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  	<link href="../resources/aihometrainer/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     
     <!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/animate.css/animate.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/et-line-font/et-line-font.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/flexslider/flexslider.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
     <!-- Main stylesheet and color file-->
-    <link href="../resources/ai_home_trainer_resources/css/style.css" rel="stylesheet">
-        <link href="../resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
-    <link id="color-scheme" href="../resources/ai_home_trainer_resources/css/colors/default.css" rel="stylesheet">
-   
- 
-   
+    <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
+        <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
+    <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
+    
+    
     
     <style>
     
@@ -69,12 +68,10 @@ td#t_title_td1    {
  	width : 400px;
 }
 td#t_title_td2    {
- 	width : 200px;
- 	font-size : 30px;
+ 	width : 1000px;
 }
 td#t_title_td3    {
- 	width : 100px;
- 	font-size : 30px;
+ 	width : 150px;
 }
 td#t_title_td4    {
  	width : 200px;
@@ -90,30 +87,11 @@ ul.filter.font-alt.test_filter{
 	margin-bottom:30px;
 }    
 
-img#sub_slider_img{
-
-    width: 203.99px;
-}
-.test_sub_simg {
-   width: 23%; 
-}
-
-#table_center{
-    margin-left:auto; 
-    margin-right:auto;
-}
-
-
-td#t_title_td5{
-	 	width : 300px;
-}
-
-
     
     </style>
     
     
-</head>
+  </head>
   
   
   
@@ -301,7 +279,36 @@ td#t_title_td5{
 		
 		
 		
-
+		
+				<table>
+				
+				
+				<colgroup>
+						<col style="width:70%">
+						<col style="width:15%">
+						<col style="width:15%">
+				</colgroup>
+				
+				
+			<tr  id="t_title_tr2">
+				<td id="t_title_td2">
+				<!-- 카운트 관련된 css를 넣을 부분 -->
+				
+				</td>
+				
+				<td id="t_title_td3">
+				<!-- <h4>정확도</h4>  -->
+				
+				</td>
+				
+				<td id="t_title_td4">
+				
+				<div id="label-container"></div>		<!-- 밑에 정확도 수치 부분 -->
+			
+				</td>
+			
+			<tr>
+		</table>
 		
 		
 
@@ -314,39 +321,39 @@ td#t_title_td5{
 		    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 		
 		   // Teachable Machine 내보내기 패널에서 제공하는 모델에 대한 링크
-		    const URL = "../resources/ai_home_trainer_resources/exercise_model/";   // #### 1. 음성이나 기타 관련 자료 넣는 폴더, 폴더 만들고 맞춰야 함 ###
+		    const URL = "../resources/aihometrainer/exercise_model/star_jump/";   // #### 1. 음성이나 기타 관련 자료 넣는 폴더, 폴더 만들고 맞춰야 함 ###
 		    let model, webcam, ctx, labelContainer, maxPredictions;
 		
 		    async function init() {  // ### 2. init 이라는 함수는 model을 불러오고(31-32), 카메라를 설정해준 다음에(35-40), (40)loop라는 함수를 계속 돌게 된다.
-		        const modelURL = URL + "model_starjump.json";
-		        const metadataURL = URL + "metadata_starjump.json";
+		        const modelURL = URL + "model.json";
+		        const metadataURL = URL + "metadata.json";
 		
-					     // 모델 및 메타데이터 로드
-					        // 파일 선택기에서 파일을 지원하려면 API의 tmImage.loadFromFiles()를 참조하십시오.
-					        // 참고: 포즈 라이브러리는 창에 tmPose 객체를 추가합니다(window.tmPose).
-					        model = await tmPose.load(modelURL, metadataURL);
-					        maxPredictions = model.getTotalClasses();
-					
-					     // 웹캠 설정을 위한 편의 기능
-					       	const size = 850; // 사이즈!!!!!!!!!!!!!!!
-					     	// const height = 800;
-					       	// const width = 1000;
-					        const flip = true; // 웹캠을 뒤집을지 여부
-					       	webcam = new tmPose.Webcam(size, size, flip); // 너비, 높이, 뒤집기
-					        //webcam = new tmPose.Webcam(height, width, flip);
-					        await webcam.setup(); // 웹캠에 대한 액세스 요청
-					        await webcam.play();
-					        window.requestAnimationFrame(loop);
-					
-					     // DOM에 요소 추가/가져오기
-					        const canvas = document.getElementById("canvas");
-					        canvas.width = size; canvas.height = size; // 및 클래스 레이블
-					        ctx = canvas.getContext("2d");
-					        labelContainer = document.getElementById("label-container");
-					        for (let i = 0; i < maxPredictions; i++) { // and class labels
-					            labelContainer.appendChild(document.createElement("div"));
-					        }
-				 }
+		     // 모델 및 메타데이터 로드
+		        // 파일 선택기에서 파일을 지원하려면 API의 tmImage.loadFromFiles()를 참조하십시오.
+		        // 참고: 포즈 라이브러리는 창에 tmPose 객체를 추가합니다(window.tmPose).
+		        model = await tmPose.load(modelURL, metadataURL);
+		        maxPredictions = model.getTotalClasses();
+		
+		     // 웹캠 설정을 위한 편의 기능
+		       	const size = 850; // 사이즈!!!!!!!!!!!!!!!
+		     	// const height = 800;
+		       	// const width = 1000;
+		        const flip = true; // 웹캠을 뒤집을지 여부
+		       	webcam = new tmPose.Webcam(size, size, flip); // 너비, 높이, 뒤집기
+		        //webcam = new tmPose.Webcam(height, width, flip);
+		        await webcam.setup(); // 웹캠에 대한 액세스 요청
+		        await webcam.play();
+		        window.requestAnimationFrame(loop);
+		
+		     // DOM에 요소 추가/가져오기
+		        const canvas = document.getElementById("canvas");
+		        canvas.width = size; canvas.height = size; // 및 클래스 레이블
+		        ctx = canvas.getContext("2d");
+		        labelContainer = document.getElementById("label-container");
+		        for (let i = 0; i < maxPredictions; i++) { // and class labels
+		            labelContainer.appendChild(document.createElement("div"));
+		        }
+		    }
 		
 		    async function loop(timestamp) { // loop라는 함수는 계속 자기 자신을 호출하면서 반복되는데, 웹캠을 업데이트 하고, predict() 라는 함수를 수행한다.
 		        webcam.update();  // 웹캠 프레임 업데이트
@@ -354,86 +361,30 @@ td#t_title_td5{
 		        window.requestAnimationFrame(loop);
 		    }
 		
-		    
-		    
-		    //  ######  
-		    var status = "class1";
-		    var count = 0;    
-		    //   ####### 
-		    
-		    
-		    
 		    async function predict() {	// ### 3. predict() 함수는 await model.estimatePose 이 모델을 불러오고, model.predict 로 결과를 뽑아서
 		    	// 예측 #1: 포즈넷을 통한 입력 실행
 		        // EstimatePose는 이미지, 비디오 또는 캔버스 html 요소를 가져올 수 있습니다.
-		        const {pose, posenetOutput } = await model.estimatePose(webcam.canvas);
+		        const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
 		     // 예측 2: 티칭 가능한 기계 분류 모델을 통한 입력 실행
 		        const prediction = await model.predict(posenetOutput);
 		
-		        
-		        
-					        // ##############
-
-		        
-		        
-				 if(prediction[1].probability.toFixed(2) == 1.00){
-					 
-		        	if(status = "class3"){
-		        		
-		        		 count = count+1;
-		        		 t_title_td3.innerHTML = count;
-		        		 console.log(count);
-							
-			        		var audio = new Audio(URL + count%10 + '.mp3');
-			        		audio.play();
-		        		 
-		        		 
-		        		 if(parseInt(count)==parseInt("5")){   // 목표숫자가 '  ' 이면  //  inputbox로 바꿈
-		        			 console.log(1);
-		        			 
-		       				count = 0;   // 카운트 초기화 되고,
-		        			 
-		        			var audio = new Audio(URL + 'success2.mp3');  
-				        	audio.play();				// 1.mp3 음성이 나옴. (수고하셨습니다 라는 음성이 나옴)
-		        		 }				        		 
-;
-		        	}	
-		        	status = "class2";  
-		        	
+		        for (let i = 0; i < maxPredictions; i++) {	// ### 4. model.predict 로 결과를 뽑아서 prediction[i].className : prediction[i].probability 을 문장으로 만들어서
+		            const classPrediction =
+		                prediction[i].className + ": " + prediction[i].probability.toFixed(2); // 라벨 컨테이너의 클래스 네임 지정 부분!(수치화하는 젤 풋터 부분)
+		            labelContainer.childNodes[i].innerHTML = classPrediction; // ##HTML에 넣어주는 역할을 하고 있다.
 		        }
-		        else if (prediction[2].probability.toFixed(2) == 0.80) {
-		        	
-		        	status = "class3";
-		        }      
-		        else if (prediction[0].probability.toFixed(2) == 1.00) {
-		          
-
-		        	status = "class1";
-		        }  
-					        // ################
-					        
-					        
-					        
-					        
-					        
-					        for (let i = 0; i < maxPredictions; i++) {	// ### 4. model.predict 로 결과를 뽑아서 prediction[i].className : prediction[i].probability 을 문장으로 만들어서
-					            const classPrediction =
-					                prediction[i].className + ": " + prediction[i].probability.toFixed(2); // 라벨 컨테이너의 클래스 네임 지정 부분!(수치화하는 젤 풋터 부분)
-					            labelContainer.childNodes[i].innerHTML = classPrediction; // ##HTML에 넣어주는 역할을 하고 있다.
-					        }
-					
-					        // ## 5. => 캠화면 하단에 있는 자세마다의 정확도임.
-					        // ## 6. prediction[i].probability 가능성. 정확도와 관련있음
-							// ## 7. prediction[i].probability가 무엇일 때 어떤 소리를 내라. 를 설정하면 됨.
-							// ## 8. prediction[0] = 1  /  prediction[1]
-					        
-					        
-					        // 마지막으로 포즈를 그립니다.
-					        drawPose(pose);
+		
+		        // ## 5. => 캠화면 하단에 있는 자세마다의 정확도임.
+		        // ## 6. prediction[i].probability 가능성. 정확도와 관련있음
+				// ## 7. prediction[i].probability가 무엇일 때 어떤 소리를 내라. 를 설정하면 됨.
+				// ## 8. prediction[0] = 1  /  prediction[1]
+		        
+		        
+		        // 마지막으로 포즈를 그립니다.
+		        drawPose(pose);
 		    }
 		
 		    function drawPose(pose) {
-		    	
 		        if (webcam.canvas) {
 		            ctx.drawImage(webcam.canvas, 0, 0);
 		            // 키포인트와 스켈레톤을 그립니다.
@@ -446,7 +397,8 @@ td#t_title_td5{
 		    }
 		</script>
 
-	 <script> init();  </script>
+	 <script> init();</script>
+
 
 		</div>
 
@@ -456,41 +408,7 @@ td#t_title_td5{
 <!-- 티쳐블 머신 끝!!!!! -->
 
 
-		
-				<table id ="table_center">
-				
-				<!-- 
-				<colgroup>
-						<col style="width:50%">
-						<col style="width:15%">
-						<col style="width:15%">
-				</colgroup>
-			 -->
-				
-			<tr  id="t_title_tr2">
-				<td id="t_title_td2">
-				<!-- 카운트 관련된 css를 넣을 부분 -->
-				<p id="count_id"> COUNT </p>
-				</td>
-				
-				<td id="t_title_td3">
-				<!-- <h4>정확도</h4>  -->
-				<!-- <script>document.write(count)</script> -->
-				</td>
-				
-				<td id="t_title_td5">
-				<!-- <h4>정확도</h4>  -->
-				<!-- <script>document.write(count)</script> -->
-				</td>
-				
-				<td id="t_title_td4">
-				
-				<div id="label-container"></div>		<!-- 밑에 정확도 수치 부분 -->
-			
-				</td>
-			
-			<tr>
-		</table>
+
 
 
 
@@ -533,7 +451,7 @@ td#t_title_td5{
                       	<tr>
                     		<td>
                       <!-- 운동사진 -->
-                      <img src="../resources/ai_home_trainer_resources/images/exci1.gif" id="img_exs1"/></a>
+                      <img src="../resources/aihometrainer/images/exci1.gif" id="img_exs1"/></a>
                       		</td>
                       		
                       		<td id="test_td">
@@ -545,10 +463,10 @@ td#t_title_td5{
                   			 <p>- 블라블라 몸을 조심하고</p><br>
                   			 
                   			  <h5 id="test_h5">주의사항</h5>
-                  			     
+                  			  
                   			<p>굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
                   		
-                      		      
+                      		
                       		</td>
                       
                       	</tr>
@@ -579,36 +497,36 @@ td#t_title_td5{
     
    <!-- 메뉴 리스트 시작 -->
 
-
+  <section class="module pb-0" id="works">
 
           
-          <div class="container" id="works">
+          <div class="container">
             <div class="row">
               <div class="col-sm-12">
-                <ul class="filter font-alt test_filter" >
+                <ul class="filter font-alt test_filter" id="filters2">
                 
                 
-          		  <li><a class="wow fadeInUp" >All</a></li>
+          		  <li><a class="current2 wow fadeInUp" href="#" data-filter2="*">All</a></li>
           		  
           		  <li>||</li>
           		  
-          		  <li><a data-url="3_ajax_test_lastmain_pushpage.jsp" class="wow fadeInUp" data-wow-delay="0.2s">유산소</a></li>
+          		  <li><a id="test3" class="current2 wow fadeInUp test3" href="#" data-filter2="*" data-wow-delay="0.2s">유산소</a></li>
                   
-                  <li><a class="wow fadeInUp" data-wow-delay="0.4s">근력운동</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".belly_2" data-wow-delay="0.4s">근력운동</a></li>
                   
-                  <li><a class="wow fadeInUp" data-wow-delay="0.6s">요가</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".arm_2" data-wow-delay="0.6s">요가</a></li>
                   
                    <li>||</li>
                   
-                  <li><a class="wow fadeInUp" data-wow-delay="0.6s">back</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".back_2" data-wow-delay="0.2s">back</a></li>
                   
-                  <li><a class="wow fadeInUp" data-wow-delay="0.4s">belly</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".belly_2" data-wow-delay="0.4s">belly</a></li>
                   
-                  <li><a class="wow fadeInUp" data-wow-delay="0.6s">arm</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".arm_2" data-wow-delay="0.6s">arm</a></li>
                   
-                  <li><a class="wow fadeInUp" data-wow-delay="0.6s">leg</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".leg_2" data-wow-delay="0.6s">leg</a></li>
                   
-                  <li><a class="wow fadeInUp" data-wow-delay="0.6s">hip</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".hip_2" data-wow-delay="0.6s">hip</a></li>
                   
                  
                   
@@ -618,7 +536,7 @@ td#t_title_td5{
               </div>
             </div>  
            </div> 
-         
+          </section>
     
  <!-- 메뉴 리스트 끝  -->   
     
@@ -629,41 +547,30 @@ td#t_title_td5{
 
 <!-- 미니 슬라이더 -->      
              
-       
-       <div class="slider_part">
-             
-        <section class="module test_module" id="slider1">
+        <section class="module test_module">
           <div class="container">
   
-            <div class="row" id="demos2">
-             
-   
-                <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
-              
-              
-
-                <div class="owl-item belly_2">
+            <div class="row">
+              <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
+                <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product "><a href="#"><img src="../resources/ai_home_trainer_resources/images/3-frank.jpg" alt="Leather belt"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-frank.jpg" alt="Leather belt"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">quat</a></h4>
                     </div>
                   </div>
                 </div>
-          
                           
-           
-                <div class="owl-item belly_2">
+                <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/ai_home_trainer_resources/images/3-keep.jpg" alt="Derby shoes"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-keep.jpg" alt="Derby shoes"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">Lungy</a></h4>
                     </div>
                   </div>
-                </div>  
-        
+                </div>            
                 
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/ai_home_trainer_resources/images/3-leglaz.jpg" alt="Leather belt"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-leglaz.jpg" alt="Leather belt"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">Plank</a></h4>
                     </div>
                   </div>
@@ -671,7 +578,7 @@ td#t_title_td5{
                               
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/ai_home_trainer_resources/images/3-pushup.jpg" alt="Leather belt"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-pushup.jpg" alt="Leather belt"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">side-Plank</a></h4>
                     </div>
                   </div>
@@ -679,7 +586,7 @@ td#t_title_td5{
                
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/ai_home_trainer_resources/images/3-yaga-3.jpg" alt="Chelsea boots"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-yaga-3.jpg" alt="Chelsea boots"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">Burpee-Test</a></h4>
                     </div>
                   </div>
@@ -687,7 +594,7 @@ td#t_title_td5{
                 
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/ai_home_trainer_resources/images/3-armdum.jpg" alt="Leather belt"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-armdum.jpg" alt="Leather belt"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">Slow-Burpee</a></h4>
                     </div>
                     
@@ -698,17 +605,8 @@ td#t_title_td5{
             </div>
           </div>
         </section>
- 
- 	</div>
-
         
-  <!-- 미니 슬라이더 끝 -->       
-
-
-
-
-
-
+  <!-- 미니 슬라이더 끝 -->      
 
 
         <section class="module-extra-small bg-dark">
@@ -737,30 +635,30 @@ td#t_title_td5{
     JavaScripts
     =============================================
     -->
-    <script src="../resources/ai_home_trainer_resources/lib/jquery/dist/jquery.js"></script>
+    <script src="../resources/aihometrainer/lib/jquery/dist/jquery.js"></script>
     
     
-  	<script src="../resources/ai_home_trainer_resources/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-  	<script src="../resources/ai_home_trainer_resources/lib/bootstrap/dist/js/bootstrap.min.js"></script>  	
+  	<script src="../resources/aihometrainer/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  	<script src="../resources/aihometrainer/lib/bootstrap/dist/js/bootstrap.min.js"></script>  	
   	
   	
-    <script src="../resources/ai_home_trainer_resources/lib/wow/dist/wow.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/isotope/dist/isotope.pkgd.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/flexslider/jquery.flexslider.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/smoothscroll.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
-    <script src="../resources/ai_home_trainer_resources/js/plugins.js"></script>
-    <script src="../resources/ai_home_trainer_resources/js/main.js"></script>
+    <script src="../resources/aihometrainer/lib/wow/dist/wow.js"></script>
+    <script src="../resources/aihometrainer/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="../resources/aihometrainer/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="../resources/aihometrainer/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="../resources/aihometrainer/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="../resources/aihometrainer/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../resources/aihometrainer/lib/smoothscroll.js"></script>
+    <script src="../resources/aihometrainer/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="../resources/aihometrainer/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="../resources/aihometrainer/js/plugins.js"></script>
+    <script src="../resources/aihometrainer/js/main.js"></script>
     
     
         
     
-    <script src="../resources/ai_home_trainer_resources/js/add_plugins.js"></script>
-    <script src="../resources/ai_home_trainer_resources/js/add_main.js"></script>
+    <script src="../resources/aihometrainer/js/add_plugins.js"></script>
+    <script src="../resources/aihometrainer/js/add_main.js"></script>
     
   </body>
 </html>

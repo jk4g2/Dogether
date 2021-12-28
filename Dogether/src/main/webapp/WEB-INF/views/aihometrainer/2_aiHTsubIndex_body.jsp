@@ -26,24 +26,24 @@
     
     -->
     <!-- Default stylesheets-->
-    <link href="../resources/ai_home_trainer_resources/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/animate.css/animate.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/et-line-font/et-line-font.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/flexslider/flexslider.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
-    <link href="../resources/ai_home_trainer_resources/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
     <!-- Main stylesheet and color file-->
-    <link href="../resources/ai_home_trainer_resources/css/style.css" rel="stylesheet">
-    <link id="color-scheme" href="../resources/ai_home_trainer_resources/css/colors/default.css" rel="stylesheet">
+    <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
     
-     <link href="../resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
+     <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
     
     
     
@@ -262,50 +262,50 @@ img#sub_img_size{
             <div class="row multi-columns-row" id="demos2">
             
             
-              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/main3.gif" alt="Main Demo"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/main3.gif" alt="Main Demo"></div>
                	  <h3 class="content-box-title font-serif">Squat</h3></a></div>
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 arm_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/all.jpg" alt="Agency"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 arm_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/all.jpg" alt="Agency"></div>
                   <h3 class="content-box-title font-serif">Lungy</h3>
                   </a></div>
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 hip_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/3-squrt.jpg" alt="Portfolio"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 hip_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-squrt.jpg" alt="Portfolio"></div>
                   <h3 class="content-box-title font-serif">Plank</h3></a></div>
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 belly_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/3-yoga-1.jpg" alt="Restaurant"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 belly_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-yoga-1.jpg" alt="Restaurant"></div>
                   <h3 class="content-box-title font-serif">side-Plank</h3></a></div>
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 leg_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/main3.gif" alt="Finance"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 leg_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/main3.gif" alt="Finance"></div>
                   <h3 class="content-box-title font-serif">Burpee-Test</h3></a></div>
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 belly_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/3-yoga-hal.jpg" alt="Landing"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 belly_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-yoga-hal.jpg" alt="Landing"></div>
                   <h3 class="content-box-title font-serif">Slow-Burpee</h3></a></div>
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size"  src="../resources/ai_home_trainer_resources/images/3-squrt.jpg" alt="Photography"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size"  src="../resources/aihometrainer/images/3-squrt.jpg" alt="Photography"></div>
                   <h3 class="content-box-title font-serif">crunch</h3></a></div>
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 arm_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/3-pushup.jpg" alt="Shop"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 arm_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-pushup.jpg" alt="Shop"></div>
                   <h3 class="content-box-title font-serif">star-jump</h3></a></div>
                   
                   
                   
-              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../ai_home_trainer_view/3_lastmain2.do">
-                  <div class="content-box-image"><img id="sub_img_size" src="../resources/ai_home_trainer_resources/images/3-lungy.jpg" alt="One Page"></div>
+              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
                   <h3 class="content-box-title font-serif">leg raise</h3></a></div>
            
             </div>
@@ -355,25 +355,25 @@ img#sub_img_size{
     JavaScripts
     =============================================
     -->
-    <script src="../resources/ai_home_trainer_resources/lib/jquery/dist/jquery.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/wow/dist/wow.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/isotope/dist/isotope.pkgd.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/flexslider/jquery.flexslider.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/smoothscroll.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="../resources/ai_home_trainer_resources/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
-    <script src="../resources/ai_home_trainer_resources/js/plugins.js"></script>
-    <script src="../resources/ai_home_trainer_resources/js/main.js"></script>
+    <script src="../resources/aihometrainer/lib/jquery/dist/jquery.js"></script>
+    <script src="../resources/aihometrainer/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../resources/aihometrainer/lib/wow/dist/wow.js"></script>
+    <script src="../resources/aihometrainer/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="../resources/aihometrainer/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="../resources/aihometrainer/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="../resources/aihometrainer/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="../resources/aihometrainer/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../resources/aihometrainer/lib/smoothscroll.js"></script>
+    <script src="../resources/aihometrainer/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="../resources/aihometrainer/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="../resources/aihometrainer/js/plugins.js"></script>
+    <script src="../resources/aihometrainer/js/main.js"></script>
     
     
         
     
-    <script src="../resources/ai_home_trainer_resources/js/add_plugins.js"></script>
-    <script src="../resources/ai_home_trainer_resources/js/add_main.js"></script>
+    <script src="../resources/aihometrainer/js/add_plugins.js"></script>
+    <script src="../resources/aihometrainer/js/add_main.js"></script>
     
     
   </body>
