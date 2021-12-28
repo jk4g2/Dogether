@@ -163,6 +163,7 @@
          </c:forEach>
       </div>
    </div>
+   
    <footer id="footer">
       <div class="container-fluid">
          <div class="col-md-12">
