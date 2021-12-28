@@ -131,7 +131,7 @@ public class UserMyPageController {
 	public String userinsert(MemberVO vo) {
 		int result = memberService.updateMemberInfo(vo);
 		System.out.println("내정보 수정 완료!");
-		return "redirect:Mypage/userMypage.do";
+		return "redirect:userMypage.do";
 	}
 	
 	
