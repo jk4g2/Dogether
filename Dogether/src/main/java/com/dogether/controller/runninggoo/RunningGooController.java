@@ -15,7 +15,6 @@ import com.dogether.domain.RunningGooVO;
 import com.dogether.service.RunningGooService;
 
 @Controller
-@RequestMapping("runninggoo")
 public class RunningGooController {
 	@Autowired
 	RunningGooService runningGooService;
@@ -32,7 +31,7 @@ public class RunningGooController {
 	}
 	
 		// 런닝구 방 리스트 얻어오기
-		@RequestMapping("/")
+		@RequestMapping("runninggoo.do")
 		public String runningGooList(RunningGooVO vo, Model m, HttpSession session) {
 			String isSession = (String) session.getAttribute("username");
 			if(isSession == null){
@@ -45,7 +44,7 @@ public class RunningGooController {
 			m.addAttribute("RunningGooList", result);
 			m.addAttribute("rnRoomCNT", listCount);
 			System.out.println("Model 객체를 통해 전달완료!");
-			return "runninggoo/runningGooList";
+			return "runningGooList";
 		}
 		
 		// 런닝구 방 생성시 보유 포인트 조회하기
