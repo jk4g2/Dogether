@@ -186,7 +186,7 @@ h4#font-color_st{
 			</div>
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="boast.do" data-lightbox="image-1"><div class="thumb">
+					<a href="boast/" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>

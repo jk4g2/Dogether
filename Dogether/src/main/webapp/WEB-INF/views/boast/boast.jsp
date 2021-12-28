@@ -7,21 +7,21 @@
 <head>
 <meta charset="UTF-8">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="./resources/css/templatemo-style.css">
-<link rel="stylesheet" href="./resources/css/boast.css">
-<link rel="stylesheet" href="./resources/css/boast2.css">
+<link rel="stylesheet" href="../resources/css/templatemo-style.css">
+<link rel="stylesheet" href="../resources/css/boast/boast.css">
+<link rel="stylesheet" href="../resources/css/boast/boast2.css">
 
 
-<script src="./resources/js/plugins.js"></script>
-<script src="./resources/js/boast.js"></script>
-<script src="./resources/js/main.js"></script>
+<script src="../resources/js/boast/boast.js"></script>
+<script src="../resources/js/plugins.js"></script>
+<script src="../resources/js/main.js"></script>
 
 <title>자랑하기</title>
 </head>
 <body>
    <nav>
       <div class="logo">
-         <a href="index.do">DO<em>GETHER</em></a>
+         <a href="../index.do">DO<em>GETHER</em></a>
       </div>
       <div class="menu-icon">
          <span></span>
@@ -50,12 +50,12 @@
    <div id="ontheside">
       <div class="mainContainer">
          <div class="plusdiv">
-            <img src="resources/img/imgforboard/plus_icon.png" alt="plus.png"
+            <img src="../resources/img/imgforboard/plus_icon.png" alt="plus.png"
                class="plusButton" style="cursor: pointer;">
             <div class="postdiv">
                <div style="margin-top: 3px">
-                  <a href="boast.do?sortType=0" class="myButton1">최신순</a> <a
-                     href="boast.do?sortType=1" class="myButton1">인기순</a>
+                  <a href="?sortType=0" class="myButton1">최신순</a> <a
+                     href="?sortType=1" class="myButton1">인기순</a>
                </div>
                <div></div>
             </div>
@@ -77,13 +77,13 @@
             <div class="card">
                <div id="userdiv">
                   <div style="cursor: pointer" id="clickID">
-                     <img src="resources/img/imgforboard/default_person.png"
+                     <img src="../resources/img/imgforboard/default_person.png"
                         id="userpic"> ${item.memberID}
                   </div>
                </div>
                <div id="content">
                   <div id="pic"
-                     style='background-image: url(./resources/img/imgforboard/img.png)'></div>
+                     style='background-image: url(../resources/img/imgforboard/img.png)'></div>
                </div>
 
                <!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 -->

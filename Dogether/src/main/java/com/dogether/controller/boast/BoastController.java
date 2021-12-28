@@ -20,12 +20,19 @@ import com.dogether.domain.Board_ReplyVO;
 import com.dogether.service.BoardServiceImpl;
 
 @Controller
+@RequestMapping("boast")
 public class BoastController {
 
 	@Autowired
 	private BoardServiceImpl boardService;
-
-	@RequestMapping("boast.do")
+	
+	@RequestMapping("{step}.do")
+	public String stepDo(@PathVariable String step) {
+		System.out.println("???");
+		return "boast/"+ step;
+	}
+	
+	@RequestMapping("/")
 	public String getboardList(@RequestParam(value = "sortType", required = false) String sortTypeBST,
 			@RequestParam(value = "memberID", required = false) String memberID, 
 			Model m, HttpSession session, BoardVO bVO) {
@@ -56,7 +63,7 @@ public class BoastController {
 		m.addAttribute("list", list);
 		m.addAttribute("like_list", like_list);
 
-		return "boast";
+		return "boast/boast";
 	}
 
 	@GetMapping(value = "updateLike.do", produces = "application/text; charset=UTF-8")
@@ -79,14 +86,14 @@ public class BoastController {
 		return Integer.toString(result);
 	}
 
-	@RequestMapping("insertBoards.do")
+	@RequestMapping("insertBoard.do")
 	public String insertBoard(BoardVO vo, HttpSession session) {
 		vo.setMemberID(session.getAttribute("username").toString().trim());
 		System.out.println(vo.getBoard_fsize());
 		System.out.println(vo.getBoard_fname());
 		System.out.println(vo.getBoard_realfname());
 		int result = boardService.insertBoard(vo);
-		return "redirect:boast.do";
+		return "redirect:/boast/";
 	}
 
 	@PostMapping(value = "reply.do", produces = "application/text; charset=UTF-8")

@@ -5,18 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="./resources/css/templatemo-style.css">
-<link rel="stylesheet" href="./resources/css/boast.css">
-<link rel="stylesheet" href="./resources/css/boast2.css">
-<link rel="stylesheet" href="./resources/css/boast3.css">
+<link rel="stylesheet" href="../resources/css/templatemo-style.css">
+<link rel="stylesheet" href="../resources/css/boast/boast.css">
+<link rel="stylesheet" href="../resources/css/boast/boast2.css">
+<link rel="stylesheet" href="../resources/css/boast/boast3.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 	crossorigin="anonymous">
 
-<script src="./resources/js/plugins.js"></script>
-<script src="./resources/js/boast.js"></script>
-<script src="./resources/js/main.js"></script>
+<script src="../resources/js/plugins.js"></script>
+<script src="../resources/js/boast/boast.js"></script>
+<script src="../resources/js/main.js"></script>
 <title>자랑하기 - 글올리기</title>
 
 </head>
@@ -52,7 +52,7 @@
 		<div class="mainContainer">
 			<h3 id="titlee">글 올리기</h3>
 			<div id="cardContent">
-				<form method="post" action="insertBoards.do" name="myform" enctype="multipart/form-data">
+				<form method="post" action="insertBoard.do" name="myform" enctype="multipart/form-data">
 					<input type="hidden" name="memberID" value="${sessionScope.username}"/>
 					<input type="file" id="fileName" name="file" onchange="setThumbnail(event);"
 						accept=".png, .jpg, .jpeg" required>
