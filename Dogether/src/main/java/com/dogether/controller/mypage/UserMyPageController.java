@@ -23,7 +23,7 @@ import com.dogether.service.OrderService;
 import com.dogether.service.TestService;
 
 @Controller
-@RequestMapping("userMyPage")
+@RequestMapping("Mypage")
 public class UserMyPageController {
 
 	@Autowired
@@ -36,7 +36,7 @@ public class UserMyPageController {
 	public OrderService orderService;
 
 	// 마이페이지 메인화면
-	@RequestMapping("myPage.do")
+	@RequestMapping("/")
 	public String myPage(String memberID, Model m, HttpSession session, Board_LikeVO vo) {
 		String sessionok = (String) session.getAttribute("username");
 		if (sessionok == null) {
@@ -58,7 +58,7 @@ public class UserMyPageController {
 		m.addAttribute("reply_list", reply_list);
 		m.addAttribute("like_list", like_list);
 
-		return "userMyPage/myPage";
+		return "Mypage/userMypage";
 	}
 
 	// 포인트 결제
@@ -131,7 +131,7 @@ public class UserMyPageController {
 	public String userinsert(MemberVO vo) {
 		int result = memberService.updateMemberInfo(vo);
 		System.out.println("내정보 수정 완료!");
-		return "redirect:myPage.do";
+		return "redirect:Mypage/userMypage.do";
 	}
 	
 	
@@ -139,6 +139,7 @@ public class UserMyPageController {
 	@RequestMapping("userOrder.do")
 	@ResponseBody
 	public List<OrderVO> adminOrder(String memberID) {		
+		System.out.println("변수로 넘겨받은 memberID----------"+memberID);
 		List<OrderVO> odList = orderService.getMyOrderList(memberID);
 		System.out.println("쇼핑몰 주문 리스트 전달완료!!");
 		return odList;

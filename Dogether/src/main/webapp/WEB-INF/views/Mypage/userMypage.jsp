@@ -1,39 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>마이 페이지입니다.</title>
 <!-- 공통 적용 -->
+<link rel="stylesheet" href="../resources/css/usermypage/mypage.css">
 <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
 <link rel="stylesheet" href="../resources/css/templatemo-style.css">
-<script
-	src="../resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<!-- 반응형 웹페이지  -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- admin 적용 -->
-<link href="../resources/css/admin/bootstrap.min.css" rel="stylesheet">
-<link href="../resources/css/admin/style.css" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.js"
-	type="text/javascript"></script>
-<script src="../resources/js/admin/common-scripts.js"></script>
-<script src="../resources/js/admin/usermypage.js"></script>
-
-<script type="text/javascript"
-	src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-<script src="../resources/js/boast.js"></script>
 <link rel="stylesheet" href="../resources/css/boast.css">
 <link rel="stylesheet" href="../resources/css/boast2.css">
-<!-- <script src="../resources/js/JoinUser.js"></script> -->
-<script
-	src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script
-	src="../resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<link rel="stylesheet" href="../resources/css/usermypage/mypage.css">
+<link href="../resources/css/admin/bootstrap.min.css" rel="stylesheet">
+<link href="../resources/css/admin/style.css" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/NAVandFOOTER.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
+<script src="../resources/js/admin/common-scripts.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+<script src="../resources/js/boast/boast.js"></script>
+<script src="../resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="../resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery|| document.write('<script src="../resources/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="../resources/js/vendor/bootstrap.min.js"></script>
+<script src="../resources/js/plugins.js"></script>
+<script src="../resources/js/main.js"></script>
+<script src="../resources/mypage/usermypage.js"></script>
 <script>
 	$(function() {
 		var IMP = window.IMP;
@@ -102,6 +99,23 @@
 
 </head>
 <body class="boxed-page">
+
+
+	      <!-- nav바---------------------------------------------------------- -->
+		<nav>
+			<div class="logo">
+				<a href="../index.do">DO<em>GETHER</em></a>
+			</div>
+	    	<div class="menu-icon">
+	    		<span></span>
+			</div>
+		</nav>
+      <!-- nav바---------------------------------------------------------- -->
+      
+
+
+
+
 	<!--sidebar start-->
 	<aside>
 		<div id="sidebar" tabindex="0"
@@ -426,28 +440,47 @@
 	</section>
 	<!-- end main content -->
 
-	<footer id="footer">
-		<div class="container-fluid">
-			<div class="col-md-12">
-				<a href="#" class="go-top" style="margin-top: 20px;"><span
-					style="color: black;">top</span></a>
-				<p id="ff" style="margin-left: 210px;">Copyright &copy; 2018
-					Company Name | Designed by TemplateMo & 2018 &copy; FlatLab by
-					VectorLab.</p>
-			</div>
-		</div>
-	</footer>
+	
+	
+	
+	
+	  
+        <div><!-- nav바 메뉴 -->
+    <section class="overlay-menu">
+      <div class="container">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+                  <li><a href="../runninggoo.do">런닝구</a></li>
+                  <li><a href="#">Gym 예약할까</a></li>
+                  <li><a href="../ai_home_trainer_view/1_aiHT_main.do">온라인 PT</a></li>
+                  <li><a href="../boast.do">자랑하기</a></li>
+                  <li><a href="../healthcenter.do">Inbody 측정 보건소</a></li>
+                  <li><a href="../shoppingmall.do">쇼핑몰</a></li>
+                  <li><a href="../userMyPage/">마이페이지</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+        
+        
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-	</script>
-	<script src="resources/js/vendor/bootstrap.min.js"></script>
-	<script src="resources/js/plugins.js"></script>
-	<script src="resources/js/main.js"></script>
+        
+	      <!-- footer---------------------------------------------------------- -->
+		<footer id="footer">
+	        <div class="container-fluid">
+	            <div class="col-md-12">
+	                <p id="ff">Copyright &copy; 2018 Company Name 
+				       | Designed by TemplateMo
+				    </p>
+	            </div>
+	        </div>
+		</footer>
+		<!-- footer---------------------------------------------------------- -->
+	      
+      
 
 </body>
 </html>

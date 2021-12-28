@@ -14,33 +14,48 @@
    
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    <!--  
-    Stylesheets
-    =============================================
     
-    -->
-    <!-- Default stylesheets-->
-    <link href="./resources/img/shoppingmall/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Template specific stylesheets-->
+    <link href="../resources/shoppingmall/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/animate.css/animate.css" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/et-line-font/et-line-font.css" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/flexslider/flexslider.css" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
-    <link href="./resources/img/shoppingmall/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
-    <!-- Main stylesheet and color file-->
-    <link href="./resources/img/shoppingmall/css/style.css" rel="stylesheet">
-    <link id="color-scheme" href="./resources/img/shoppingmall/css/colors/default.css" rel="stylesheet">
-    <link rel="stylesheet" href="./resources/css/templatemo-style.css">
-	<link rel="stylesheet" href="./resources/css/Calander.css">
+    <link href="../resources/shoppingmall/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <link href="../resources/shoppingmall/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="../resources/shoppingmall/css/colors/default.css" rel="stylesheet">
+    <link rel="stylesheet" href="../resources/css/templatemo-style.css">
+    <link rel="stylesheet" href="../resources/css/NAVandFOOTER.css">
+	<link rel="stylesheet" href="../resources/shoppingmall/css/shoppingmall.css">
+    <!--  
+    JavaScripts
+    =============================================
+    -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="./resources/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="./resources/js/vendor/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../resources/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="../resources/shoppingmall/lib/jquery/dist/jquery.js"></script>
+    <script src="../resources/shoppingmall/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../resources/shoppingmall/lib/wow/dist/wow.js"></script>
+    <script src="../resources/shoppingmall/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="../resources/shoppingmall/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="../resources/shoppingmall/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="../resources/shoppingmall/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="../resources/shoppingmall/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../resources/shoppingmall/lib/smoothscroll.js"></script>
+    <script src="../resources/shoppingmall/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="../resources/shoppingmall/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="../resources/shoppingmall/js/plugins.js"></script>
+    <script src="../resources/shoppingmall/js/main.js"></script>
+    <script src="../resources/js/plugins.js"></script>
+    <script src="../resources/js/main.js"></script>
+    <script src="../resources/js/vendor/bootstrap.min.js"></script>
+    
+    
   </head>
   
   
@@ -53,14 +68,50 @@
       </div>
       
       <!-- nav바---------------------------------------------------------- -->
-		<nav>
-			<div class="logo">
-				<a href="index.do">DO<em>GETHER</em></a>
-			</div>
-	    	<div class="menu-icon">
-	    		<span></span>
-			</div>
-		</nav>
+	
+<nav>
+   <div class="logo">
+       <a href="index.do">DO<em>GETHER</em></a>
+   </div>
+    <div class="menu-icon">
+       <span></span>
+    </div>
+</nav>
+
+
+ <section class="overlay-menu">
+      <div class="container">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+              
+                  <li>
+                      <a href="#">런닝구</a>
+                  </li>
+                  <li>
+                      <a href="#">Gym 예약할까</a>
+                  </li>
+                  <li>
+                      <a href="#">온라인 PT</a>
+                  </li>
+                  <li>
+                      <a href="#">자랑하기</a>
+                  </li>
+                  <li>
+                      <a href="#">BMI 측정가능 보건소</a>
+                  </li>
+                  <li>
+                      <a href="#">쇼핑몰</a>
+                  </li>
+                  <li>
+                      <a href="Mypage">마이페이지</a>
+                  </li>
+                  
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
       <!-- nav바---------------------------------------------------------- -->
       <!-- 섹션시작---------------------------------------------------------- -->
       
@@ -96,7 +147,7 @@
             <c:forEach items="${bestProduct}" var="product">
               <div class="col-sm-6 col-md-3 col-lg-3">
 	                <div class="shop-item">
-	                  <div class="shop-item-image"><img src="./resources/img/shoppingmall/productimgs/${product.product_realfname}" width="262" height="259" />
+	                  <div class="shop-item-image"><img src="../resources/shoppingmall/productimgs/${product.product_realfname}" width="262" height="259" />
 	                    <div class="shop-item-detail"><a class="btn btn-round btn-b" href="detailProduct.do?ProductID=${product.productID}"><span class="icon-basket">Add To Cart</span></a></div>
 	                  </div>
 	                  <h4 class="shop-item-title font-alt"><a href="detailProduct.do?ProductID=${product.productID}">${product.productName}</a></h4>${product.productPrice}₩
@@ -126,56 +177,56 @@
               <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/단백칩.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/단백칩.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">통밀당 단백칩 9종</a></h4>2,000₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/초코파이.PNG" width="160" height="160"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/초코파이.PNG" width="160" height="160"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">수제 통밀당 초코파이</a></h4>13,500₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/두부스콘.PNG" width="160" height="160"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/두부스콘.PNG" width="160" height="160"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">두부스콘 2종</a></h4>2,500₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/그릭요거트.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/그릭요거트.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">수제 그릭 요거트</a></h4>8,500₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/곤약팝콘.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/곤약팝콘.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">곤약 팝콘 3종</a></h4>1,300₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/어묵바.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/어묵바.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">닭가슴살 어묵바</a></h4>4,500₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/곤약떡.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/곤약떡.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">곤약 현미떡</a></h4>1,000₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="./resources/img/shoppingmall/productimgs/곤약떡볶이.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/곤약떡볶이.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">곤약 떡볶이</a></h4>3,200₩
                     </div>
                   </div>
@@ -266,50 +317,6 @@
 
 
 
-
-	
-     
-        <div><!-- nav바 메뉴 -->
-    <section class="overlay-menu">
-      <div class="container">
-        <div class="row">
-          <div class="main-menu">
-              <ul>
-              
-                  <li>
-                      <a href="#">런닝구</a>
-                  </li>
-                  <li>
-                      <a href="#">Gym 예약할까</a>
-                  </li>
-                  <li>
-                      <a href="#">온라인 PT</a>
-                  </li>
-                  <li>
-                      <a href="#">자랑하기</a>
-                  </li>
-                  <li>
-                      <a href="#">BMI 측정가능 보건소</a>
-                  </li>
-                  <li>
-                      <a href="#">쇼핑몰</a>
-                  </li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    </div>
-        
-        
-        
-        
-        
-
-
-
-
-
 	<!-- footer---------------------------------------------------------- -->
 	<footer id="footer">
         <div class="container-fluid">
@@ -328,24 +335,7 @@
       </div> <!-- end of main -->
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
     </main>
-    <!--  
-    JavaScripts
-    =============================================
-    -->
-    <script src="./resources/img/shoppingmall/lib/jquery/dist/jquery.js"></script>
-    <script src="./resources/img/shoppingmall/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./resources/img/shoppingmall/lib/wow/dist/wow.js"></script>
-    <script src="./resources/img/shoppingmall/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="./resources/img/shoppingmall/lib/isotope/dist/isotope.pkgd.js"></script>
-    <script src="./resources/img/shoppingmall/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-    <script src="./resources/img/shoppingmall/lib/flexslider/jquery.flexslider.js"></script>
-    <script src="./resources/img/shoppingmall/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="./resources/img/shoppingmall/lib/smoothscroll.js"></script>
-    <script src="./resources/img/shoppingmall/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="./resources/img/shoppingmall/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
-    <script src="./resources/img/shoppingmall/js/plugins.js"></script>
-    <script src="./resources/img/shoppingmall/js/main.js"></script>
-       
+    
     
   </body>
 </html>

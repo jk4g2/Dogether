@@ -25,9 +25,9 @@ $(document).ready(function(){
 
 //장바구니에서 삭제--------------------
   $(document).on('click', '#removeBtn', function(){
-    let ID = $(".productID").val();
-    let Name = $("#ProductName").text()
-
+    let ID = $(this).parent().prev().prev().prev().prev().find("#PID").text();
+    let Name = $(this).parent().prev().prev().prev().prev().find("#ProductName").text();
+ 
     $.ajax({
     	type : 'post',
     	data : {productID : ID},
@@ -47,12 +47,25 @@ $(document).ready(function(){
 
 
 	$(function() {
-
-
 		var IMP = window.IMP;
 		IMP.init("imp19194605");
-
 	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

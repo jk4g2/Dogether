@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-/* nav바-------------------------------------------------------------------------------------------*/
 nav .logo {
   float: left;
   margin-left: 30px;
@@ -93,7 +91,37 @@ nav {
 }
 
 
-/*FOOTER-------------------------------------------------------------*/
+.overlay-menu.open {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.overlay-menu {
+    overflow: scroll;
+}
+
+.overlay-menu {
+    background: rgba(0, 0, 0, 0.95);
+    color: #ffffff;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 15%;
+    padding: 30px 0;
+    opacity: 0;
+    text-align: left;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+
+.overlay-menu::-webkit-scrollbar {
+    display: none;
+}
+
 #footer{
    position:fixed;
    bottom:0px;
@@ -102,4 +130,3 @@ nav {
    bottom: 0px;
    border-top:4px;
   }
- 

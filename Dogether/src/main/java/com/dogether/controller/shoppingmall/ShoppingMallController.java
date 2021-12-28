@@ -18,6 +18,7 @@ import com.dogether.domain.Shopping_cartVO;
 import com.dogether.service.ProductService;
 
 @Controller
+@RequestMapping("shoppingMall")
 public class ShoppingMallController {
 
 	@Autowired
@@ -26,11 +27,12 @@ public class ShoppingMallController {
 	
 	
 	//쇼핑몰 메인홈에서 베스트상품4개 가져오기
-	@RequestMapping("shoppingmall.do")
-	public void goShoppingMall(Model model) {
+	@RequestMapping("/")
+	public String goShoppingMall(Model model) {
 		System.out.println("쇼핑몰에 들어갑니다==========");
 		List<ProductsVO> list = productService.bestProductsList();
 		model.addAttribute("bestProduct",list);
+		return "shoppingMall/shoppingmall";
 	}
 	
 	
@@ -112,7 +114,7 @@ public class ShoppingMallController {
 		MemberVO memberInfo = productService.showUserInfo(vo);
 		m.addAttribute("memberInfo",memberInfo);
 		m.addAttribute("jangbaguni",list);
-		return "shoppingCart";
+		return "shoppingMall/shoppingCart";
 	}
 	
 	

@@ -76,7 +76,7 @@ h4#font-color_st{
 		</c:if>
 		<c:if test="${not empty sessionScope}">
 			<button id="logout" class="btn btn mainlog" style="float: right;">Logout</button>
-			<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'userMyPage/myPage.do' " style="float: right;">MyPage</button>
+			<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'Mypage/' " style="float: right;">MyPage</button>
 		</c:if>
 		
 	
@@ -205,7 +205,7 @@ h4#font-color_st{
 			
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="shoppingmall.do" data-lightbox="image-1"><div class="thumb">
+					<a href="shoppingMall/" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>

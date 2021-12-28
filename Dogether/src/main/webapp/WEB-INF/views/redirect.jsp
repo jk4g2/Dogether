@@ -10,7 +10,7 @@
 
 <script>
     alert("${msg}");
-	window.location.href="index.do";
+	window.location.href="../index.do";
 </script>
 </body>
 </html>
