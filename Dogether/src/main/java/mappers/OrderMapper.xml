@@ -8,11 +8,16 @@
 		FROM orders
 	</select> 
 	
-	<select id="getMyOrderList" resultType="OrderVO" parameterType="string">
-		SELECT *
-		FROM orders where MemberID = #{memberID}
+	<select id="getMyOrderList" resultType="hashmap" parameterType="string">
+		SELECT Product_realfname,OrderID,MemberID,ProductID,OrderDate,BuyingConfirmYN,ReturnYN,returnstatus
+     	FROM orders NATURAL JOIN products where MemberID = #{memberID}
+
 	</select>
 	
-	
+	<update id="updatebuyingConfirm" parameterType="OrderVO">
+		UPDATE orders
+		SET BuyingConfirmYN = 'Y'
+		WHERE MemberID = #{memberID} AND OrderID = #{orderID} AND ProductID = #{productID};
+	</update>
 	
 </mapper>

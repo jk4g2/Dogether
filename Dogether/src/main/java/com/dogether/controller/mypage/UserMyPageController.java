@@ -1,5 +1,6 @@
 package com.dogether.controller.mypage;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -136,17 +137,28 @@ public class UserMyPageController {
 	
 	
 	// 쇼핑몰 주문 list 출력
-	@RequestMapping("userOrder.do")
+	@RequestMapping("OrderList.do")
 	@ResponseBody
-	public List<OrderVO> adminOrder(String memberID) {		
+	public List<HashMap<String,Object>> Orderlist(String memberID) {		
 		System.out.println("변수로 넘겨받은 memberID----------"+memberID);
-		List<OrderVO> odList = orderService.getMyOrderList(memberID);
+		List<HashMap<String,Object>> odList = orderService.getMyOrderList(memberID);
+		for(HashMap a : odList) {
+			System.out.println(a.get("OrderDate")+"----------------------------");
+		}
 		System.out.println("쇼핑몰 주문 리스트 전달완료!!");
 		return odList;
 	}
 	
 	
-	
+	//구매확정 업데이트
+	@RequestMapping("updatebuyingConfirm.do")
+	@ResponseBody
+	public String updatebuyingConfirm(OrderVO vo) {
+		System.out.println("구매확정 업데이트-----");
+		orderService.updatebuyingConfirm(vo);
+		String message = "구매확정 완료";
+		return message;
+	}
 	
 	
 	

@@ -1,5 +1,6 @@
 package com.dogether.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,13 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public List<OrderVO> getMyOrderList(String memberID) {
+	public List<HashMap<String,Object>> getMyOrderList(String memberID) {
 		return orderDAO.getMyOrderList(memberID);
+	}
+
+	@Override
+	public void updatebuyingConfirm(OrderVO vo) {
+		orderDAO.updatebuyingConfirm(vo);
 	}
 
 }
