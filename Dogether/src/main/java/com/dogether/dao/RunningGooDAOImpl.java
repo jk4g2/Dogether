@@ -1,5 +1,6 @@
 package com.dogether.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -48,5 +49,41 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 		System.out.println("런닝구 방 생성시 멤버의 보유 포인트를 가져오는 함수 호출");
 		return mybatis.selectOne("runningGooDAOMapper.getMemberJoinRngList",nowMemberID);
 	}
+	
+	@Override
+	public RunningGooVO bringBasicRngRoomInfo(RunningGooVO vo) {
+		// TODO Auto-generated method stub
+		System.out.println("DoJoin 클릭시 INSERT되는 함수");
+		return mybatis.selectOne("runningGooDAOMapper.bringBasicRngRoomInfo", vo);
+	}
+	
+	@Override
+	public void CreateRunningGooMemberInsert(RunningGooVO vo) {
+		// 참여자가 DoJoin을 눌렀을때 들어가는 멤버정보
+		mybatis.insert("runningGooDAOMapper.CreateRunningGooMemberInsert", vo);
+	}
+	
+	@Override
+	public List<HashMap<String,Object>> viewJoinMemberList(int roomNum) {
+		// 호스트에게 보여질 수락이 완료된 멤버들의 정보
+		System.out.println("호스트에게 보여질 수락이 완료된 멤버들의 리스트 매퍼 호출");
+		return mybatis.selectList("runningGooDAOMapper.viewJoinMemberList", roomNum);
+	}
 
+	@Override
+	public List<HashMap<String,Object>> viewNotYetJoinMemberList(int roomNum) {
+		// 호스트에게 보여질 수락을 기다리는 참여자들의 간단한 정보
+		System.out.println("호스트에게 보여질 수락을 기다리는 멤버들의 리스트 매퍼 호출");
+		int result = roomNum;
+		System.out.println(result+"입니당!!");
+		return mybatis.selectList("runningGooDAOMapper.viewNotYetJoinMemberList", roomNum);
+	}
+	
+	@Override
+	public void upateRngMemberInfo(HashMap<String,Object> map) {
+		// 호스트가 수락을 눌렀을때 수정될 런닝구 멤버의 정보
+		System.out.println("호스트 수락시 업데이트 되는 런닝구 멤버 정보");
+		mybatis.update("runningGooDAOMapper.upadateRunningGooJoinMemberInfo",map);
+	}
+	
 }

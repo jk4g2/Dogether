@@ -68,3 +68,66 @@ var RangeSlider = function(){
 RangeSlider();
 
 
+// DoJoin 클릭시 호스트에게 popup 띄우기
+function receiveRngRequest(){
+	window.open('showRngJoinMemberInfo.do', 'popup01', 'width=300, height=400, scrollbars= 0, toolbar=0, menubar=no');
+}
+
+// onclick 쓰지말고 제이쿼리로 직접 찾아서 이벤트걸기
+// 버튼에 each를 걸고 버튼이 this
+$(".userBtn").click(function(){
+		if (!confirm("참여신청 할까요?")) {
+        // 취소(아니오) 버튼 클릭 시 이벤트
+        alert("참여신청이 취소되었습니다.");
+    } else {
+        // 확인(예) 버튼 클릭 시 이벤트
+        var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
+        alert(nowRoomNum);
+        $.ajax({
+        	url: "bringBasicRngRoomInfo.do",
+        	data : { roomNumber : nowRoomNum},
+        	success: function(res){
+		        alert(res);
+        	},
+        	error : function(){
+        		alert("요청실패!");
+        	}
+        }); // end-of-ajax   
+    } // end-of-else
+})
+
+
+
+// 호스트가 버튼을 눌렀을때 팝업창 화면
+$('.hostBtn').click(function(){
+	var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
+	alert("런닝구 멤버들의 신청현황 조회를 완료했습니다.");
+	window.open('viewJoinMemberTotalInfo.do?roomNumber=' + nowRoomNum, 'popup01', 'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
+		
+}) // end-of-click
+
+// 호스트가 수락을 눌렀을때
+$('.acceptJoin').click(function(){
+	$.ajax({
+		url: "updateJoinMemberInfo.do",
+        data : { roomNum : $("#roomNum").text() },
+        success: function(res){
+		    alert(res);
+		    
+       	},
+        error : function(){
+        	alert("요청실패!!!!");
+        }
+	}) //end-of-ajax
+})
+
+
+
+
+
+
+
+
+
+
+

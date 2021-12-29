@@ -17,7 +17,7 @@
 	</select>
 	
 	<select id="getRunningGooList" resultType="com.dogether.domain.RunningGooVO">
-		SELECT * FROM runninggoo GROUP BY RoomNumber 
+		SELECT * FROM runninggoo WHERE hostYN = 'Y' GROUP BY RoomNumber
 		<choose>
 			<when test="sortTypeRNG==0">ORDER BY RoomNumber DESC</when>
 			<when test="sortTypeRNG==1">ORDER BY meetingTime DESC</when>
@@ -33,4 +33,38 @@
       FROM member
       WHERE MemberID = #{memberID};
    </select>
+   
+   <select id="bringBasicRngRoomInfo" resultType="com.dogether.domain.RunningGooVO">
+		SELECT * FROM runninggoo WHERE RoomNumber = #{roomNumber} GROUP BY RoomNumber;
+	</select>
+	
+	<insert id="CreateRunningGooMemberInsert" parameterType="com.dogether.domain.RunningGooVO">
+		INSERT INTO runninggoo(roomNumber,location,memberID,memberPendingStatusYN,
+		currentMembers,maxMembers, hostYN, sportsType, runningDistance, ageGeneration, sportsTime, 
+		locationLat, locationLong, hostComment,meetingTime,deposit) 
+		VALUES(#{roomNumber},#{location},#{memberID},#{memberPendingStatusYN},
+		#{currentMembers},#{maxMembers}, #{hostYN}, #{sportsType}, #{runningDistance}, #{ageGeneration}, #{sportsTime}, 
+		#{locationLat}, #{locationLong}, #{hostComment},#{meetingTime},5000)
+	</insert>
+	
+	<select id="viewJoinMemberList" parameterType="integer" resultType="hashmap">
+     SELECT roomNumber, memberID, Birthday, Gender, UserName, NickName, PhoneNumber 
+     from runninggoo r natural join member m 
+	 where r.MemberID = m.MemberID and RoomNumber = #{roomNum} and HostYN ='N' and MemberPendingStatusYN = 'N'
+   </select>
+   
+   <select id="viewNotYetJoinMemberList" parameterType="integer" resultType="hashmap">
+     SELECT roomNumber , memberID, Birthday, Gender, UserName, NickName, PhoneNumber 
+     from runninggoo r natural join member m
+	 where r.MemberID = m.MemberID and RoomNumber = #{roomNum} and HostYN ='N' and MemberPendingStatusYN = 'Y'
+   </select>
+   
+   <update id="upadateRunningGooJoinMemberInfo" parameterType="hashmap">
+   		UPDATE runninggoo 
+		SET currentMembers = currentMembers+1,
+		MemberPendingStatusYN = 'N'
+		WHERE memberid = #{memberid}
+		AND roomnumber = #{roomnumber}
+   </update>
+	
 </mapper>
