@@ -149,24 +149,7 @@ h4#font-color_st{
 						</div></a>
 				</div>
 			</div>
-			<div class="col-md-4 col-sm-6">
-				<div class="portfolio-item">
-					<a href="gym.do" data-lightbox="image-1"><div class="thumb">
-							<div class="hover-effect">
-								<div class="hover-content">
-
-									<h1>
-										<em>gym Reservation</em>
-									</h1>
-									<p>근거리 헬스장 일일권 예약하러 가기</p>
-								</div>
-							</div>
-							<div class="image">
-								<img src="./resources/img/imgformain/gym1.jpg">
-							</div>
-						</div></a>
-				</div>
-			</div>
+			
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
 					<a href="aihometrainer/1_aiHT_main.do" data-lightbox="image-1"><div class="thumb">
@@ -184,6 +167,7 @@ h4#font-color_st{
 						</div></a>
 				</div>
 			</div>
+			
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
 					<a href="boast/" data-lightbox="image-1"><div class="thumb">
@@ -224,16 +208,11 @@ h4#font-color_st{
 			
 			
 						<!--  추가한 사진박스 시작!! 11111-->
-			<div class="col-md-4 col-sm-6 test6">
+			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
 					<a href="healthcenter/" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
-								<!-- 
-									<h1>
-										보건소 
-									</h1>
-									 -->
 									
 									<h1 id="test8">
 									<em>public</em>
@@ -255,8 +234,8 @@ h4#font-color_st{
 			
 			
 							<!--  추가한 사진박스 시작!! 2222-->
-			<div class="col-md-4 col-sm-6 test6">
-				<div class="portfolio-item test6">
+			<div class="col-md-4 col-sm-6">
+				<div class="portfolio-item">
 					<a href="sleep/" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
