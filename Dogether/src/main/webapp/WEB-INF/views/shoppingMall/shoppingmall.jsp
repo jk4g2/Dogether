@@ -122,8 +122,8 @@
             <div class="font-alt mb-30 titan-title-size-1">다양한 건강식품을 할인된 가격에 만나보세요.</div>
             <div class="font-alt mb-40 titan-title-size-4">DOGETHER MALL</div>
               <div id="mainBtn">
-	                	<a class="section-scroll btn btn-border-w btn-round" href="totalproduct.do">모든 상품</a>
-	                	<a class="section-scroll btn btn-border-w btn-round" href="shoppingCart.do">내 장바구니</a>
+	                	<a class="section-scroll btn btn-border-w btn-round" href="totalproduct.do">모든상품</a>
+	                	<a class="section-scroll btn btn-border-w btn-round" href="shoppingCart.do">장바구니</a>
 	           </div>
           </div>
         </div>

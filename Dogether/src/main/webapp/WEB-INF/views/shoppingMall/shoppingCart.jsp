@@ -211,7 +211,7 @@
 							</div>
 							<div id="mainBtn">
 								<a class="section-scroll btn btn-border-w btn-round detailBtn" id="cartBtn"
-									href="totalproduct.do">모든 상품</a> 
+									href="totalproduct.do">모든상품</a> 
 									<a class="section-scroll btn btn-border-w btn-round detailBtn" id="cartBtn"
 									href="shoppingmall.do">HOME</a>
 							</div>

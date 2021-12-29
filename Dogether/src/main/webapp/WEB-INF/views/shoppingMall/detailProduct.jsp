@@ -110,9 +110,9 @@
                 <div class="row mb-20">
                 <div id="detailBtn">
 								<a class="section-scroll btn btn-border-w btn-round detailBtn" id="detailcartBtn2"
-									href="totalproduct.do">모든 상품</a> 
+									href="totalproduct.do">모든상품</a> 
 									<a class="section-scroll btn btn-border-w btn-round detailBtn" id="detailcartBtn"
-									href="shoppingCart.do">내 장바구니</a>
+									href="shoppingCart.do">장바구니</a>
 							</div>
                 </div>
               </div>
