@@ -223,65 +223,130 @@ $('#myOrder').click(function(evt){
   $(".sese").hide();					// 모든 테이블 숨기기
   $("#myorderList").show();		// 쇼핑몰 주문 리스트 테이블만 보이게 변경
   $("#userOrderList").show();		// 쇼핑몰 주문 리스트 테이블만 보이게 변경
-  userOrderList();					// 리스트 출력 함수 호출
+  OrderList();					// 리스트 출력 함수 호출
 }); //end click
 
 
-function userOrderList(){
-  $.ajax({
-    type : 'get',
-    url : 'userOrder.do',
-    data : {memberID : $("#memberID").text()},
-      dataType : 'json',										// db(서버)에서 받을 때 데이터 타입
-    success : function(resultOrder){
-      // ##### 동적으로 쇼핑몰 주문 리스트 만들기 #####
-      var userOrderList = $("#userOrderList");			// adminpage.jsp에 table id를 변수에 저장
-      userOrderList.empty();								// 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
-      userOrderList.append(								// list 테이블 헤더
-        "<tr>"
-        + "<th width='200'>주문일자</th>"
-        + "<th width='400'>주문번호</th>"
-        + "<th width='200'>주문자</th>"
-        + "<th width='400'>상품번호</th>"
-        + "<th width='100'>구매확정여부</th>"
-        + "<th width='100'>반품여부</th>"
-        + "<th width='100'>반품상태</th>"
-        +"</tr>");
-        if(resultOrder[0].memberID == null){
-          var tr = $("<tr/>");
-          var nonedata = $("<td colspan='7' />").html("<h3>주문하신 상품이 존재하지 않습니다.</h3>");
-          tr.append(nonedata);
-          userOrderList.append(tr);
-        }
-        else{
-          for(row of resultOrder){											// 향상된 for문 (list row : resultMember) ==> 변수명은 상관없음
-            console.log(row);												// 데이터가 잘 넘어왔는지 확인
-            var tr = $("<tr/>");											// <tr/> 객체 생성
-            var orderDate = $("<td width='200' />").html(row.orderDate);	// td객체를 생성 ==> orderDate를 td에 담는다
-            tr.append(orderDate); 											// tr에 orderDate를 담은 td를 추가
-            var orderID = $("<td width='400' />").text(row.orderID);
-            tr.append(orderID);
-            var memberID = $("<td width='200' />").html(row.memberID);
-            tr.append(memberID);
-            var productID = $("<td width='400' />").html(row.productID);
-            tr.append(productID);
-            var buyingConfirmYN = $("<td width='100' />").html(row.buyingConfirmYN);
-            tr.append(buyingConfirmYN);
-            var returnYN = $("<td width='100' />").text(row.returnYN);
-            tr.append(returnYN);
-            var returnStatus = $("<td width='100' />").html(row.returnStatus);
-            tr.append(returnStatus);
+function OrderList(){
+      $.ajax({
+         type : 'get',
+         url : 'OrderList.do',
+         data : {memberID : $("#memberID").text() },
+         dataType : 'json',                              // db(서버)에서 받을 때 데이터 타입
+         success : function(resultOrder){
+            // ##### 동적으로 쇼핑몰 주문 리스트 만들기 #####
+            var userOrderList = $("#userOrderList");         // adminpage.jsp에 table id를 변수에 저장
+            userOrderList.empty();                        // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
+            userOrderList.append(                        // list 테이블 헤더
+               "<tr>"
+               + "<th width='200'>주문일자</th>"
+               + "<th width='300'>주문번호</th>"
+               + "<th width='200'>주문자</th>"
+               + "<th width='200'>상품번호</th>"
+               + "<th width='400'>상품이미지</th>"
+               + "<th width='150'>구매확정여부</th>"
+               + "<th width='150'>반품여부</th>"
+               + "<th width='150'>반품상태</th>"
+               +"</tr>");
+            for(row of resultOrder){
+              if(row['OrderID'] == null){
+                var tr = $("<tr/>");
+                var nonedata = $("<td colspan='8' />").html("<h3>주문하신 상품이 존재하지 않습니다.</h3>");
+                tr.append(nonedata);
+                userOrderList.append(tr);
+              }
+              else{                   // 향상된 for문 (list row : resultMember) ==> 변수명은 상관없음
+               console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
+               var tr = $("<tr/>");                                 // <tr/> 객체 생성
+               var orderDate = $("<td width='200' />").html(new Date(row['OrderDate']).yyyymmdd());   // td객체를 생성 ==> orderDate를 td에 담는다
+               tr.append(orderDate);                                  // tr에 orderDate를 담은 td를 추가
+               var orderID = $("<td width='300' />").text(row['OrderID']);
+               tr.append(orderID);
+               var memberID = $("<td width='200' />").html(row['MemberID']);
+               tr.append(memberID);
+               var productID = $("<td width='200' />").html(row['ProductID']);
+               tr.append(productID);
+               // ######### 상품이미지 출력
+               var product_realfname = $("<td id='product_realfname'/>").html("<img src='../resources/img/shoppingmall/productimgs/"+ row['Product_realfname'] +"'>");
+               tr.append(product_realfname);
+               if(row['BuyingConfirmYN'] == 'Y'){
+                 var buyingConfirmYN = $("<td width='150' />").html(row['BuyingConfirmYN']);//구매확정 완료
+                 tr.append(buyingConfirmYN);
+               }
+               else{
+                 var buyingConfirmYN = $("<td width='100' />").html('<button type="button" id="buyingConfirmBTN">구매확정</button>');
+                 tr.append(buyingConfirmYN);
+               }
+               var returnYN = $("<td width='150' />").text(row['ReturnYN']);
+               tr.append(returnYN);
+               // 반품상태 int ==> String 변경
+               if(row['returnstatus']==0) {
+            	   row['returnstatus'] = '주문완료';
+                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+               } else if (row['returnstatus']==1) {
+                  row['returnstatus'] = '반품신청';
+                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+               } else if (row['returnstatus']==2) {
+                  row['returnstatus'] = '반품진행중';
+                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+               } else {
+                  row['returnstatus'] = '반품처리완료';
+                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+               }
+               tr.append(returnStatus);
 
-            userOrderList.append(tr);			// 모든 컬럼 정보를 append한 tr을 list에 append
+               userOrderList.append(tr);
+
+                      // 모든 컬럼 정보를 append한 tr을 list에 append
             } // end for문
-        }//end of else
-    }, // end success
-    error : function(err){
-      alert('전송실패');
-      console.log(err);
-    } //end error
-  })	// end ajax
-}	// end function adminOrderList()
+          }//end else
+         }, // end success
+         error : function(err){
+            alert('전송실패');
+            console.log(err);
+         } //end error
+      })   // end ajax
+   }   // end function OrderList()
+
+
+
+
+
+
+
+   // ################################################
+   	// 밀리세컨드를 yyyy-mm-dd로 포맷
+   	Date.prototype.yyyymmdd = function() {
+           var yyyy = this.getFullYear().toString();
+           var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based
+           var dd  = this.getDate().toString();
+           return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]);
+   	};
+
+
+
+	$(document).on('click','#buyingConfirmBTN',function(){
+    let memberID = $("#memberID").text();
+    let productID = $(this).parent().prev().prev().text();
+    let orderID = $(this).parent().prev().prev().prev().prev().text();
+
+    $.ajax({
+      type : 'get',
+      url : 'updatebuyingConfirm.do',
+      data : {memberID : memberID, productID : productID, orderID : orderID},
+      success : function(result){
+        console.log(result);
+        OrderList();
+      },//end of sucess
+      error : function(err){
+        alert("errorerrorerrorerrorerrorerrorerrorerrorerrorerrorerrorerrorerrorerrorerrorerrorerrorerror")
+      }//end of error
+    })//end of ajax
+	})//end of 구매확정버튼 클릭
+
+
+
+
 
 
 
