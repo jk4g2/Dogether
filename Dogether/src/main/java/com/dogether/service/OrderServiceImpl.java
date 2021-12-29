@@ -29,5 +29,11 @@ public class OrderServiceImpl implements OrderService{
 	public void updatebuyingConfirm(OrderVO vo) {
 		orderDAO.updatebuyingConfirm(vo);
 	}
+	
+	// 주문 list + 상품 이미지 출력(관리자페이지)
+	@Override
+	public List<HashMap<String, Object>> getOrderList(OrderVO sortTypeOrder) {
+		return orderDAO.getOrderList(sortTypeOrder);
+	}
 
 }

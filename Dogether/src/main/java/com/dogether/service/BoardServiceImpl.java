@@ -48,4 +48,10 @@ public class BoardServiceImpl implements BoardService{
 	public int insertReply(Board_ReplyVO vo) {
 		return boardDAO.insertReply(vo);
 	}
+	// 자랑하기 삭제(관리자페이지)
+	@Override
+	public void deleteBST(BoardVO vo) {
+		System.out.println("Service에서 자랑하기 삭제 호출함");
+		boardDAO.deleteBST(vo);		
+	}
 }

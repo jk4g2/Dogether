@@ -11,4 +11,6 @@ public interface MemberService {
 	void updatePoint(String memberID,int price);//포인트 충전하기
 	List<BoardVO> myBoardList(String memberID);//내 자랑하기 게시글 가져오기
 	int updateMemberInfo(MemberVO vo);//내 정보 수정하기
+	// 회원 삭제(탈퇴)하기(관리자페이지)
+	public void deleteMember(MemberVO vo);
 }

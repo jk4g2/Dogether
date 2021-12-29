@@ -86,4 +86,19 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 		mybatis.update("runningGooDAOMapper.upadateRunningGooJoinMemberInfo",map);
 	}
 	
+	// 런닝구 리스트 가져오기(프로필사진 포함 in 관리자페이지)
+	@Override
+	public List<HashMap<String,Object>> getRNGListWithProfile(RunningGooVO sortTypeRNG) {
+		System.out.println("런닝구 방 리스트 불러오는 함수 호출");
+		return mybatis.selectList("runningGooDAOMapper.getRNGListWithProfile", sortTypeRNG);
+	}
+	
+	// 런닝구 방 삭제(관리자페이지)
+	@Override
+	public void deleteRNG(RunningGooVO vo) {
+		System.out.println("mybatis 런닝구방 삭제 호출함");
+		System.out.println(vo.getRoomNumber()+"방삭제번호");
+		mybatis.delete("runningGooDAOMapper.deleteRNG", vo);
+	}
+	
 }

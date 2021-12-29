@@ -19,13 +19,11 @@ public class RunningGooServiceImpl implements RunningGooService {
 	// 런닝구 방 생성
 	@Override
 	public void insertRNRoomInfo(RunningGooVO vo) {
-		// TODO Auto-generated method stub
 		runningGooDAO.createRngRoom(vo);
 	}
 
 	@Override
 	public List<RunningGooVO> getRNRoomList(RunningGooVO vo) {
-		// TODO Auto-generated method stub
 		return runningGooDAO.getRNRoomList(vo);
 	}
 
@@ -42,7 +40,6 @@ public class RunningGooServiceImpl implements RunningGooService {
 	
 	@Override
 	public RunningGooVO bringBasicRngRoomInfo(RunningGooVO vo) {
-		
 		return runningGooDAO.bringBasicRngRoomInfo(vo);
 	}
 	
@@ -50,7 +47,6 @@ public class RunningGooServiceImpl implements RunningGooService {
 	public void CreateRunningGooMemberInsert(RunningGooVO vo) {
 		// 참여자가 DoJoin을 눌렀을때 들어가는 멤버정보
 		runningGooDAO.CreateRunningGooMemberInsert(vo);
-		
 	}
 	
 	@Override
@@ -69,6 +65,19 @@ public class RunningGooServiceImpl implements RunningGooService {
 	public void upateRngMemberInfo(HashMap<String,Object> map) {
 		// 호스트가 수락을 눌렀을때 수정될 런닝구 멤버의 정보
 		runningGooDAO.upateRngMemberInfo(map);
+	}
+	
+	// 런닝구 리스트 가져오기(프로필사진 포함 in 관리자페이지) 
+	@Override
+	public List<HashMap<String,Object>> getRNGListWithProfile(RunningGooVO sortTypeRNG) {
+		return runningGooDAO.getRNGListWithProfile(sortTypeRNG);
+	}
+	
+	// 런닝구 방 삭제(관리자페이지)
+	@Override
+	public void deleteRNG(RunningGooVO vo) {
+		System.out.println("Service에서 런닝구방 삭제 호출함");
+		runningGooDAO.deleteRNG(vo);		
 	}
 	
 }

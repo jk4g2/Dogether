@@ -46,5 +46,11 @@ public class MemberDAOImpl implements MemberDAO{
 		return mybatis.update("MemberDAO.updateMemberInfo", vo);
 	}
 
-	
+	// 회원 삭제(탈퇴)하기(관리자페이지)
+	@Override
+	public void deleteMember(MemberVO vo) {
+		System.out.println("mybatis 회원 삭제(탈퇴) 호출함");
+		System.out.println(vo.getMemberID()+"회원번호");
+		mybatis.delete("MemberDAO.deleteMember", vo);		
+	}	
 }

@@ -41,5 +41,11 @@ public class MemberServiceImpl implements MemberService{
 	public int updateMemberInfo(MemberVO vo) {
 		return memberDAO.updateMemberInfo(vo);
 	}
+	// 회원 삭제(탈퇴)하기(관리자페이지)
+	@Override
+	public void deleteMember(MemberVO vo) {
+		System.out.println("Service에서 회원 삭제(탈퇴) 호출함");
+		memberDAO.deleteMember(vo);		
+	}
 
 }

@@ -63,5 +63,12 @@ public class BoardDAOImpl implements BoardDAO{
 	public int insertReply(Board_ReplyVO vo) {
 		return mybatis.insert("BoardDAO.insertReply",vo);
 	}
+	// 자랑하기 삭제(관리자페이지)
+	@Override
+	public void deleteBST(BoardVO vo) {
+		System.out.println("mybatis 상품 삭제 호출함");
+		System.out.println(vo.getBoardID()+"자랑하기 삭제");
+		mybatis.delete("BoardDAO.deleteBST", vo);
+	}
 
 }

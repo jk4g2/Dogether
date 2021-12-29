@@ -66,5 +66,21 @@
 		WHERE memberid = #{memberid}
 		AND roomnumber = #{roomnumber}
    </update>
+   
+   <!-- 런닝구방 + 프로필사진 출력 (관리자페이지)-->
+   <select id="getRNGListWithProfile" resultType="hashmap" parameterType="com.dogether.domain.RunningGooVO">
+      SELECT *
+      FROM runninggoo NATURAL JOIN member
+      <choose>
+			<when test="sortTypeRNG==0">ORDER BY RoomNumber DESC</when>
+			<when test="sortTypeRNG==1">ORDER BY meetingTime DESC</when>
+		</choose>
+   </select>
+   
+   <!-- 런닝구방 삭제 (관리자페이지)-->
+   <delete id="deleteRNG" parameterType="com.dogether.domain.RunningGooVO">
+		DELETE FROM runninggoo
+		WHERE RoomNumber = #{roomNumber}
+	</delete>
 	
 </mapper>

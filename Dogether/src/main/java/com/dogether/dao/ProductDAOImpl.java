@@ -100,16 +100,26 @@ public class ProductDAOImpl implements ProductDAO {
 		return mybatis.selectList("ProductsDAO.bestProductsList");
 	}
 
+	//관리자페이지 상품 추가
 	@Override
 	public int productsInsert(ProductsVO vo) {
 		System.out.println("mybatis 상품 추가하기 호출!!");
 		return mybatis.insert("ProductsDAO.productsInsert", vo);
 	}
 
+	//관리자페이지 상품 수정
 	@Override
 	public void productsUpdate(ProductsVO vo) {
 		System.out.println("mybatis 상품 수정하기 호출함");
 		mybatis.update("ProductsDAO.productsUpdate");
+	}
+	
+	//관리자페이지 상품 삭제
+	@Override
+	public void productsDelete(ProductsVO vo) {
+		System.out.println("mybatis 상품 삭제 호출함");
+		System.out.println(vo.getProductID()+"삭삭1");
+		mybatis.delete("ProductsDAO.productsDelete", vo);
 	}
 	
 }

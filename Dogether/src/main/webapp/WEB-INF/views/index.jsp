@@ -257,7 +257,7 @@ h4#font-color_st{
 							<!--  추가한 사진박스 시작!! 2222-->
 			<div class="col-md-4 col-sm-6 test6">
 				<div class="portfolio-item test6">
-					<a href="sleep.do" data-lightbox="image-1"><div class="thumb">
+					<a href="sleep/" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 						

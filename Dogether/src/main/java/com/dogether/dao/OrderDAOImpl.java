@@ -29,5 +29,12 @@ public class OrderDAOImpl implements OrderDAO{
 	public void updatebuyingConfirm(OrderVO vo) {
 		mybatis.update("OrderDAO.updatebuyingConfirm", vo);
 	}
+	
+	// 주문 list + 상품 이미지 출력(관리자페이지)
+	@Override
+	public List<HashMap<String, Object>> getOrderList(OrderVO sortTypeOrder) {
+		System.out.println("sortTypeOrder"+ sortTypeOrder);
+		return mybatis.selectList("OrderDAO.getOrderList", sortTypeOrder);
+	}
 
 }

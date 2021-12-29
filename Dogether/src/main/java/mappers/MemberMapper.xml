@@ -62,4 +62,10 @@
 			member_realfname = #{member_realfname},member_fsize = #{member_fsize} WHERE MemberID = #{memberID}
 	</update>
 	
+	<!-- 회원 삭제(탈퇴)하기(관리자페이지) -->
+	<delete id="deleteMember" parameterType="MemberVO">
+		DELETE FROM member
+		WHERE MemberID = #{memberID}
+	</delete>
+	
 </mapper>

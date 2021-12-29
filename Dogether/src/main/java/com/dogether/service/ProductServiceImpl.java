@@ -20,6 +20,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Override
 	public List<ProductsVO> getProductsList() {
+		System.out.println("Service에서 상품리스트 호출함");
 		return productsDAO.getProductsList();
 	}
 
@@ -73,14 +74,23 @@ public class ProductServiceImpl implements ProductService {
 		return productsDAO.bestProductsList();
 	}
 
+	// 상품 추가 (관리자페이지)
 	@Override
 	public int productsInsert(ProductsVO vo) {
 		return productsDAO.productsInsert(vo);
 	}
 	
+	// 상품 수정 (관리자페이지)
 	@Override
 	public void productsUpdate(ProductsVO vo) {
-		System.out.println("Service에서 상품수정 호출함");
+		System.out.println("Service에서 상품 수정 호출함");
+		productsDAO.productsUpdate(vo);
 	}
-
+	
+	// 상품 삭제 (관리자페이지)
+	@Override
+	public void productsDelete(ProductsVO vo) {
+		System.out.println("Service에서 상품 삭제 호출함");
+		productsDAO.productsDelete(vo);
+	} 
 }

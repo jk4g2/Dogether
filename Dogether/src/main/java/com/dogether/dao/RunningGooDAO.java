@@ -38,4 +38,9 @@ public interface RunningGooDAO {
 	// 호스트가 수락을 눌렀을때 수정될 런닝구 멤버의 정보
 	void upateRngMemberInfo(HashMap<String,Object> map);
 	
+	// 런닝구 리스트 가져오기(프로필사진 포함 in 관리자페이지)
+	public List<HashMap<String,Object>> getRNGListWithProfile(RunningGooVO sortTypeRNG);
+	
+	// 런닝구 방 삭제(관리자페이지)
+	public void deleteRNG(RunningGooVO vo);
 }

@@ -37,5 +37,6 @@ public interface ProductDAO {
 	public int productsInsert(ProductsVO vo);
 	//관리자페이지 상품 수정하기
 	public void productsUpdate(ProductsVO vo);
-	
+	//관리자페이지 상품 삭제하기
+	public void productsDelete(ProductsVO vo);
 }
