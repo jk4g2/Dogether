@@ -2,27 +2,27 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Elements - Editorial by HTML5 UP</title>
-<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="../resources/css/csshealth/main.css" />
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<link rel="stylesheet" href="../resources/css/templatemo-style.css">
-<link rel="stylesheet" href="../resources/css/boast/boast.css">
-<link rel="stylesheet" href="../resources/css/boast/boast2.css">
+	content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Search Example</title>
+<link rel="stylesheet" href="../resources/css/csshealth/main.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
 
-<link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/templatemo-style.css">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="../resources/js/jshealth/search.js"></script>
 <script src="../resources/js/plugins.js"></script>
 <script src="../resources/js/main.js"></script>
 </head>
-
-<body class=".is-preload ">
-	<!-- HEADER -->
-	<nav>
+<body>
+	<nav style="background-color: black">
 		<div class="logo">
 			<a href="../index.do">DO<em>GETHER</em></a>
 		</div>
@@ -30,8 +30,6 @@
 			<span></span>
 		</div>
 	</nav>
-
-	<!-- NAV  -->
 	<section class="overlay-menu">
 		<div class="container">
 			<div class="row">
@@ -51,77 +49,27 @@
 		</div>
 	</section>
 
+	<!-- 검색구간 -->
+	<div id="searchingdiv">
+		<h1>보건소 검색</h1>
+		<input id="search" autocomplete="off" placeholder="Search">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">보건소 이름</th>
+					<th scope="col">주소</th>
+					<th scope="col">전화번호</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<p id="noresults">결과를 찾을 수 없습니다.</p>
 
-
-
-	<div id="wrapper" style="position:relative; margin-top:100px;">
-
-		<!-- Main -->
-		<div id="main">
-			<div class="inner">
-
-				<section>
-					<div class="row gtr-200">
-						<div class="col-6 col-12-medium">
-
-							<h4>지역별 인바디 측정 가능 보건소를 찾아보세요.</h4>
-							<ul class="actions">
-								<li><a href="?centerAddress=서울특별시" class="button primary">서울특별시</a></li>
-								<li><a href="?centerAddress=부산광역시" class="button">부산광역시</a></li>
-								<li><a href="?centerAddress=인천광역시" class="button primary">인천광역시</a></li>
-								<li><a href="?centerAddress=대전광역시" class="button">대전광역시</a></li>
-								<li><a href="?centerAddress=대구광역시" class="button primary">대구광역시</a></li>
-								<li><a href="?centerAddress=광주광역시" class="button">광주광역시</a></li>
-								<li><a href="?centerAddress=울산광역시" class="button primary">울산광역시</a></li>
-								<li><a href="?centerAddress=경기도" class="button">경기도</a></li>
-
-							</ul>
-							<ul class="actions">
-								<li><a href="?centerAddress=전라남도" class="button primary">전라남도</a></li>
-								<li><a href="?centerAddress=전라북도" class="button">전라북도</a></li>
-								<li><a href="?centerAddress=경상남도" class="button primary">경상남도</a></li>
-								<li><a href="?centerAddress=경상북도" class="button">경상북도</a></li>
-								<li><a href="?centerAddress=충청남도" class="button primary">충청남도</a></li>
-								<li><a href="?centerAddress=충청북도" class="button">충청북도</a></li>
-								<li><a href="?centerAddress=강원도" class="button primary">강원도</a></li>
-								<li><a href="?centerAddress=제주도" class="button">제주도</a></li>
-
-							</ul>
-
-							<!-- Table -->
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>보건소 이름</th>
-											<th>주소</th>
-											<th>전화번호</th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="item" items="${list}">
-											<tr>
-												<td>${item.centerName}</td>
-												<td>${item.centerAddress}</td>
-												<td>${item.centerPhoneNumber}</td>
-											</tr>
-										</c:forEach>
-
-
-									</tbody>
-
-								</table>
-							</div>
-
-						</div>
-
-					</div>
-				</section>
-
-			</div>
-		</div>
 	</div>
-	<footer id="footer" style="position:absolute; bottom:0px;">
+
+	<!-- footer -->
+	<footer id="footer" style="position: absolute; bottom: 0px;">
 		<div class="container-fluid">
 			<div class="col-md-12">
 				<p id="ff">Copyright &copy; 2018 Company Name | Designed by
@@ -130,7 +78,7 @@
 		</div>
 	</footer>
 
-
-
 </body>
 </html>
+
+
