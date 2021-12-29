@@ -59,7 +59,7 @@
 			if (rsp.success) {
 				paypoint(memberID, price);
 				alert("포인트 충전성공!!")
-				location.replace("myPage.do")
+				location.replace("../Mypage/")
 			} else {
 				alert("충전에 실패하였습니다. 다시 시도해주세요.")
 			}

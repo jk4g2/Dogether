@@ -128,10 +128,10 @@ public class UserMyPageController {
 
 	// 내 정보 수정하기
 	@PostMapping(value = "updateMemberInfo.do", produces = "application/text; charset=UTF-8")
-	public String userinsert(MemberVO vo) {
-		int result = memberService.updateMemberInfo(vo);
+	public String updateMyInfo(MemberVO vo) {
+		memberService.updateMemberInfo(vo);
 		System.out.println("내정보 수정 완료!");
-		return "redirect:/";
+		return "redirect:../Mypage/";
 	}
 	
 	
