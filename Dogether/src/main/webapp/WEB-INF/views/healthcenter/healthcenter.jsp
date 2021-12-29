@@ -52,7 +52,7 @@
 	<!-- 검색구간 -->
 	<div id="searchingdiv">
 		<h1>보건소 검색</h1>
-		<input id="search" autocomplete="off" placeholder="Search">
+		<input id="search" autocomplete="off" placeholder="지역을 입력해주세요!">
 		<table class="table">
 			<thead>
 				<tr>
@@ -80,5 +80,3 @@
 
 </body>
 </html>
-
-
