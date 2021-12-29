@@ -21,7 +21,7 @@ function setThumbnail(event) {
   reader.readAsDataURL(event.target.files[0]);
 }
 
-
+//게시물을 올릴때
 function submitstuff(){
   let fileName = document.getElementById("fileName").value;
   if(! $('#content').val().replace(/(^\s*)|(\s*$)/gi, "") && fileName =='') {
@@ -50,8 +50,8 @@ function submitstuff(){
 }
 
 $(function() {
-  //좋아요 버튼을 눌렀을 때,
 
+  //좋아요 버튼을 눌렀을 때,
    //$('.likeButton').click(function() {
    $(document).on("click",".likeButton",function(){
    		//이미 좋아요가 눌린 상태에서 좋아요 취소...
@@ -111,12 +111,14 @@ $(function() {
 		};
    })
 
+	//게시물올리기로 이동!
    $(".plusButton").click(function() {
       window.location.href="insertBoardForm.do";
    });
 
 
 
+	//댓글달기
    $(document).on("click","#commentbutton",function(){
      let thiss = $(this).prev();
      let reply = $(this).prev().val();
@@ -176,21 +178,24 @@ $(function() {
      })
    });
 
+
+	//더보기를 클릭했을시,.
    $(document).on("click",".more",function(){
      $(this).nextUntil("#commentside").css({"display":"block"});
      $(this).css({"display":"none"});
    });
 
 
-
+	//작성자 아이디를 클릭했을시.
   $(document).on("click","#clickID",function(){
      let memberID = $(this).first().html().split('>')[1].trim();
-	   window.location.href = "boast.do?memberID=" + memberID;
+	   window.location.href = "?memberID=" + memberID;
    });
 
+	//댓글 작성자 아이디를 클릭했을시.
    $(document).on("click","#commentwriter",function(){
       let memberID = $(this).text().trim();
-      window.location.href="boast.do?memberID=" + memberID;
+      window.location.href="?memberID=" + memberID;
     });
 
 
