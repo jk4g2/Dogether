@@ -20,5 +20,5 @@ public interface RunningGooDAO {
 	int getRunningGooRoomCount(RunningGooVO vo);
 	
 	// 런닝구 방 생성 시 멤버 보유 포인트 얻어오기
-	public int getRngMemberPoints(MemberVO vo);
+	public int getRngMemberPoints(String nowMemberID);
 }

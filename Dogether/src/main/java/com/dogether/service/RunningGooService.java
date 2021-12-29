@@ -17,6 +17,6 @@ public interface RunningGooService {
 	int getRNRoomCount(RunningGooVO vo);
 	
 	// 멤버 포인트 조회
-	int getMemberJoinRunningGoo(MemberVO vo);
+	int getMemberJoinRunningGoo(String nowMemberID);
 	
 }

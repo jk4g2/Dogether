@@ -30,8 +30,7 @@
 	
 	<select id="getMemberJoinRngList" resultType="integer" parameterType="com.dogether.domain.MemberVO">
       SELECT point
-      FROM runninggoo NATURAL JOIN member
-      WHERE MemberID = 'member1'
-      GROUP BY MemberID;
+      FROM member
+      WHERE MemberID = #{memberID};
    </select>
 </mapper>

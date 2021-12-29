@@ -35,8 +35,8 @@ public class RunningGooServiceImpl implements RunningGooService {
 	}
 	
 	@Override
-	public int getMemberJoinRunningGoo(MemberVO vo){
-	    return runningGooDAO.getRngMemberPoints(vo);
+	public int getMemberJoinRunningGoo(String nowMemberID){
+	    return runningGooDAO.getRngMemberPoints(nowMemberID);
 	}
 
 }

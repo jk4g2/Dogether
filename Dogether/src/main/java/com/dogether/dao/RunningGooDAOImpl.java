@@ -44,9 +44,9 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 	}
 	
 	@Override
-	public int getRngMemberPoints(MemberVO vo) {
+	public int getRngMemberPoints(String nowMemberID) {
 		System.out.println("런닝구 방 생성시 멤버의 보유 포인트를 가져오는 함수 호출");
-		return mybatis.selectOne("runningGooDAOMapper.getMemberJoinRngList",vo);
+		return mybatis.selectOne("runningGooDAOMapper.getMemberJoinRngList",nowMemberID);
 	}
 
 }

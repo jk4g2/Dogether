@@ -57,9 +57,11 @@ public class RunningGooController {
 		// 런닝구 방 생성시 보유 포인트 조회하기
 		@RequestMapping("viewMemberPoints.do")
 		@ResponseBody
-		public Integer viewMembersPoints(MemberVO vo) {
+		public Integer viewMembersPoints(MemberVO vo, HttpSession session) {
 			System.out.println("보유포인트 컨트롤러 테스트!");
-			int rngMemberPoints = runningGooService.getMemberJoinRunningGoo(vo);
+			String nowMemberID = session.getAttribute("username").toString();
+			System.out.println(nowMemberID);
+			int rngMemberPoints = runningGooService.getMemberJoinRunningGoo(nowMemberID);
 			System.out.println(rngMemberPoints);
 			return rngMemberPoints;
 		}
