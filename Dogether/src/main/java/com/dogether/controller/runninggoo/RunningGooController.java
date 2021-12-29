@@ -105,7 +105,6 @@ public class RunningGooController {
 		@RequestMapping("updateJoinMemberInfo.do")
 		@ResponseBody
 		public String updateJoinMember(int roomNum, HttpSession session) {
-			session.setAttribute("username", "bruce");
 			String memberID = session.getAttribute("username").toString();
 			HashMap<String,Object> map = new HashMap<String,Object>();
 			map.put("memberid", memberID);
