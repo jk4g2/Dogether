@@ -21,13 +21,16 @@
 <body>
 <h1>참여완료된 멤버현황</h1>
 	<table class="joinCompleteTable">
+		<th>아이디</th>
 		<th>성명</th>
 		<th>성별</th>
 		<th>생년월일</th>
 		<th>닉네임</th>
 		<th>휴대폰 번호</th>
 		<c:forEach items="${joinCompleteMemberList }" var="JoinCompleteMemberList">
+		<h1 style="display:none">${JoinCompleteMemberList['roomNumber'] }</h1>
 		<tr>
+			<td id="completeMemberID">${JoinCompleteMemberList['memberID']}</td>
 			<td>${JoinCompleteMemberList['UserName'] }</td>
 			<td>
 				<c:choose>
@@ -48,6 +51,7 @@
 	<hr>
 	<h1>참여대기중인 멤버현황</h1>
 	<table class="joinCompleteTable">
+		<th>아이디</th>
 		<th>성명</th>
 		<th>성별</th>
 		<th>생년월일</th>
@@ -55,9 +59,9 @@
 		<th>휴대폰 번호</th>
 		<th colspan="2">수락여부</th>
 		<c:forEach items="${joinNotYetCompleteMemberList }" var="NotYetJoinMemberList">
-		<h1 id="roomN"></h1>
 		<div id="roomNum" style="display:none;">${NotYetJoinMemberList['roomNumber']}</div>
 		<tr>
+			<td id="notYetMemberID">${NotYetJoinMemberList['memberID']}</td>
 			<td>${NotYetJoinMemberList['UserName'] }</td>
 			<td>
 				<c:choose>
@@ -78,6 +82,6 @@
 		
 		</c:forEach>
 	</table>
-	<script type="text/javascript" src="resources/js/RunningGoo.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/RunningGoo.js"></script>
 </body>
 </html>

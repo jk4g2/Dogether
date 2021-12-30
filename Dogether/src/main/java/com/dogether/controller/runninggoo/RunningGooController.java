@@ -50,9 +50,9 @@ public class RunningGooController {
 			List<RunningGooVO> result = runningGooService.getRNRoomList(vo);
 			int listCount = runningGooService.getRNRoomCount(vo);
 			System.out.println(listCount);
-			System.out.println(vo.getMemberID() + "입니다~~~");
 			m.addAttribute("RunningGooList", result);
 			m.addAttribute("rnRoomCNT", listCount);
+			
 			System.out.println("Model 객체를 통해 전달완료!");
 			return "runninggoo/runningGooList";
 		}
@@ -76,7 +76,6 @@ public class RunningGooController {
 			// 일단 방참여 정보는 똑같으니 vo를 불러와 각각의 vo에 담기	
 			// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
 			RunningGooVO svo = runningGooService.bringBasicRngRoomInfo(vo);
-			System.out.println(session.getAttribute("username").toString());
 			svo.setMemberID(session.getAttribute("username").toString());
 			svo.setMemberPendingStatusYN("Y");
 			svo.setHostYN("N");
@@ -96,21 +95,33 @@ public class RunningGooController {
 			
 			// 호스트에게 보여질 수락을 기다리는 참여자들의 간단한 정보
 			//int roomNum1 = rVO.getRoomNumber();
-			System.out.println(roomNum+"이에요~~");
 			List<HashMap<String,Object>> result2 = runningGooService.viewNotYetJoinMemberList(roomNum);
+			System.out.println(result2.toString());
 			m.addAttribute("joinNotYetCompleteMemberList", result2);
 		}
 		
 		// 호스트가 수락을 눌렀을때 수정되는 참여자의 정보 --> 참여자
 		@RequestMapping("updateJoinMemberInfo.do")
 		@ResponseBody
-		public String updateJoinMember(int roomNum, HttpSession session) {
-			String memberID = session.getAttribute("username").toString();
+		public String updateJoinMember(int roomNum, String joinPendingMember, HttpSession session) {
 			HashMap<String,Object> map = new HashMap<String,Object>();
+			String memberID = joinPendingMember;
 			map.put("memberid", memberID);
 			map.put("roomnumber",roomNum);
 			runningGooService.upateRngMemberInfo(map);
 			return "Confirm!";
 		}
+		
+		// 호스트의 런닝구 방 삭제
+		@RequestMapping("deleteRngRoom.do")
+		@ResponseBody
+		public String deleteRngRoom(String hostMemberID, int roomNum, HttpSession session) {
+			HashMap<String,Object> map = new HashMap<String,Object>();
+			map.put("memberid", hostMemberID);
+			map.put("roomnumber",roomNum);
+			runningGooService.deleteRngRoom(map);
+			return "Confirm!";
+		}
+		
 	
 }

@@ -98,22 +98,45 @@ $(".userBtn").click(function(){
 
 
 
-// 호스트가 버튼을 눌렀을때 팝업창 화면
+// 호스트가 enrollment 버튼을 눌렀을때 팝업창 화면
 $('.hostBtn').click(function(){
 	var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
 	alert("런닝구 멤버들의 신청현황 조회를 완료했습니다.");
+	alert(nowRoomNum);
 	window.open('viewJoinMemberTotalInfo.do?roomNumber=' + nowRoomNum, 'popup01', 'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
 		
 }) // end-of-click
 
+$('.delBtn').click(function(){
+	var nowRoomNum = $(this).parent().prev().prev().prev().prev().prev().children(".rngRoomNum").text();
+	var nowHostID =$(this).parent().prev().prev().prev().prev().prev().children(".rn_profile_nickname").text();
+	alert(nowRoomNum);
+	alert(nowHostID);
+	$.ajax({
+		url : "deleteRngRoom.do",
+		data : { hostMemberID : nowHostID, roomNum : nowRoomNum },
+		success : function(){
+			alert("삭제완료!");
+			location.replace("../runninggoo/");
+		},
+		error : function(){
+			alert("삭제 실패!");
+		}
+	});
+}) // end-of-click
+
+
 // 호스트가 수락을 눌렀을때
 $('.acceptJoin').click(function(){
+	var nowRoomNum = $("#roomNum").text();
+	alert(nowRoomNum);
+	alert($("#nowMemberID").text());
 	$.ajax({
 		url: "updateJoinMemberInfo.do",
-        data : { roomNum : $("#roomNum").text() },
+        data : { roomNum : $("#roomNum").text(), joinPendingMember : $("#notYetMemberID").text() },
         success: function(res){
 		    alert(res);
-		    
+		    location.replace("../runninggoo/viewJoinMemberTotalInfo.do?roomNumber=" + nowRoomNum);
        	},
         error : function(){
         	alert("요청실패!!!!");
@@ -123,10 +146,20 @@ $('.acceptJoin').click(function(){
 
 
 
+// 런닝구 방 다 차면 검은색 배경씌우기
 
-
-
-
+$('.rn_profile_memberCount').each(function(){
+	var CrntMembers = $(this).children('.currentMembers').text();
+	var maxMembers = $(this).children('.maxMembers').text();
+	var nowList = $(this).parent().prev();
+	var nowBalloon = $(this).parent().next().next().next().children('.ballon');
+	
+	if(parseInt(CrntMembers) >= parseInt(maxMembers)){
+		nowList.addClass('matched matchedBG');
+		nowBalloon.addClass('matchedBG');
+	}
+	
+})
 
 
 

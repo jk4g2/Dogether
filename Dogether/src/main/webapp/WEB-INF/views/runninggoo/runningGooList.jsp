@@ -30,13 +30,9 @@
 	<!-- DB에서 forEach 돌며 값 불러오기 -->
 	<div class="col-12 rn_room_list_wrap">
 		<c:forEach items="${RunningGooList }" var="runninggoo">
-			<c:choose>
-				<c:when test="${runninggoo.currentMembers == runninggoo.maxMembers }">
-					<!-- 꽉찬 방일떄 처리할 스타일 -->
-				</c:when>
-				<c:when test="${runninggoo.currentMembers < runninggoo.maxMembers }">
 					<div class="col-12 runninggoo_card_wrap">
 				<div class="col-12 runninggoo_card_inner mb30">
+					<div class="isMatched"></div>
 					<div class="col-12 rn_card_user_profile">
 						<div class="rngRoomNum" style="display:none">${runninggoo.roomNumber }</div>
 						<div class="col-0 rn_profile_picture">
@@ -44,6 +40,11 @@
 						</div>
 						<div class="col-0 rn_profile_nickname">${runninggoo.memberID}</div>
 						<div class="col-0 rn_profile_eval">별점</div>
+						<div class="col-0 rn_profile_memberCount">
+							<span class="currentMembers">${runninggoo.currentMembers }</span>
+							 / 
+							 <span class="maxMembers">${runninggoo.maxMembers }</span>
+						</div>
 					</div>
 					<div class="col-12 kakao_map">
 					</div>
@@ -129,6 +130,9 @@
 							<div class="col-12 doJoinBtn">
 								<input type="button" class="hostBtn" value="Enrollment Status">
 							</div>
+							<div class="col-12 deleteBtn">
+								<input type="button" class="delBtn" value="deleteRoom">
+							</div>
 						</c:when>
 						<c:otherwise>
 							<div class="col-12 doJoinBtn">
@@ -136,12 +140,10 @@
 							</div>
 						</c:otherwise>
 					</c:choose>
-				</div>
 				<div class="wido" style="display: none">${runninggoo.locationLat}</div>
 				<div class="gyeongdo" style="display: none">${runninggoo.locationLong}</div>
+				</div>
 			</div>
-				</c:when>
-			</c:choose>
 		</c:forEach>
 		<div class="col-12 rn_plus_btn">
 			<a href="createRngRoom.do" class="rn_plus_btn_link"> <img

@@ -101,4 +101,10 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 		mybatis.delete("runningGooDAOMapper.deleteRNG", vo);
 	}
 	
+	@Override
+	public void deleteRngRoom(HashMap<String, Object> map) {
+		// TODO Auto-generated method stub
+		mybatis.delete("runningGooDAOMapper.deleteRngRoom", map);
+	}
+	
 }

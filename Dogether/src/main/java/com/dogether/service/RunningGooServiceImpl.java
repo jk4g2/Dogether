@@ -80,4 +80,11 @@ public class RunningGooServiceImpl implements RunningGooService {
 		runningGooDAO.deleteRNG(vo);		
 	}
 	
+	@Override
+	public void deleteRngRoom(HashMap<String, Object> map) {
+		// 런닝구 방 삯제
+		runningGooDAO.deleteRngRoom(map);
+		
+	}
+	
 }

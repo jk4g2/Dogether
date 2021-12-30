@@ -83,4 +83,10 @@
 		WHERE RoomNumber = #{roomNumber}
 	</delete>
 	
+	<!-- 런닝구 방 삭제 (유저가 직접) -->
+	<delete id="deleteRngRoom" parameterType="hashmap">
+		DELETE FROM runninggoo 
+		WHERE roomnumber =#{roomnumber} AND memberID = #{memberid}
+	</delete>
+	
 </mapper>
