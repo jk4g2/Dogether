@@ -101,7 +101,7 @@
 				afterPaydeleteShoppingCart();
 				afterPayinsertOrders(rsp["merchant_uid"]);
 				alert("결제성공") 
-				location.replace("shoppingCart.do")
+				location.replace("../notification/shoppingSuccessNotification.do");//모바일에 알람보내러 가기
 			} else {
 				alert("결제에 실패하였습니다. 다시 시도해주세요.")
 			}
@@ -114,7 +114,6 @@
 			contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
 			url : 'deletefromjanbaguni.do',
 			success : function(result) {
-				console.log("장바구니에서 삭제 완료")
 			},
 			error : function(err) {
 				alert("장바구니에서 삭제 에러발생")
@@ -131,7 +130,6 @@
 			},
 			url : 'insertOrderList.do',
 			success : function(result) {
-				alert(result + "개 품목 구매완료!")
 			},
 			error : function() {
 				alert("Order테이블에 추가하기 에러발생")

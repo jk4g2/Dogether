@@ -1,9 +1,9 @@
+<%@page import="org.springframework.http.HttpRequest"%>
 <%@page import="com.google.gson.JsonObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ page import='java.net.*, java.io.*'%>
-
+<div id="price" style="display:none;">${price}</div>
 <%
 	// FCM 서버에서 보낸 토큰값 :   FirebaseInstanceId.getInstance().getToken()
 	// 콘솔에 출력하고는 그 값을 복사해서 사용해야 한다
@@ -16,7 +16,7 @@
 	//프로젝트키값
 	String AUTH_KEY_FCM = "AAAAWaG2pec:APA91bFZ_Bqk9oq0zz3UrdYACepGQKGaIIRdZB_oI0DTI4RwvE1IVZmBKkqImRZvC2xlU-5y7Lobu1McOL9rCa_C4HDvRuC-o-CcySpyZvY5NbYFRpst1JkyRxqjxuOx_2MmTbCTBHZm";
 	String API_URL_FCM = "https://fcm.googleapis.com/fcm/send";
-	
+
 	URL url = new URL(API_URL_FCM);
 	HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 	
@@ -35,7 +35,7 @@
 	//info.put("title", "my message");   // Notification title
 	//info.put("body", "test"); // Notification body
 	info.addProperty("title", "Dogether"); // Notification title
-	info.addProperty("body", "쇼핑몰 결제가 완료되었습니다."); // Notification body
+	info.addProperty("body","쇼핑몰 결제가 완료되었습니다."); // Notification body
 	json.add("notification", info);
 	
 	OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
@@ -43,6 +43,9 @@
 	wr.write(json.toString());
 	wr.flush();
 	conn.getInputStream();
-
+	
+	
+	response.sendRedirect("../shoppingMall/");
+	
 %>
 
