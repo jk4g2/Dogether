@@ -46,4 +46,7 @@ public interface RunningGooDAO {
 	
 	// 런닝구 방 삭제
 	void deleteRngRoom(HashMap<String,Object> map);
+	
+	// 런닝구 이미 참가되어있는지 CHECK
+	RunningGooVO userJoinCheck(RunningGooVO vo);
 }

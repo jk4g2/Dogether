@@ -103,8 +103,12 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 	
 	@Override
 	public void deleteRngRoom(HashMap<String, Object> map) {
-		// TODO Auto-generated method stub
 		mybatis.delete("runningGooDAOMapper.deleteRngRoom", map);
+	}
+
+	@Override
+	public RunningGooVO userJoinCheck(RunningGooVO vo) {
+		return mybatis.selectOne("runningGooDAOMapper.userJoinCheck", vo);
 	}
 	
 }

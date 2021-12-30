@@ -43,4 +43,7 @@ public interface RunningGooService {
 	
 	// 런닝구 방 삯제
 	void deleteRngRoom(HashMap<String,Object> map);
+	
+	// 런닝구 DOjoin 할때 이미 조인되어있으면 안되게끔 체크
+	RunningGooVO userJoinCheck(RunningGooVO vo);
 }

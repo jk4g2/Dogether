@@ -86,5 +86,10 @@ public class RunningGooServiceImpl implements RunningGooService {
 		runningGooDAO.deleteRngRoom(map);
 		
 	}
+
+	@Override
+	public RunningGooVO userJoinCheck(RunningGooVO vo) {
+		return runningGooDAO.userJoinCheck(vo);
+	}
 	
 }

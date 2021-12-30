@@ -89,4 +89,8 @@
 		WHERE roomnumber =#{roomnumber} AND memberID = #{memberid}
 	</delete>
 	
+	<select id="userJoinCheck" parameterType="com.dogether.domain.RunningGooVO" resultType="com.dogether.domain.RunningGooVO">
+		SELECT * FROM runninggoo where memberID = #{memberID} and roomnumber = #{roomNumber}
+	</select>
+	
 </mapper>

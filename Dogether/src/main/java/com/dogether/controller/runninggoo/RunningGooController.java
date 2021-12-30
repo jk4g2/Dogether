@@ -36,7 +36,7 @@ public class RunningGooController {
 		vo.setMemberID(session.getAttribute("username").toString());
 		runningGooService.insertRNRoomInfo(vo);
 		System.out.println(vo.getRoomNumber());
-		return "redirect:../runninggoo/";
+		return "redirect:/runninggoo/";
 	}
 	
 		// 런닝구 방 리스트 얻어오기
@@ -70,7 +70,7 @@ public class RunningGooController {
 		}
 		
 		// DoJoin 버튼 클릭 시 호스트에게 보여질 참여자의 정보 INSERT --> 참여자
-		@RequestMapping("bringBasicRngRoomInfo.do")
+		@RequestMapping(value="bringBasicRngRoomInfo.do", produces = "application/text; charset=UTF-8")
 		@ResponseBody
 		public String showJoinMember(RunningGooVO vo, HttpSession session) {
 			// 일단 방참여 정보는 똑같으니 vo를 불러와 각각의 vo에 담기	
@@ -79,8 +79,14 @@ public class RunningGooController {
 			svo.setMemberID(session.getAttribute("username").toString());
 			svo.setMemberPendingStatusYN("Y");
 			svo.setHostYN("N");
-			runningGooService.CreateRunningGooMemberInsert(svo);
-			return "호스트에게 참여신청을 보냈습니다!";
+			RunningGooVO checkvo = runningGooService.userJoinCheck(svo);
+			if(checkvo != null) {
+				return "이미 참가신청이 되어있습니다!";
+			}
+			else {
+				runningGooService.CreateRunningGooMemberInsert(svo);
+				return "호스트에게 참여신청을 보냈습니다!";
+			}
 		}
 		
 		// 호스트에게 보여질 수락된 참여자들의 간단한 정보 --> 호스트
