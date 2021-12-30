@@ -50,6 +50,28 @@
     <script src="../resources/shoppingmall/js/plugins.js"></script>
     <script src="../resources/shoppingmall/js/main.js"></script>
 	<script src="../resources/shoppingmall/js/submit.js"></script>
+	<script>
+	//장바구니  추가--------------------
+	  $(document).on('click', '#cartBtn', function(){
+	    let Cnt = $("#productCnt").val();
+	    let Name = $("#ProductNameName").text();
+	    let ID = $("#productIDvalue").text();
+	    $.ajax({
+	    	type : 'post',
+	    	data : {productQuantity : Cnt,productID : ID},
+	    	contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+	    	url : 'shoppingCartInsert.do',
+	    	success : function(result){
+	    		alert(Name+" "+Cnt+"건 "+result);
+	    	},//end success
+	    	error : function(err){
+	    		alert("에러발생--------------");
+	    	}//end error
+	    });//end of ajax
+	  })
+	//end of click
+
+	</script>
  	
   </head>
   
@@ -104,7 +126,7 @@
                   <div class="col-sm-4 mb-sm-20">
                     <input id="productCnt" class="form-control input-lg" type="number" name="coun" value="1" max="40" min="1" required="required"/>
                   </div>
-                  <div class="col-sm-8"><button id="cartBtn" class="btn btn-lg btn-block btn-round btn-b" href="shoppingCartInsert.do">Add To Cart</button></div>
+                  <div class="col-sm-8"><button id="cartBtn" class="btn btn-lg btn-block btn-round btn-b">Add To Cart</button></div>
                   
                 </div>
                 <div class="row mb-20">

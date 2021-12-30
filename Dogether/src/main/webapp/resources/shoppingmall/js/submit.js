@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
+
 //장바구니  추가--------------------
   $(document).on('click', '#cartBtn', function(){
-
     let Cnt = $("#productCnt").val();
     let Name = $("#ProductNameName").text();
     let ID = $("#productIDvalue").text();
