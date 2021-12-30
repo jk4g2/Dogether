@@ -10,7 +10,7 @@
 	// 실제적으로는 이 값을 DB에 넣고 jsp에서는 DB에서 가지고 와서 사용
 	//userDeviceIdKey is the device id you will query from your database
 	//.......
-	String userDeviceIdKey = "cFDpQ29GTMKXVprmkCJWGH:APA91bHjGKIdOPDpeJfIbfeQYdVVKmsWRGLg-llaLOmsDfCh-1-b6X6E0qaQ9YuyuEsn9WQT1Hd5-sboZsMcGMb6HcXFJ8f84gQOgWYpXHjYornyoJ5a8yrFY1P9J03wPVEnO82e2n27";
+	String userDeviceIdKey = "dSSz1QxmQXCioFsTem7Vt6:APA91bE4hpCKTTvYybBNijUj5nxztTXGC9-d5j42weXd6hLJxn0kD9B5txXRidGKQ2jRC9ZWCgpdBQHnBakvc2nD6A-Xp1eWYmTzcnObYQMcyAOa7V9hodZ7DtKJfWB0x28MEz-FmpbQ";
 	//Method to send Notifications from server to client end.
 	// firebase.google.com 사이트에서 해당 프로젝트 > 설정 > 클라우드 메세지 > 서버 키 토큰 복사
 	//프로젝트키값
