@@ -68,6 +68,12 @@
 		WHERE MemberID = #{memberID}
 	</delete>
 	
+	<!-- 전체 회원 수(관리자페이지) -->
+	<select id="getMemberCount" resultType="integer">
+		SELECT COUNT(*)
+		FROM  member
+	</select>
+	
 	
 	<!-- 내가 참가한 런닝구 목록 현황가져오기 -->
 	<select id="myrunninggooList" parameterType="string" resultType="hashmap">

@@ -79,6 +79,12 @@ public class RunningGooServiceImpl implements RunningGooService {
 		System.out.println("Service에서 런닝구방 삭제 호출함");
 		runningGooDAO.deleteRNG(vo);		
 	}
+	// 런닝구 총 매칭 건수(관리자페이지)
+	@Override
+	public int getMatchedCount() {
+		System.out.println("Service에서 런닝구 총 매칭 건수 호출함");
+		return runningGooDAO.getMatchedCount();
+	}
 	
 	@Override
 	public void deleteRngRoom(HashMap<String, Object> map) {

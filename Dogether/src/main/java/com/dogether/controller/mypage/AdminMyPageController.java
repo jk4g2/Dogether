@@ -34,18 +34,19 @@ public class AdminMyPageController {
 	OrderService orderService;
 	@Autowired
 	ProductService productService;
-
-	// 인덱스에서 어드민페이지로 이동
-	@RequestMapping("/")
-	public String admin() {
-		System.out.println("관리자 페이지로 이동!!");
-		return "admin/adminpage";
-	}
 	
 	// 첫페이지로 이동
-	@RequestMapping("adminpage.do")
-	public void adminpage() {
+	@RequestMapping("/")
+	public String adminpage(Model m) {
 		System.out.println("첫페이지로 이동!!");
+		int memberCount = memberService.getMemberCount();		//전체 회원 수 
+		int matchedCount = runningGooService.getMatchedCount();	//전체 매칭 건수
+		int boastCount = boardService.getBoastCount();			//전체 자랑하기 글수
+		System.out.println("memberCount" + memberCount + "matchedCount=" + matchedCount + "boastCount=" + boastCount);
+		m.addAttribute("memberCount", memberCount);
+		m.addAttribute("matchedCount", matchedCount);
+		m.addAttribute("boastCount", boastCount);
+		return "admin/adminpage";
 	}
 
 	// 런닝구 list 출력 + 정렬하기

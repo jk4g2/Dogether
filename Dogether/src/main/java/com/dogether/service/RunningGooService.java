@@ -41,6 +41,9 @@ public interface RunningGooService {
 	// 런닝구 방 삭제(관리자페이지)
 	public void deleteRNG(RunningGooVO vo);
 	
+	// 런닝구 총 매칭 건수(관리자페이지)
+	public int getMatchedCount();
+	
 	// 런닝구 방 삯제
 	void deleteRngRoom(HashMap<String,Object> map);
 	

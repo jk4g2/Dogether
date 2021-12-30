@@ -53,6 +53,12 @@ public class MemberDAOImpl implements MemberDAO{
 		System.out.println(vo.getMemberID()+"회원번호");
 		mybatis.delete("MemberDAO.deleteMember", vo);		
 	}
+	// 전체 회원 수(관리자페이지)
+	@Override
+	public int getMemberCount() {
+		System.out.println("mybatis 총 회원 수 호출함");
+		return mybatis.selectOne("MemberDAO.getMemberCount");		
+	}
 
 	@Override
 	public List<HashMap<String, Object>> myrunninggooList(String memberID) {

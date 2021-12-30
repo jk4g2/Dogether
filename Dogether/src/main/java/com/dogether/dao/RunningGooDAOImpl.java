@@ -101,6 +101,13 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 		mybatis.delete("runningGooDAOMapper.deleteRNG", vo);
 	}
 	
+	// 런닝구 총 매칭 건수(관리자페이지)
+	@Override
+	public int getMatchedCount() {
+		System.out.println("mybatis 런닝구 총 매칭 건수 호출함");
+		return mybatis.selectOne("runningGooDAOMapper.getMatchedCount");
+	}
+	
 	@Override
 	public void deleteRngRoom(HashMap<String, Object> map) {
 		mybatis.delete("runningGooDAOMapper.deleteRngRoom", map);

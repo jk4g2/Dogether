@@ -47,6 +47,12 @@ public class MemberServiceImpl implements MemberService{
 		System.out.println("Service에서 회원 삭제(탈퇴) 호출함");
 		memberDAO.deleteMember(vo);		
 	}
+	//총 회원 수(관리자페이지)
+	@Override
+	public int getMemberCount() {
+		System.out.println("Service에서 총 회원 수 호출함");
+		return memberDAO.getMemberCount();		
+	}
 
 	@Override
 	public List<HashMap<String, Object>> myrunninggooList(String memberID) {

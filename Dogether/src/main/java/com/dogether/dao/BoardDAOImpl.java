@@ -70,5 +70,11 @@ public class BoardDAOImpl implements BoardDAO{
 		System.out.println(vo.getBoardID()+"자랑하기 삭제");
 		mybatis.delete("BoardDAO.deleteBST", vo);
 	}
+	// 자랑하기 글 수(관리자페이지)
+	@Override
+	public int getBoastCount() {
+		System.out.println("mybatis 자랑하기 글 수 호출함");
+		return mybatis.selectOne("BoardDAO.getBoastCount");
+	}
 
 }
