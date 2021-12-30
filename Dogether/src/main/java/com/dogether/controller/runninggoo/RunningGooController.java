@@ -36,7 +36,7 @@ public class RunningGooController {
 		vo.setMemberID(session.getAttribute("username").toString());
 		runningGooService.insertRNRoomInfo(vo);
 		System.out.println(vo.getRoomNumber());
-		return "redirect:/runninggoo/";
+		return "redirect:../runninggoo/";
 	}
 	
 		// 런닝구 방 리스트 얻어오기

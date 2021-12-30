@@ -13,17 +13,6 @@ $(document).ready(function() {
 
   }); //end click
 
-//내 런닝구  왼쪽 카테고리에서 클릭했을때!!
-  $('#myRNG').click(function(evt){
-    evt.preventDefault();				// a태그 링크 기능 무력화
-    evt.stopPropagation();				// a태그 링크 기능 무력화
-    $("h1").hide();					// 페이지명 안보이게 변경
-    $("#h1RNG").show();				// 페이지명 보이게 변경
-
-    $(".sese").hide();					// 모든 리스트 테이블을 삭제
-    $("#MyRunninggo").show();			// 런닝구 리스트 테이블만 보임으로 변경
-
-  }); //end click
 
 //내정보 수정 왼쪽 카테고리에서 클릭했을때!!
   $('#myINFO').click(function(evt){
@@ -308,10 +297,123 @@ function OrderList(){
       })   // end ajax
    }   // end function OrderList()
 
+   //내 런닝구  왼쪽 카테고리에서 클릭했을때!!
+     $('#myRNG').click(function(evt){
+       evt.preventDefault();				// a태그 링크 기능 무력화
+       evt.stopPropagation();				// a태그 링크 기능 무력화
+       $("h1").hide();					// 페이지명 안보이게 변경
+       $("#h1RNG").show();				// 페이지명 보이게 변경
+
+       $(".sese").hide();					// 모든 리스트 테이블을 삭제
+       $("#MyRunninggo").show();
+       $("#myRNGList").show();
+       $("#userRNGList").show();
+
+       myhostrunninggooList();
+       getMyRunninggoList();
+
+     }); //end click
+
+   function getMyRunninggoList(){
+         $.ajax({
+            type : 'post',
+            url : 'getMyRunninggoList.do',
+            data : {memberID : $("#memberID").text() },
+            dataType : 'json',                              // db(서버)에서 받을 때 데이터 타입
+            success : function(resultOrder){
+
+               var userRNGList = $("#userRNGList");         // adminpage.jsp에 table id를 변수에 저장
+               userRNGList.empty();                        // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
+               userRNGList.append(                        // list 테이블 헤더
+                  "<tr>"
+                  + "<th colspan='5'>참여한 런닝구 목록</th>"
+                  +"</tr>");
+              if(resultOrder == ""){
+   	                var tr = $("<tr/>");
+   	                var nonedata = $("<td colspan='5' />").html('<h3>참여한 런닝구가 존재하지 않습니다.</h3>');
+   	                tr.append(nonedata);
+   	                userRNGList.append(tr);
+                  }
+              else{
+                  for(row of resultOrder){
+                  console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
+                  var tr = $("<tr/>");                                 // <tr/> 객체 생성
+                  var hostIMG = $("<td width='200' />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
+                  tr.append(hostIMG);                                  // tr에 orderDate를 담은 td를 추가
+                  var hostID = $("<td width='300' />").text(row['memberID']+"님의 방");
+                  tr.append(hostID);
+                  var hostComment = $("<td width='200' />").html(row['hostComment']);
+                  tr.append(hostComment);
+                  var meetingTime = $("<td width='200' />").html(new Date(row['meetingTime']).yyyymmdd());
+                  tr.append(meetingTime);
+                  if(row['memberPendingStatusYN'] == 'Y'){
+                    var memberPendingStatusYN = $("<td width='150' />").html("<span>신청 대기중</span>");//구매확정 완료
+                    tr.append(memberPendingStatusYN);
+                  }
+                  else{
+                    var memberPendingStatusYN = $("<td width='100' />").html("<span>신청 완료</span>");
+                    tr.append(memberPendingStatusYN);
+                  }
+                  userRNGList.append(tr);
+
+                         // 모든 컬럼 정보를 append한 tr을 list에 append
+               } // end for문
+             }//end else
+            }, // end success
+            error : function(err){
+               alert('전송실패');
+               console.log(err);
+            } //end error
+         })   // end ajax
+      }   // end function OrderList()
 
 
 
+      function myhostrunninggooList(){
+            $.ajax({
+               type : 'post',
+               url : 'myhostrunninggooList.do',
+               data : {memberID : $("#memberID").text() },
+               dataType : 'json',                              // db(서버)에서 받을 때 데이터 타입
+               success : function(resultOrder){
 
+                  var myRNGList = $("#myRNGList");         // adminpage.jsp에 table id를 변수에 저장
+                  myRNGList.empty();                        // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
+                  myRNGList.append(                        // list 테이블 헤더
+                     "<tr>"
+                     + "<th colspan='5'>마이 런닝구 목록</th>"
+                     +"</tr>");
+                 if(resultOrder == ""){
+                       var tr = $("<tr/>");
+                       var nonedata = $("<td colspan='5' />").html('<h3>생성한 런닝구가 존재하지 않습니다.</h3>');
+                       tr.append(nonedata);
+                       myRNGList.append(tr);
+                     }
+                 else{
+                     for(row of resultOrder){
+                     console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
+                     var tr = $("<tr/>");                                 // <tr/> 객체 생성
+                     var hostIMG = $("<td width='200' />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
+                     tr.append(hostIMG);                                  // tr에 orderDate를 담은 td를 추가
+                     var hostID = $("<td width='300' />").text(row['memberID']);
+                     tr.append(hostID);
+                     var hostComment = $("<td width='200' />").html(row['hostComment']);
+                     tr.append(hostComment);
+                     var meetingTime = $("<td width='200' />").html(new Date(row['meetingTime']).yyyymmdd());
+                     tr.append(meetingTime);
+                     var memberStatus = $("<td width='150' />").html("<button type='button'>신청 현황</button>");//구매확정 완료
+                     tr.append(memberStatus);
+                     myRNGList.append(tr);
+                            // 모든 컬럼 정보를 append한 tr을 list에 append
+                  } // end for문
+                }//end else
+               }, // end success
+               error : function(err){
+                  alert('전송실패');
+                  console.log(err);
+               } //end error
+            })   // end ajax
+         }   // end function OrderList()
 
 
    // ################################################

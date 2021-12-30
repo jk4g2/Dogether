@@ -171,10 +171,25 @@ public class UserMyPageController {
 	}
 	
 	
+	//내 런닝구 목록 가져오기
+	@PostMapping(value="getMyRunninggoList.do")
+	@ResponseBody
+	public List<HashMap<String,Object>>getMyRunninggooList(String memberID){
+		List<HashMap<String,Object>> rgList = memberService.myrunninggooList(memberID);
+		for(HashMap a : rgList) {
+			System.out.println(a.get("memberID"));
+		}
+		return rgList;
+	}
 	
 	
-	
-	
+	//내가 호스트인 런닝구 목록 가져오기
+	@PostMapping("myhostrunninggooList.do")
+	@ResponseBody
+	public List<HashMap<String,Object>>myhostrunninggooList(String memberID){
+		List<HashMap<String,Object>> hrgList = memberService.myhostrunninggooList(memberID);
+		return hrgList;
+	}
 	
 	
 	

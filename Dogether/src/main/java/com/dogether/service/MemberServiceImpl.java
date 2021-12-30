@@ -48,4 +48,14 @@ public class MemberServiceImpl implements MemberService{
 		memberDAO.deleteMember(vo);		
 	}
 
+	@Override
+	public List<HashMap<String, Object>> myrunninggooList(String memberID) {
+		return memberDAO.myrunninggooList(memberID);
+	}
+
+	@Override
+	public List<HashMap<String, Object>> myhostrunninggooList(String memberID) {
+		return memberDAO.myhostrunninggooList(memberID);
+	}
+
 }

@@ -68,4 +68,21 @@
 		WHERE MemberID = #{memberID}
 	</delete>
 	
+	
+	<!-- 내가 참가한 런닝구 목록 현황가져오기 -->
+	<select id="myrunninggooList" parameterType="string" resultType="hashmap">
+		SELECT r.RoomNumber as roomNumber,r.MemberID as memberID ,m.Member_realfname as member_realfname,r.HostComment as hostComment ,
+		r.meetingTime as meetingTime,(select MemberPendingStatusYN FROM runninggoo WHERE MemberID = #{memberID} and RoomNumber = r.RoomNumber) as memberPendingStatusYN 
+		FROM runninggoo r natural join member m
+		WHERE RoomNumber in (SELECT RoomNumber FROM runninggoo WHERE MemberID = #{meberID}) and HostYN = 'y';
+	</select>
+	
+	<!-- 내가 호스트인 런닝구 목록 현황가져오기 -->
+	<select id="myhostrunninggooList" parameterType="string" resultType="hashmap">
+		SELECT m.Member_realfname as member_realfname,m.MemberID as memberID,
+					r.HostComment as hostComment,r.meetingTime as meetingTime 
+		FROM member m,runninggoo r 
+		WHERE m.MemberID = #{memberID} AND r.HostYN = 'y' AND m.MemberID = r.MemberID;
+	</select>
+	
 </mapper>

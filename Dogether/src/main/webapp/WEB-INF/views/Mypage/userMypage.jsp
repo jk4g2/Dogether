@@ -206,9 +206,13 @@
 									<!-- 런닝구  -->
 									<div id="MyRunninggo" class="sese">
 										<!-- ########## 런닝구 리스트  ########## -->
-										<table id="userRNGList" border="2" style="display: none;">
-											<!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->
+										<table id="myRNGList" border="2" style="display: none;">
+											<!-- 여기에 내가 호스트인 방 목록 각각의 방 누르면 팝업뜨게끔 -->
 										</table>
+										<table id="userRNGList" border="2" style="display: none; margin-top: 10px;">
+											<!-- 여기에는 내가 참가자인 방 목록 -->
+										</table>
+										
 									</div>
 
 

@@ -1,5 +1,6 @@
 package com.dogether.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.dogether.domain.BoardVO;
@@ -11,7 +12,8 @@ public interface MemberDAO {
 	public void updatePoint(String memberID,int price);//포인트 추가하기
 	public List<BoardVO> myBoardList(String memberID);//내 자랑하기 게시글 목록 가져오기
 	public int updateMemberInfo(MemberVO vo);//내정보 수정하기
-	// 회원 삭제(탈퇴)하기(관리자페이지)
-	public void deleteMember(MemberVO vo);
+	public void deleteMember(MemberVO vo);	// 회원 삭제(탈퇴)하기(관리자페이지)
+	public List<HashMap<String,Object>> myrunninggooList(String memberID);//내 런닝구 목록 가져오기
+	public List<HashMap<String,Object>> myhostrunninggooList(String memberID);//내가 호스트인 런닝구 목록 가져오기
 
 }
