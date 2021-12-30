@@ -264,7 +264,7 @@ h4#font-color_st{
 	<footer>
 		<div class="container-fluid">
 			<div class="col-md-12">
-				<p>Copyright &copy; 2018 Company Name | Designed by TemplateMo<a href='adminLogin.do'>||Admin</a></p>
+				<p>Copyright &copy; 2018 Company Name | Designed by TemplateMo ||<a href='adminLogin.do'> Admin</a></p>
 			</div>
 		</div>
 	</footer>
