@@ -86,7 +86,7 @@
 	<!-- nav바---------------------------------------------------------- -->
 		<nav>
 			<div class="logo">
-				<a href="index.jsp">DO<em>GETHER</em></a>
+				<a href="../index.do">DO<em>GETHER</em></a>
 			</div>
 	    	<div class="menu-icon">
 	    		<span></span>
