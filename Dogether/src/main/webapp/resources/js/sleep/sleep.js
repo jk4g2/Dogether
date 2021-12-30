@@ -13,7 +13,7 @@ $(document).ready(function() {
             if($('#ampm').val() == "AM") {
                 setTime.setHours($('#hour').val());
             }
-            
+
             else if($('#ampm').val() == "PM") {
                 setTime.setHours(+$('#hour').val() + 12);
             }
@@ -32,13 +32,13 @@ $(document).ready(function() {
                 var pm = false;
                 if(dateObj.getHours() > 12) {										//파라미터로 받은 시간이 오후라면
                     formatted = dateObj.getHours() - 12;							//시간에서 12를 빼고
-                    pm = true;														//pm을 true로 
+                    pm = true;														//pm을 true로
                 } else if(dateObj.getHours() < 12 && dateObj.getHours() != 0) {		//파라미터로 받은 시간이 오전이고, 12시가 아니라면
                     formatted = dateObj.getHours();									//해당 시간을 hour로 설정
                 } else if(dateObj.getHours() == 0){									//파라미터 시간이 0
                     formatted = "12";												//12시를 hour
                 } else if(dateObj.getHours() == 12){								//파라미터 시간이 12
-                    formatted = "12";												//12시를 hour	
+                    formatted = "12";												//12시를 hour
                     pm = true;														//pm을 true로
                 }
                 if(dateObj.getMinutes() < 10) {										//분이 한자리 수 라면
@@ -53,41 +53,42 @@ $(document).ready(function() {
                 }
                 return formatted;
             }
-            
+
             $('#result6').html(String(retDate(res1)));		//가까운 시간부터 출력
-            $('#result5').html(String(retDate(res2))); 
+            $('#result5').html(String(retDate(res2)));
             $('#result4').html(String(retDate(res3)));
             $('#result3').html(String(retDate(res4)));
             $('#result2').html(String(retDate(res5)));
             $('#result1').html(String(retDate(res6)));
-    
+
             $('#results').show();							//display가  none인 results를 show함
         } // end hour/minute check if
         else {
             alert("일어날 시간을 선택해주세요!");
-            window.location.replace("sleep/");									
+            return;
+            window.location.replace("../sleep/");
         } // end not-filled check
-        
+
 //      ######################################################
-//  	 start ajax 
+//  	 start ajax
 //      ######################################################
       // 일어나야 할 시간 결과
-  		$.ajax({ 
+  		$.ajax({
   			type : 'get',  							// 화면에서 데이터를 전송하는 방식(method)
-  			datatype : 'html',						// 화면에서 보낸 데이터 
-  			url : 'sleep/',					
+  			datatype : 'html',						// 화면에서 보낸 데이터
+  			url : 'sleep/',
   			success : function() {
   				$('#results').css('display','block');
   			},
 	  		error : function(err){
 	  			alert('전송실패');
 	  			console.log(err);
-	  		}		
+	  		}
   		}); // end of ajax
 //      ######################################################
-//  	 end ajax    
+//  	 end ajax
 //      ######################################################
-  		
+
     }); // end calculate
 
     /* ########## 자러갈 시간을 입력했을 때 ########## */
@@ -114,7 +115,7 @@ $(document).ready(function() {
             var res3 = new Date(res2.getTime() + 90*60000);
             var res4 = new Date(res3.getTime() + 90*60000);
             var res5 = new Date(res4.getTime() + 90*60000);
-            var res6 = new Date(res5.getTime() + 90*60000); 
+            var res6 = new Date(res5.getTime() + 90*60000);
 
             function retDate(dateObj) {
                 var formatted = '';
@@ -142,43 +143,43 @@ $(document).ready(function() {
                 }
                 return formatted;
             }
-            
+
             $('#result6').html(String(retDate(res6)));
-            $('#result5').html(String(retDate(res5))); 
+            $('#result5').html(String(retDate(res5)));
             $('#result4').html(String(retDate(res4)));
             $('#result3').html(String(retDate(res3)));
             $('#result2').html(String(retDate(res2)));
             $('#result1').html(String(retDate(res1)));
-    
+
             $('#results').show();
         } // end hour/minute check if
         else {
             alert("자러갈 시간을 선택해주세요!");
-            window.location.replace("sleep/");
+            window.location.replace("../sleep/");
         } // end not-filled check
-        
+
 //      ######################################################
-//  	 start ajax 
+//  	 start ajax
 //      ######################################################
       // 일어나야 할 시간 결과
-  		$.ajax({ 
+  		$.ajax({
   			type : 'get',  							// 화면에서 데이터를 전송하는 방식(method)
-  			datatype : 'html',						// 화면에서 보낸 데이터 
-  			url : 'sleep/',					
+  			datatype : 'html',						// 화면에서 보낸 데이터
+  			url : 'sleep/',
   			success : function() {
   				$('#results').css('display','block');
   			},
 	  		error : function(err){
 	  			alert('전송실패');
 	  			console.log(err);
-	  		}		
+	  		}
   		}); // end of ajax
 //      ######################################################
-//  	 end ajax    
+//  	 end ajax
 //      ######################################################
-  		
+
     }); // end #calc
-    
+
     /* ########### 지금 잘까! ########### */
     $('#zzz').click(function() {
         $('.pricing-tables').hide();
@@ -224,28 +225,28 @@ $(document).ready(function() {
         $('#resultNow4').html(String(retDate(res4)));
         $('#resultNow5').html(String(retDate(res5)));
         $('#resultNow6').html(String(retDate(res6)));
-    
+
         $('#resultsNow').show();
-        
+
 //  ######################################################
-//    	 start ajax 
+//    	 start ajax
 //  ######################################################
       // 지금 잘까 결과
-    		$.ajax({ 
+    		$.ajax({
     			type : 'get',  							// 화면에서 데이터를 전송하는 방식(method)
-    			datatype : 'html',						// 화면에서 보낸 데이터 
-    			url : 'sleep/',					
+    			datatype : 'html',						// 화면에서 보낸 데이터
+    			url : 'sleep/',
     			success : function() {
     				$('#resultsNow').css('display','block');
     			},
       		error : function(err){
       			alert('전송실패');
       			console.log(err);
-      		}		
+      		}
     		}); // end of ajax
 //  ######################################################
-//    	 end ajax    
+//    	 end ajax
 //  ######################################################
-    	
+
     }); //end #zzz
 });	//end ready
