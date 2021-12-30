@@ -238,9 +238,9 @@ img#sub_img_size{
                   
                   <li><a class="wow fadeInUp" href="#" data-filter2=".arm_2" data-wow-delay="0.6s">arm</a></li>
                   
-                  <li><a class="wow fadeInUp" href="#" data-filter2=".leg_2" data-wow-delay="0.6s">leg</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".leg_2" data-wow-delay="0.6s">leg&hip</a></li>
                   
-                  <li><a class="wow fadeInUp" href="#" data-filter2=".hip_2" data-wow-delay="0.6s">hip</a></li>
+                  <li><a class="wow fadeInUp" href="#" data-filter2=".hip_2" data-wow-delay="0.6s">whole body&Core</a></li>
                 </ul>
               </div>
             </div>

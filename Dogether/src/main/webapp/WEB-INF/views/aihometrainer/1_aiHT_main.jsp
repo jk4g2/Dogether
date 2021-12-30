@@ -23,24 +23,24 @@
     
     -->
     <!-- Default stylesheets-->
-    <link href="../resources/aihometrainer/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/animate.css/animate.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/et-line-font/et-line-font.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/flexslider/flexslider.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
     <!-- Main stylesheet and color file-->
-    <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
-    <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="../resources/ai_home_trainer_resources/css/colors/default.css" rel="stylesheet">
     
-    <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
+    <link href="../resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
     
     
     
@@ -201,7 +201,7 @@
             <!-- 헤더 -->
       
       
-      <section id = "padding-test" class="bg-dark-30 showcase-page-header module parallax-bg" data-background="../resources/aihometrainer/images/main3.gif">
+      <section id = "padding-test" class="bg-dark-30 showcase-page-header module parallax-bg" data-background="../resources/ai_home_trainer_resources/images/main3.gif">
         <div id="titanA" class="titan-caption">
           <div class="caption-content">
           
@@ -270,7 +270,7 @@
 <div class="row textaa" id="newnewnew" >
             <div class="col-aa">
 
-           <img src="../resources/aihometrainer/images/bbbb.jpg" class="Textaaaa"></a>
+           <img src="../resources/ai_home_trainer_resources/images/bbbb.jpg" class="Textaaaa"></a>
        
             </div>
         </div>  
@@ -278,15 +278,15 @@
 
         <div class="row" id="test2">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="../aihometrainer/2_aiHTsubIndex_exercise.do"><img id="rounded-circle" src="../resources/aihometrainer/images/yss.jpg" class="rounded-circle img-fluid border" ></a>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_exercise.do"><img id="rounded-circle" src="../resources/ai_home_trainer_resources/images/yss.jpg" class="rounded-circle img-fluid border" ></a>
                 <h5 class="text-center mt-3 mb-3">유산소<h5>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="../aihometrainer/2_aiHTsubIndex_exercise.do"><img src="../resources/aihometrainer/images/grud22.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_exercise.do"><img src="../resources/ai_home_trainer_resources/images/grud22.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">근력운동</h2>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="../aihometrainer/2_aiHTsubIndex_exercise.do"><img src="../resources/aihometrainer/images/yoga3.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_exercise.do"><img src="../resources/ai_home_trainer_resources/images/yoga3.jpg" class="rounded-circle img-fluid border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">요가</h2>
             </div>
         </div>
@@ -301,58 +301,59 @@
 
     <div id="gallery" class="grid">
         <figure class="effect-bubba">
-            <img src="../resources/aihometrainer/images/all.jpg" alt="img01">
+            <img src="../resources/ai_home_trainer_resources/images/all.jpg" alt="img01">
             <figcaption>
                 <h2>All  <span>exercise</span></h2>
-                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_body.do">View more</a>
             </figcaption>           
         </figure>
         
         <figure class="effect-bubba">
-            <img src="../resources/aihometrainer/images/back1.jpg" alt="img02">
+            <img src="../resources/ai_home_trainer_resources/images/back1.jpg" alt="img02">
             <figcaption>
                 <h2>for perfect <span>BACK</span></h2>
                 <p>It is prepared for your healthy posture and <br>core muscles. </p>
-                <a href="../aihometrainer/2_aiHTsubIndex_body.do" value="click" onclick="hello()">View more</a>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_body.do" value="click" onclick="hello()">View more</a>
             </figcaption>           
         </figure>
         
         <figure class="effect-bubba">
-            <img src="../resources/aihometrainer/images/belly1.jpg" alt="img07">
+            <img src="../resources/ai_home_trainer_resources/images/belly1.jpg" alt="img07">
             <figcaption>
                 <h2>become good <span>BELLY</span> <i>Now</i></h2>
                 <p>You will be able to start your day <br>a little lighter today!</p>              
-                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_body.do">View more</a>
             </figcaption>           
         </figure>
         
         <figure class="effect-bubba">
-            <img src="../resources/aihometrainer/images/Arm.jpg" alt="img04">
+            <img src="../resources/ai_home_trainer_resources/images/Arm.jpg" alt="img04">
             <figcaption>
                 <h2>great <span>ARM</span></h2>
                 <p>For an arm like Captain America!</p>
-                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_body.do">View more</a>
             </figcaption>           
         </figure>
         
         <figure class="effect-bubba">
-            <img src="../resources/aihometrainer/images/leg.jpg" alt="img14">
+            <img src="../resources/ai_home_trainer_resources/images/Hip.jpg" alt="img14">
             <figcaption>
-                <h2>Healthy <span>LEG</span></h2>
+                <h2>handsome <span>LEG&HIP</span></h2>
                 <span class="glyphicon glyphicon-star"></span>
                 <span class="glyphicon glyphicon-heart"></span>
                 <span class="glyphicon glyphicon-comment"></span>
-                <p>If you build up your second heart, <br>your leg muscles, you'll be able to spend more energetic days.</p>
-                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+                <p>If you build up your second heart, <br>your leg muscles, you'll be able to spend more energetic days. 
+                	<br>do it now. </p>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_body.do">View more</a>
             </figcaption>           
         </figure>
         
         <figure class="effect-bubba">
-            <img src="../resources/aihometrainer/images/Hip.jpg" alt="img08">
+            <img src="../resources/ai_home_trainer_resources/images/core2.jpg" alt="img08">
             <figcaption>
-                <h2>handsome <span>HIP</span></h2>
-                <p>If you want to have a more attractive back, <br>do it now.</p>
-                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+                <h2>WHOLE BODY & <span>CORE</span></h2>
+                <p> A strong core will make your day <br>more comfortable.</p>
+                <a href="../ai_home_trainer_view/2_aiHTsubIndex_body.do">View more</a>
             </figcaption>           
         </figure>
     </div><!-- #gallery -->
@@ -386,25 +387,28 @@
                 <div class="features-item">
                   <div class="features-icon"><span class="icon-lightbulb"></span></div>
                   <h3 class="features-title font-alt">무료로 개인 트레이너를 소환하세요.</h3>
-                  	 비싼 개인트레이너에 돈을 지불하지 마세요! 집에서 Cam 만 있으면 무료로 당신의 퍼스널 트레이너를 소환할 수 있습니다!
+                  	 비싼 개인트레이너에 돈을 지불하지 마세요! <br>집에서 Cam 만 있으면 무료로 당신의 <br>퍼스널 트레이너를 소환할 수 있습니다! <br>갯수는 AI트레이너가 세어줄테니, <br>운동 자세에 집중하세요!
                 </div>
               </div>
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="features-item">
                   <div class="features-icon"><span class="icon-tools"></span></div>
-                  <h3 class="features-title font-alt">Designs &amp; interfaces</h3>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
+                  <h3 class="features-title font-alt">당신의 목표치를 이끌어줍니다.</h3>
+                  	AI 트레이너가 당신의 운동량의 하루 목표치를 <br>성공할 수 있도록 카운터와 타이머 기능으로 편리하게 운동할 수 있도록 도와주며 격려해줍니다. <br>함께 운동하세요!
                 </div>
               </div>
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="features-item">
                   <div class="features-icon"><span class="icon-tools-2"></span></div>
-                  <h3 class="features-title font-alt">Coding &amp; development</h3>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
+                  <h3 class="features-title font-alt">CAM을 준비해주세요.</h3>
+                  	카메라가 없으면 AI 트레이너가 실행되지 않아요. 화상카메라나 핸드폰의 카메라를 준비하세요. CAM은 우리 AI 트레이너의 눈입니다. 
                 </div>
               </div>
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="features-item">
                   <div class="features-icon"><span class="icon-lifesaver"></span></div>
-                  <h3 class="features-title font-alt">Dedicated support</h3>Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
+                  <h3 class="features-title font-alt">밝은색의 옷을 입어주세요!</h3>
+                  	어두운 옷이나 어두운 장소에서는 <br>AI트레이너가 당신의 자세를 정확하게 <br>인식하지 못할 수 있습니다. <br>밝은 색의 옷을 입는 것을 권장합니다.
                 </div>
               </div>
             </div>
@@ -458,23 +462,23 @@
     JavaScripts
     =============================================
     -->
-    <script src="../resources/aihometrainer/lib/jquery/dist/jquery.js"></script>
-    <script src="../resources/aihometrainer/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../resources/aihometrainer/lib/wow/dist/wow.js"></script>
-    <script src="../resources/aihometrainer/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="../resources/aihometrainer/lib/isotope/dist/isotope.pkgd.js"></script>
-    <script src="../resources/aihometrainer/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-    <script src="../resources/aihometrainer/lib/flexslider/jquery.flexslider.js"></script>
-    <script src="../resources/aihometrainer/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="../resources/aihometrainer/lib/smoothscroll.js"></script>
-    <script src="../resources/aihometrainer/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="../resources/aihometrainer/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
-    <script src="../resources/aihometrainer/js/plugins.js"></script>
-    <script src="../resources/aihometrainer/js/main.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/jquery/dist/jquery.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/wow/dist/wow.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/isotope/dist/isotope.pkgd.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/flexslider/jquery.flexslider.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/smoothscroll.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+    <script src="../resources/ai_home_trainer_resources/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+    <script src="../resources/ai_home_trainer_resources/js/plugins.js"></script>
+    <script src="../resources/ai_home_trainer_resources/js/main.js"></script>
     
     
-    <script src="../resources/aihometrainer/js/add_plugins.js"></script>
-    <script src="../resources/aihometrainer/js/add_main.js"></script>
+    <script src="../resources/ai_home_trainer_resources/js/add_plugins.js"></script>
+    <script src="../resources/ai_home_trainer_resources/js/add_main.js"></script>
     
   </body>
 </html>
