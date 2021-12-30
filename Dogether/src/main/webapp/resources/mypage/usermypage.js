@@ -345,6 +345,26 @@ function OrderList(){
 	})//end of 구매확정버튼 클릭
 
 
+  $("#OUT").click(function(){
+    var result = confirm('정말 회원탈퇴를 진행하시겠습니까?');
+    if(result) {
+      let memberID = $("#memberID").text();
+      alert("모든 회원정보와 포인트가 사라집니다.")
+      console.log(memberID);
+      $.ajax({
+        data : 'get',
+        url : 'OUTmember.do',
+        data : {memberID : memberID},
+        success : function(result){
+          alert(result);
+          location.replace("../logout.do");
+        },//end of success
+        error : function(){
+          alert("에러발생----------");
+        }//end of error
+      })//end of ajax
+    }//end if if
+  })//end of 회원탈퇴
 
 
 

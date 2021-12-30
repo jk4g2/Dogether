@@ -137,7 +137,7 @@ public class UserMyPageController {
 	
 	
 	// 쇼핑몰 주문 list 출력
-	@RequestMapping("OrderList.do")
+	@RequestMapping(value ="OrderList.do")
 	@ResponseBody
 	public List<HashMap<String,Object>> Orderlist(String memberID) {		
 		System.out.println("변수로 넘겨받은 memberID----------"+memberID);
@@ -151,7 +151,7 @@ public class UserMyPageController {
 	
 	
 	//구매확정 업데이트
-	@RequestMapping("updatebuyingConfirm.do")
+	@RequestMapping(value="updatebuyingConfirm.do", produces = "application/text; charset=UTF-8")
 	@ResponseBody
 	public String updatebuyingConfirm(OrderVO vo) {
 		System.out.println("구매확정 업데이트-----");
@@ -161,7 +161,14 @@ public class UserMyPageController {
 	}
 	
 	
-	
+	//회원탈퇴
+	@GetMapping(value="OUTmember.do", produces = "application/text; charset=UTF-8")
+	@ResponseBody
+	public String OUTmember(MemberVO vo) {
+		System.out.println(vo.getMemberID()+"님의 회원탈퇴가 진행됩니다.");
+		memberService.deleteMember(vo);
+		return "탈퇴가 완료되었습니다.";
+	}
 	
 	
 	

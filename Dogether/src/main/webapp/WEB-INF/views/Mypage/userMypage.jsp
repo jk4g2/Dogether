@@ -189,7 +189,7 @@
 													placeholder="충전하실 금액을 적어주세요." style="width: 190px" min="0" />
 												<button type="button" onclick="requestPay()">포인트 충전</button>
 												<p>※포인트는 런닝구 매칭의 예약금으로 사용됩니다.</p>
-												<span id="OUT">회원탈퇴</span>
+												<span id="OUT" style="cursor:pointer">회원탈퇴</span>
 											</div>
 										</div>
 									</div>
