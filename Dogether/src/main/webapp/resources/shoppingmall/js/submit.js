@@ -27,7 +27,7 @@ $(document).ready(function(){
   $(document).on('click', '#removeBtn', function(){
     let ID = $(this).parent().prev().prev().prev().prev().find("#PID").text();
     let Name = $(this).parent().prev().prev().prev().prev().find("#ProductName").text();
- 
+
     $.ajax({
     	type : 'post',
     	data : {productID : ID},
@@ -53,7 +53,19 @@ $(document).ready(function(){
 
 
 
+  $("#updateBtn").click(function(){
 
+    if($(".productID").val() === undefined){
+      return;
+    }
+    if($("#ProductCNT").val() === undefined){
+      return;
+    }
+
+    $("#formform").submit();
+
+
+  })//end of updateBtn
 
 
 

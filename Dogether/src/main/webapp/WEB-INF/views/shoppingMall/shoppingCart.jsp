@@ -272,8 +272,7 @@
 							<div class="col-sm-3 col-sm-offset-3">
 								<div class="form-group">
 									<button id="updateBtn"
-										class="btn btn-block btn-round btn-d pull-right" type="submit">
-										<!-- onclick="location.href='updateQuantity.do'" -->
+										class="btn btn-block btn-round btn-d pull-right" type="button">
 										UpdateCart
 									</button>
 
