@@ -4,7 +4,7 @@
 html,body{
 	margin: 0;
 	padding: 0;
-
+	background:floralwhite;
 }
 
 
@@ -137,6 +137,7 @@ font-style: normal;
 font-weight:normal; 
 text-decoration: none;
 border:1px solid #c0c0c0;
+background:white;
 }
 .introduce{position:relative}
 
@@ -148,6 +149,7 @@ font-style: normal; font-weight: bold; text-decoration: none 	}
 
 
 td{font-size:12;font-weight:bold; }
+td.normal2{border:4px solid #c0c0c0; background:white}
 a{text-decoration:none}
 
 input {font-size: 9pt; color: #000000; text-decoration: none;
@@ -159,7 +161,7 @@ table{ width:60%;  margin:auto; } /* 테이블 가운데 정렬  */
 .table1 {  width:60%; border:0px; cellspacing:0px; cellpadding:5px;  top:14%; height:10% }
 .table2 {  width:60%;  cellspacing:0; cellpadding:3px; height:10%; }
 
-.tb_ttl {  background:dodgerblue;  width:185px; color: floralwhite; height:0px;}
+.tb_ttl {  background:white;  width:185px; color: black; height:0px; border:4px solid #c0c0c0;}
 .tb_ttl > img{width:100%;}
 .sidetd{height: 10px; width:50px;}
 #userinput{ margin-top:0; height:80%; padding-top:150px; padding-bottom:150px; }

@@ -34,7 +34,7 @@ var btnClickCount = 0;
 				}
 
 				// 우편번호와 주소 정보를 해당 필드에 넣는다.
-				document.getElementById('Zipcode').value = data.zonecode; //5자리 새우편번호 사용
+				document.getElementById('zipCode').value = data.zonecode; //5자리 새우편번호 사용
 				document.getElementById('BasicAddress').value = fullAddr; // 커서를 상세주소 필드로 이동한다.
 				document.getElementById('RestAddress').focus();
 			}
@@ -71,11 +71,12 @@ $("#idCheckResult2").click(function(){
          // 한글처리
          contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
          success : function(result){
-            alert(result)
-            if(result == "중복된 닉네임입니다"){
+            
+            if(result == "중복된 아이디입니다"){
             	$("#userId").val("")
             }//end of if
-           	$('#idCheckResult2').val(result);
+	           	$('#idCheckResult').text(result);
+	           	$('#idCheckResult2').val(result);
          },
          error : function(err){
             alert("error");
@@ -83,6 +84,8 @@ $("#idCheckResult2").click(function(){
   	 })
 	 });
 //---------------------------------------------------------------
+
+
 
 
 // 닉네임 중복체크 버튼 버전-----------------------------------------
@@ -95,10 +98,12 @@ $("#nNCheckResult2").click(function(){
         // 한글처리
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         success : function(result){
-           alert(result)
+           
            if(result == "중복된 닉네임입니다"){
            	$("#usernickN").val("")
            }//end of if
+           					$('#nNCheckResult').text(result);
+					 		$('#nNCheckResult2').val(result);
         },
         error : function(err){
            alert("error");
@@ -133,30 +138,62 @@ $("#nNCheckResult2").click(function(){
 	});
 //------------------------------------------------------
 
+//-----------------------클릭시 span뜨고 남여 선택시 span안뜸
+//-----------------------한번 실행이니 각각 if
+//---------------------------------------------성별선텍
+$('#sel').click(function(){
+	if($('#sel').val() == 999){
+			$("#gCheckResult").text("성별을 선택해주세요.");
+			return;
+	}
+	if ($('#sel').val() == 0){
+			$("#gCheckResult").text("");
+			return;
+	}
+	if ($('#sel').val() == 1){
+			$("#gCheckResult").text("");
+			return;
+	}
+	});
+
+
+//--------------------------------------------비번일치
+$('#pwCheckResult2').click(function(){
+	if($.trim($('#userPass').val()) != $.trim($('#userPass2').val())){
+			$('#pwCheckResult').text("비밀번호가 불일치");
+			return;
+	}
+	if($.trim($('#userPass').val()) == $.trim($('#userPass2').val())){
+			$("#pwCheckResult").text("비밀번호 일치");
+	}
+});
+
 
 //전송 버튼을 눌렀을 때 값이 비어있으면---------------------
      $('#confirm').click(function(){
        if( $.trim($("#userId").val()) == '' ){
-            alert("아이디를 입력해 주세요.");
+       var idCheck = $('#idCheckResult').text("아이디를 입력해 주세요.");
+           	idCheck.hide(3000);
             $("#userId").focus();
             return;
         }
 
-       if($.trim($('#userPass').val())==''){
-          alert("비번입력해주세요.");
+       if($.trim($('#userPass').val())==''){1
+          $('#userPass').text("비밀번호를 입력해 주세요.");
           $('#userPass').focus();
           return;
        }
 
        if($.trim($('#userPass').val()) != $.trim($('#userPass2').val())){
-          alert("비밀번호가 일치하지 않습니다..");
+          $('#pwCheckResult').text("비밀번호가 일치하지 않습니다..");
           $('#userPass2').focus();
           return;
        }
 
 
        if($.trim($('#userName').val())==''){
-          alert("이름입력해주세요.");
+       var uNCheck = $('#uNCheckResult').text("사용자 이름을 입력해 주세요.");
+       	  uNCheck.hide(3000);
           $('#userName').focus();
           return;
        }
@@ -167,14 +204,43 @@ $("#nNCheckResult2").click(function(){
 	      return;
 	   }
 	   
-	   if(($('#sel').val())==999){
-	  	  alert("성별을 선택해주세요.");
-		  console.log($('#sel').val());
-	  	  return;
-	}
+	   if($.trim($('#email').val())==''){
+	   	  $('#eMailCheckResult').text("이메일을 입력해 주세요.");
+          $('#email').focus();
+        //end function
+          return;
+       }
+
+	   if($.trim($('.phone').val())==''){
+	   var telCheck = $('#telCheckResult').text("전화번호를 정확히 입력해 주세요.");
+       	  telCheck.hide(2000);
+          $('.phone').focus();
+          return;
+       }
+
+       if($.trim($('#Birthday').val())==''){
+          return;
+       }
+       
+	   if($('#sel').val() == 999){
+			$("#gCheckResult").text("성별을 선택해주세요.");
+			return;
+		}
+		
+		if($.trim($('#zipCode').val())==''){
+          $('#zipCode').focus();
+          $('#zipCode').val("주소를 입력해주세요.");
+          return;
+       	}
+       	
+       	if($.trim($('#RestAddress').val())==''){
+          $('#RestAddress').focus();
+          return;
+       	}
 		
 			 if(btnClickCount < 2){
-				 alert("중복확인 버튼을 클릭해주세요.")
+			 var bCheck = $('#bCheckResult').text("중복버튼을 확인해 주세요.");
+				 bCheck.hide(3000);
 				 return;
 			 }
 

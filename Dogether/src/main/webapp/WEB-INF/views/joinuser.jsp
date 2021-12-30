@@ -92,7 +92,7 @@
 <!-- 상단 소개말--------------------------------------------------------- -->
 	  <table class='table1'>
 		  <tr bgcolor="#3399CC"> 
-		    <td height="30" class="normalbold tb_ttl" align="center"><font color="#FFFFFF" font size=100px>사용자 정보입력</font></td>
+		    <td height="30" class="normalbold tb_ttl" align="center" background="white" border="1px solid"><font color="black" font size=100px>사용자 정보입력</font></td>
 		  </tr>
 	  
 	  </table>
@@ -115,6 +115,7 @@
 	      	<td colspan="3" class="normal"> 
 	        	<input type="text" name="memberID" id="userId" autocomplete="off" size="20"> 
 	        	<button type="button" id="idCheckResult2" >중복확인</button>
+	        	<span id="idCheckResult" style="width:150px;color:red"></span>
 	      	</td>
 	    </tr>
 	    <tr > 
@@ -129,14 +130,19 @@
 	      	</td>
 	      	<td width="160" class="normal"> 
 	        	<input type="password" id="userPass2">
+	        	<button type="button" id="pwCheckResult2" >check</button>
+	        	<div><span id="pwCheckResult" style="width:150px;color:red"></span>
+	        	</div>
+	        	
 	      	</td>
 	    </tr>
 	    <tr> 
 	      	<td class="normalbold tb_ttl"> 
 	        	<div align="center">사용자 이름</div>
 	      	</td>
-	      	<td colspan="3" height="23" class="normal"> 
+	      	<td colspan="3" class="normal"> 
 	        	<input type="text" name="userName" id="userName" autocomplete="off">
+	        	<span id="uNCheckResult" style="width:200px;color:red"></span>
 	      	</td>
 	    </tr>
 	    <tr>
@@ -146,6 +152,7 @@
 	      	<td colspan="3" height="23" class="normal"> 
 	        	<input type="text" name="nickName" id="usernickN" autocomplete="off">
 	        	<button type="button" id="nNCheckResult2" >중복확인</button>
+	        	<span id="nNCheckResult" style="width:150px;color:red"></span>
 	      	</td>
 	    </tr>
 	    <tr>
@@ -156,17 +163,7 @@
 		    	<input type="email" placeholder="이메일" name="email" id="email" maxlength="30" autocomplete="off">
 				<div id="error_mail" class="result-email result-check"></div>
 			</td>
-		    <!-- <td class="normalbold tb_ttl">
-	    		<div align="center">이메일</div>
-	    	</td>
-			<td colspan="3">
-				<input type="email" id="Email" name="email">@
-				<select>
-					<option>naver.com</option>
-					<option>daum.net</option>
-					<option>gmail.com</option>
-				</select>
-			</td> -->
+		    
 	    </tr>
 	    <tr>
 	    	<td class="normalbold tb_ttl">
@@ -174,7 +171,7 @@
 	    	</td>
 	    	<td class="normal" colspan="3">
 	    		<input type="text" name="phoneNumber" class="phone" maxlength="13" placeholder="핸드폰번호" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-
+				<span id="telCheckResult" style="width:150px;color:red"></span>
 	    		<div class="eheck_font" id="phone_check"></div>
 	    	</td>
     	</tr>
@@ -194,6 +191,7 @@
 					<option value="0" name="gender">남</option>	<!-- option에 value 값 없어도 됨 -->
 					<option value="1" name="gender">여</option>
 				</select>
+				<span id="gCheckResult" style="width:150px;color:red"></span>
 			</td>
     	</tr>
     	<tr>
@@ -201,8 +199,7 @@
 	    		<div align="center">우편번호</div>
 	    	</td>
 	    	<td colspan="3" class="normal">
-	    		<input type="text" size="20" value="" name="zipCode" id="Zipcode" autocomplete="off">
-	    	
+	    		<input type="text" size="20" value="" name="zipCode" id="zipCode" autocomplete="off">
 	    		<input type="button" value="주소검색" id="btnAddress" >
 	    	</td>
 	    </tr>
@@ -218,10 +215,11 @@
 	    
 
 	    <tr>
-	      	<td colspan="4" class="normal" width="70%" height="5%"> 
+	      	<td colspan="4" class="normal2" width="70%" height="5%"> 
 	        	<div align="center"> 
 	          	<button type="button" form="userinput" id="confirm" class="submitBtn" value="등   록">등 록</button>
 	          	<input type="reset" class="submitBtn" value="취   소">
+	          	<span id="bCheckResult" style="width:150px;color:red"></span>
 	        	</div>
 	      	</td>
 	    </tr>
