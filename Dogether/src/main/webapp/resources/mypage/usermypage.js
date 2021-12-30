@@ -248,14 +248,14 @@ function OrderList(){
                + "<th width='150'>반품여부</th>"
                + "<th width='150'>반품상태</th>"
                +"</tr>");
-            for(row of resultOrder){
-              if(row['OrderID'] == null){
-                var tr = $("<tr/>");
-                var nonedata = $("<td colspan='8' />").html("<h3>주문하신 상품이 존재하지 않습니다.</h3>");
-                tr.append(nonedata);
-                userOrderList.append(tr);
-              }
-              else{                   // 향상된 for문 (list row : resultMember) ==> 변수명은 상관없음
+           if(resultOrder == ""){
+	                var tr = $("<tr/>");
+	                var nonedata = $("<td colspan='8' />").html('<h3>주문하신 상품이 존재하지 않습니다.</h3>');
+	                tr.append(nonedata);
+	                userOrderList.append(tr);
+               }
+           else{// 향상된 for문 (list row : resultMember) ==> 변수명은 상관없음
+               for(row of resultOrder){
                console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
                var tr = $("<tr/>");                                 // <tr/> 객체 생성
                var orderDate = $("<td width='200' />").html(new Date(row['OrderDate']).yyyymmdd());   // td객체를 생성 ==> orderDate를 td에 담는다
