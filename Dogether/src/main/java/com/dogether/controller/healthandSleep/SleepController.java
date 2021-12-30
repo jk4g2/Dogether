@@ -17,7 +17,7 @@ public class SleepController {
 	//디른 시간 추천받기를 눌렀을 때 sleep.jsp로 이동
 	@RequestMapping("back.do")
 	public String back() {
-		return "sleep";
+		return "redirect:/sleep/";
 	}
 	
 }

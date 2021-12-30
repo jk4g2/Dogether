@@ -66,17 +66,18 @@ $(document).ready(function() {
         else {
             alert("일어날 시간을 선택해주세요!");
             return;
-            window.location.replace("../sleep/");
+            //window.location.replace("sleep.do");
         } // end not-filled check
 
 //      ######################################################
 //  	 start ajax
 //      ######################################################
       // 일어나야 할 시간 결과
+      /*
   		$.ajax({
   			type : 'get',  							// 화면에서 데이터를 전송하는 방식(method)
   			datatype : 'html',						// 화면에서 보낸 데이터
-  			url : 'sleep/',
+  			url : 'sleep.do',
   			success : function() {
   				$('#results').css('display','block');
   			},
@@ -84,7 +85,7 @@ $(document).ready(function() {
 	  			alert('전송실패');
 	  			console.log(err);
 	  		}
-  		}); // end of ajax
+  		});*/ // end of ajax
 //      ######################################################
 //  	 end ajax
 //      ######################################################
@@ -155,17 +156,17 @@ $(document).ready(function() {
         } // end hour/minute check if
         else {
             alert("자러갈 시간을 선택해주세요!");
-            window.location.replace("../sleep/");
         } // end not-filled check
 
 //      ######################################################
 //  	 start ajax
 //      ######################################################
       // 일어나야 할 시간 결과
+      /*
   		$.ajax({
   			type : 'get',  							// 화면에서 데이터를 전송하는 방식(method)
   			datatype : 'html',						// 화면에서 보낸 데이터
-  			url : 'sleep/',
+  			url : 'sleep.do',
   			success : function() {
   				$('#results').css('display','block');
   			},
@@ -173,7 +174,7 @@ $(document).ready(function() {
 	  			alert('전송실패');
 	  			console.log(err);
 	  		}
-  		}); // end of ajax
+  		});*/ // end of ajax
 //      ######################################################
 //  	 end ajax
 //      ######################################################
@@ -232,10 +233,10 @@ $(document).ready(function() {
 //    	 start ajax
 //  ######################################################
       // 지금 잘까 결과
-    		$.ajax({
+    		/*$.ajax({
     			type : 'get',  							// 화면에서 데이터를 전송하는 방식(method)
     			datatype : 'html',						// 화면에서 보낸 데이터
-    			url : 'sleep/',
+    			url : 'sleep.do',
     			success : function() {
     				$('#resultsNow').css('display','block');
     			},
@@ -243,7 +244,7 @@ $(document).ready(function() {
       			alert('전송실패');
       			console.log(err);
       		}
-    		}); // end of ajax
+    		});*/ // end of ajax
 //  ######################################################
 //    	 end ajax
 //  ######################################################
