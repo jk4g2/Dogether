@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,16 +29,49 @@ public class RunningGooController {
 		return "runninggoo/createRngRoom";
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*이부분 선생님께 질문할부분-------------------------
+	 * 컨트롤러에 들어가지도 못함 400에러뜸 */
 	// 런닝구 방 생성 및 정보 입력하기
-	@RequestMapping("rngInsert.do")
+	@PostMapping(value="rngInsert.do")
 	public String CreateRngRoom(RunningGooVO vo, HttpSession session) {
 		// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
+		System.out.println("으아아아아아아ㅏ아ㅏ아아아ㅓ만어리만어리만어리ㅏㅁㄴ얾나ㅣㅇ러민아러민아럼니아러민아럼ㄴ아럼낭러미낭러민아러민아러미나어라너이ㅏ런이ㅏ럼니아러미나얼미낭러미낭러미낭러민아러민아럼니아럼ㄴ이라");
 		System.out.println((String) session.getAttribute("username"));
 		vo.setMemberID(session.getAttribute("username").toString());
 		runningGooService.insertRNRoomInfo(vo);
 		System.out.println(vo.getRoomNumber());
-		return "redirect:/runninggoo/";
+		return "redirect:../runninggoo/";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 		// 런닝구 방 리스트 얻어오기
 		@RequestMapping("/")
