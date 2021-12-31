@@ -54,18 +54,41 @@
    </select>
    
    <select id="viewNotYetJoinMemberList" parameterType="integer" resultType="hashmap">
-     SELECT roomNumber , memberID, Birthday, Gender, UserName, NickName, PhoneNumber 
+     SELECT roomNumber, memberID, Birthday, Gender, UserName, NickName, PhoneNumber 
      from runninggoo r natural join member m
 	 where r.MemberID = m.MemberID and RoomNumber = #{roomNum} and HostYN ='N' and MemberPendingStatusYN = 'Y'
    </select>
    
    <update id="upadateRunningGooJoinMemberInfo" parameterType="hashmap">
    		UPDATE runninggoo 
-		SET currentMembers = currentMembers+1,
-		MemberPendingStatusYN = 'N'
+		SET MemberPendingStatusYN = 'N'
 		WHERE memberid = #{memberid}
 		AND roomnumber = #{roomnumber}
    </update>
+   
+   <update id="updateRnGCrntMemberCount" parameterType="integer">
+   		UPDATE runninggoo 
+		SET currentMembers = currentMembers+1
+		WHERE hostYN = 'Y'
+		AND roomnumber = #{roomNum}
+   </update>
+   
+   <delete id="deleteJoinMemberInfo" parameterType="hashmap">
+	   DELETE FROM runninggoo
+	   WHERE memberid = #{memberid}
+	   AND roomnumber = #{roomnumber}
+   </delete>
+   
+	
+	<!-- 런닝구 방 삭제 (유저가 직접) -->
+	<delete id="deleteRngRoom" parameterType="hashmap">
+		DELETE FROM runninggoo 
+		WHERE roomnumber =#{roomnumber} AND memberID = #{memberid}
+	</delete>
+	
+	<select id="userJoinCheck" parameterType="com.dogether.domain.RunningGooVO" resultType="com.dogether.domain.RunningGooVO">
+		SELECT * FROM runninggoo where memberID = #{memberID} and roomnumber = #{roomNumber}
+	</select>
    
    <!-- 런닝구방 + 프로필사진 출력 (관리자페이지)-->
    <select id="getRNGListWithProfile" resultType="hashmap" parameterType="com.dogether.domain.RunningGooVO">
@@ -90,16 +113,6 @@
 		AND HostYN = 'Y'
 		AND MemberPendingStatusYN = 'N'
 		ORDER BY RoomNumber
-	</select>
-	
-	<!-- 런닝구 방 삭제 (유저가 직접) -->
-	<delete id="deleteRngRoom" parameterType="hashmap">
-		DELETE FROM runninggoo 
-		WHERE roomnumber =#{roomnumber} AND memberID = #{memberid}
-	</delete>
-	
-	<select id="userJoinCheck" parameterType="com.dogether.domain.RunningGooVO" resultType="com.dogether.domain.RunningGooVO">
-		SELECT * FROM runninggoo where memberID = #{memberID} and roomnumber = #{roomNumber}
 	</select>
 	
 </mapper>

@@ -7,11 +7,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/runninggoo/runninggooMain.css">
  <link href="${pageContext.request.contextPath}/resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 <!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
  -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -20,6 +18,7 @@
 <title>런닝구</title>
 </head>
 <body>
+	<div>
 	<!-- header -->
 	<nav>
 		<div class="logo">
@@ -29,7 +28,28 @@
 			<span></span>
 		</div>
 	</nav>
+	
+	<section class="overlay-menu">
+      <div class="container">
+         <div class="row">
+            <div class="main-menu">
+               <ul>
+                  <li><a href="runninggoo.do">런닝구</a></li>
+                  <li><a href="#">Gym 예약할까</a></li>
+                  <li><a href="ai_home_trainer_view/1_aiHT_main.do">온라인 PT</a></li>
+                  <li><a href="boast.do">자랑하기</a></li>
+                  <li><a href="healthcenter.do">Inbody 측정 보건소</a></li>
+                  <li><a href="shoppingmall.do">쇼핑몰</a></li>
+                  <li><a href="userMyPage/myPage.do">마이페이지</a></li>
 
+               </ul>
+            </div>
+         </div>
+      </div>
+   </section>
+	
+	<h1 class="currentSessionMyID">${sessionScope.username }</h1>
+	
 	<!-- DB에서 forEach 돌며 값 불러오기 -->
 	<div class="col-12 rn_room_list_wrap">
 		<c:forEach items="${RunningGooList }" var="runninggoo">
@@ -159,7 +179,7 @@
 		</div>
 	</div>
 
-	<!--  footer
+	<!--  footer -->
 	<footer id="footer">
 		<div class="container-fluid">
 			<div class="col-md-12">
@@ -167,15 +187,15 @@
 					TemplateMo</p>
 			</div>
 		</div>
-	</footer>  -->
+	</footer>
 	
-	<div class="rngForEachLength">${rnRoomCNT }</div>
-	
+	<div class="rngForEachLength" style="display:none">${rnRoomCNT }</div>
+	</div>
 
 	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b002992ff5db3facd06fff2ffcf08711"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/kakaoMap.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/RunningGoo.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/plugins.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/runninggoo/plugins.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/runninggoo/main.js"></script>
 </body>
 </html>

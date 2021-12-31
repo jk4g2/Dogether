@@ -86,6 +86,31 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 		mybatis.update("runningGooDAOMapper.upadateRunningGooJoinMemberInfo",map);
 	}
 	
+	@Override
+	public void updateRnGCrntMemberCount(int roomNum) {
+		// 호스트가 수락을 눌렀을때 현재 멤버 +1
+		System.out.println("호스트가 수락을 눌렀을때 현재 멤버 +1");
+		System.out.println(roomNum+"DAO에서 가져온 룸넘버");
+		mybatis.update("runningGooDAOMapper.updateRnGCrntMemberCount", roomNum);
+	}
+	
+	
+	@Override
+	public void deleteRngRoom(HashMap<String, Object> map) {
+		mybatis.delete("runningGooDAOMapper.deleteRngRoom", map);
+	}
+
+	@Override
+	public RunningGooVO userJoinCheck(RunningGooVO vo) {
+		return mybatis.selectOne("runningGooDAOMapper.userJoinCheck", vo);
+	}
+
+	@Override
+	public void deleteJoinMemberInfo(HashMap<String, Object> map) {
+		// 호스트가 거절을 눌렀을때
+		mybatis.delete("runningGooDAOMapper.deleteJoinMemberInfo", map);
+	}
+	
 	// 런닝구 리스트 가져오기(프로필사진 포함 in 관리자페이지)
 	@Override
 	public List<HashMap<String,Object>> getRNGListWithProfile(RunningGooVO sortTypeRNG) {
@@ -107,15 +132,4 @@ public class RunningGooDAOImpl implements RunningGooDAO {
 		System.out.println("mybatis 런닝구 총 매칭 건수 호출함");
 		return mybatis.selectOne("runningGooDAOMapper.getMatchedCount");
 	}
-	
-	@Override
-	public void deleteRngRoom(HashMap<String, Object> map) {
-		mybatis.delete("runningGooDAOMapper.deleteRngRoom", map);
-	}
-
-	@Override
-	public RunningGooVO userJoinCheck(RunningGooVO vo) {
-		return mybatis.selectOne("runningGooDAOMapper.userJoinCheck", vo);
-	}
-	
 }

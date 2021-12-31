@@ -1,6 +1,14 @@
 
+body{
+	margin:0;
+}
+
 p{
     margin-bottom: 0;
+}
+
+nav{
+	background-color: black;
 }
 
 .rn_room_list_wrap{

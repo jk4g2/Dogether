@@ -7,9 +7,6 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/runninggooMain.css">
 <link rel="stylesheet" href="resources/css/navandfooter.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 <!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
  -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -80,7 +77,7 @@
 			<td>${NotYetJoinMemberList['NickName'] }</td>
 			<td>${NotYetJoinMemberList['PhoneNumber'] }</td>
 			<td class="acceptJoin" colspan=1><input type="button" class="acceptJoin" value="수락"></td>
-			<td class="rejectJoin" colspan=1><button>거절</button></td>
+			<td class="rejectJoin" colspan=1><input type="button" class="deleteJoin" value="거절"></td>
 		</tr>
 		
 		</c:forEach>

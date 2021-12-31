@@ -102,7 +102,6 @@ $(".userBtn").click(function(){
 $('.hostBtn').click(function(){
 	var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
 	alert("런닝구 멤버들의 신청현황 조회를 완료했습니다.");
-	alert(nowRoomNum);
 	window.open('viewJoinMemberTotalInfo.do?roomNumber=' + nowRoomNum, 'popup01', 'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
 		
 }) // end-of-click
@@ -110,8 +109,8 @@ $('.hostBtn').click(function(){
 $('.delBtn').click(function(){
 	var nowRoomNum = $(this).parent().prev().prev().prev().prev().prev().children(".rngRoomNum").text();
 	var nowHostID =$(this).parent().prev().prev().prev().prev().prev().children(".rn_profile_nickname").text();
-	alert(nowRoomNum);
-	alert(nowHostID);
+	//alert(nowRoomNum);
+	//alert(nowHostID);
 	$.ajax({
 		url : "deleteRngRoom.do",
 		data : { hostMemberID : nowHostID, roomNum : nowRoomNum },
@@ -127,16 +126,50 @@ $('.delBtn').click(function(){
 
 
 // 호스트가 수락을 눌렀을때
+var isAjax = false;
 $('.acceptJoin').click(function(){
+	if(isAjax == true){
+		return;
+	}
+	
+	isAjax = true;
+	
 	var nowRoomNum = $("#roomNum").text();
-	alert(nowRoomNum);
-	alert($("#nowMemberID").text());
+	//alert(nowRoomNum);
+	//alert($("#nowMemberID").text());
 	$.ajax({
 		url: "updateJoinMemberInfo.do",
-        data : { roomNum : $("#roomNum").text(), joinPendingMember : $("#notYetMemberID").text() },
+        data : { roomNum : nowRoomNum, joinPendingMember : $("#notYetMemberID").text() },
         success: function(res){
 		    alert(res);
 		    location.replace("../runninggoo/viewJoinMemberTotalInfo.do?roomNumber=" + nowRoomNum);
+		    isAjax = false;
+       	},
+        error : function(){
+        	alert("요청실패!!!!");
+        }
+	}) //end-of-ajax
+})
+
+
+
+// 호스트가 거절을 눌렀을때
+var isRun = false;
+$('.deleteJoin').click(function(){
+	if(isRun == true){
+		return;
+	}
+	
+	isRun = true;
+	
+	var nowRoomNum = $("#roomNum").text();
+	$.ajax({
+		url: "deleteJoinMemberInfo.do",
+        data : { roomNum : nowRoomNum, joinPendingMember : $("#notYetMemberID").text() },
+        success: function(res){
+		    alert(res);
+		    location.replace("../runninggoo/viewJoinMemberTotalInfo.do?roomNumber=" + nowRoomNum);
+		    isRun = false;
        	},
         error : function(){
         	alert("요청실패!!!!");
@@ -153,8 +186,10 @@ $('.rn_profile_memberCount').each(function(){
 	var maxMembers = $(this).children('.maxMembers').text();
 	var nowList = $(this).parent().prev();
 	var nowBalloon = $(this).parent().next().next().next().children('.ballon');
-	
-	if(parseInt(CrntMembers) >= parseInt(maxMembers)){
+	var hostRngRoomID = $(this).prev().prev().text();
+	var currentMyID = $(this).parent().parent().parent().parent().prev().text();
+
+	if((parseInt(CrntMembers) >= parseInt(maxMembers)) && (currentMyID != hostRngRoomID)){
 		nowList.addClass('matched matchedBG');
 		nowBalloon.addClass('matchedBG');
 	}

@@ -10,7 +10,7 @@ public interface RunningGooService {
 	
 	// 런닝구 방 생성
 	void insertRNRoomInfo(RunningGooVO vo);
-	
+		
 	// 런닝구 리스트 가져오기
 	List<RunningGooVO> getRNRoomList(RunningGooVO vo);
 	
@@ -35,6 +35,18 @@ public interface RunningGooService {
 	// 호스트가 수락을 눌렀을때 수정될 런닝구 멤버의 정보
 	void upateRngMemberInfo(HashMap<String,Object> map);
 	
+	//  호스트가 수락을 눌렀을때 런닝구 방 현재 멤버 + 1
+	void updateRnGCrntMemberCount(int roomNum);
+	
+	// 호스트가 거절을 눌렀을때
+	void deleteJoinMemberInfo(HashMap<String, Object> map);
+	
+	// 런닝구 방 삭제
+	void deleteRngRoom(HashMap<String,Object> map);
+	
+	// 런닝구 DOjoin 할때 이미 조인되어있으면 안되게끔 체크
+	RunningGooVO userJoinCheck(RunningGooVO vo);
+	
 	// 런닝구 리스트 가져오기(프로필사진 포함 in 관리자페이지)
 	List<HashMap<String,Object>> getRNGListWithProfile(RunningGooVO sortTypeRNG);
 	
@@ -43,10 +55,4 @@ public interface RunningGooService {
 	
 	// 런닝구 총 매칭 건수(관리자페이지)
 	public int getMatchedCount();
-	
-	// 런닝구 방 삯제
-	void deleteRngRoom(HashMap<String,Object> map);
-	
-	// 런닝구 DOjoin 할때 이미 조인되어있으면 안되게끔 체크
-	RunningGooVO userJoinCheck(RunningGooVO vo);
 }
