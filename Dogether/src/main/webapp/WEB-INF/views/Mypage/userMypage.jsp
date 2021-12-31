@@ -378,7 +378,7 @@
 																		<c:if test="${count lt 2}">
 																			<div class="comments">
 																				<ul id="forid">
-																					<li id="commentwriter" class="reply mypagereply" >${reply.replyer}</li>
+																					<li  class="reply mypagereply" style="font-weight:bold;" >${reply.replyer}</li>
 																					<li class="reply">${reply.reply }</li>
 																				</ul>
 																			</div>
