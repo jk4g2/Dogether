@@ -370,7 +370,8 @@ nav {
 .full-screen-portfolio .portfolio-item h1 {
   position: relative;
   font-size: 40px;
-  font-family : BlackHan;
+  /*font-family : BlackHan;*/
+  font-family: 'Jua', sans-serif;
   font-weight : bold;
   text-transform: uppercase;
   color: white;

@@ -2,9 +2,11 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Noto Sans KR", sans-serif;
+	font-family: 'Jua', sans-serif;
 }
-
+html{
+	font-family: 'Jua', sans-serif;
+}
 a {
 	text-decoration: none;
 	color: black;
@@ -39,6 +41,7 @@ li {
 #h2 {
 	color: tomato;
 	font-size: 2em;
+	font-family: 'Jua', sans-serif;
 }
 
 .login_sns {
@@ -147,7 +150,7 @@ li {
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-family: Arial;
+	font-family: 'Jua', sans-serif;
 	font-size: 15px;
 	padding: 9px 23px;
 	text-decoration: none;

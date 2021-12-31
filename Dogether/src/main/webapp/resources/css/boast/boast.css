@@ -183,7 +183,8 @@ nav {
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-family: Arial;
+	/*font-family: Arial;*/
+	font-family: 'Jua', sans-serif;
 	font-size: 15px;
 	font-weight: bold;
 	padding: 6px 24px;
@@ -304,7 +305,7 @@ footer-->#footer {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Noto Sans KR", sans-serif;
+	font-family: 'Jua', sans-serif;
 }
 
 a {
