@@ -8,6 +8,9 @@
     <!-- 공통 적용 -->
     <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <!-- 반응형 웹페이지  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

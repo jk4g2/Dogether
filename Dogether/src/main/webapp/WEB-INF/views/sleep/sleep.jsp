@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
     <!-- 헤더/푸터/내브바css -->
 	<link href="${pageContext.request.contextPath}/resources/css/admin/admin.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <!-- ajax -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/sleep/sleep.js"></script>

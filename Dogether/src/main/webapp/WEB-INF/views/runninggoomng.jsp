@@ -15,6 +15,9 @@
     <!-- 유희진 템플릿 -->
     <!-- Bootstrap core CSS -->
     <link href="./resources/css/admin/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <!-- right slidebar-->
 <!--     <link href="./resources/css/admin/slidebars.css" rel="stylesheet">
  -->    <link href="./resources/css/admin/style.css" rel="stylesheet">

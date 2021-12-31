@@ -16,6 +16,9 @@
 	crossorigin="anonymous">
 
 <link rel="stylesheet" href="../resources/css/templatemo-style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="../resources/js/jshealth/search.js"></script>
 <script src="../resources/js/plugins.js"></script>

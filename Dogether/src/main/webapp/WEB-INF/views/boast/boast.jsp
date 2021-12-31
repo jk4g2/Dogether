@@ -11,7 +11,9 @@
 <link rel="stylesheet" href="../resources/css/templatemo-style.css">
 <link rel="stylesheet" href="../resources/css/boast/boast.css">
 <link rel="stylesheet" href="../resources/css/boast/boast2.css">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 
 <script src="../resources/js/boast/boast.js"></script>
 <script src="../resources/js/plugins.js"></script>

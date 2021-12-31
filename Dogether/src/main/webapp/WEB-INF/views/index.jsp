@@ -22,6 +22,9 @@ Highway Template https://templatemo.com/tm-520-highway
 <link rel="stylesheet" href="./resources/css/light-box.css">
 <link rel="stylesheet" href="./resources/css/templatemo-style.css">
 <link rel="stylesheet" href="./resources/css/loginformstyle.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 
 <link
 	href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900"

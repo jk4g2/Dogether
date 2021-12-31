@@ -32,7 +32,8 @@ transition: background 1s ease-out;
 
 
 body {
-  font-family: 'Kanit', sans-serif;
+ /*  font-family: 'Kanit', sans-serif; */
+  font-family: 'Jua', sans-serif;
 }
 
 body::-webkit-scrollbar {

@@ -1,8 +1,51 @@
+
+html{
+	font-family: 'Jua', sans-serif;
+}
 nav .logo {
   float: left;
   margin-left: 30px;
 }
-
+@media only screen and (max-width: 992px) { 
+	#userinput{
+	padding-top: 20%;
+	padding-bottom: 30%;
+	overflow:auto;
+	width:400px;
+	height:150px;
+	}
+	.table1{
+	overflow:auto;
+	width:400px;
+	height:150px;
+	}
+	.table2{
+	overflow:auto;
+	width:400px;
+	height:150px;
+	}
+	
+	.overlay-menu {
+    background: rgba(0, 0, 0, 0.95);
+    color: #ffffff;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: px 0;
+    opacity: 0;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+	body{
+	background : floralwhite;
+	}
+}
 nav .logo a {
   font-size: 28px;
   line-height: 80px;

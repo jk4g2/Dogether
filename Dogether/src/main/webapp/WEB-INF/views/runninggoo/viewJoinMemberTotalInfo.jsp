@@ -7,6 +7,9 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/runninggooMain.css">
 <link rel="stylesheet" href="resources/css/navandfooter.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
 <!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
  -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"
