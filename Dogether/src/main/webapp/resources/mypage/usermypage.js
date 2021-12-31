@@ -14,6 +14,13 @@ $(document).ready(function() {
   }); //end click
 
 
+//자랑하기 게시판에서 사람눌러도 리다이렉트 안되게!!
+$(document).on('click', '#commentwriter.mypagereply', function(evt){
+	evt.preventDefault();				// a태그 링크 기능 무력화
+	evt.stopPropagation();				// a태그 링크 기능 무력화
+})
+
+
 //내정보 수정 왼쪽 카테고리에서 클릭했을때!!
   $('#myINFO').click(function(evt){
     evt.preventDefault();				// a태그 링크 기능 무력화
@@ -247,23 +254,23 @@ function OrderList(){
                for(row of resultOrder){
                console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
                var tr = $("<tr/>");                                 // <tr/> 객체 생성
-               var orderDate = $("<td width='200' />").html(new Date(row['OrderDate']).yyyymmdd());   // td객체를 생성 ==> orderDate를 td에 담는다
+               var orderDate = $("<td  />").html(new Date(row['OrderDate']).yyyymmdd());   // td객체를 생성 ==> orderDate를 td에 담는다
                tr.append(orderDate);                                  // tr에 orderDate를 담은 td를 추가
-               var orderID = $("<td width='300' />").text(row['OrderID']);
+               var orderID = $("<td  />").text(row['OrderID']);
                tr.append(orderID);
-               var memberID = $("<td width='200' />").html(row['MemberID']);
+               var memberID = $("<td  />").html(row['MemberID']);
                tr.append(memberID);
-               var productID = $("<td width='200' />").html(row['ProductID']);
+               var productID = $("<td  />").html(row['ProductID']);
                tr.append(productID);
                // ######### 상품이미지 출력
                var product_realfname = $("<td id='product_realfname'/>").html("<img src='../resources/img/shoppingmall/productimgs/"+ row['Product_realfname'] +"'>");
                tr.append(product_realfname);
                if(row['BuyingConfirmYN'] == 'Y'){
-                 var buyingConfirmYN = $("<td width='150' />").html(row['BuyingConfirmYN']);//구매확정 완료
+                 var buyingConfirmYN = $("<td  />").html(row['BuyingConfirmYN']);//구매확정 완료
                  tr.append(buyingConfirmYN);
                }
                else{
-                 var buyingConfirmYN = $("<td width='100' />").html('<button type="button" id="buyingConfirmBTN">구매확정</button>');
+                 var buyingConfirmYN = $("<td  />").html('<button type="button" id="buyingConfirmBTN">구매확정</button>');
                  tr.append(buyingConfirmYN);
                }
                var returnYN = $("<td width='150' />").text(row['ReturnYN']);
@@ -271,16 +278,16 @@ function OrderList(){
                // 반품상태 int ==> String 변경
                if(row['returnstatus']==0) {
             	   row['returnstatus'] = '주문완료';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td  />").html(row['returnstatus']);
                } else if (row['returnstatus']==1) {
                   row['returnstatus'] = '반품신청';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td  />").html(row['returnstatus']);
                } else if (row['returnstatus']==2) {
                   row['returnstatus'] = '반품진행중';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td  />").html(row['returnstatus']);
                } else {
                   row['returnstatus'] = '반품처리완료';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td  />").html(row['returnstatus']);
                }
                tr.append(returnStatus);
 
@@ -337,20 +344,20 @@ function OrderList(){
                   for(row of resultOrder){
                   console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
                   var tr = $("<tr/>");                                 // <tr/> 객체 생성
-                  var hostIMG = $("<td width='200' />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
+                  var hostIMG = $("<td  />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
                   tr.append(hostIMG);                                  // tr에 orderDate를 담은 td를 추가
-                  var hostID = $("<td width='300' />").text(row['memberID']+"님의 방");
+                  var hostID = $("<td  />").text(row['memberID']+"님의 방");
                   tr.append(hostID);
-                  var hostComment = $("<td width='200' />").html(row['hostComment']);
+                  var hostComment = $("<td  />").html(row['hostComment']);
                   tr.append(hostComment);
-                  var meetingTime = $("<td width='200' />").html(new Date(row['meetingTime']).yyyymmdd());
+                  var meetingTime = $("<td  />").html(new Date(row['meetingTime']).yyyymmdd());
                   tr.append(meetingTime);
                   if(row['memberPendingStatusYN'] == 'Y'){
-                    var memberPendingStatusYN = $("<td width='150' />").html("<span>신청 대기중</span>");//구매확정 완료
+                    var memberPendingStatusYN = $("<td  />").html("<span>신청 대기중</span>");//구매확정 완료
                     tr.append(memberPendingStatusYN);
                   }
                   else{
-                    var memberPendingStatusYN = $("<td width='100' />").html("<span>신청 완료</span>");
+                    var memberPendingStatusYN = $("<td  />").html("<span>신청 완료</span>");
                     tr.append(memberPendingStatusYN);
                   }
                   userRNGList.append(tr);
@@ -392,17 +399,17 @@ function OrderList(){
                      for(row of resultOrder){
                      console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
                      var tr = $("<tr />");                                 // <tr/> 객체 생성
-                     var hostIMG = $("<td width='200' />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
+                     var hostIMG = $("<td  />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
                      tr.append(hostIMG);                                  // tr에 orderDate를 담은 td를 추가
-                     var hostID = $("<td width='300' />").text(row['memberID']);
+                     var hostID = $("<td  />").text(row['memberID']+"님의 방");
                      tr.append(hostID);
-                     var hostComment = $("<td width='200' />").html(row['hostComment']);
+                     var hostComment = $("<td  />").html(row['hostComment']);
                      tr.append(hostComment);
-                     var meetingTime = $("<td width='200' />").html(new Date(row['meetingTime']).yyyymmdd());
+                     var meetingTime = $("<td  />").html(new Date(row['meetingTime']).yyyymmdd());
                      tr.append(meetingTime);
 										 var roomNumber = $("<td style='display : none;'/>").html(row['roomNumber']);
                      tr.append(roomNumber);
-                     var memberStatus = $("<td width='150' />").html("<button id='sincheongStatus' type='button' >신청 현황</button>");//구매확정 완료
+                     var memberStatus = $("<td  />").html("<button id='sincheongStatus' type='button' >신청 현황</button>");//구매확정 완료
                      tr.append(memberStatus);
                      myRNGList.append(tr);
                             // 모든 컬럼 정보를 append한 tr을 list에 append
@@ -472,8 +479,12 @@ function OrderList(){
 
 
 	$(document).on('click', '#sincheongStatus', function(){
-		let roomNum = $(this).parent().prev().text();
-		alert(roomNum);
+		let roomNumber = $(this).parent().prev().text();
+		alert(roomNumber);
+		window.open('viewJoinMemberTotalInfo.do?roomNumber=' + roomNumber, 'popup01',
+		 			'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
 	})
+
+
 
 })//end ready

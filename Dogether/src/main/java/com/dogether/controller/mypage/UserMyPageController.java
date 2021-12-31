@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dogether.domain.BoardVO;
@@ -18,9 +19,11 @@ import com.dogether.domain.Board_LikeVO;
 import com.dogether.domain.Board_ReplyVO;
 import com.dogether.domain.MemberVO;
 import com.dogether.domain.OrderVO;
+import com.dogether.domain.RunningGooVO;
 import com.dogether.service.BoardService;
 import com.dogether.service.MemberService;
 import com.dogether.service.OrderService;
+import com.dogether.service.RunningGooService;
 import com.dogether.service.TestService;
 
 @Controller
@@ -35,7 +38,10 @@ public class UserMyPageController {
 	public TestService testService;
 	@Autowired
 	public OrderService orderService;
-
+	@Autowired
+	public RunningGooService runningGooService;
+	
+	
 	// 마이페이지 메인화면
 	@RequestMapping("/")
 	public String myPage(String memberID, Model m, HttpSession session, Board_LikeVO vo) {
@@ -193,7 +199,24 @@ public class UserMyPageController {
 	
 	
 	
-	
+	// 호스트에게 보여질 수락된 참여자들의 간단한 정보 --> 호스트
+	@RequestMapping("viewJoinMemberTotalInfo.do")
+	public String viewJoinMemberInfo(RunningGooVO rVO,Model m, @RequestParam String roomNumber) {
+		// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
+		// 수락이 완료된 참여자들의 간단한 정보
+		int roomNum = Integer.parseInt(roomNumber);
+		List<HashMap<String,Object>> result1 = runningGooService.viewJoinMemberInfo(roomNum);
+		m.addAttribute("joinCompleteMemberList", result1);
+		
+		
+		// 호스트에게 보여질 수락을 기다리는 참여자들의 간단한 정보
+		//int roomNum1 = rVO.getRoomNumber();
+		List<HashMap<String,Object>> result2 = runningGooService.viewNotYetJoinMemberList(roomNum);
+		System.out.println(result2.toString());
+		m.addAttribute("joinNotYetCompleteMemberList", result2);
+		
+		return "redirect:/runninggoo/viewJoinMemberTotalInfo.do?roomNumber="+roomNumber;
+	}
 	
 	
 	

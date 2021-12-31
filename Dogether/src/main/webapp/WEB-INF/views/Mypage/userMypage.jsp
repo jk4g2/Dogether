@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="../resources/css/usermypage/mypage.css">
 <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
 <link rel="stylesheet" href="../resources/css/templatemo-style.css">
-<link rel="stylesheet" href="../resources/css/boast.css">
-<link rel="stylesheet" href="../resources/css/boast2.css">
+<link rel="stylesheet" href="../resources/css/boast/boast.css">
+<link rel="stylesheet" href="../resources/css/boast/boast2.css">
+<link rel="stylesheet" href="../resources/css/boast/boast3.css">
 <link href="../resources/css/admin/bootstrap.min.css" rel="stylesheet">
 <link href="../resources/css/admin/style.css" rel="stylesheet">
 <link rel="stylesheet" href="../resources/css/NAVandFOOTER.css">
@@ -377,7 +378,7 @@
 																		<c:if test="${count lt 2}">
 																			<div class="comments">
 																				<ul id="forid">
-																					<li id="commentwriter" class="reply">${reply.replyer}</li>
+																					<li id="commentwriter" class="reply mypagereply" >${reply.replyer}</li>
 																					<li class="reply">${reply.reply }</li>
 																				</ul>
 																			</div>
