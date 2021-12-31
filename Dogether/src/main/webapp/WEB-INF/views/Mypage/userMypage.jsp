@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="../resources/css/templatemo-style.css">
 <link rel="stylesheet" href="../resources/css/boast/boast.css">
 <link rel="stylesheet" href="../resources/css/boast/boast2.css">
-<link rel="stylesheet" href="../resources/css/boast/boast3.css">
 <link href="../resources/css/admin/bootstrap.min.css" rel="stylesheet">
 <link href="../resources/css/admin/style.css" rel="stylesheet">
 <link rel="stylesheet" href="../resources/css/NAVandFOOTER.css">
@@ -325,7 +324,7 @@
 										<c:if test="${empty nullCheck}">
 
 											<div id="ontheside">
-												<div class="mainContainer">
+												<div class="mainContainer" style="border:none;">
 
 													<c:set var="count" value="0" />
 													<c:forEach var="item" items="${list}">
@@ -333,7 +332,7 @@
 														<input type="hidden" value="${item.boardID }">
 
 														<!-- 게시글 div -->
-														<div class="card">
+														<div class="card" style='border: 1px solid black;'>
 															<div id="userdiv">
 																<img
 																	src="../resources/img/imgforboard/default_person.png"

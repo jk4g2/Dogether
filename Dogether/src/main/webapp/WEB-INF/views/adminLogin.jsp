@@ -5,9 +5,9 @@
 <html>
 <head>
 <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
-<link rel="stylesheet" href="./resources/css/fontAwesome.css">
-<link rel="stylesheet" href="./resources/css/light-box.css">
-<link rel="stylesheet" href="./resources/css/templatemo-style.css">
+<link rel="stylesheet" href="/Dogether/resources/css/fontAwesome.css">
+<link rel="stylesheet" href="/Dogether/resources/css/light-box.css">
+<link rel="stylesheet" href="/Dogether/resources/css/templatemo-style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,13 +16,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="./resources/js/vendor/bootstrap.min.js"></script>
-<script src="./resources/js/plugins.js"></script>
-<script src="./resources/js/main.js"></script>
+<script src="/Dogether/resources/js/vendor/bootstrap.min.js"></script>
+<script src="/Dogether/resources/js/plugins.js"></script>
+<script src="/Dogether/resources/js/main.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 <script language="javascript" src="//code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="./resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="/Dogether/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>admin 로그인</title>
@@ -258,7 +258,7 @@ body {
 			<p>아이디와 패스워드를 입력하세요.
 		</h4>
 
-		<form name="form" class="adminlogin" action="admin/"
+		<form name="form" class="adminlogin" action="admin/adminlogin.do"
 			method="post">
 			<table width="300" height="120">
 				<tr>

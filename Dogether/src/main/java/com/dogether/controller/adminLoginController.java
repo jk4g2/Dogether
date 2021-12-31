@@ -23,16 +23,13 @@ public class adminLoginController {
 	public String adminlogin(AdminVO vo, HttpSession session ,Model m) {
 		System.out.println(vo.getAdminID());
 		AdminVO result = adminLoginService.adminIdCheck_Login(vo);
-		String message = "님 로그인되었습니다.";
 		// 로그인이 됬으면
 		if (result != null) {
-			session.setAttribute("adminID", result.getAdminID());
-			m.addAttribute("message",message);
-			return "admin/adminpage";
-		} else {
-			message = "존재하지 않는 아이디입니다.";
-			m.addAttribute("message",message);
-			return "adminLogin";
+			session.setAttribute("username", result.getAdminID());
+			return "admin/";
+		}
+		else {//로그인 안됬을떄
+			return "redirect:../adminLogin.do";
 		}
 	}
 }
