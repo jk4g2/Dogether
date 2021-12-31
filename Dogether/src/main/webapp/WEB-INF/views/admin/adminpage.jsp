@@ -18,6 +18,7 @@
     <link href="${pageContext.request.contextPath}/resources/css/admin/admin.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/admin/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/admin/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../resources/css/PhoneCSS.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/common-scripts.js"></script>

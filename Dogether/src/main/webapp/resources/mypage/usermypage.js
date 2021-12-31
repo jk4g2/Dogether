@@ -311,7 +311,6 @@ function OrderList(){
 
        myhostrunninggooList();
        getMyRunninggoList();
-
      }); //end click
 
    function getMyRunninggoList(){
@@ -392,7 +391,7 @@ function OrderList(){
                  else{
                      for(row of resultOrder){
                      console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
-                     var tr = $("<tr/>");                                 // <tr/> 객체 생성
+                     var tr = $("<tr />");                                 // <tr/> 객체 생성
                      var hostIMG = $("<td width='200' />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
                      tr.append(hostIMG);                                  // tr에 orderDate를 담은 td를 추가
                      var hostID = $("<td width='300' />").text(row['memberID']);
@@ -401,7 +400,9 @@ function OrderList(){
                      tr.append(hostComment);
                      var meetingTime = $("<td width='200' />").html(new Date(row['meetingTime']).yyyymmdd());
                      tr.append(meetingTime);
-                     var memberStatus = $("<td width='150' />").html("<button type='button'>신청 현황</button>");//구매확정 완료
+										 var roomNumber = $("<td style='display : none;'/>").html(row['roomNumber']);
+                     tr.append(roomNumber);
+                     var memberStatus = $("<td width='150' />").html("<button id='sincheongStatus' type='button' >신청 현황</button>");//구매확정 완료
                      tr.append(memberStatus);
                      myRNGList.append(tr);
                             // 모든 컬럼 정보를 append한 tr을 list에 append
@@ -470,6 +471,9 @@ function OrderList(){
 
 
 
-
+	$(document).on('click', '#sincheongStatus', function(){
+		let roomNum = $(this).parent().prev().text();
+		alert(roomNum);
+	})
 
 })//end ready

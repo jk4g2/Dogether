@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="resources/css/runninggooMain.css">
 <link rel="stylesheet" href="resources/css/navandfooter.css">
+<link rel="stylesheet" href="../resources/css/PhoneCSS.css">
 <!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
  -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"

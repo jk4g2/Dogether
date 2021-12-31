@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/runninggoo/runninggooMain.css">
  <link href="${pageContext.request.contextPath}/resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
+ <link rel="stylesheet" href="../resources/css/PhoneCSS.css">
 <!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
  -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"

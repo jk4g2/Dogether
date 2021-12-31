@@ -14,6 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../resources/css/PhoneCSS.css">
 
 <script src="../resources/js/boast/boast.js"></script>
 <script src="../resources/js/plugins.js"></script>

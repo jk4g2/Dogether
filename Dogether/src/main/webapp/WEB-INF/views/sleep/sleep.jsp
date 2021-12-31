@@ -12,6 +12,7 @@
     <!-- 헤더/푸터/내브바css -->
 	<link href="${pageContext.request.contextPath}/resources/css/admin/admin.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../resources/css/PhoneCSS.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <!-- ajax -->

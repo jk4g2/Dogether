@@ -25,7 +25,7 @@ Highway Template https://templatemo.com/tm-520-highway
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="/Dogether/resources/css/PhoneCSS.css">
 <link
 	href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900"
 	rel="stylesheet">
