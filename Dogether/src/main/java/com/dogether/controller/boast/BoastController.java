@@ -27,8 +27,12 @@ public class BoastController {
 	private BoardServiceImpl boardService;
 	
 	@RequestMapping("{step}.do")
-	public String stepDo(@PathVariable String step) {
-		System.out.println("???");
+	public String stepDo(@PathVariable String step, Model m, HttpSession session) {
+		String sessionok = (String) session.getAttribute("username");
+		if(sessionok == null) {
+			m.addAttribute("msg", "로그인이 필요한 서비스입니다.");
+			return "redirect";
+		}
 		return "boast/"+ step;
 	}
 	
