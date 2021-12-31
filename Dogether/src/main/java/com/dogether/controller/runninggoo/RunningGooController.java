@@ -47,7 +47,7 @@ public class RunningGooController {
 	/*이부분 선생님께 질문할부분-------------------------
 	 * 컨트롤러에 들어가지도 못함 400에러뜸 */
 	// 런닝구 방 생성 및 정보 입력하기
-	@PostMapping(value="rngInsert.do")
+	@RequestMapping(value="rngInsert.do")
 	public String CreateRngRoom(RunningGooVO vo, HttpSession session) {
 		// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
 		System.out.println("으아아아아아아ㅏ아ㅏ아아아ㅓ만어리만어리만어리ㅏㅁㄴ얾나ㅣㅇ러민아러민아럼니아러민아럼ㄴ아럼낭러미낭러민아러민아러미나어라너이ㅏ런이ㅏ럼니아러미나얼미낭러미낭러미낭러민아러민아럼니아럼ㄴ이라");

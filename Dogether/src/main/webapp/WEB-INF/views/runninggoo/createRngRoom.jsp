@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/runninggoo/runninggooMain.css">
 <link rel="stylesheet" href="resources/css/navandfooter.css">
 <link href="resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
@@ -94,22 +94,22 @@
 					<div class="col-12 rn_card_check_box">
 						
 						<form action="rngInsert.do" method="post" id="createForm">
-							<input id="getLat"  style="display:none">
-							<input id="getLong"  style="display:none">
-							<input id="getFullAddress"  style="display:none">
+							<input id="getLat" name="locationLat" style="display:none">
+							<input id="getLong" name="locationLong" style="display:none">
+							<input id="getFullAddress" name="location" style="display:none">
 							<p class="rn_room_hashtag">#만나는 날짜</p>
-							<input type="datetime-local" id="meeting-time" >
+							<input type="datetime-local" name="meetingTime" id="meeting-time" >
 							<!-- <input type="datetime-local" id="meeting-time"
        						name="meetingTime" value="2018-06-12T19:30"
        						min="2018-06-07T00:00" max="2018-06-14 00:00"> -->
        						<div id="result"></div>
 							<div class="col-12 rn_card_host_input_comment_box">
 								<p class="rn_room_hashtag">#호스트 한마디</p>
-								<textarea class="create_host_comment"  id="create_host_comment"></textarea>
+								<textarea class="create_host_comment" name="hostComment" id="create_host_comment"></textarea>
 							</div>
 							<div class="col-4 rn_card_sports_event_choice">
 								<p class="rn_room_hashtag">#스포츠 종목</p>
-								<select id="sportsSelect" >
+								<select id="sportsSelect" name="sportsType" >
 									<option value=9999>종목선택...</option>
 									<option value=0>런닝</option>
 									<option value=1>발야구</option>
@@ -121,7 +121,7 @@
 								<div id="selectRunningDistance">
 									<p class="rn_room_hashtag">#런닝 뛸 거리</p>
 									<span>1km</span>
-  									<input type="range" id="runningDistanceInput" class="slider_range"  min="1" max="10" value="1" step="1" 
+  									<input type="range" id="runningDistanceInput" class="slider_range" name="runningDistance" min="1" max="10" value="1" step="1" 
   											oninput="document.getElementById('slider_value_view1').innerHTML=this.value+'km';">
   									<span>10km</span>
   									<font size=2 id="slider_value_view1">0</font>
@@ -130,7 +130,7 @@
 								<div id="selectExerciseTime">
 									<p class="rn_room_hashtag">#운동시간</p>
 									<span>1시간</span>
-  									<input type="range" id="sportsTimeInput" class="slider_range"  min="1" max="4" value="1" step="1" 
+  									<input type="range" id="sportsTimeInput" class="slider_range" name="sportsTime" min="1" max="4" value="1" step="1" 
   											oninput="document.getElementById('slider_value_view2').innerHTML=this.value+'시간';">
   									<span>4시간</span>
   									<font size=2 id="slider_value_view2">0</font>
@@ -139,7 +139,7 @@
 							<div class="col-4 rn_card_sports_age_choice">
 								<p class="rn_room_hashtag">#연령대</p>
 								<span>20대</span>
-  								<input type="range" id="maxMembers" class="slider_range" min="20" max="50" value="20" step="10" 
+  								<input type="range" id="maxMembers" class="slider_range" name="ageGeneration" min="20" max="50" value="20" step="10" 
   										oninput="document.getElementById('slider_value_view3').innerHTML=this.value+'대';">
   								<span>50대</span>
   								<font size=2 id="slider_value_view3">0</font>
@@ -148,7 +148,7 @@
 								<p class="rn_room_hashtag">#최대 인원수</p>
 								<!-- value가 30이면 20~30대, 40이면 20~40대, 50이면 20~50대 -->
 								<span>2명</span>
-  								<input type="range" id="maxMembers" class="slider_range"  min="2" max="9" value="5" step="1" 
+  								<input type="range" id="maxMembers" class="slider_range" name="maxMembers" min="2" max="9" value="5" step="1" 
   										oninput="document.getElementById('slider_value_view4').innerHTML=this.value+'명';">
   								<span>9명</span>
   								<font size=2 id="slider_value_view4">0</font>
