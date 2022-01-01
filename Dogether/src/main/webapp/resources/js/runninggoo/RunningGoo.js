@@ -96,13 +96,26 @@ function receiveRngRequest(){
 	window.open('showRngJoinMemberInfo.do', 'popup01', 'width=300, height=400, scrollbars= 0, toolbar=0, menubar=no');
 }
 
+// #### 참가자(user)가 참가 버튼 클릭했을 때 ##########################
 // onclick 쓰지말고 제이쿼리로 직접 찾아서 이벤트걸기
 // 버튼에 each를 걸고 버튼이 this
-$(".userBtn").click(function(){
+let userPoint = parseInt($("#nowMemberPoint").text());
+$(".userBtn").click(function(){		
+	if( userPoint < 5000){		// 참여 불가 (참가자(user)의 포인트가 5000원 보다 작을 때)
+		if (!confirm("포인트가 부족합니다. 충전하시겠습니까?")) {
+	        // 취소(아니오) 버튼 클릭 시 이벤트
+	        alert("다음에 같이 뛰어요:)");
+			return;			//window.location.href="../runninggoo/";	//런닝구 리스트 페이지로 이동
+	    } else {
+	        // 확인(예) 버튼 클릭 시 이벤트
+	    	// 마이페이지 메인(포인트결제) 페이지로 이동
+			window.location.href="../Mypage/";
+	    } // end-of-else
+	} else {		// 참여 가능 (참가자(user)의 포인트가 5000원 보다 클 때)
 		if (!confirm("참여신청 할까요?")) {
         // 취소(아니오) 버튼 클릭 시 이벤트
         alert("참여신청이 취소되었습니다.");
-    } else {
+		} else {
         // 확인(예) 버튼 클릭 시 이벤트
         var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
         alert(nowRoomNum);
@@ -111,13 +124,15 @@ $(".userBtn").click(function(){
         	data : { roomNumber : nowRoomNum},
         	success: function(res){
 		        alert(res);
+		        location.reload();
         	},
         	error : function(){
         		alert("요청실패!");
         	}
         }); // end-of-ajax   
-    } // end-of-else
-})
+		} // end-of-els	e
+	}	
+})//end click 
 
 
 

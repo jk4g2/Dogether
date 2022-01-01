@@ -72,8 +72,6 @@
   transition:800ms ease all;
 
 }
-
-
 </style>
 <body>
 	<div>
@@ -107,6 +105,8 @@
    </section>
 	
 	<h1 class="currentSessionMyID">${sessionScope.username }</h1>
+	<!-- 현재 로그인 한 사람의 보유포인트 -->
+	<span id="nowMemberPoint" style="display:none">${ nowMemberPoint }</span>
 	
 	<!-- DB에서 forEach 돌며 값 불러오기 -->
 	<div class="col-12 rn_room_list_wrap">
@@ -238,6 +238,7 @@
 			<a href="#">▲ 맨 위로</a>
 		</div>
 	</div>
+	
 
 	<!--  footer -->
 	<footer id="footer">

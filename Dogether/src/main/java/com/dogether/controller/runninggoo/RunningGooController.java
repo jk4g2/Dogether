@@ -67,7 +67,12 @@ public class RunningGooController {
 		System.out.println(listCount);
 		m.addAttribute("RunningGooList", result);
 		m.addAttribute("rnRoomCNT", listCount);
-			
+		
+		//헌재 로그인한 멤버 포인트 조회하기
+		String nowMemberID = session.getAttribute("username").toString();	// 현재 멤버id
+		MemberVO mVo = memberService.getMemberInfo(nowMemberID);		// 현재 멤버의 모든 정보 mVo에 담
+		m.addAttribute("nowMemberPoint", mVo.getPoint());								// 현재 멤버 정보에서 point만 jsp로 전달
+
 		System.out.println("Model 객체를 통해 전달완료!");
 		return "runninggoo/runningGooList";
 	}
@@ -87,7 +92,7 @@ public class RunningGooController {
 	// DoJoin 버튼 클릭 시 호스트에게 보여질 참여자의 정보 INSERT --> 참여자
 	@RequestMapping(value="bringBasicRngRoomInfo.do", produces = "application/text; charset=UTF-8")
 	@ResponseBody
-	public String showJoinMember(RunningGooVO vo, HttpSession session) {
+	public String showJoinMember(RunningGooVO vo, HttpSession session, Model m) {
 		// 일단 방참여 정보는 똑같으니 vo를 불러와 각각의 vo에 담기	
 		// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
 		RunningGooVO svo = runningGooService.bringBasicRngRoomInfo(vo);
@@ -95,11 +100,14 @@ public class RunningGooController {
 		svo.setMemberPendingStatusYN("Y");
 		svo.setHostYN("N");
 		RunningGooVO checkvo = runningGooService.userJoinCheck(svo);
+
 		if(checkvo != null) {
 			return "이미 참가신청이 되어있습니다!";
 		}
 		else {
 			runningGooService.CreateRunningGooMemberInsert(svo);
+			String updateMemberID = svo.getMemberID();
+			memberService.minusPointForRNGDeposit(updateMemberID);
 			return "호스트에게 참여신청을 보냈습니다!";
 		}
 	}
