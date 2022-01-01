@@ -264,52 +264,66 @@ img#sub_img_size{
             <div class="row multi-columns-row" id="demos2">
             
             
-              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+             <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/main3.gif" alt="Main Demo"></div>
-               	  <h3 class="content-box-title font-serif">Squat</h3></a></div>
+               	  <h3 class="content-box-title font-serif">Basic Plank</h3></a></div>
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 arm_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/all.jpg" alt="Agency"></div>
-                  <h3 class="content-box-title font-serif">Lungy</h3>
+                  <h3 class="content-box-title font-serif">Burpee Test</h3>
                   </a></div>
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 hip_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-squrt.jpg" alt="Portfolio"></div>
-                  <h3 class="content-box-title font-serif">Plank</h3></a></div>
+                  <h3 class="content-box-title font-serif">Butter Fly</h3></a></div>
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 belly_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-yoga-1.jpg" alt="Restaurant"></div>
-                  <h3 class="content-box-title font-serif">side-Plank</h3></a></div>
+                  <h3 class="content-box-title font-serif">Chair Pose</h3></a></div>
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 leg_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/main3.gif" alt="Finance"></div>
-                  <h3 class="content-box-title font-serif">Burpee-Test</h3></a></div>
+                  <h3 class="content-box-title font-serif">Dumbbell Let Pull Down</h3></a></div>
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 belly_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-yoga-hal.jpg" alt="Landing"></div>
-                  <h3 class="content-box-title font-serif">Slow-Burpee</h3></a></div>
+                  <h3 class="content-box-title font-serif">Plank</h3></a></div>
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size"  src="../resources/aihometrainer/images/3-squrt.jpg" alt="Photography"></div>
-                  <h3 class="content-box-title font-serif">crunch</h3></a></div>
+                  <h3 class="content-box-title font-serif">Push Up</h3></a></div>
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 arm_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-pushup.jpg" alt="Shop"></div>
-                  <h3 class="content-box-title font-serif">star-jump</h3></a></div>
+                  <h3 class="content-box-title font-serif">Shoulder Press</h3></a></div>
                   
                   
                   
               <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
                   <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
-                  <h3 class="content-box-title font-serif">leg raise</h3></a></div>
-           
+                  <h3 class="content-box-title font-serif">Side Squrt</h3></a></div>
+
+
+              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
+                  <h3 class="content-box-title font-serif">Squrt</h3></a></div>
+
+
+              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
+                  <h3 class="content-box-title font-serif">Side Lateral Raise</h3></a></div>
+
+
+              <div class="col-md-4 col-sm-6 col-xs-12 back_2" id="img_margin"><a class="content-box" href="../aihometrainer/3_lastmain2.do">
+                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
+                  <h3 class="content-box-title font-serif">Tree Pose</h3></a></div>
             </div>
           </div>
         </section>
