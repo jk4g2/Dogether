@@ -61,8 +61,7 @@ public class ShoppingMallController {
 		System.out.println("상품이 장바구니에 있는지 먼저 검사합니다.===============");
 		String sessionok = (String) session.getAttribute("username");
 		if(sessionok == null){
-			m.addAttribute("msg","로그인이 필요한 서비스입니다.");
-			return "redirect";
+			return "0";
 		}
 		vo.setMemberID(session.getAttribute("username").toString());//멤버아이디도 같이 보내야함으로 vo에 set을 하고 보냄
 		Shopping_cartVO check = productService.productCheck(vo);

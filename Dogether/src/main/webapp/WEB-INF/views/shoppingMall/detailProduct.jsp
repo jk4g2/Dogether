@@ -34,6 +34,7 @@
     
     
     <script src="../resources/shoppingmall/lib/jquery/dist/jquery.js"></script>
+	<script src="../resources/shoppingmall/js/submit.js"></script>
     <script src="../resources/shoppingmall/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../resources/shoppingmall/lib/wow/dist/wow.js"></script>
     <script src="../resources/shoppingmall/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
@@ -52,7 +53,6 @@
 	<script src="../resources/js/main.js"></script>
     <script src="../resources/shoppingmall/js/plugins.js"></script>
     <script src="../resources/shoppingmall/js/main.js"></script>
-	<script src="../resources/shoppingmall/js/submit.js"></script>
 	<script>
 	//장바구니  추가--------------------
 	  $(document).on('click', '#cartBtn', function(){
@@ -98,13 +98,13 @@
       <!-- nav바---------------------------------------------------------- -->
       
 		<p id="productIDvalue" style="display:none;">${product.productID}</p>
+	    <div id="ckeckMemberID" style="display:none;">${sessionScope.username}</div>
 	
       <div class="main">
         <section class="module">
           <div class="container">
             <div class="row">
 	
-									
               <div class="col-sm-6 mb-sm-40">
               		<img src="../resources/shoppingmall/productimgs/${product.product_realfname}" width="665" height="750" alt="상품사진">				
               </div>
@@ -129,7 +129,7 @@
                   <div class="col-sm-4 mb-sm-20">
                     <input id="productCnt" class="form-control input-lg" type="number" name="coun" value="1" max="40" min="1" required="required"/>
                   </div>
-                  <div class="col-sm-8"><button id="cartBtn" class="btn btn-lg btn-block btn-round btn-b">Add To Cart</button></div>
+                  <div class="col-sm-8"><button id="cartInsertBtn" class="btn btn-lg btn-block btn-round btn-b">Add To Cart</button></div>
                   
                 </div>
                 <div class="row mb-20">

@@ -99,7 +99,11 @@
 		reader.readAsDataURL(event.target.files[0]);
 	}
 </script>
-
+<style>
+.functionBTN{
+	width : 15px;
+}
+</style>
 
 
 </head>
@@ -333,11 +337,26 @@
 
 														<!-- 게시글 div -->
 														<div class="card" style='border: 1px solid black;'>
-															<div id="userdiv">
+															<div id="userdiv" style="display:inline-block;">
 																<img
 																	src="../resources/img/imgforboard/default_person.png"
 																	id="userpic"> ${item.memberID}
 															</div>
+															
+															<!-- 세션스코프 username과 item.memberID 가 같으면 게시글 수정 및 삭제 기능 추가 -->
+															<!-- ************************************************** -->
+															<c:if test="${sessionScope.username eq item.memberID}">
+																<div style="display:inline-block; float: right;">
+																	<div style= "display:none;">${item.boardID}</div>
+																	<img src="../resources/img/imgforboard/edit_image.png"
+																		class="imageforedit functionBTN" style="width: 15px; height:14px;"> <img
+																		src="../resources/img/imgforboard/remove_image.png"
+																		class="imagefordelete functionBTN" style="width: 15px; height:14px;">
+																</div>
+															</c:if>
+															
+															
+															
 															<div id="content">
 																<div id="pic"
 																	style='background-image: url(../resources/img/imgforboard/img.png)'></div>
@@ -379,6 +398,13 @@
 																				<ul id="forid">
 																					<li  class="reply mypagereply" style="font-weight:bold;" >${reply.replyer}</li>
 																					<li class="reply">${reply.reply }</li>
+																					<!-- 세션의 아이디와 게시자의 이름이 같으면 댓글수정 부분과 댓글삭제 버튼 추가 -->
+																					<!-- ****************************************** -->
+																					<c:if test="${reply.replyer eq sessionScope.username}">
+																						<div style="display:none">${reply.reply_no}</div>
+																						<img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply functionBTN" style="width: 15px; height:14px;">
+																						<img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply functionBTN" style="width: 15px; height:14px;">
+																					</c:if>
 																				</ul>
 																			</div>
 																		</c:if>
@@ -394,6 +420,11 @@
 																				<ul id="forid">
 																					<li id="commentwriter" class="reply">${reply.replyer}</li>
 																					<li class="reply">${reply.reply }</li>
+																					<c:if test="${reply.replyer eq sessionScope.username}">
+																						<div style="display:none">${reply.reply_no}</div>
+																						<img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply functionBTN" style='width: 15px; height:14px;'>
+																						<img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply functionBTN" style="width: 15px; height:14px;">
+																					</c:if>
 																				</ul>
 																			</div>
 																		</c:if>

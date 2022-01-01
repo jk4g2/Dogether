@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 //장바구니  추가--------------------
-  $(document).on('click', '#cartBtn', function(){
+  $(document).on('click', '#cartInsertBtn', function(){
     let Cnt = $("#productCnt").val();
     let Name = $("#ProductNameName").text();
     let ID = $("#productIDvalue").text();
@@ -12,7 +12,12 @@ $(document).ready(function(){
     	contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     	url : 'shoppingCartInsert.do',
     	success : function(result){
-    		alert(Name+" "+Cnt+"건 "+result);
+    		let data1 = $.trim(result);
+    		if(data1 === $.trim("0")){
+				alert("로그인이 필요한 서비스입니다.");
+    		}if(data1 !== $.trim("0") ){
+				alert(Name+" "+Cnt+"건 "+result);
+    		}
     	},//end success
     	error : function(err){
     		alert("에러발생--------------");

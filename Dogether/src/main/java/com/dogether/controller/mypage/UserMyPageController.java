@@ -101,12 +101,14 @@ public class UserMyPageController {
 	// 댓글 등록
 	@PostMapping(value = "reply.do", produces = "application/text; charset=UTF-8")
 	@ResponseBody
-	public void insert(Board_ReplyVO vo, HttpSession session) {
+	public String insert(Board_ReplyVO vo, HttpSession session) {
 		System.out.println(vo.getBoardID());
 		System.out.println(vo.getReply());
 		vo.setReplyer(session.getAttribute("username").toString().trim());
 
-		boardService.insertReply(vo);
+		int boardID = boardService.insertReply(vo);
+		System.out.println(boardID);
+		return Integer.toString(boardID);
 	}
 
 	// 아이디 중복확인
@@ -221,6 +223,40 @@ public class UserMyPageController {
 	
 	
 	
+
+	@RequestMapping("deleteBoard.do")
+	@ResponseBody
+	public void deleteBoard(BoardVO vo) {
+		System.out.println(vo.getBoardID());
+		boardService.deleteBoard(vo);
+	}
+
+	@RequestMapping("deleteReply.do")
+	@ResponseBody
+	public void deleteReply(Board_ReplyVO vo) {
+		System.out.println(vo.getReply_no());
+		boardService.deleteReply(vo);
+	}
+
+	@GetMapping("updateReply.do")
+	@ResponseBody
+	public String updateReply(Board_ReplyVO vo, HttpSession session) {
+		System.out.println("댓글수정 가즈아");
+		boardService.updateReply(vo);
+		return "";
+	}
+	@GetMapping("updateBoardForm.do")
+	public String updateBoardForm(@RequestParam(value = "boardID", required = true) String boardID,
+			Model m) {
+		m.addAttribute("boardID",boardID);
+		return "boast/updateBoardForm";
+	}
+	
+	@RequestMapping("updateBoard.do")
+	public String updateBoard(BoardVO vo, HttpSession session) {
+		boardService.updateBoard(vo);
+		return "redirect:/boast/";
+	}
 	
 	
 	
