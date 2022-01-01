@@ -146,7 +146,7 @@ textarea{
 	<!-- DB에서 forEach 돌며 값 불러오기 -->
 	<div class="col-12 rn_room_list_wrap">
 			<div class="col-12 runninggoo_card_wrap">
-				<div class="col-12 runninggoo_card_inner create mb30">
+				<div class="col-12 runninggoo_card_inner create box mb30">
 					<div class="col-12 rn_card_user_profile">
 						<div class="col-0 rng_createRoom_title">
 							<h1>런닝구 방만들기</h1>
