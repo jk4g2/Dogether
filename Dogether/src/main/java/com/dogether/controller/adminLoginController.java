@@ -17,16 +17,17 @@ import com.dogether.service.AdminLoginService;
 public class adminLoginController {
 
 	@Autowired
-	public AdminLoginService adminLoginService;
+	AdminLoginService adminLoginService;
 	
 	@PostMapping(value = "adminlogin.do", produces = "application/text; charset=UTF-8")
 	public String adminlogin(AdminVO vo, HttpSession session ,Model m) {
 		System.out.println(vo.getAdminID());
 		AdminVO result = adminLoginService.adminIdCheck_Login(vo);
+		
 		// 로그인이 됬으면
 		if (result != null) {
 			session.setAttribute("username", result.getAdminID());
-			return "admin/";
+			return "redirect:../admin/";
 		}
 		else {//로그인 안됬을떄
 			return "redirect:../adminLogin.do";

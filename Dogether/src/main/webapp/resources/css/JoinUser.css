@@ -7,26 +7,6 @@ html, body {
 	font-family: 'Jua', sans-serif;
 }
 
-@media only screen and (max-width: 992px) {
-	#userinput {
-		padding-top: 20%;
-		padding-bottom: 30%;
-		overflow: auto;
-		width: 400px;
-		height: 150px;
-	}
-	.table1 {
-		overflow: auto;
-		width: 400px;
-		height: 150px;
-	}
-	.table2 {
-		overflow: auto;
-		width: 400px;
-		height: 150px;
-	}
-}
-
 img {
 	width: 150px;
 	height: 150px;
@@ -143,7 +123,8 @@ nav {
 
 /*폼양식__________________________________________________________*/
 table {
-	border: gray 1 solid
+	border: gray 1 solid;
+	 overflow-x: scroll;
 }
 
 th, td {
@@ -155,7 +136,6 @@ a {
 }
 
 .normal {
-	font-family: "굴림", "돋움";
 	font-size: 12;
 	font-style: normal;
 	font-weight: normal;
@@ -173,8 +153,6 @@ a {
 }
 
 .normalbold {
-	font-family: "굴림", "돋움";
-	font-size: 12;
 	font-style: normal;
 	font-weight: bold;
 	text-decoration: none
@@ -194,11 +172,53 @@ a {
 	text-decoration: none
 }
 
+@media only screen and (max-width: 992px) { 
+	#userinput{
+	padding-top: 20%;
+	padding-bottom: 30%;
+	overflow:auto;
+	width:400px;
+	height:150px;
+	}
+	.table1{
+	overflow:auto;
+	width:400px;
+	height:150px;
+	}
+	.table2{
+	overflow:auto;
+	width:400px;
+	height:150px;
+	}
+	
+	.overlay-menu {
+    background: rgba(0, 0, 0, 0.95);
+    color: #ffffff;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding: px 0;
+    opacity: 0;
+    text-align: center;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+	body{
+	background : floralwhite;
+	}
+}
+
 input {
 	font-size: 9pt;
 	color: #000000;
 	text-decoration: none;
 	border-style: groove;
+	font-family: 'Jua', sans-serif;
 }
 
 table {
@@ -206,15 +226,17 @@ table {
 	margin: auto;
 } /* 테이블 가운데 정렬  */
 .table1 {
+	overflow:auto;
 	width: 60%;
 	border: 0px;
 	cellspacing: 0px;
 	cellpadding: 5px;
 	top: 14%;
-	height: 10%
+	height: 10%;
 }
 
 .table2 {
+	overflow:auto;
 	width: 60%;
 	cellspacing: 0;
 	cellpadding: 3px;
@@ -242,7 +264,7 @@ table {
 	margin-top: 0;
 	height: 80%;
 	padding-top: 150px;
-	padding-bottom: 150px;
+	/* padding-bottom: 150px; */
 }
 
 input {
@@ -262,4 +284,7 @@ input {
 #fileselectBtn {
 	margin-top: 0;
 	border: 0;
+}
+button{
+	font-family: 'Jua', sans-serif;
 }

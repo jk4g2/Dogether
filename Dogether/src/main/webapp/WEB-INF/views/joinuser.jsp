@@ -97,7 +97,7 @@
 <!-- 상단 소개말--------------------------------------------------------- -->
 	  <table class='table1'>
 		  <tr bgcolor="#3399CC"> 
-		    <td height="30" class="normalbold tb_ttl" align="center" background="white" border="1px solid"><font color="black" font size=100px>사용자 정보입력</font></td>
+		    <td height="30" class="normalbold tb_ttl" align="center" background="white" border="1px solid" style="font-weight:normal;d"><font color="black" font size=100px>회원가입</font></td>
 		  </tr>
 	  
 	  </table>
