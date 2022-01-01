@@ -50,8 +50,8 @@
         <link href="../resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
     <link id="color-scheme" href="../resources/ai_home_trainer_resources/css/colors/default.css" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" >
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
  
    
     
@@ -120,7 +120,7 @@ img#sub_slider_img{
       
 	<nav>
 	   <div class="logo">
-	       <a href="index.jsp">DO<em>GETHER</em></a>
+	       <a href="../index.do">DO<em>GETHER</em></a>
 	   </div>
 	    <div class="menu-icon">
 	       <span></span>

@@ -72,6 +72,8 @@
   transition:800ms ease all;
 
 }
+
+
 </style>
 <body>
 	<div>

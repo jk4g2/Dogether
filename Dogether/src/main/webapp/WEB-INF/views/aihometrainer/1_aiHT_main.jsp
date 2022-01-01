@@ -25,10 +25,12 @@
     <!-- Default stylesheets-->
     <link href="../resources/aihometrainer/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template specific stylesheets-->
+    
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="../resources/aihometrainer/lib/animate.css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/templatemo-style.css">
     <link href="../resources/aihometrainer/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../resources/aihometrainer/lib/et-line-font/et-line-font.css" rel="stylesheet">
     <link href="../resources/aihometrainer/lib/flexslider/flexslider.css" rel="stylesheet">
@@ -42,8 +44,8 @@
     
     <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" >
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     
     
 
@@ -156,7 +158,7 @@
       
 	<nav id="nav_test">
 	   <div class="logo">
-	       <a href="index.jsp">DO<em>GETHER</em></a>
+	       <a href="../index.do">DO<em>GETHER</em></a>
 	   </div>
 	    <div class="menu-icon">
 	       <span></span>
