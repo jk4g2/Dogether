@@ -22,15 +22,15 @@
 .rngButtons{
 	display:flex;
 	align-items:center;
-	flex-direction:column;
+	justify-content:space-between;
 }
 
 .btn{
-  background:#1AAB8A;
+  background:#797979;
   color:#fff;
   border:none;
   position:relative;
-  width:100px;
+  width:80px;
   height:45px;
   text-align:center;
   font-size:20px;
@@ -45,12 +45,11 @@
 }
 
 .btn:first-child{
-	margin-bottom:10px;
 }
 
 .btn:hover{
   background:#fff;
-  color:#1AAB8A;
+  color:#797979;
 }
 .btn:before,.btn:after{
   content:'';
@@ -59,7 +58,7 @@
   right:0;
   height:2px;
   width:0;
-  background: #1AAB8A;
+  background: #797979;
   transition:400ms ease all;
 }
 .btn:after{
@@ -178,7 +177,7 @@
 							<div id="rngLocation">${ runninggoo.location}</div>
 						</div>
 						<div class="col-4 rn_card_sports_age_choice">
-							<p class="rn_room_hashtag">#연령대</p>
+							<p class="rn_room_hashtag">#선호연령대</p>
 							<c:set var="AgeGeneration" value="${runninggoo.ageGeneration}"/>
 							<c:choose>
 								<c:when test="${AgeGeneration == 20}">
@@ -208,16 +207,16 @@
 					<div class="rngButtons">
 					<c:choose>
 						<c:when test="${ sessionScope.username == runninggoo.memberID }">
-							<div class="col-12 doJoinBtn btn hostBtn" style="font-size:15px;">
-								<p>Application<br/>Status</p>
+							<div class="col-12 doJoinBtn btn hostBtn">
+								<p>신청현황</p>
 							</div>
 							<div class="col-12 deleteBtn btn delBtn">
-								<p>DELETE</p>
+								<p>삭제</p>
 							</div>
 						</c:when>
 						<c:otherwise>
 							<div class="col-12 doJoinBtn btn userBtn">
-								<p>Let's Join!</p>
+								<p>참가</p>
 							</div>
 						</c:otherwise>
 					</c:choose>

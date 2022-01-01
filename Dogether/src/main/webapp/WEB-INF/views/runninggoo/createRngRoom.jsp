@@ -22,6 +22,80 @@
 <script type="text/javascript" src="resources/js/bootstrap.js"></script>
 <title>런닝구 방만들기</title>
 </head>
+<style>
+
+input, select{
+	border: 3px solid black;
+	border-radius: 10px;
+}
+
+textarea{
+	border: 3px solid black;
+	border-radius: 10px;
+}
+
+.subBtn{
+	width: 100px;
+    height: 23px;
+    border: 3px solid black;
+    border-radius: 20px;
+    background: #797979;
+    line-height: 2px;
+}
+
+.roomCreateBtn{
+	display:flex;
+	justify-content:center;
+	margin-top:15px;
+	border-radius:20px;
+}
+
+#roomCreateSubmitBtn{
+  background:#797979;
+  color:#fff;
+  border:none;
+  border-radius:20px;
+  position:relative;
+  width:200px;
+  height:45px;
+  text-align:center;
+  font-size:20px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+#roomCreateSubmitBtn>p{
+	margin:0;
+}
+
+
+#roomCreateSubmitBtn:hover{
+  background:#fff;
+  color:#797979;
+}
+#roomCreateSubmitBtn:before,#roomCreateSubmitBtn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+#roomCreateSubmitBtn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+#roomCreateSubmitBtn:hover:before,#roomCreateSubmitBtn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+
+</style>
 <body>
 	<!-- name 속성 다 넣기. -->
 	<!-- header -->
@@ -80,13 +154,13 @@
 					</div>
 					<div class="col-12 kakao_map">
 						<div id="map" style="width:100%;height:350px;"></div>
-						<button onclick="zoomIn()">지도레벨 - 1</button>
-    					<button onclick="zoomOut()">지도레벨 + 1</button>
+						<button onclick="zoomIn()" class="subBtn">지도레벨 - 1</button>
+    					<button onclick="zoomOut()" class="subBtn">지도레벨 + 1</button>
 						<p class="rn_room_hashtag">#장소검색</p>
 						<div>
             				<form onsubmit="searchPlaces(); return false;">
                 				<input type="text" value="" id="keyword" size="30"> 
-                				<button type="submit">검색하기</button> 
+                				<button type="submit" class="subBtn">검색하기</button> 
             				</form>
         				</div>
         				<ul id="placesList"></ul>
@@ -126,7 +200,7 @@
   									<input type="range" id="runningDistanceInput" class="slider_range" name="runningDistance" min="1" max="10" value="1" step="1" 
   											oninput="document.getElementById('slider_value_view1').innerHTML=this.value+'km';">
   									<span>10km</span>
-  									<font size=2 id="slider_value_view1">0</font>
+  									<font size=2 id="slider_value_view1">1km</font>
   									
 								</div>
 								<div id="selectExerciseTime">
@@ -135,25 +209,25 @@
   									<input type="range" id="sportsTimeInput" class="slider_range" name="sportsTime" min="1" max="4" value="1" step="1" 
   											oninput="document.getElementById('slider_value_view2').innerHTML=this.value+'시간';">
   									<span>4시간</span>
-  									<font size=2 id="slider_value_view2">0</font>
+  									<font size=2 id="slider_value_view2">1시간</font>
 								</div>
 							</div>
 							<div class="col-4 rn_card_sports_age_choice">
-								<p class="rn_room_hashtag">#연령대</p>
+								<p class="rn_room_hashtag">#선호연령대</p>
 								<span>20대</span>
   								<input type="range" id="maxMembers" class="slider_range" name="ageGeneration" min="20" max="50" value="20" step="10" 
   										oninput="document.getElementById('slider_value_view3').innerHTML=this.value+'대';">
   								<span>50대</span>
-  								<font size=2 id="slider_value_view3">0</font>
+  								<font size=2 id="slider_value_view3">20대</font>
 							</div>
 							<div>
 								<p class="rn_room_hashtag">#최대 인원수</p>
 								<!-- value가 30이면 20~30대, 40이면 20~40대, 50이면 20~50대 -->
 								<span>2명</span>
-  								<input type="range" id="maxMembers" class="slider_range" name="maxMembers" min="2" max="9" value="5" step="1" 
+  								<input type="range" id="maxMembers" class="slider_range" name="maxMembers" min="2" max="9" value="2" step="1" 
   										oninput="document.getElementById('slider_value_view4').innerHTML=this.value+'명';">
   								<span>9명</span>
-  								<font size=2 id="slider_value_view4">0</font>
+  								<font size=2 id="slider_value_view4">2명</font>
 							</div>
 							<div>
 							<p class="rn_room_hashtag">#보유 포인트</p>
@@ -169,7 +243,7 @@
 							</table>
 						</div>
 							<div class="col-12 roomCreateBtn">
-								<input type="submit" value="roomCreate" id="roomCreateSubmitBtn">
+								<input type="submit" value="방만들기" id="roomCreateSubmitBtn">
 							</div>
 						</form>
 			
