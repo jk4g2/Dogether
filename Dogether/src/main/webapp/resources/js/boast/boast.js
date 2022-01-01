@@ -175,13 +175,13 @@ $(function() {
            if($(thiss).parent().siblings('span').css('display') === 'none'){
              //let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
              let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>'+
-             '<li class="reply"> ' + reply + ' </li> <img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
+             '<li class="reply"> ' + reply + ' </li><div style="display:none">'+result+ '</div><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
              $(thiss).parent().before(textt);
 
            }else{ //더보기가 아직도 존재할때..
             //let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
             let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
-             '<li class="reply"> ' + reply + ' </li> <img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
+             '<li class="reply"> ' + reply + ' </li><div style="display:none">'+result+ '</div><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
             $(thiss).parent().before(textt);
            }
 
@@ -193,11 +193,11 @@ $(function() {
             $(thiss).parent().before(more);
             //let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
             let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
-            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
+            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
             $(thiss).parent().before(textt);
           }else{
             let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
-            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
+            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
             $(thiss).parent().before(textt);
           }
           //이미 댓글이 한개 일때..
@@ -282,7 +282,7 @@ $(function() {
     //댓글 수정 버튼 누름
     $(document).on("click",".imageforeditreply",function(){
       if(confirm("댓글을 수정하시겠습니까?")==true){
-        $(this).prev().prev().html("<input type='text' style='border-style:groove;border-top:none;border-left:none;border-right:none;border-bottom:2px solid black;'/> <button class='contentUpdateBTN'>수정완료</button>");
+        $(this).prev().prev().html(" <input type='text' style='border-style:groove;border-top:none;border-left:none;border-right:none;border-bottom:2px solid black;'/> <button class='contentUpdateBTN'>수정완료</button>");
       }else{
         return;
       }
@@ -298,7 +298,7 @@ $(function() {
         url : 'updateReply.do',
         data : {reply_no:reply_no,reply:aftercontent},
         success : function(result){
-          $(good).html(aftercontent);
+          $(good).html(' ' + aftercontent);
         },//end of success
         error : function(err){
           alert("error발생 ㅅㄱㅇ")

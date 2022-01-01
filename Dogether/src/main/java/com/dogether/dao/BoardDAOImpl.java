@@ -61,7 +61,8 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public int insertReply(Board_ReplyVO vo) {
-		return mybatis.insert("BoardDAO.insertReply", vo);
+		mybatis.insert("BoardDAO.insertReply", vo);
+		return mybatis.selectOne("BoardDAO.getLastReplyID");
 	}
 
 	// 자랑하기 삭제(관리자페이지)

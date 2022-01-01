@@ -84,16 +84,23 @@
 	<!-- 댓글 수정하기 -->
 	<update id="updateReply" parameterType="Board_ReplyVO">
 		UPDATE BOARD_REPLY
-		SET Reply = #{reply} WHERE reply_no = #{reply_no}
+		SET
+		Reply = #{reply} WHERE reply_no = #{reply_no}
 	</update>
 
 	<update id="updateBoard" parameterType="BoardVO">
-		update board 
+		update board
 		set BoardContent = #{boardContent},
 		board_fname = #{board_fname},
 		board_realfname = #{board_realfname},
 		board_fsize = #{board_fsize}
 		where boardID = #{boardID}
 	</update>
-
+	
+	<select id="getLastReplyID" resultType="Integer">
+		select reply_no
+		from board_reply
+		order by reply_no desc
+		limit 1;
+	</select>
 </mapper>

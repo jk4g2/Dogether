@@ -97,15 +97,18 @@ public class BoastController {
 		int result = boardService.insertBoard(vo);
 		return "redirect:/boast/";
 	}
-
+	
+	
 	@PostMapping(value = "reply.do", produces = "application/text; charset=UTF-8")
 	@ResponseBody
-	public void insert(Board_ReplyVO vo, HttpSession session) {
+	public String insert(Board_ReplyVO vo, HttpSession session) {
 		System.out.println(vo.getBoardID());
 		System.out.println(vo.getReply());
 		vo.setReplyer(session.getAttribute("username").toString().trim());
 
-		boardService.insertReply(vo);
+		int boardID = boardService.insertReply(vo);
+		System.out.println(boardID);
+		return Integer.toString(boardID);
 	}
 
 	@RequestMapping("deleteBoard.do")
@@ -126,10 +129,10 @@ public class BoastController {
 	@ResponseBody
 	public String updateReply(Board_ReplyVO vo, HttpSession session) {
 		System.out.println("댓글수정 가즈아");
-		vo.setReply(session.getAttribute("username").toString());
 		boardService.updateReply(vo);
 		return "";
 	}
+	
 	@GetMapping("updateBoardForm.do")
 	public String updateBoardForm(@RequestParam(value = "boardID", required = true) String boardID,
 			Model m) {
