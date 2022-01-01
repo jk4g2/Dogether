@@ -107,10 +107,10 @@ $('.hostBtn').click(function(){
 }) // end-of-click
 
 $('.delBtn').click(function(){
-	var nowRoomNum = $(this).parent().prev().prev().prev().prev().prev().children(".rngRoomNum").text();
-	var nowHostID =$(this).parent().prev().prev().prev().prev().prev().children(".rn_profile_nickname").text();
-	//alert(nowRoomNum);
-	//alert(nowHostID);
+	var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
+	var nowHostID =$(this).parent().prev().prev().prev().prev().children(".rn_profile_nickname").text();
+	alert(nowRoomNum);
+	alert(nowHostID);
 	$.ajax({
 		url : "deleteRngRoom.do",
 		data : { hostMemberID : nowHostID, roomNum : nowRoomNum },

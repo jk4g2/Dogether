@@ -440,7 +440,7 @@ $(document).ready(function() {
     
  // ############ 상품 추가하기에서 등록 버튼을 클릭했을 때  ############
     $(document).on("click","#submitBtn",function(){
-    	if($("#productImgFile").val() !="" && $("#productID").val() !="" && $("productName").val() !="" && $("#productPrice").val() !="" && $("#productContent").val()!=""){
+    	if($("#productImgFile").val() !="" && $("#productID").val() !="" && $("#productName").val() !="" && $("#productPrice").val() !="" && $("#productContent").val()!=""){
     	 $("h1").hide();                     			  // 페이지명 안보이게 변경
          $("#h1Products").show();             // 페이지명 보이게 변경
          $("table").hide();                            // 모든 테이블 숨기기

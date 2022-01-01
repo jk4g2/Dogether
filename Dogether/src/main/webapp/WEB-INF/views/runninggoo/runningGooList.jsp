@@ -18,6 +18,62 @@
 <script type="text/javascript" src="resources/js/bootstrap.js"></script>
 <title>런닝구</title>
 </head>
+<style>
+.rngButtons{
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+}
+
+.btn{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  width:100px;
+  height:45px;
+  text-align:center;
+  font-size:20px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+
+.btn>p{
+	margin:0;
+}
+
+.btn:first-child{
+	margin-bottom:10px;
+}
+
+.btn:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.btn:before,.btn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.btn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn:hover:before,.btn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+
+}
+</style>
 <body>
 	<div>
 	<!-- header -->
@@ -54,8 +110,8 @@
 	<!-- DB에서 forEach 돌며 값 불러오기 -->
 	<div class="col-12 rn_room_list_wrap">
 		<c:forEach items="${RunningGooList }" var="runninggoo">
-					<div class="col-12 runninggoo_card_wrap">
-				<div class="col-12 runninggoo_card_inner mb30">
+			<div class="col-12 runninggoo_card_wrap">
+				<div class="col-12 runninggoo_card_inner mb30 box">
 					<div class="isMatched"></div>
 					<div class="col-12 rn_card_user_profile">
 						<div class="rngRoomNum" style="display:none">${runninggoo.roomNumber }</div>
@@ -149,21 +205,23 @@
 							<div class="col-12 rn_card_host_comment">${runninggoo.hostComment }</div>
 						</div>
 					</div>
+					<div class="rngButtons">
 					<c:choose>
 						<c:when test="${ sessionScope.username == runninggoo.memberID }">
-							<div class="col-12 doJoinBtn">
-								<input type="button" class="hostBtn" value="Enrollment Status">
+							<div class="col-12 doJoinBtn btn hostBtn" style="font-size:15px;">
+								<p>Application<br/>Status</p>
 							</div>
-							<div class="col-12 deleteBtn">
-								<input type="button" class="delBtn" value="deleteRoom">
+							<div class="col-12 deleteBtn btn delBtn">
+								<p>DELETE</p>
 							</div>
 						</c:when>
 						<c:otherwise>
-							<div class="col-12 doJoinBtn">
-								<input type="button" class="userBtn" value="DoJoin">
+							<div class="col-12 doJoinBtn btn userBtn">
+								<p>Let's Join!</p>
 							</div>
 						</c:otherwise>
 					</c:choose>
+					</div>
 				<div class="wido" style="display: none">${runninggoo.locationLat}</div>
 				<div class="gyeongdo" style="display: none">${runninggoo.locationLong}</div>
 				</div>
