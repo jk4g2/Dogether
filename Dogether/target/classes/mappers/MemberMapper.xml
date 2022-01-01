@@ -26,6 +26,11 @@
 		UPDATE member SET Point = Point + #{price} WHERE MemberID = #{memberID};
 	</update>
 	
+	<!-- 호스트가 user참여 거절시 포인트 +5000 환불 -->
+	<update id="plusPointForRNGDeposit" parameterType="string">
+		UPDATE member SET Point = Point +5000 WHERE MemberID = #{userID};
+	</update>
+	
 	
 	<insert id="memberinsert" parameterType="MemberVO">
 		INSERT INTO member(MemberID,PW,Email,NickName,UserName,PhoneNumber,

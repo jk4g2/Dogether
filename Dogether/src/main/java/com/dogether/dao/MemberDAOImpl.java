@@ -75,4 +75,10 @@ public class MemberDAOImpl implements MemberDAO{
 	public void minusPointForRNGDeposit(String ID) {
 		mybatis.update("MemberDAO.minusPointForRNGDeposit", ID);
 	}	
+	
+	// 호스트가 user 방참가 거절시 포인트 +5000
+		@Override
+		public void plusPointForRNGDeposit(String ID) {
+			mybatis.update("MemberDAO.plusPointForRNGDeposit", ID);
+		}	
 }

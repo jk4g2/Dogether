@@ -17,5 +17,6 @@ public interface MemberDAO {
 	public List<HashMap<String,Object>> myrunninggooList(String memberID);//내 런닝구 목록 가져오기
 	public List<HashMap<String,Object>> myhostrunninggooList(String memberID);//내가 호스트인 런닝구 목록 가져오기
 	public void minusPointForRNGDeposit(String ID);	//런닝구 host 방만들기 & user 방참가 수락시 포인트 -5000
+	public void plusPointForRNGDeposit(String ID);		// 호스트가 user 방참가 거절시 포인트 +5000
 
 }

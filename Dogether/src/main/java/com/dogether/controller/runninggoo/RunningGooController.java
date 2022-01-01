@@ -158,6 +158,8 @@ public class RunningGooController {
 		map.put("roomnumber", roomNum);
 		map.put("memberid", joinPendingMember);
 		runningGooService.deleteJoinMemberInfo(map);
+		String userID = (String)map.get("memberid");
+		memberService.plusPointForRNGDeposit(userID);
 		return "rejectComplete!!";
 	}
 	
