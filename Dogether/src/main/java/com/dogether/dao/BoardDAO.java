@@ -14,6 +14,10 @@ public interface BoardDAO {
 	public int insertLike(Board_LikeVO vo);
 	public int insertBoard(BoardVO vo);
 	public int insertReply(Board_ReplyVO vo);
+	public void deleteBoard(BoardVO vo);
+	public void deleteReply(Board_ReplyVO vo);
+	public void updateReply(Board_ReplyVO vo);
+	public void updateBoard(BoardVO vo);
 	// 자랑하기 삭제(관리자페이지)
 	public void deleteBST(BoardVO vo);
 	// 자랑하기 글 수(관리자페이지)

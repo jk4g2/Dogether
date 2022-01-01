@@ -3,14 +3,15 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BoardDAO">
 
-	<select id="getBoardList" resultType="BoardVO" parameterType="BoardVO">
-			SELECT *
-			FROM BOARD 
-			
+	<select id="getBoardList" resultType="BoardVO"
+		parameterType="BoardVO">
+		SELECT *
+		FROM BOARD
+
 		<if test="memberID!=null">
 			WHERE memberID = #{memberID}
 		</if>
-		
+
 		<choose>
 			<when test="sortTypeBST==0">ORDER BY BoardID DESC</when>
 			<when test="sortTypeBST==1">ORDER BY board_like_count DESC</when>
@@ -22,50 +23,77 @@
 		FROM board_reply
 	</select>
 
-	<select id="getLikeList" parameterType="Board_LikeVO" resultType="Board_LikeVO">
+	<select id="getLikeList" parameterType="Board_LikeVO"
+		resultType="Board_LikeVO">
 		SELECT *
 		FROM board_like
 		WHERE LIKER = #{liker}
 	</select>
 
 	<delete id="deleteLike" parameterType="Board_LikeVO">
-		DELETE 
+		DELETE
 		FROM board_like
 		WHERE liker = #{liker}
 		AND boardID=#{boardID}
 	</delete>
-	
+
 	<insert id="insertLike" parameterType="Board_LikeVO">
-		insert into board_like (BoardID,liker) 
+		insert into board_like
+		(BoardID,liker)
 		values (#{boardID},#{liker})
-	
+
 	</insert>
-	
+
 	<update id="updateCount" parameterType="Board_LikeVO">
 		UPDATE board
-		set Board_like_count = #{board_like_no}
+		set
+		Board_like_count = #{board_like_no}
 		WHERE boardID = #{boardID};
 	</update>
-	
+
 	<insert id="insertBoard" parameterType="BoardVO">
-		INSERT INTO BOARD(MemberID, BoardContent ,Board_fname, Board_realfname ,BOARD_FSIZE)
+		INSERT INTO
+		BOARD(MemberID, BoardContent ,Board_fname, Board_realfname
+		,BOARD_FSIZE)
 		VALUE(#{memberID},#{boardContent},#{board_fname},#{board_realfname},#{board_fsize})
 	</insert>
-	
+
 	<insert id="insertReply" parameterType="Board_ReplyVO">
-		INSERT INTO BOARD_REPLY(BOARDID,REPLYER, REPLY) 
+		INSERT INTO
+		BOARD_REPLY(BOARDID,REPLYER, REPLY)
 		VALUE(#{boardID},#{replyer},#{reply})
 	</insert>
-	
+
 	<!-- 자랑하기 삭제 (관리자페이지) -->
 	<delete id="deleteBST" parameterType="BoardVO">
 		DELETE FROM board
-		WHERE BoardID = #{boardID}
+		WHERE
+		BoardID = #{boardID}
 	</delete>
-	
+
 	<!-- 자랑하기 글 수 (관리자페이지) -->
 	<select id="getBoastCount" resultType="integer">
 		SELECT COUNT(*) FROM board
 	</select>
-	
+
+	<delete id="deleteReply" parameterType="Board_ReplyVO">
+		DELETE FROM board_reply
+		WHERE Reply_no = #{reply_no}
+	</delete>
+
+	<!-- 댓글 수정하기 -->
+	<update id="updateReply" parameterType="Board_ReplyVO">
+		UPDATE BOARD_REPLY
+		SET Reply = #{reply} WHERE reply_no = #{reply_no}
+	</update>
+
+	<update id="updateBoard" parameterType="BoardVO">
+		update board 
+		set BoardContent = #{boardContent},
+		board_fname = #{board_fname},
+		board_realfname = #{board_realfname},
+		board_fsize = #{board_fsize}
+		where boardID = #{boardID}
+	</update>
+
 </mapper>

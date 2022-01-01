@@ -25,40 +25,38 @@ public class BoastController {
 
 	@Autowired
 	private BoardServiceImpl boardService;
-	
+
 	@RequestMapping("{step}.do")
 	public String stepDo(@PathVariable String step, Model m, HttpSession session) {
-		String sessionok = (String) session.getAttribute("username");
-		if(sessionok == null) {
-			m.addAttribute("msg", "로그인이 필요한 서비스입니다.");
-			return "redirect";
-		}
-		return "boast/"+ step;
-	}
-	
-	@RequestMapping("/")
-	public String getboardList(@RequestParam(value = "sortType", required = false) String sortTypeBST,
-			@RequestParam(value = "memberID", required = false) String memberID, 
-			Model m, HttpSession session, BoardVO bVO) {
-		System.out.println("나오나?");
 		String sessionok = (String) session.getAttribute("username");
 		if (sessionok == null) {
 			m.addAttribute("msg", "로그인이 필요한 서비스입니다.");
 			return "redirect";
 		}
-		
+		return "boast/" + step;
+	}
+
+	@RequestMapping("/")
+	public String getboardList(@RequestParam(value = "sortType", required = false) String sortTypeBST,
+			@RequestParam(value = "memberID", required = false) String memberID, Model m, HttpSession session,
+			BoardVO bVO) {
+		String sessionok = (String) session.getAttribute("username");
+		if (sessionok == null) {
+			m.addAttribute("msg", "로그인이 필요한 서비스입니다.");
+			return "redirect";
+		}
+
 		Board_LikeVO vo = new Board_LikeVO();// 좋아요를 위한 vo
 		vo.setLiker(session.getAttribute("username").toString().trim());
 		if (sortTypeBST != null) {
 			bVO.setSortTypeBST(Integer.parseInt(sortTypeBST));
 		}
-		System.out.println(bVO.getSortTypeBST());
-		
-		if(memberID!=null) {
+
+		if (memberID != null) {
 			bVO.setMemberID(memberID);
-			m.addAttribute("memberID",memberID);
+			m.addAttribute("memberID", memberID);
 		}
-		
+
 		List<BoardVO> list = boardService.getBoardList(bVO);
 		List<Board_ReplyVO> reply_list = boardService.getReplyList();
 		List<Board_LikeVO> like_list = boardService.getLikeList(vo);
@@ -109,12 +107,42 @@ public class BoastController {
 
 		boardService.insertReply(vo);
 	}
-/*
-	@RequestMapping("getBoardList2.do")
+
+	@RequestMapping("deleteBoard.do")
 	@ResponseBody
-	public List<BoardVO> getBoardList2(BoardVO bVO) {
-		List<BoardVO> list = boardService.getBoardList(bVO);
-		return list;
+	public void deleteBoard(BoardVO vo) {
+		System.out.println(vo.getBoardID());
+		boardService.deleteBoard(vo);
 	}
-*/
+
+	@RequestMapping("deleteReply.do")
+	@ResponseBody
+	public void deleteReply(Board_ReplyVO vo) {
+		System.out.println(vo.getReply_no());
+		boardService.deleteReply(vo);
+	}
+
+	@GetMapping("updateReply.do")
+	@ResponseBody
+	public String updateReply(Board_ReplyVO vo, HttpSession session) {
+		System.out.println("댓글수정 가즈아");
+		vo.setReply(session.getAttribute("username").toString());
+		boardService.updateReply(vo);
+		return "";
+	}
+	@GetMapping("updateBoardForm.do")
+	public String updateBoardForm(@RequestParam(value = "boardID", required = true) String boardID,
+			Model m) {
+		System.out.println("되는거맞나?");
+		m.addAttribute("boardID",boardID);
+		return "boast/updateBoardForm";
+	}
+	
+	@RequestMapping("updateBoard.do")
+	public String updateBoard(BoardVO vo, HttpSession session) {
+		boardService.updateBoard(vo);
+		return "redirect:/boast/";
+	}
+	
+	
 }

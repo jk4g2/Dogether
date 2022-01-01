@@ -25,6 +25,31 @@ function setThumbnail(event) {
 function submitstuff(){
   let fileName = document.getElementById("fileName").value;
   if(! $('#content').val().replace(/(^\s*)|(\s*$)/gi, "") && fileName =='') {
+     alert("내용을 적어주세요");
+     return;
+  }
+
+  let result = validateFileType();
+  if(result == 0){
+    return;
+  }
+
+  if(! $('#content').val().replace(/(^\s*)|(\s*$)/gi, "")) {
+     alert("뭐라도 좀 적어주세요!");
+     return;
+  }
+
+
+
+  document.myform.submit();
+}
+
+function updatestuff(){
+  let boardID = document.getElementById("boardID").value;
+  alert(boardID);
+
+  let fileName = document.getElementById("fileName").value;
+  if(! $('#content').val().replace(/(^\s*)|(\s*$)/gi, "") && fileName =='') {
      alert("올릴게 없는데요..?");
      return;
   }
@@ -48,6 +73,8 @@ function submitstuff(){
 
   document.myform.submit();
 }
+
+
 
 $(function() {
 
@@ -146,25 +173,31 @@ $(function() {
 
            //더보기를 이미 눌렀을때,
            if($(thiss).parent().siblings('span').css('display') === 'none'){
-             let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
+             //let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
+             let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>'+
+             '<li class="reply"> ' + reply + ' </li> <img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
              $(thiss).parent().before(textt);
 
            }else{ //더보기가 아직도 존재할때..
-            let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
+            //let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
+            let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
+             '<li class="reply"> ' + reply + ' </li> <img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
             $(thiss).parent().before(textt);
            }
 
          }else{//더보기가 없을떄..
           //이미 댓글이 두개 일때.. 더보기 항목 추가...
-          console.log($(thiss).parent().siblings('.comments').length);
           if($(thiss).parent().siblings('.comments').length >= 2){
             console.log(1);
-            let more = '<span class="more" style="cursor: pointer">더보기...</span>'
+            let more = '<span class="more" style="cursor: pointer; color:gray;">더보기...</span>'
             $(thiss).parent().before(more);
-            let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
+            //let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
+            let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
+            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
             $(thiss).parent().before(textt);
           }else{
-            let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
+            let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
+            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="right:0;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="right:0;">  </ul></div>'
             $(thiss).parent().before(textt);
           }
           //이미 댓글이 한개 일때..
@@ -197,6 +230,83 @@ $(function() {
       let memberID = $(this).text().trim();
       window.location.href="?memberID=" + memberID;
     });
+
+
+    $(document).on("click",".imagefordeletereply",function(){
+      let reply_no = $(this).prev().prev().text();
+      let thiss = $(this).parent().parent();
+      if(confirm("댓글을 삭제하시겠습니까?") == true){
+        $.ajax({
+          type: "get",
+          url: "deleteReply.do",
+          data:{reply_no : reply_no},
+          success: function(result){
+            $(thiss).remove();
+            alert("댓글을 삭제했습니다");
+          },
+          error: function(error){
+            alert(error);
+          },
+        })
+      }else{
+        return;
+      }
+    })
+
+    $(document).on("click",".imageforedit",function(){
+      let boardID = $(this).prev().text();
+      window.location.href = "updateBoardForm.do?boardID=" + boardID;
+    })
+
+    $(document).on("click",".imagefordelete",function(){
+      let card = $(this).parent().parent().parent();
+      let boardID = $(this).prev().prev().text();
+      if(confirm("이 글을 삭제하시겠습니까?")== true){
+        $.ajax({
+          type: "get",
+          url: "deleteBoard.do",
+          data:{boardID : boardID},
+          success: function(result){
+            alert("글이 삭제 되었습니다");
+            $(card).remove();
+            //window.location.href = "../boast/";
+          },
+          error: function(error){
+            alert(error);
+          },
+        })
+      }else{
+        return;
+      }
+    })
+    //댓글 수정 버튼 누름
+    $(document).on("click",".imageforeditreply",function(){
+      if(confirm("댓글을 수정하시겠습니까?")==true){
+        $(this).prev().prev().html("<input type='text' style='border-style:groove;border-top:none;border-left:none;border-right:none;border-bottom:2px solid black;'/> <button class='contentUpdateBTN'>수정완료</button>");
+      }else{
+        return;
+      }
+    })
+
+    //댓글 수정 버튼 누름
+    $(document).on("click",".contentUpdateBTN",function(){
+      var reply_no = $(this).parent().next().text();
+      var aftercontent = $(this).prev().val();
+      var good = $(this).parent();
+      $.ajax({
+        type : 'get',
+        url : 'updateReply.do',
+        data : {reply_no:reply_no,reply:aftercontent},
+        success : function(result){
+          $(good).html(aftercontent);
+        },//end of success
+        error : function(err){
+          alert("error발생 ㅅㄱㅇ")
+        }//end of error
+      })//end of ajax
+    })
+
+
 
 
 
