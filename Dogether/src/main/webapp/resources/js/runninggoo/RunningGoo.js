@@ -27,7 +27,6 @@ $("#sportsSelect").change(function(){
 		$('#selectRunningDistance').hide();
 		$('#selectExerciseTime').show();
 	}
-	
 });
 
 
@@ -41,7 +40,18 @@ $('#jeonsong').click(function(){
 		dataType : 'text',
 		success : function(result){
 			$('#mbPoint').html(result);
-			alert("보유 포인트 조회완료");	
+//			console.log("보유 포인트 조회완료");	
+			if($("#mbPoint").val() < 5000){
+				if (!confirm("포인트가 부족합니다. 충전하시겠습니까?")) {
+			        // 취소(아니오) 버튼 클릭 시 이벤트
+			        alert("다음에 같이 뛰어요:)");
+					window.location.href="../runninggoo/";
+			    } else {
+			        // 확인(예) 버튼 클릭 시 이벤트
+			    	// 마이페이지 메인(포인트결제) 팝업띄우기
+					window.open('../Mypage/', 'popup02', 'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
+			    } // end-of-else
+			}
 		},
 		error : function(err){
 			alert("전송실패");
@@ -49,6 +59,17 @@ $('#jeonsong').click(function(){
 	}); // end-of-ajax
 })
 
+// ############ 런닝구 방만들기 페이지 input null값 유효성검사  ############
+    $(document).on("click","#roomCreateSubmitBtn",function(){		 
+    	if($("#getLat").val() =="" || $("#getLong").val() =="" || $("#getFullAddress").val() =="" || $("#meetingTime").val() =="" || $("#create_host_comment").val() =="" || $("#sportsSelect").val() =="9999"){	
+    		alert("공란을 채워주세요!");
+    	    return false;
+    	} else if($("#mbPoint").html() ==""){
+    		alert("포인트를 조회해주세요!");
+    		return false;
+    	}
+    	$('#roomCreateSubmitBtn').submit();
+    }); //end click
 
 // 슬라이더 인풋 태그들의 실시간 값 표시
 function ShowSliderValue(sVal)
