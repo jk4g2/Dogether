@@ -91,4 +91,9 @@
 		WHERE m.MemberID = #{memberID} AND r.HostYN = 'y' AND m.MemberID = r.MemberID;
 	</select>
 	
+	<!-- 런닝구 host 방만들기 & user 방참가 수락시 포인트 -5000 -->
+	<update id="minusPointForRNGDeposit" parameterType="string">
+		UPDATE member SET Point = Point -5000 WHERE MemberID = #{HostID};
+	</update>
+	
 </mapper>

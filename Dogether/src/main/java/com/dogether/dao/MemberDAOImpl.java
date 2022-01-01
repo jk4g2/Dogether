@@ -69,4 +69,10 @@ public class MemberDAOImpl implements MemberDAO{
 	public List<HashMap<String, Object>> myhostrunninggooList(String memberID) {
 		return mybatis.selectList("MemberDAO.myhostrunninggooList",memberID);
 	}	
+	
+	//런닝구 host 방만들기 & user 방참가 수락시 포인트 -5000
+	@Override
+	public void minusPointForRNGDeposit(String ID) {
+		mybatis.update("MemberDAO.minusPointForRNGDeposit", ID);
+	}	
 }

@@ -8,13 +8,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dogether.domain.MemberVO;
 import com.dogether.domain.RunningGooVO;
+import com.dogether.service.MemberService;
 import com.dogether.service.RunningGooService;
 
 @Controller
@@ -22,6 +22,9 @@ import com.dogether.service.RunningGooService;
 public class RunningGooController {
 	@Autowired
 	RunningGooService runningGooService;
+	
+	@Autowired
+	MemberService memberService;
 	
 	// 방만들기 페이지로 이동
 	@RequestMapping("createRngRoom.do")
@@ -42,8 +45,10 @@ public class RunningGooController {
 	public String CreateRngRoom(RunningGooVO vo, HttpSession session) {
 		// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
 		System.out.println("으아아아아아아ㅏ아ㅏ아아아ㅓ만어리만어리만어리ㅏㅁㄴ얾나ㅣㅇ러민아러민아럼니아러민아럼ㄴ아럼낭러미낭러민아러민아러미나어라너이ㅏ런이ㅏ럼니아러미나얼미낭러미낭러미낭러민아러민아럼니아럼ㄴ이라");
+		String HostID = (String) session.getAttribute("username");
 		System.out.println((String) session.getAttribute("username"));
 		vo.setMemberID(session.getAttribute("username").toString());
+		memberService.minusPointForRNGDeposit(HostID);
 		runningGooService.insertRNRoomInfo(vo);
 		System.out.println(vo.getRoomNumber());
 		return "redirect:../runninggoo/";
@@ -125,6 +130,10 @@ public class RunningGooController {
 		map.put("memberid", memberID);
 		map.put("roomnumber",roomNum);
 		runningGooService.upateRngMemberInfo(map);
+//		memberService.minusPointForRNGDeposit(memberID);		// 런닝구 수락시 ==> 보류
+		
+		//멤버 포인트 수정하기
+		
 		
 		// 현재 인원수를 호스트가 가진 row에서 수정하기
 		System.out.println(roomNum + "인데?");

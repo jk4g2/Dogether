@@ -16,4 +16,6 @@ public interface MemberService {
 	public int getMemberCount();	// 총 회원 수(관리자페이지)
 	List<HashMap<String,Object>> myrunninggooList(String memberID);//내 런닝구목록 가져오기
 	List<HashMap<String,Object>> myhostrunninggooList(String memberID);//내가 호스트인 런닝구목록 가져오기
+	public void minusPointForRNGDeposit(String ID);	//런닝구 host 방만들기 & user 방참가 수락시 포인트 -5000
+
 }

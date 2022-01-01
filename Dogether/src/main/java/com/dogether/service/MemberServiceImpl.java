@@ -63,5 +63,11 @@ public class MemberServiceImpl implements MemberService{
 	public List<HashMap<String, Object>> myhostrunninggooList(String memberID) {
 		return memberDAO.myhostrunninggooList(memberID);
 	}
-
+	
+	//런닝구 host 방만들기 & user 방참가 수락시 포인트 -5000
+	@Override
+	public void minusPointForRNGDeposit(String ID) {
+		memberDAO.minusPointForRNGDeposit(ID);
+	}
+		
 }
