@@ -113,7 +113,7 @@
 		<c:forEach items="${RunningGooList }" var="runninggoo">
 			<div class="col-12 runninggoo_card_wrap">
 				<div class="col-12 runninggoo_card_inner mb30 box">
-					<h1 class="isPayBack_0"></h1>
+					<h1 class="0"></h1>
 					<div class="isMatched"></div>
 					<div class="col-12 rn_card_user_profile">
 						<div class="rngRoomNum" style="display:none">${runninggoo.roomNumber }</div>

@@ -72,7 +72,7 @@ public class RunningGooController {
 		MemberVO mVo = memberService.getMemberInfo(nowMemberID);		// 현재 멤버의 모든 정보 mVo에 담
 		m.addAttribute("nowMemberPoint", mVo.getPoint());								// 현재 멤버 정보에서 point만 jsp로 전달
 
-	System.out.println("Model 객체를 통해 전달완료!");
+		System.out.println("Model 객체를 통해 전달완료!");
 		return "runninggoo/runningGooList";
 	}
 		
@@ -173,7 +173,7 @@ public class RunningGooController {
 		memberService.plusPointForRNGDeposit1(roomNum);
 		
 		// 호스트 방 삭제
-	map.put("roomnumber",roomNum);
+		map.put("roomnumber",roomNum);
 		runningGooService.deleteRngRoom(map);
 		
 		

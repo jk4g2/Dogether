@@ -101,7 +101,7 @@
 		UPDATE member SET Point = Point -5000 WHERE MemberID = #{HostID};
 	</update>
 	
-	<!-- 런닝구 미매칭 기간만료 또는 매칭 완료 기간만료 +5000 -->
+	<!-- 방 삭제 시 모든 멤버 포인트 +5000 -->
 	<update id="plusPointForRNGDeposit1" parameterType="integer">
 		UPDATE runninggoo r NATURAL JOIN member m
 		SET m.point= m.point +5000

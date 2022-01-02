@@ -261,16 +261,15 @@ $('.rn_profile_memberCount').each(function(){
 	
 	var isPayBck = $(this).parent().prev().prev();
 	
-	if(isPayBck.attr("class") == "isPayBack_0"){	
+	if(isPayBck.attr("class") == "0"){	
 		if((refund3 || refund1) == true){
 			nowList.addClass('matched matchedBG');
 			nowBalloon.addClass('matchedBG');
-			isPayBck.attr("class", "isPayBack_1");
+			isPayBck.attr("class", "1");
 		}  // 3
 		else if((parseInt(CrntMembers) >= (parseInt(maxMembers)) && (currentMyID != hostRngRoomID))){
 			nowList.addClass('matched matchedBG');
 			nowBalloon.addClass('matchedBG');
-			isPayBck.attr("class", "isPayBack_1");
 		}
 	}
 })

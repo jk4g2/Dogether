@@ -24,7 +24,7 @@ public class MemberVO {
 	private int point;
 	private char blackListYN;
 	private int sortTypeMember;		// 0이면 이름순, 1이면 나이순, 2면 블랙리스트만
-	
+		
 	public String getMemberID() {
 		return memberID;
 	}
@@ -127,7 +127,6 @@ public class MemberVO {
 	public void setSortTypeMember(int sortTypeMember) {
 		this.sortTypeMember = sortTypeMember;
 	}
-
 	
 	MultipartFile file;
 	
