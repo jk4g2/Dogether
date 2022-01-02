@@ -71,9 +71,15 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	// 호스트가 user 방참가 거절시 포인트 +5000
-		@Override
-		public void plusPointForRNGDeposit(String ID) {
-			memberDAO.plusPointForRNGDeposit(ID);
-		}
+	@Override
+	public void plusPointForRNGDeposit(String ID) {
+		memberDAO.plusPointForRNGDeposit(ID);
+	}
 		
+	// 호스트 방 삭제시 관련된 모든 멤버 +5000원 환불
+	@Override
+	public void plusPointForRNGDeposit1(int roomNum) {
+		memberDAO.plusPointForRNGDeposit1(roomNum);
+		
+	}
 }

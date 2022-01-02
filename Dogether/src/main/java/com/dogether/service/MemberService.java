@@ -18,5 +18,5 @@ public interface MemberService {
 	List<HashMap<String,Object>> myhostrunninggooList(String memberID);//내가 호스트인 런닝구목록 가져오기
 	public void minusPointForRNGDeposit(String ID);	//런닝구 host 방만들기 & user 방참가 수락시 포인트 -5000
 	public void plusPointForRNGDeposit(String ID);		// 호스트가 user 방참가 거절시 포인트 +5000
-
+	public void plusPointForRNGDeposit1(int roomNum); // 호스트 방 삭제시 관련된 모든 멤버 +5000원 환불
 }

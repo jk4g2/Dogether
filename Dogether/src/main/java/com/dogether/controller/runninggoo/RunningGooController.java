@@ -44,7 +44,6 @@ public class RunningGooController {
 	@RequestMapping(value="rngInsert.do")
 	public String CreateRngRoom(RunningGooVO vo, HttpSession session) {
 		// Dogether 본 서버에서는 session.setAttribute를 해줄 필요가 없음.
-		System.out.println("으아아아아아아ㅏ아ㅏ아아아ㅓ만어리만어리만어리ㅏㅁㄴ얾나ㅣㅇ러민아러민아럼니아러민아럼ㄴ아럼낭러미낭러민아러민아러미나어라너이ㅏ런이ㅏ럼니아러미나얼미낭러미낭러미낭러민아러민아럼니아럼ㄴ이라");
 		String HostID = (String) session.getAttribute("username");
 		System.out.println((String) session.getAttribute("username"));
 		vo.setMemberID(session.getAttribute("username").toString());
@@ -73,7 +72,7 @@ public class RunningGooController {
 		MemberVO mVo = memberService.getMemberInfo(nowMemberID);		// 현재 멤버의 모든 정보 mVo에 담
 		m.addAttribute("nowMemberPoint", mVo.getPoint());								// 현재 멤버 정보에서 point만 jsp로 전달
 
-		System.out.println("Model 객체를 통해 전달완료!");
+	System.out.println("Model 객체를 통해 전달완료!");
 		return "runninggoo/runningGooList";
 	}
 		
@@ -166,11 +165,19 @@ public class RunningGooController {
 	// 호스트의 런닝구 방 삭제
 	@RequestMapping("deleteRngRoom.do")
 	@ResponseBody
-	public String deleteRngRoom(String hostMemberID, int roomNum, HttpSession session) {
+	public String deleteRngRoom(String hostMemberID, int roomNum) {
 		HashMap<String,Object> map = new HashMap<String,Object>();
-		map.put("memberid", hostMemberID);
-		map.put("roomnumber",roomNum);
+//		map.put("memberid", hostMemberID);
+		
+		// 호스트 방 삭제 및 기간만료 등 여러 경우에 그 방과 관련된 모든 멤버 +5000원 환불
+		memberService.plusPointForRNGDeposit1(roomNum);
+		
+		// 호스트 방 삭제
+	map.put("roomnumber",roomNum);
 		runningGooService.deleteRngRoom(map);
+		
+		
+		
 		return "Confirm!";
 	}
 		
