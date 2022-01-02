@@ -1,8 +1,18 @@
 
 // 날짜 데이터 값 받아오기
+var today = new Date();
 $("#meeting-time").change(function(){
-	var dateString = $("#meeting-time").val()
-	console.log(dateString);
+var checkMeetingTime = new Date($("#meeting-time").val());
+	
+	var todayMinusMeetingTime = checkMeetingTime.getTime() - today.getTime();
+	
+	var minusDateResult = todayMinusMeetingTime / 1000 / 60 / 60 / 24;
+	console.log(minusDateResult);
+	
+	if( minusDateResult < 0 ){
+		alert("지난 날짜는 선택할 수 없습니다.");
+		$("#meeting-time").val("");
+	}	
 });
 
 $('#selectRunningDistance').hide();
@@ -147,19 +157,29 @@ $('.hostBtn').click(function(){
 $('.delBtn').click(function(){
 	var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
 	var nowHostID =$(this).parent().prev().prev().prev().prev().children(".rn_profile_nickname").text();
-	alert(nowRoomNum);
-	alert(nowHostID);
-	$.ajax({
-		url : "deleteRngRoom.do",
-		data : { hostMemberID : nowHostID, roomNum : nowRoomNum },
-		success : function(){
-			alert("삭제완료!");
-			location.replace("../runninggoo/");
-		},
-		error : function(){
-			alert("삭제 실패!");
-		}
-	});
+	//alert(nowRoomNum);
+	///alert(nowHostID);
+	
+	// 아니오 눌렀을때
+	if(!confirm("정말 런닝구 방을 삭제할까요?")){
+		alert("방삭제가 취소되었습니다.")
+	}
+	// 확인 눌렀을때
+	else{
+		//alert(nowRoomNum);
+		//alert(nowHostID);
+		$.ajax({
+			url : "deleteRngRoom.do",
+			data : { hostMemberID : nowHostID, roomNum : nowRoomNum },
+			success : function(){
+				alert("삭제완료!");
+				location.replace("../runninggoo/");
+			},
+			error : function(){
+				alert("삭제 실패!");
+			}
+		}); // end-of-ajax
+	}
 }) // end-of-click
 
 
@@ -217,7 +237,9 @@ $('.deleteJoin').click(function(){
 
 
 
-// 런닝구 방 다 차면 검은색 배경씌우기
+// 런닝구 방 다 차거나 미매칭 상태에서 날짜 만료되면 검은색 배경씌우기
+
+
 
 $('.rn_profile_memberCount').each(function(){
 	var CrntMembers = $(this).children('.currentMembers').text();
@@ -226,12 +248,31 @@ $('.rn_profile_memberCount').each(function(){
 	var nowBalloon = $(this).parent().next().next().next().children('.ballon');
 	var hostRngRoomID = $(this).prev().prev().text();
 	var currentMyID = $(this).parent().parent().parent().parent().prev().text();
-
-	if((parseInt(CrntMembers) >= parseInt(maxMembers)) && (currentMyID != hostRngRoomID)){
-		nowList.addClass('matched matchedBG');
-		nowBalloon.addClass('matchedBG');
-	}
+	var checkMeetingTime = new Date($(this).parent().next().next().children().children().children().next('#showMeetingTime').text());
 	
+	var todayMinusMeetingTime = checkMeetingTime.getTime() - today.getTime();
+	
+	var minusDateResult = todayMinusMeetingTime / 1000 / 60 / 60 / 24;
+	console.log(minusDateResult);
+	
+	
+	var refund3 = (parseInt(CrntMembers) >= (parseInt(maxMembers)) && (currentMyID != hostRngRoomID)) && minusDateResult < 0;
+	var refund1 = (parseInt(CrntMembers) < (parseInt(maxMembers)) && (currentMyID != hostRngRoomID)) && minusDateResult < 0;
+	
+	var isPayBck = $(this).parent().prev().prev();
+	
+	if(isPayBck.attr("class") == "isPayBack_0"){	
+		if((refund3 || refund1) == true){
+			nowList.addClass('matched matchedBG');
+			nowBalloon.addClass('matchedBG');
+			isPayBck.attr("class", "isPayBack_1");
+		}  // 3
+		else if((parseInt(CrntMembers) >= (parseInt(maxMembers)) && (currentMyID != hostRngRoomID))){
+			nowList.addClass('matched matchedBG');
+			nowBalloon.addClass('matchedBG');
+			isPayBck.attr("class", "isPayBack_1");
+		}
+	}
 })
 
 
