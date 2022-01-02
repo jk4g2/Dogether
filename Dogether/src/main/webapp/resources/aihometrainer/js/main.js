@@ -246,57 +246,10 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
 
 
 
-
-
-
-
-
-
-
-        /* ---------------------------------------------- /*
-         * Portfolio 
-         /* ---------------------------------------------- */
-
-        var worksgrid   = $('#works-grid'),
-            worksgrid_mode;
-
-        if (worksgrid.hasClass('works-grid-masonry')) {
-            worksgrid_mode = 'masonry';
-        } else {
-            worksgrid_mode = 'fitRows';
-        }
-
-        worksgrid.imagesLoaded(function() {
-            worksgrid.isotope({
-                layoutMode: worksgrid_mode,
-                itemSelector: '.work-item'
-            });
-        });
-
-        $('#filters a').click(function() {
-            $('#filters .current').removeClass('current');
-            $(this).addClass('current');
-            var selector = $(this).attr('data-filter');
-
-            worksgrid.isotope({
-                filter: selector,
-                animationOptions: {
-                    duration: 750,
-                    easing: 'linear',
-                    queue: false
-                }
-            });
-
-            return false;
-        });
-
-
-
-
-
         /* ---------------------------------------------- /*
          * Portfolio demos2   clickclickclick
          /* ---------------------------------------------- */
+
 
 
 
@@ -307,14 +260,15 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
 
         if (demos2.hasClass('demos2-masonry')) {
             demos2_mode = 'masonry2';
+           console.log('------------------------------------------')
         } else {
             demos2_mode = 'fitRows2';
         }
 
         demos2.imagesLoaded(function() {
             demos2.isotope({
-                layoutMode: demos2_mode,
-                itemSelector: '.aaaaa'
+                layoutMode: 'fitRows2',
+                itemSelector: $("#img_margin")
             });
         });
 
@@ -340,9 +294,6 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
         
         
 
-     
- 
- 
 
         
         
@@ -460,15 +411,6 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
 
 
 
-
-
-
-
-
-
-
-
-
     });
 })(jQuery);
 
@@ -476,36 +418,35 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
 
 
 
-/*---------------------- ajax*/
-/*
-$(document).ready(function(){
+/*=========================== MadeByMe =============*/
 
-	$("#works li").click(function(){
+/*====  [3]상세 페이지의 밑의 메뉴를 클릭했을 때 요소가     ====*/
 
 
-		
-		var li_url = $(this).data('url')
+$(document).ready(function() {
+   
+  	$('.testtest').addClass('hide'); 
+    
+    $('.testtest').first().removeClass('hide').addClass('block'); 
 
-	    
-		$.ajax({
-			type:'get',
-			url : li_url,
-			dataType :'html',
-			success : function(data){
-				$('.slider_part').empty();
-				$('.slider_part').html(data);				
-			}
-			error:function(error){
-			
-			}
 
-		
-			})
-		
-		});		
-		
-	});
-	*/
-	
-	
+    $('.list_menu').first().addClass('selectedTab');
+
+
+    $('.list_menu').click(function() {	
+        if(!$(this).hasClass('selectedTab')) { 
+            var tabContentType = $(this).children('a').attr('class'); 
+        		
+            $('.list_menu').removeClass('selectedTab'); 
+            $(this).addClass('selectedTab');	  
+            $('div.testtest').addClass('hide');	 
+            $( '.' + tabContentType ).parent().removeClass('hide').addClass('block');
+       
+        }
+    });
+});
+
+
+
+
 

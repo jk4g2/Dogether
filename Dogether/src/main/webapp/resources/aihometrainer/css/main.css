@@ -1226,28 +1226,34 @@ div.col-lg-6{
   
   
   
-  
+
 #test_test_t2 {
 	 margin-left: 30%;
 	 margin-right: 30%
 }
 
+#test_test_t3 { 
+	 margin-left: 8%;
+	 margin-right: 8%
+}
 
 
 
 
-section#motion_test{
+
+
+.middle_td{
 	background-image:url(../images/loding.jpg);
     -webkit-background-size:/*@@prefixmycss->No equivalent*/;
-    -moz-background-size:cover;
+  -moz-background-size:cover;
     -o-background-size:/*@@prefixmycss->No equivalent*/;
-    background-position:center center;
+   background-position:center center;
     background-attachment:fixed;
     background-repeat:no-repeat;
     position:relative;
-    min-height: 300px;
-	
+    min-height: 300px;	
 }
+
 
 
 td#test_td{
@@ -1297,6 +1303,7 @@ nav .logo a {
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.5px;
+  font-family: 'Jua', sans-serif;
 }
 
 nav .logo em {
@@ -1305,7 +1312,7 @@ nav .logo em {
 }
 
 nav#nav_test {
-    background: black;
+    background: rgba(250,250,250,0.2);
     height: 80px;
     position: fixed;
     width: 100%;
@@ -1400,7 +1407,6 @@ nav {
 .overlay-menu.open {
     opacity: 1;
     transform: translateY(0%);
-    font-family: 'Jua', sans-serif;
 }
 
 .overlay-menu {
@@ -1423,6 +1429,7 @@ nav {
     text-align: left;
     transform: translateY(-100%);
     transition: all 0.5s;
+    font-family: 'Jua', sans-serif;
 }
 
 .overlay-menu::-webkit-scrollbar {
@@ -1431,21 +1438,28 @@ nav {
   
   
   .overlay-menu ul li a {
-    font-size: 25px;
+	font-size: 30px;
     font-weight: 300;
     color: #fff;
     margin-left: 20px;
     text-decoration: none;
     transition: all 0.5s;
+    
 }
 
-.overlay-menu ul {
-	list-style: none;
-	padding-left: 0px;
+  .overlay-menu ul li{
+	padding-top: 15px;
+    padding-right: 0px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+    list-style:none;
+    
+  }
+
+ul#non_padding{
+	padding-left:0px;
+	padding-top:70px;
 }
-
-
-
 
 
 /*------------------------------ scroll_bar*/
@@ -1458,4 +1472,14 @@ body::-webkit-scrollbar {
 /* Add a thumb */
 body::-webkit-scrollbar-thumb {
     background: rgba(250, 250, 250, 0.5);
+    
+
+}
+
+
+
+.t2t2_menu > div {
+    display: inline-block;
+    padding: 0 0 10px;
+    margin: 0 25px;
 }

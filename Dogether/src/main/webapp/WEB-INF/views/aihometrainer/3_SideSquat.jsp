@@ -99,6 +99,8 @@
 	
 	var count_get = 0; // // getCount함수에서 받아온 변수를 받기 위해 선언한 변수.
 	
+	var count = 0;
+	
 	// ## input에 입력한 값을 받아서 지역변수에서 전역변수로 만드는 과정
 	function getCount(){
 		
@@ -106,13 +108,17 @@
 		
 			this.count_get = count_yet;
 		
+		var count_yet2 = document.getElementById("ViewCount").value;
+			
+			this.count = count_yet2;
+			
+			count = 0;
+		
 			var audio = new Audio(URL + 'start.mp3');
     		audio.play();
     	
 			$("#ViewCount3").text("시작하세요.");
-			$("#ViewCount").text("");			
-    		
-    		console.log(count_get); 		
+			$("#ViewCount").text("");					
 		};
 
 </script>
@@ -176,8 +182,8 @@
 						</td>
 						
 						<td>   <!-- 1 : 운동 종목 -->
-							<div id="t_title">Side Lateral Raise</div>
-							<div>사이드 레터럴 레이즈</div>
+							<div id="t_title">Wide Squat</div>
+							<div>와이드 스쿼트</div>
 						</td>
 			   	</tr>
 						
@@ -237,8 +243,8 @@
 					    let model, webcam, ctx, labelContainer, maxPredictions;
 					
 					    async function init() {  // ### 2. init 이라는 함수는 model을 불러오고(31-32), 카메라를 설정해준 다음에(35-40), (40)loop라는 함수를 계속 돌게 된다.
-					        const modelURL = URL + "SRR_model.json";
-					        const metadataURL = URL + "SRR_metadata.json";
+					        const modelURL = URL + "sideSquat_model.json";
+					        const metadataURL = URL + "sideSquat_metadata.json";
 					
 								     // 모델 및 메타데이터 로드
 								        // 파일 선택기에서 파일을 지원하려면 API의 tmImage.loadFromFiles()를 참조하십시오.
@@ -289,9 +295,9 @@
 		        
 								// ##############				        
 					        
-								 if(prediction[0].probability.toFixed(2) == 0.90){
+								 if(prediction[0].probability.toFixed(2) >= 0.90){
 										 
-							        	if(prediction[1].probability.toFixed(2) == 1.00){
+							        	if(prediction[1].probability.toFixed(2) >= 1.00){
 							        		
 							        		 count = count+1;
 							        		 ViewCount.innerHTML = count;
@@ -300,22 +306,31 @@
 											
 							     				$("#ViewCount3").text("");
 							        		 
-								        		var audio = new Audio(URL + count%10 + '.mp3');
-								        		audio.play();
+									     				var audio = new Audio(URL + 'sound/' + count%10 + '.mp3');
+									     				var audio_ten = new Audio(URL + 'sound/' + parseInt(count/10) + count%10 + '.mp3');
+								        
+									     				if(parseInt(count)<10){
+		
+											        		audio.play();
+									     				}
+											        	else{
+											        		audio_ten.play();	
+											        	}	
+											        	
 							        		 
-							        		 
-							        		 if(parseInt(count)==parseInt(count_get)){   // 목표숫자가 '  ' 이면  //  inputbox로 바꿈
-							        			 console.log(1);
-							        			 
-							       				count = 0;   // 카운트 초기화 되고,
-							        			 
-							        			var audio = new Audio(URL + 'success2.mp3');  
-									        	audio.play();				// success2.mp3 음성이 나옴. (목표한 갯수를 완료하였습니다 라는 음성이 나옴)
-												$("#ViewCount").text("");
-												$("#ViewCount3").text("목표한 갯수를 성공하셨습니다.");
-									        	
-							        			 };							        		 
+								        		 if(parseInt(count)==parseInt(count_get)){   // 목표숫자가 '  ' 이면  //  inputbox로 바꿈
+								        			 console.log(1);
+								        			 
+								       				count = 0;   // 카운트 초기화 되고,
+								        			 
+								        			var audio_s = new Audio(URL + 'success2.mp3');  
+										        	audio_s.play();				// success2.mp3 음성이 나옴. (목표한 갯수를 완료하였습니다 라는 음성이 나옴)
+													$("#ViewCount").text("");
+													$("#ViewCount3").text("목표한 갯수를 성공하셨습니다.");
+										        	
+								        			 };							        		 
 							        	}	
+							        	
 							        	else if(prediction[2].probability.toFixed(2) == 1.00){
 											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
 											//$("#ViewTimer2").attr("src", "../resources/aihometrainer/images/3-yaga-3.jpg");
@@ -323,7 +338,7 @@
 							        		
 							        	}
 							        	
-							        };
+							   };
 										        
 	         
 										        // ##############
@@ -448,7 +463,7 @@
     
     
     
-  <!-- 3. 하단  ############# 하단 메뉴 요소 시작!! ########## -->     
+ <!-- 3. 하단  ############# 하단 메뉴 요소 시작!! ########## -->     
              
 
 	     <!-- ## 메뉴 : ALL 시작! -->              

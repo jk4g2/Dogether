@@ -60,31 +60,36 @@
 		 width: 100px; }
 	
 	img#sub_slider_img{
-		 width: 203.99px; }
+		 width: 203.99px; 
+		 height : 136.09px;}
 		 
 	.test_sub_simg {
 	     width: 23%; }
 	
 	.middle_td{
-		padding-left : 10px;
-		padding-right: 10px;}
+		 padding-left : 10px;
+		 padding-right: 10px;}
 	
 	#under_table{
-		padding-left : 10%;
-		padding-right: 10%;}
+		 padding-left : 10%;
+		 padding-right: 10%;}
 	
 	#canvas{
-	    padding-right: 80px;}
+	     padding-right: 80px;}
 	
 	#start_button{
-		padding-top:15px;
-		padding-bottom:30px;}
+		 padding-top:15px;
+		 padding-bottom:30px;}
 	
 	.block {display:block;}
 	.hide {display:none;}
 	
 	#motion_test{
-	    padding-top:112px; }
+   		 padding-top:112px; }
+    
+    img#imgSize{
+    	 height : 136.09px;
+    }
 		    
 </style>
  
@@ -179,7 +184,7 @@
      <!-- 헤더바 시작! -->
 	<nav>
 	   <div class="logo">
-	       <a href="index.jsp">DO<em>GETHER</em></a>
+	       <a href="index.do">DO<em>GETHER</em></a>
 	   </div>
 	    <div class="menu-icon">
 	       <span></span>
@@ -192,14 +197,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="main-menu">
-					<ul>
-						<li><a href="#">런닝구</a></li>
-						<li><a href="#">Gym 예약할까</a></li>
-						<li><a href="#">온라인 PT</a></li>
-						<li><a href="#">자랑하기</a></li>
-						<li><a href="#">BMI 측정가능 보건소</a></li>
-						<li><a href="#">쇼핑몰</a></li>
-						<li><a href="Mypage">마이페이지</a></li>
+					<ul id="non_padding">
+						<li><a href="runninggoo.do">런닝구</a></li>
+						<li><a href="ai_home_trainer_view/1_aiHT_main.do">온라인 PT</a></li>
+						<li><a href="boast.do">자랑하기</a></li>
+						<li><a href="healthcenter.do">Inbody 측정 보건소</a></li>
+						<li><a href="shoppingmall.do">쇼핑몰</a></li>
+						<li><a href="userMyPage/myPage.do">마이페이지</a></li>
 					</ul>
 				</div>
 			</div>
@@ -223,8 +227,8 @@
 						</td>
 						
 						<td>   <!-- 1 : 운동 종목 -->
-							<div id="t_title">나무자세</div>
-							<div>스쿼트</div>
+							<div id="t_title">Tree Pose</div>
+							<div>나무자세</div>
 						</td>
 				 </tr>
 						
@@ -260,7 +264,7 @@
 					<td style="height: 180px;">
 						<div id="ViewTimer_right" style="font-size:50px; color:blue;"></div>  <!-- '올바른 자세입니다'가 출력 부분. -->
 							<!-- <img src="#"/>  -->					
-							<div id="ViewTimer_wrong" style="font-size:40px; color:red; "></div>  <!-- '자세에 좀 더 집중해주세요'가 출력 부분. -->						
+						<div id="ViewTimer_wrong" style="font-size:40px; color:red;"></div>  <!-- '자세에 좀 더 집중해주세요'가 출력 부분. -->						
 					</td>
 				</tr>					
 						
@@ -286,8 +290,8 @@
 					    let model, webcam, ctx, labelContainer, maxPredictions;
 					
 					    async function init() {  // ### 2. init 이라는 함수는 model을 불러오고(31-32), 카메라를 설정해준 다음에(35-40), (40)loop라는 함수를 계속 돌게 된다.
-					        const modelURL = URL + "tree_starjump.json";
-					        const metadataURL = URL + "tree_starjump.json";
+					        const modelURL = URL + "tree_model.json";
+					        const metadataURL = URL + "tree_metadata.json";
 					
 								     // 모델 및 메타데이터 로드
 								        // 파일 선택기에서 파일을 지원하려면 API의 tmImage.loadFromFiles()를 참조하십시오.
@@ -334,19 +338,20 @@
 					        					        
 								    // ##############
 						
-									 if(prediction[0].probability.toFixed(2)||prediction[2].probability.toFixed(2) >= 0.95){   // 시작 자세
-										
+									 if(prediction[0].probability.toFixed(2)||prediction[2].probability.toFixed(2) > 0.95){   // 시작 자세
+											$("#ViewTimer_wrong").text("");											
 											$("#ViewTimer_right").text("올바른 자세입니다");
-											$("#ViewTimer_wrong").text("");	
 										 }
 							        
-									 else if(prediction[0].probability.toFixed(2)||prediction[2].probability.toFixed(2) < 0.95) {
-								        
-											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
-											//$("#ViewTimer2").attr("src", "../resources/aihometrainer/images/3-yaga-3.jpg");
+									 else if(prediction[1].probability.toFixed(2) > 0.80) {
+								            $("#ViewTimer_wrong").text("");												 
 											$("#ViewTimer_right").text("");
-					
-									 	};
+										 }
+								    
+									 else if (prediction[3].probability.toFixed(2)||prediction[4].probability.toFixed(2) > 0.95){
+											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
+											$("#ViewTimer_right").text("");
+					 					};
 		
 							
 								        // ##############
@@ -436,7 +441,7 @@
     
 <!-- 4. 하단 메뉴 ############# 하단 메뉴 리스트 시작! ########## -->
 
-		<div class="container" id="works">
+		<div class="container width_size" id="works" style="width: 1200px;">
 			<div class="row">
 				<div class="col-sm-12">
 					<ul class="filter font-alt test_filter">
@@ -452,7 +457,7 @@
 
 						<li class="list_menu"><a class="menu_belly">belly</a></li>
 
-						<li class="list_menu"><a class="menu_arm">arm</a></li>
+						<li class="list_menu"><a class="menu_arm">arm & shoulder</a></li>
 
 						<li class="list_menu"><a class="menu_leg">leg & hip</a></li>
 
@@ -482,53 +487,106 @@
 	
 	                <div class="owl-item">
 	                  <div class="col-sm-12">
-	                    <div class="ex-product "><a href="#"><img src="../resources/aihometrainer/images/3-frank.jpg" alt="Leather belt"/></a>
-	                      <h4 class="shop-item-title font-alt"><a href="#">squat</a></h4>
+	                    <div class="ex-product "><a href="#"><img src="../resources/aihometrainer/images/3-starjump.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">star jump</a></h4>
 	                    </div>
 	                  </div>
 	                </div>
 	                   
 	                <div class="owl-item">
 	                  <div class="col-sm-12">
-	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-keep.jpg" alt="Derby shoes"/></a>
-	                      <h4 class="shop-item-title font-alt"><a href="#">Lungy</a></h4>
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-keep.jpg" alt="Derby shoes" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Basic plank</a></h4>
 	                    </div>
 	                  </div>
 	                </div>  
 	        
 	                
 	                <div class="owl-item">
-	                  <div class="col-sm-12">
-	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-leglaz.jpg" alt="Leather belt"/></a>
-	                      <h4 class="shop-item-title font-alt"><a href="#">Plank</a></h4>
+	                  <div class="col-sm-12"> 
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/burpeetest.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">burpee test</a></h4>
 	                    </div>
 	                  </div>
 	                </div>
+
+
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-squrt.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">squat</a></h4>
+	                    </div>
+	                  </div>
+	                </div>	  
+
 	                              
 	                <div class="owl-item">
 	                  <div class="col-sm-12">
-	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-pushup.jpg" alt="Leather belt"/></a>
-	                      <h4 class="shop-item-title font-alt"><a href="#">side-Plank</a></h4>
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/butterfly.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">butterfly</a></h4>
 	                    </div>
 	                  </div>
 	                </div>
 	               
 	                <div class="owl-item">
 	                  <div class="col-sm-12">
-	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-yaga-3.jpg" alt="Chelsea boots"/></a>
-	                      <h4 class="shop-item-title font-alt"><a href="#">Burpee-Test</a></h4>
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/chairPose.jpg" alt="Chelsea boots" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Chair pose</a></h4>
 	                    </div>
 	                  </div>
 	                </div>
 	                
 	                <div class="owl-item">
 	                  <div class="col-sm-12">
-	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-armdum.jpg" alt="Leather belt"/></a>
-	                      <h4 class="shop-item-title font-alt"><a href="#">Slow-Burpee</a></h4>
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/dumbbelllfd.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Dumbbell Let Pull Down</a></h4>
 	                    </div>
-	                           
 	                  </div>
 	                </div>
+	                
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-pushup.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Push Up</a></h4>
+	                    </div>
+	                  </div>
+	                </div>
+	                
+	               <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/shoulderpress.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Shoulder Press</a></h4>
+	                    </div>
+	                  </div>
+	                </div>
+	                
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/wideSqurt.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Wide squat</a></h4>
+	                    </div>
+	                  </div>
+	                </div>	                
+	                
+              
+	                
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-armdum.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Side Lateral Raise</a></h4>
+	                    </div>
+	                  </div>
+	                </div>	                
+
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/tree_yoga.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Tree Pose</a></h4>
+	                    </div>
+	                  </div>
+	                </div>
+	                
+	                
 	              </div>
 	            </div>
 	          </div>
@@ -550,10 +608,10 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
+										src="../resources/aihometrainer/images/burpeetest.jpg"
 										alt="Leather belt" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
+										<a href="#">Burpee Test</a>
 									</h4>
 								</div>
 							</div>
@@ -563,27 +621,15 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
+										src="../resources/aihometrainer/images/3-starjump.jpg"
 										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
+										<a href="#">Star Jump</a>
 									</h4>
 								</div>
 							</div>
 						</div>
 	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -594,56 +640,90 @@
 	
 	
 	      <!-- ## 메뉴 : 근력운동 시작! -->  
-		  <div class="testtest">  
-		  <div class="menu_grud">
-			<div class="module test_module module_2" id="last_menulist">
-				<div class="container">
 	
-					<div class="row" id="demos2">
+	       <div class="testtest">     
+	       <div class="menu_grud">
+	        <div class="module test_module module_2" id="last_menulist">
+	          <div class="container">
+	  
+	            <div class="row" id="demos3">
+	  
+	                <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
 	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
+	                   
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-keep.jpg" alt="Derby shoes" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Basic plank</a></h4>
+	                    </div>
+	                  </div>
+	                </div>  
+
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-squrt.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">squat</a></h4>
+	                    </div>
+	                  </div>
+	                </div>	  
+	                              
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/butterfly.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">butterfly</a></h4>
+	                    </div>
+	                  </div>
+	                </div>
+	               
+	               <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/dumbbelllfd.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Dumbbell Let Pull Down</a></h4>
+	                    </div>
+	                  </div>
+	                </div>
+	                
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-pushup.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Push Up</a></h4>
+	                    </div>
+	                  </div>
+	                </div>
+	                
+	               <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/shoulderpress.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Shoulder Press</a></h4>
+	                    </div>
+	                  </div>
+	                </div>
+	                
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/wideSqurt.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Wide squat</a></h4>
+	                    </div>
+	                  </div>
+	                </div>	                
+	                
+              
+	                
+	                <div class="owl-item">
+	                  <div class="col-sm-12">
+	                    <div class="ex-product"><a href="#"><img src="../resources/aihometrainer/images/3-armdum.jpg" alt="Leather belt" id="imgSize"/></a>
+	                      <h4 class="shop-item-title font-alt"><a href="#">Side Lateral Raise</a></h4>
+	                    </div>
+	                  </div>
+	                </div>	                
+
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	       </div>
+	      </div>	
 	
-						<div class="owl-item belly_2">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
-										alt="Derby shoes" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
-									</h4>
-								</div>
-							</div>
-						</div>
-	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		  </div>
-		 </div>
 		 <!-- ## 메뉴 : 근력운동 끝! -->  
 	
 	
@@ -659,10 +739,10 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
+										src="../resources/aihometrainer/images/tree_yoga.jpg"
 										alt="Leather belt" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
+										<a href="#">Tree Pose</a>
 									</h4>
 								</div>
 							</div>
@@ -672,27 +752,15 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
+										src="../resources/aihometrainer/images/chairPose.jpg"
 										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
+										<a href="#">Chair pose</a>
 									</h4>
 								</div>
 							</div>
 						</div>
 	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -712,40 +780,15 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
-	
-						<div class="owl-item belly_2">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
+										src="../resources/aihometrainer/images/dumbbelllfd.jpg"
 										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
+										<a href="#">Dumbbell Let Pull Down</a>
 									</h4>
 								</div>
 							</div>
 						</div>
 	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -761,44 +804,6 @@
 	
 					<div class="row" id="demos2">
 	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
-	
-						<div class="owl-item belly_2">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
-										alt="Derby shoes" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
-									</h4>
-								</div>
-							</div>
-						</div>
-	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -815,14 +820,14 @@
 	
 					<div class="row" id="demos2">
 	
-						<div class="owl-item ">
+						<div class="owl-item belly_2">
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
+										src="../resources/aihometrainer/images/butterfly.jpg"
+										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
+										<a href="#">butterfly</a>
 									</h4>
 								</div>
 							</div>
@@ -832,27 +837,42 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
+										src="../resources/aihometrainer/images/3-pushup.jpg"
 										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
+										<a href="#">Push Up</a>
 									</h4>
 								</div>
 							</div>
 						</div>
 	
-						<div class="owl-item ">
+						<div class="owl-item belly_2">
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
+										src="../resources/aihometrainer/images/shoulderpress.jpg"
+										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
+										<a href="#">Shoulder Press</a>
 									</h4>
 								</div>
 							</div>
 						</div>
+						
+						<div class="owl-item ">
+							<div class="col-sm-12 test_sub_simg">
+								<div class="ex-product">
+									<a href="#"><img id="sub_slider_img"
+										src="../resources/aihometrainer/images/3-armdum.jpg"
+										alt="Leather belt" /></a>
+									<h4 class="shop-item-title font-alt">
+										<a href="#">Side Lateral Raise</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+						
+						
 					</div>
 				</div>
 			</div>
@@ -868,14 +888,27 @@
 	
 					<div class="row" id="demos2">
 	
+						<div class="owl-item belly_2">
+							<div class="col-sm-12 test_sub_simg">
+								<div class="ex-product">
+									<a href="#"><img id="sub_slider_img"
+										src="../resources/aihometrainer/images/3-squrt.jpg"
+										alt="Derby shoes" /></a>
+									<h4 class="shop-item-title font-alt">
+										<a href="#">squat</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+						
 						<div class="owl-item ">
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
+										src="../resources/aihometrainer/images/wideSqurt.jpg"
 										alt="Leather belt" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
+										<a href="#">Wide squat</a>
 									</h4>
 								</div>
 							</div>
@@ -885,27 +918,15 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
+										src="../resources/aihometrainer/images/chairPose.jpg"
 										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
+										<a href="#">Chair pose</a>
 									</h4>
 								</div>
 							</div>
 						</div>
-	
-						<div class="owl-item ">
-							<div class="col-sm-12 test_sub_simg">
-								<div class="ex-product">
-									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
-										alt="Leather belt" /></a>
-									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
-									</h4>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -925,10 +946,10 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
+										src="../resources/aihometrainer/images/burpeetest.jpg"
 										alt="Leather belt" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
+										<a href="#">Burpee Test</a>
 									</h4>
 								</div>
 							</div>
@@ -938,27 +959,41 @@
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-keep.jpg"
+										src="../resources/aihometrainer/images/3-starjump.jpg"
 										alt="Derby shoes" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Lungy</a>
+										<a href="#">Star Jump</a>
 									</h4>
 								</div>
 							</div>
 						</div>
-	
+
 						<div class="owl-item ">
 							<div class="col-sm-12 test_sub_simg">
 								<div class="ex-product">
 									<a href="#"><img id="sub_slider_img"
-										src="../resources/aihometrainer/images/3-leglaz.jpg"
+										src="../resources/aihometrainer/images/3-keep.jpg"
 										alt="Leather belt" /></a>
 									<h4 class="shop-item-title font-alt">
-										<a href="#">Plank</a>
+										<a href="#">Basic plank</a>
 									</h4>
 								</div>
 							</div>
 						</div>
+						
+						<div class="owl-item ">
+							<div class="col-sm-12 test_sub_simg">
+								<div class="ex-product">
+									<a href="#"><img id="sub_slider_img"
+										src="../resources/aihometrainer/images/tree_yoga.jpg"
+										alt="Leather belt" /></a>
+									<h4 class="shop-item-title font-alt">
+										<a href="#">Tree Pose</a>
+									</h4>
+								</div>
+							</div>
+						</div>						
+
 					</div>
 				</div>
 			 </div>

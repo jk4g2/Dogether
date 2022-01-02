@@ -47,7 +47,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" >
 	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     
-    
 
      <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
@@ -175,14 +174,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="main-menu">
-					<ul>
-						<li><a href="#">런닝구</a></li>
-						<li><a href="#">Gym 예약할까</a></li>
-						<li><a href="#">온라인 PT</a></li>
-						<li><a href="#">자랑하기</a></li>
-						<li><a href="#">BMI 측정가능 보건소</a></li>
-						<li><a href="#">쇼핑몰</a></li>
-						<li><a href="Mypage">마이페이지</a></li>
+					<ul id="non_padding">
+						<li><a href="../runninggoo.do">런닝구</a></li>
+						<li><a href="../aihometrainer/1_aiHT_main.do">온라인 PT</a></li>
+						<li><a href="../boast/boast.do">자랑하기</a></li>
+						<li><a href="../healthcenter/healthcenter.do">Inbody 측정 보건소</a></li>
+						<li><a href="../shoppingMall.do">쇼핑몰</a></li>
+						<li><a href="../userMypage.do">마이페이지</a></li>
 
 					</ul>
 				</div>
@@ -333,7 +331,7 @@
         <figure class="effect-bubba">
             <img src="../resources/aihometrainer/images/Arm.jpg" alt="img04">
             <figcaption>
-                <h2>great <span>ARM</span></h2>
+                <h2>great <span>arm & </span>shoulder</h2>
                 <p>For an arm like Captain America!</p>
                 <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
             </figcaption>           
