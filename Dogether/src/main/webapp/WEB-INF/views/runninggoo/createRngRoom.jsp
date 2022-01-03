@@ -23,6 +23,9 @@
 <title>런닝구 방만들기</title>
 </head>
 <style>
+* {
+	font-family: 'Jua', sans-serif;
+}
 
 input, select{
 	border: 3px solid black;
@@ -100,43 +103,25 @@ textarea{
 	<!-- name 속성 다 넣기. -->
 	<!-- header -->
 	<nav>
-   <div class="logo">
-       <a href="../index.do">DO<em>GETHER</em></a>
-   </div>
-    <div class="menu-icon">
-       <span></span>
-    </div>
-</nav>
-
-
- <section class="overlay-menu">
-      <div class="container">
+	   <div class="logo">
+	       <a href="../index.do">DO<em>GETHER</em></a>
+	   </div>
+	    <div class="menu-icon">
+	       <span></span>
+	    </div>
+	</nav>
+ 	<section class="overlay-menu">
+      <div class="container" style="background:black;">
         <div class="row">
           <div class="main-menu">
               <ul>
-              
-                  <li>
-                      <a href="#">런닝구</a>
-                  </li>
-                  <li>
-                      <a href="#">Gym 예약할까</a>
-                  </li>
-                  <li>
-                      <a href="#">온라인 PT</a>
-                  </li>
-                  <li>
-                      <a href="#">자랑하기</a>
-                  </li>
-                  <li>
-                      <a href="#">BMI 측정가능 보건소</a>
-                  </li>
-                  <li>
-                      <a href="#">쇼핑몰</a>
-                  </li>
-                  <li>
-                      <a href="Mypage">마이페이지</a>
-                  </li>
-                  
+                  <li><a href="../runninggoo/">런닝구</a></li>
+                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+                  <li><a href="../boast/">자랑하기</a></li>
+                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+                  <li><a href="../sleep/">수면시간계산기</a></li>
+                  <li><a href="../Mypage/">마이페이지</a></li>
               </ul>
           </div>
         </div>
