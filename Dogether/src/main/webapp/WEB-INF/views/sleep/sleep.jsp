@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>Best Sleep Time in Dogether!</title>
+    <title>DOGETHER 수면시간계산기입니다.	</title>
     <!-- Dogether 공통 템플릿 -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
     <!-- 반응형 웹사이트  -->
@@ -11,10 +11,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css">
     <!-- 헤더/푸터/내브바css -->
 	<link href="${pageContext.request.contextPath}/resources/css/admin/admin.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../resources/css/PhoneCSS.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <!-- ajax -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/sleep/sleep.js"></script>
@@ -46,27 +47,13 @@ ${pageContext.request.contextPath}
         <div class="row">
           <div class="main-menu">
               <ul>
-                  <li>
-                      <a href="#">런닝구</a>
-                  </li>
-                  <li>
-                      <a href="#">Gym 예약할까</a>
-                  </li>
-                  <li>
-                      <a href="#">온라인 PT</a>
-                  </li>
-                  <li>
-                      <a href="#">자랑하기</a>
-                  </li>
-                  <li>
-                      <a href="#">BMI 측정가능 보건소</a>
-                  </li>
-                  <li>
-                      <a href="#">쇼핑몰</a>
-                  </li>
-                  <li>
-                      <a href="Mypage">마이페이지</a>
-                  </li>
+                  <li><a href="../runninggoo/">런닝구</a></li>
+                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+                  <li><a href="../boast/">자랑하기</a></li>
+                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+                  <li><a href="../sleep/">수면시간계산기</a></li>
+                  <li><a href="../Mypage/">마이페이지</a></li>
               </ul>
           </div>
         </div>

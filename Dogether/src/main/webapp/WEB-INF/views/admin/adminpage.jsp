@@ -6,24 +6,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>관리자 페이지입니다.</title>
     <!-- 공통 적용 -->
+    <script src="${pageContext.request.contextPath}/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/PhoneCSS.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/NAVandFOOTER.css">
+    <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
-    <script src="${pageContext.request.contextPath}/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <!-- 반응형 웹페이지  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- admin 적용 -->
     <link href="${pageContext.request.contextPath}/resources/css/admin/admin.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/admin/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/resources/css/admin/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../resources/css/PhoneCSS.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/common-scripts.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/adminpage.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/adminvalid.js"></script>
+	
 	
 	<!--상품이미지 미리보기--------------------------------------------------------------------------------------------------------- -->
 	<script> 
@@ -71,27 +74,13 @@
         <div class="row">
           <div class="main-menu">
               <ul>
-                  <li>
-                      <a href="#">런닝구</a>
-                  </li>
-                  <li>
-                      <a href="#">Gym 예약할까</a>
-                  </li>
-                  <li>
-                      <a href="#">온라인 PT</a>
-                  </li>
-                  <li>
-                      <a href="#">자랑하기</a>
-                  </li>
-                  <li>
-                      <a href="#">BMI 측정가능 보건소</a>
-                  </li>
-                  <li>
-                      <a href="#">쇼핑몰</a>
-                  </li>
-                  <li>
-                      <a href="Mypage">마이페이지</a>
-                  </li>
+                  <li><a href="../runninggoo/">런닝구</a></li>
+                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+                  <li><a href="../boast/">자랑하기</a></li>
+                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+                  <li><a href="../sleep/">수면시간계산기</a></li>
+                  <li><a href="../Mypage/">마이페이지</a></li>
               </ul>
           </div>
         </div>

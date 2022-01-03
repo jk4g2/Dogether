@@ -11,7 +11,7 @@
     Document Title
     =============================================
     -->
-<title>DOGETHER</title>
+<title>DOGETHER 쇼핑몰입니다.</title>
 
    <!-- JavaScripts ============================================= -->
 	<script src="../resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -179,25 +179,24 @@
 
 
 		<div>
-			<!-- nav바 메뉴 -->
-			<section class="overlay-menu">
-				<div class="container">
-					<div class="row">
-						<div class="main-menu">
-							<ul>
-								<li><a href="../runninggoo.do">런닝구</a></li>
-								<li><a href="#">Gym 예약할까</a></li>
-								<li><a href="../ai_home_trainer_view/1_aiHT_main.do">온라인
-										PT</a></li>
-								<li><a href="../boast.do">자랑하기</a></li>
-								<li><a href="../healthcenter.do">Inbody 측정 보건소</a></li>
-								<li><a href="../Mypage/">쇼핑몰</a></li>
-								<li><a href="../userMyPage/">마이페이지</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
+	<!-- nav바 메뉴 -->
+	<section class="overlay-menu">
+      <div class="container" style="background:black;">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+                  <li><a href="../runninggoo/">런닝구</a></li>
+                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+                  <li><a href="../boast/">자랑하기</a></li>
+                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+                  <li><a href="../sleep/">수면시간계산기</a></li>
+                  <li><a href="../Mypage/">마이페이지</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 		</div>
 
 
