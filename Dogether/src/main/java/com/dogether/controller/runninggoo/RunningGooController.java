@@ -57,10 +57,10 @@ public class RunningGooController {
 	@RequestMapping("/")
 	public String runningGooList(RunningGooVO vo, Model m, HttpSession session) {
 		String isSession = (String) session.getAttribute("username");
-			if(isSession == null){
-				m.addAttribute("msg","로그인이 필요한 서비스입니다.");
-				return "redirect";
-			}
+		if(isSession == null){
+			m.addAttribute("msg","로그인이 필요한 서비스입니다.");
+			return "redirect";
+		}
 		List<RunningGooVO> result = runningGooService.getRNRoomList(vo);
 		int listCount = runningGooService.getRNRoomCount(vo);
 		System.out.println(listCount);
@@ -68,11 +68,12 @@ public class RunningGooController {
 		m.addAttribute("rnRoomCNT", listCount);
 		
 		//헌재 로그인한 멤버 포인트 조회하기
-		String nowMemberID = session.getAttribute("username").toString();	// 현재 멤버id
-		MemberVO mVo = memberService.getMemberInfo(nowMemberID);		// 현재 멤버의 모든 정보 mVo에 담
-		m.addAttribute("nowMemberPoint", mVo.getPoint());								// 현재 멤버 정보에서 point만 jsp로 전달
-
-		System.out.println("Model 객체를 통해 전달완료!");
+		if(!isSession.equals("Admin")) {
+			String nowMemberID = session.getAttribute("username").toString();	// 현재 멤버id
+			MemberVO mVo = memberService.getMemberInfo(nowMemberID);		// 현재 멤버의 모든 정보 mVo에 담
+			m.addAttribute("nowMemberPoint", mVo.getPoint());								// 현재 멤버 정보에서 point만 jsp로 전달
+			System.out.println("Model 객체를 통해 전달완료!");
+		}
 		return "runninggoo/runningGooList";
 	}
 		

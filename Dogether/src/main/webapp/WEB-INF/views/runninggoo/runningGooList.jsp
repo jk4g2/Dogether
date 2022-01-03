@@ -229,12 +229,21 @@
 				</div>
 			</div>
 		</c:forEach>
-		<div class="col-12 rn_plus_btn">
-			<a href="createRngRoom.do" class="rn_plus_btn_link"> <img
-				src="${pageContext.request.contextPath}/resources/img/runninggooimage/rng_plus_btn.png">
-			</a>
-		</div>
-
+		<c:if test="${sessionScope.username ne 'Admin'}">
+			<div class="col-12 rn_plus_btn">
+				<a href="createRngRoom.do" class="rn_plus_btn_link"> <img
+					src="${pageContext.request.contextPath}/resources/img/runninggooimage/rng_plus_btn.png">
+				</a>
+			</div>
+		</c:if>
+		<c:if test="${sessionScope.username eq 'Admin'}">
+			<div class="col-12 rn_plus_btn" style="display:none">
+				<a href="createRngRoom.do" class="rn_plus_btn_link"> <img
+					src="${pageContext.request.contextPath}/resources/img/runninggooimage/rng_plus_btn.png">
+				</a>
+			</div>
+		</c:if>
+		
 		<div class="col-12 rn_top_btn">
 			<a href="#">▲ 맨 위로</a>
 		</div>
