@@ -250,8 +250,9 @@ textarea{
 	
 	<div class="rngForEachLength">${rnRoomCNT }</div>
 	
-	
-	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b002992ff5db3facd06fff2ffcf08711"></script>
+	 
+	<!-- <script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b002992ff5db3facd06fff2ffcf08711"></script> -->
+	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5cb2aec4a9d3e6a82c4abf60ad9d183d"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/services.js"></script>
 
 

@@ -276,7 +276,8 @@
 	<div class="rngForEachLength" style="display:none">${rnRoomCNT }</div>
 	</div>
 
-	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b002992ff5db3facd06fff2ffcf08711"></script>
+	<!-- <script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b002992ff5db3facd06fff2ffcf08711"></script> -->
+	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5cb2aec4a9d3e6a82c4abf60ad9d183d"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/kakaoMap.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/runninggoo/RunningGoo.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/runninggoo/plugins.js"></script>
