@@ -8,15 +8,15 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-<link rel="stylesheet" href="../resources/css/templatemo-style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/runninggoo/runninggooMain.css">
-<link rel="stylesheet" href="resources/css/navandfooter.css">
-<link href="resources/ai_home_trainer_resources/css/main.css" rel="stylesheet">
-<link rel="stylesheet" href="../resources/css/PhoneCSS.css">
-<!-- 	<link rel="stylesheet" href="resources/css/templatemo-style.css">
- -->
-<script src="https://code.jquery.com/jquery-3.6.0.js"
-	type="text/javascript"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/PhoneCSS.css">
+<!-- 폰트 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+<!-- 공통 -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
 <script src="resources/js/plugins.js"></script>
 <script src="resources/js/main.js"></script>
 <script type="text/javascript" src="resources/js/bootstrap.js"></script>
@@ -121,7 +121,7 @@ textarea{
                   <li><a href="../shoppingMall/">쇼핑몰</a></li>
                   <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
                   <li><a href="../sleep/">수면시간계산기</a></li>
-                  <li><a href="../Mypage/">마이페이지</a></li>
+                  <li><a href="../mypage/">마이페이지</a></li>
               </ul>
           </div>
         </div>

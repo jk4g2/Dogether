@@ -17,13 +17,8 @@
 	</select>
 	
 	<select id="getRunningGooList" resultType="com.dogether.domain.RunningGooVO">
-		SELECT * FROM runninggoo WHERE hostYN = 'Y' GROUP BY RoomNumber
-		<choose>
-			
-			<when test="sortTypeRNG==0">ORDER BY RoomNumber DESC</when>
-			<when test="sortTypeRNG==1">ORDER BY meetingTime DESC</when>
-			<otherwise>ORDER BY meetingTime DESC</otherwise>
-		</choose>
+		SELECT * FROM runninggoo WHERE hostYN = 'Y' GROUP BY RoomNumber 
+		ORDER BY CurrentMembers = MaxMembers ASC, meetingTime DESC
 	</select>
 	
 	<select id="getRunningGooRoomCount" resultType="integer">

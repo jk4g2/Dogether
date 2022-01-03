@@ -63,7 +63,7 @@
 			if (rsp.success) {
 				paypoint(memberID, price);
 				alert("포인트 충전성공!!")
-				location.replace("../Mypage/")
+				location.replace("../mypage/")
 			} else {
 				alert("충전에 실패하였습니다. 다시 시도해주세요.")
 			}
@@ -498,7 +498,7 @@
                   <li><a href="../shoppingMall/">쇼핑몰</a></li>
                   <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
                   <li><a href="../sleep/">수면시간계산기</a></li>
-                  <li><a href="../Mypage/">마이페이지</a></li>
+                  <li><a href="../mypage/">마이페이지</a></li>
               </ul>
           </div>
         </div>

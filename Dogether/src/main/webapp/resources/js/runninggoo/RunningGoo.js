@@ -61,7 +61,7 @@ $('#jeonsong').click(function(){
 			        // 확인(예) 버튼 클릭 시 이벤트
 			    	// roomCreate 버튼 비활성화 & 마이페이지 메인(포인트결제) 팝업띄우기
 			    	$("#roomCreateSubmitBtn").attr("disabled", true);
-					window.open('../Mypage/', 'popup02', 'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
+					window.open('../mypage/', 'popup02', 'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
 			    } // end-of-else
 			}
 		},
@@ -119,7 +119,7 @@ $(".userBtn").click(function(){
 	    } else {
 	        // 확인(예) 버튼 클릭 시 이벤트
 	    	// 마이페이지 메인(포인트결제) 페이지로 이동
-			window.location.href="../Mypage/";
+			window.location.href="../mypage/";
 	    } // end-of-else
 	} else {		// 참여 가능 (참가자(user)의 포인트가 5000원 보다 클 때)
 		if (!confirm("참여신청 할까요?")) {
@@ -238,9 +238,6 @@ $('.deleteJoin').click(function(){
 
 
 // 런닝구 방 다 차거나 미매칭 상태에서 날짜 만료되면 검은색 배경씌우기
-
-
-
 $('.rn_profile_memberCount').each(function(){
 	var CrntMembers = $(this).children('.currentMembers').text();
 	var maxMembers = $(this).children('.maxMembers').text();
