@@ -79,7 +79,12 @@ h4#font-color_st{
 		</c:if>
 		<c:if test="${not empty sessionScope}">
 			<button id="logout" class="btn btn mainlog" style="float: right;">Logout</button>
-			<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'Mypage/' " style="float: right;">MyPage</button>
+			<c:if test="${sessionScope.username ne 'Admin'}">
+				<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'Mypage/' " style="float: right;">MyPage</button>
+			</c:if>
+			<c:if test="${sessionScope.username eq 'Admin'}">
+				<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'admin/' " style="float: right;">AdminPage</button>
+			</c:if>
 		</c:if>
 		
 	
@@ -267,7 +272,12 @@ h4#font-color_st{
 	<footer>
 		<div class="container-fluid">
 			<div class="col-md-12">
-				<p>Copyright &copy; 2018 Company Name | Designed by TemplateMo ||<a href='adminLogin.do'> Admin</a></p>
+				<p>Copyright &copy; 2018 Company Name | Designed by TemplateMo ||
+				<c:if test="${empty sessionScope}">
+					<a href='adminLogin.do'> Admin</a>
+				</c:if>
+				
+				</p>
 			</div>
 		</div>
 	</footer>

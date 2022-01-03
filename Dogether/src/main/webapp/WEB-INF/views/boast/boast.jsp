@@ -57,8 +57,11 @@
 	<div id="ontheside">
 		<div class="mainContainer">
 			<div class="plusdiv">
-				<img src="../resources/img/imgforboard/plus_icon.png" alt="plus.png"
-					class="plusButton" style="cursor: pointer;">
+				<c:if test="${sessionScope.username ne 'Admin'}">
+					<img src="../resources/img/imgforboard/plus_icon.png"
+						alt="plus.png" class="plusButton" style="cursor: pointer;">
+				</c:if>
+
 				<div class="postdiv">
 					<div style="margin-top: 3px">
 						<a href="?sortType=0" class="myButton1">최신순</a> <a
@@ -76,7 +79,7 @@
 
 			<c:if test="${not empty list and memberID != null}">
 				<div style="text-align: right;">
-					<h3 style="margin-bottom: 3px;">${memberID}님의 게시물</h3>
+					<h3 style="margin-bottom: 3px;">${memberID}님의게시물</h3>
 				</div>
 			</c:if>
 
@@ -87,7 +90,7 @@
 				<!-- 게시글 div -->
 				<div class="card">
 					<div id="userdiv">
-						<div style="cursor: pointer; display:inline-block;" id="clickID">
+						<div style="cursor: pointer; display: inline-block;" id="clickID">
 							<img src="../resources/img/imgforboard/default_person.png"
 								id="userpic"> ${item.memberID}
 						</div>
@@ -95,14 +98,23 @@
 						<!-- 세션스코프 username과 item.memberID 가 같으면 게시글 수정 및 삭제 기능 추가 -->
 						<!-- ************************************************** -->
 						<c:if test="${sessionScope.username eq item.memberID}">
-							<div style="display:inline-block; float: right;">
-								<div style= "display:none;">${item.boardID}</div>
+							<div style="display: inline-block; float: right;">
+								<div style="display: none;">${item.boardID}</div>
 								<img src="../resources/img/imgforboard/edit_image.png"
 									class="imageforedit"> <img
 									src="../resources/img/imgforboard/remove_image.png"
 									class="imagefordelete">
 							</div>
 						</c:if>
+						
+						<c:if test="${sessionScope.username eq 'Admin'}">
+							<div style="display: inline-block; float: right;">
+								<div style="display: none;">${item.boardID}</div>
+								<img src="../resources/img/imgforboard/edit_image.png" class="imageforedit" style="display:none">
+								<img src="../resources/img/imgforboard/remove_image.png" class="imagefordelete">
+							</div>
+						</c:if>
+						
 					</div>
 					<div id="content">
 						<div id="pic"
@@ -147,9 +159,18 @@
 											<!-- 세션의 아이디와 게시자의 이름이 같으면 댓글수정 부분과 댓글삭제 버튼 추가 -->
 											<!-- ****************************************** -->
 											<c:if test="${reply.replyer eq sessionScope.username}">
-												<div style="display:none">${reply.reply_no}</div>
-												<img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply">
-												<img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply">
+												<div style="display: none">${reply.reply_no}</div>
+												<img src="../resources/img/imgforboard/edit_image.png"
+													class="imageforeditreply">
+												<img src="../resources/img/imgforboard/remove_image.png"
+													class="imagefordeletereply">
+											</c:if>
+											<c:if test="${sessionScope.username eq 'Admin'}">
+												<div style="display: none">${reply.reply_no}</div>
+												<img src="../resources/img/imgforboard/edit_image.png"
+													class="imageforeditreply" style="display:none">
+												<img src="../resources/img/imgforboard/remove_image.png"
+													class="imagefordeletereply">
 											</c:if>
 										</ul>
 									</div>
@@ -159,7 +180,7 @@
 								<c:if test="${count gt 1 }">
 									<!-- count가  2보다 같거나 크고 count가 2일경우 더보기 칸 추가. -->
 									<c:if test="${count eq 2 }">
-										<span class="more" style="cursor: pointer;color:gray;">더보기...</span>
+										<span class="more" style="cursor: pointer; color: gray;">더보기...</span>
 										<br>
 									</c:if>
 									<div class="comments" style="display: none;">
@@ -167,10 +188,20 @@
 											<li id="commentwriter" class="reply" style="cursor: pointer">${reply.replyer}</li>
 											<li class="reply">${reply.reply }</li>
 											<c:if test="${reply.replyer eq sessionScope.username}">
-												<div style ="display:none">${reply.reply_no}</div>
-												<img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply">
-												<img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply">
+												<div style="display: none">${reply.reply_no}</div>
+												<img src="../resources/img/imgforboard/edit_image.png"
+													class="imageforeditreply">
+												<img src="../resources/img/imgforboard/remove_image.png"
+													class="imagefordeletereply">
 											</c:if>
+											<c:if test="${sessionScope.username eq 'Admin'}">
+												<div style="display: none">${reply.reply_no}</div>
+												<img src="../resources/img/imgforboard/edit_image.png"
+													class="imageforeditreply" style="display:none">
+												<img src="../resources/img/imgforboard/remove_image.png"
+													class="imagefordeletereply">
+											</c:if>
+											
 										</ul>
 									</div>
 								</c:if>
@@ -182,11 +213,20 @@
 
 
 						<!-- 댓글 다는부분 -->
-						<div id="commentside">
-							<div id="writernameforcomment">${sessionScope.username }</div>
-							<input type="text" class="comment">
-							<button id="commentbutton">댓글달기</button>
-						</div>
+						<c:if test="${sessionScope.username ne 'Admin'}">
+							<div id="commentside">
+								<div id="writernameforcomment">${sessionScope.username }</div>
+								<input type="text" class="comment">
+								<button id="commentbutton">댓글달기</button>
+							</div>
+						</c:if>
+						<c:if test="${sessionScope.username eq 'Admin'}">
+							<div id="commentside" style="display:none">
+								<div id="writernameforcomment">${sessionScope.username }</div>
+								<input type="text" class="comment">
+								<button id="commentbutton">댓글달기</button>
+							</div>
+						</c:if>
 						<!-- 댓글 다는부분 끝 -->
 
 
