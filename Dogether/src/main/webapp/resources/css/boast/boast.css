@@ -92,18 +92,23 @@ nav {
 .mainContainer {
 	max-width: 600px;
 	margin: 0 auto;
-	border: 1px solid black;
 	padding-bottom: 50px;
 	margin-top: 8%;
 	margin-bottom: 8%;
-	border-radius: 20px;
 }
 
+.card {
+	margin-left: -1px;
+	margin-right: 0px;
+	position: relative;
+	border-radius: 20px;
+	margin-bottom:20px;
+	border: 1px solid black;
+}
 @media ( max-width : 992px) {
 	.mainContainer {
 		max-width: 600px;
 		margin: 0 auto;
-		border: 1px solid black;
 		padding-bottom: 50px;
 		margin-top: 22%;
 		margin-bottom: 8%;
@@ -111,16 +116,25 @@ nav {
 	}
 	.plusdiv {
 		margin: 10px;
-		height: 40px;
-		text-align: left;
+		/*height: 40px;
+		text-align: left;*/
 		position: fixed;
-		left: 1;
-		right: 0px;
+		/*left: 1;
+		right: 0px;*/
 		z-index: 1;
 		bottom: 0px;
 	}
 	div>h3 {
 		text-align: center;
+	}
+	
+	.card{
+		margin-left: 1px;
+		margin-right: 3px;
+		position: relative;
+		border-radius: 20px;
+		margin-bottom:20px;
+		border: 1px solid black;
 	}
 }
 
@@ -132,19 +146,11 @@ nav {
 
 .plusdiv {
 	right: 10px;
-	margin: 10px;
 	height: 40px;
 	text-align: left;
+	margin-bottom:20px;
 }
 
-.card {
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	margin-left: -1px;
-	margin-right: 0px;
-	position: relative;
-	border-radius: 20px;
-}
 
 #userpic {
 	width: 20px;

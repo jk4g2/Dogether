@@ -63,7 +63,7 @@
 				</c:if>
 
 				<div class="postdiv">
-					<div style="margin-top: 3px">
+					<div style="margin-left: 5px;">
 						<a href="?sortType=0" class="myButton1">최신순</a> <a
 							href="?sortType=1" class="myButton1">인기순</a>
 					</div>
