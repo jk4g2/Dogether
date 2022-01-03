@@ -9,11 +9,12 @@
 <title>Highway - Free CSS Template</title>
 <!-- 
 
-Highway Template https://templatemo.com/tm-520-highway
+	Highway Template https://templatemo.com/tm-520-highway
 
 -->
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 
+<meta name="description" content=""> -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
 
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
@@ -23,9 +24,9 @@ Highway Template https://templatemo.com/tm-520-highway
 <link rel="stylesheet" href="./resources/css/templatemo-style.css">
 <link rel="stylesheet" href="./resources/css/loginformstyle.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/Dogether/resources/css/PhoneCSS.css">
+<link rel="stylesheet" href="./resources/css/PhoneCSS.css">
 <link
 	href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900"
 	rel="stylesheet">
@@ -62,6 +63,19 @@ h4#font-color_st{
 	color:white;
 }
 
+@charset "UTF-8";
+@media only screen and (max-width: 992px) {
+	.login {
+		width:100%;
+		background-color:black;
+	}
+	
+	.login form{
+		width:70%;
+		display:contents;
+	}
+	
+}
 
 </style>
 
@@ -108,7 +122,7 @@ h4#font-color_st{
 			<input type="submit" value="Login"><br>
 			<br>
 			
-			<input type="button" id="joining" value="Go Join" >
+			<input type="button" id="joining" value="Join" >
 			
 		</div>
 		</form>
