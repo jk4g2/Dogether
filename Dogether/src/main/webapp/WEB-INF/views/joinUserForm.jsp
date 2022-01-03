@@ -22,7 +22,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 <script src="./resources/js/vendor/bootstrap.min.js"></script>
-<script src="./resources/js/JoinUser.js"></script>
+<script src="./resources/js/joinUser.js"></script>
 <script src="./resources/js/plugins.js"></script>
 <script src="./resources/js/main.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">

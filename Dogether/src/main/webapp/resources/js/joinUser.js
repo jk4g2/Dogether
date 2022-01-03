@@ -64,6 +64,7 @@ var btnClickCount = 0;
 
 $("#idCheckResult2").click(function(){
 		btnClickCount+=1;
+	let thiss = $(this)
       $.ajax({
          type : 'get',
          url : 'idCheck.do',
@@ -74,9 +75,15 @@ $("#idCheckResult2").click(function(){
             
             if(result == "중복된 아이디입니다"){
             	$("#userId").val("")
-            }//end of if
-	           	$('#idCheckResult').text(result);
-	           	$('#idCheckResult2').val(result);
+            	$(thiss).next().show()
+            }else if(result == "사용 불가능한 아이디 입니다"){
+            	$("#userId").val("")            	
+            	$(thiss).next().show()
+            }
+            
+            //end of if
+	        $('#idCheckResult').text(result);
+	        $('#idCheckResult2').val(result);
          },
          error : function(err){
             alert("error");
@@ -101,9 +108,11 @@ $("#nNCheckResult2").click(function(){
            
            if(result == "중복된 닉네임입니다"){
            	$("#usernickN").val("")
+           }else if(result =="사용 불가능한 닉네임 입니다"){
+           	$("#usernickN").val("")           
            }//end of if
-           					$('#nNCheckResult').text(result);
-					 		$('#nNCheckResult2').val(result);
+           	$('#nNCheckResult').text(result);
+			$('#nNCheckResult2').val(result);
         },
         error : function(err){
            alert("error");
@@ -193,14 +202,18 @@ $('#pwCheckResult2').click(function(){
 
        if($.trim($('#userName').val())==''){
        var uNCheck = $('#uNCheckResult').text("사용자 이름을 입력해 주세요.");
-       	  uNCheck.hide(3000);
+       	  //uNCheck.hide(3000);
           $('#userName').focus();
           return;
        }
 
 		if($.trim($('#idCheckResult2').val())=='중복된 아이디입니다'){
 	      alert("아이디를 중복확인해주세요.");
-	      console.log(1)
+	      return;
+	   }
+	   
+	   if($.trim($('#idCheckResult2').val())=='사용 불가능한 아이디 입니다'){
+	      alert("아이디를 중복확인해주세요.");
 	      return;
 	   }
 	   
@@ -213,10 +226,14 @@ $('#pwCheckResult2').click(function(){
 
 	   if($.trim($('.phone').val())==''){
 	   var telCheck = $('#telCheckResult').text("전화번호를 정확히 입력해 주세요.");
-       	  telCheck.hide(2000);
+       	  //telCheck.hide(2000);
           $('.phone').focus();
           return;
        }
+	   if($.trim($('#usernickN').val()) ==''){
+	   	$('#usernickN').focus();
+	   	return;
+	   }
 
        if($.trim($('#Birthday').val())==''){
           return;
@@ -237,12 +254,12 @@ $('#pwCheckResult2').click(function(){
           $('#RestAddress').focus();
           return;
        	}
-		
-			 if(btnClickCount < 2){
-			 var bCheck = $('#bCheckResult').text("중복버튼을 확인해 주세요.");
-				 bCheck.hide(3000);
-				 return;
-			 }
+       	
+		if(btnClickCount < 2){
+			var bCheck = $('#bCheckResult').text("중복버튼을 확인해 주세요.");
+			bCheck.hide(3000);
+			return;
+		}
 
 
 

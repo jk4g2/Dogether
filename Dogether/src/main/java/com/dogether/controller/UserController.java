@@ -35,8 +35,12 @@ public class UserController {
 	@ResponseBody // ************************************* 비동기통신을 의미 ajax
 	public String idCheck(MemberVO vo) {
 		System.out.println("아이디체크-------------------------------------------------------------");
+		if(vo.getMemberID().equals("") || vo.getMemberID().toLowerCase().equals("admin")) {
+			return "사용 불가능한 아이디 입니다";
+		}
 		MemberVO memberidcheck = testService.idCheck_Login(vo);
 		String message = "사용가능한 아이디입니다";
+		
 		if (memberidcheck != null)
 			return "중복된 아이디입니다";
 		return message;
@@ -47,6 +51,10 @@ public class UserController {
 	@ResponseBody // ************************************* 비동기통신을 의미 ajax
 	public String nickNameCheck(MemberVO vo) {
 		System.out.println("닉네임체크-------------------------------------------------------------");
+		if(vo.getNickName().equals("") || vo.getNickName().toLowerCase().equals("admin") || vo.getNickName().equals("관리자")) {
+			return "사용 불가능한 닉네임 입니다";
+		}
+		
 		MemberVO result = testService.nickName_Check(vo);
 		String message = "사용가능한 닉네임입니다";
 		if (result != null)
@@ -58,6 +66,11 @@ public class UserController {
 	@PostMapping(value = "userInsert.do", produces = "application/text; charset=UTF-8")
 	public String userinsert(MemberVO vo) {
 		System.out.println("TQ");
+		if(vo.getMember_fname()=="" || vo.getMember_fname()==null) {
+			vo.setMember_fname("default_person.png");
+			vo.setMember_realfname("default_person.png");	
+			vo.setMember_fsize(0);
+		}
 		int result = testService.memberinsert(vo);
 		System.out.println("디비에 사진 인설트 완료");
 		String message = "가입 실패하였습니다.";
