@@ -235,8 +235,6 @@ $('.deleteJoin').click(function(){
 	}) //end-of-ajax
 })
 
-
-
 // 런닝구 방 다 차거나 미매칭 상태에서 날짜 만료되면 검은색 배경씌우기
 $('.rn_profile_memberCount').each(function(){
 	var CrntMembers = $(this).children('.currentMembers').text();
@@ -270,6 +268,12 @@ $('.rn_profile_memberCount').each(function(){
 		}
 	}
 })
+$("#top").click(function() {
+ $('html, body').animate({
+        scrollTop : 0
+    }, 400);
+    return false;
+});
 
 
 

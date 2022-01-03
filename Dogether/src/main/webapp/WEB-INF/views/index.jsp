@@ -174,7 +174,7 @@ h4#font-color_st{
 			
 			<div class="col-md-4 col-sm-6">
 				<div class="portfolio-item">
-					<a href="aihometrainer/1_aiHT_main.do" data-lightbox="image-1"><div class="thumb">
+					<a href="aihometrainer/" data-lightbox="image-1"><div class="thumb">
 							<div class="hover-effect">
 								<div class="hover-content">
 									<h1>

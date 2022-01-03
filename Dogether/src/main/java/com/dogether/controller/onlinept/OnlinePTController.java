@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("aihometrainer")
 public class OnlinePTController {
 
+	@RequestMapping("/")
+	public String online() {
+		return "aihometrainer/1_aiHT_main";
+	}
 	
 	@RequestMapping("{step}.do")
 	public String stepDo (@PathVariable String step) {

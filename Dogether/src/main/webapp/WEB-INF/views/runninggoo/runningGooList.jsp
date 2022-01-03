@@ -87,6 +87,7 @@
 		transition: all 0.5s;
 	}
 }
+
 </style>
 <body>
 	<div>
@@ -258,7 +259,7 @@
 		</c:if>
 		
 		<div class="col-12 rn_top_btn">
-			<a href="#">▲ 맨 위로</a>
+			<a href="#" id="top">▲ 맨 위로</a>
 		</div>
 	</div>
 	
