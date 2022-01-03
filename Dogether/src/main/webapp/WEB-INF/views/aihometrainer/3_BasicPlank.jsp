@@ -1,22 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<mata http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Basic Plank</title>
-	
+		<title>AI Home Trainer : Basic Plank</title>
     
     <!--  Favicons ============================================= -->
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Default stylesheets-->
+   <!-- Default stylesheets-->
   	<link href="../resources/aihometrainer/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  
     <!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
@@ -33,9 +29,9 @@
     <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
         <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
-   
+    <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	   
  
-<style>
+	<style>
 		    
 	div.module.test_module{ 
 		padding-top: 10px; }
@@ -91,82 +87,68 @@
     	 height : 136.09px;
     }
 		    
-</style>
+	</style>
  
 
-<script> 
+	<script> 
  
-	
-	var Timesec = 0; // // getTime함수에서 받아온 변수를 받기 위해 선언한 변수.
-	
-	// ## input에 입력한 값을 받아서 변수로 만드는 과정
-	function getTime(){
+		var Timesec = 0; // // getTime함수에서 받아온 변수를 받기 위해 선언한 변수.
 		
-		var Timesec_yet = document.getElementById("timer_input").value;  // input에 입력된 값 받는 법.
-		
-			this.Timesec = Timesec_yet;
-		
-		var Timesec_yet2 = document.getElementById("timer_deley").value;  // input에 입력된 값 받는 법.
-		
-			this.Timesec_deley = Timesec_yet2;		
+		// ## input에 입력한 값을 받아서 변수로 만드는 과정
+		function getTime(){
 			
+			var Timesec_yet = document.getElementById("timer_input").value;  // input에 입력된 값 받는 법.
+				this.Timesec = Timesec_yet;
 			
-			TimerStart(); // getTime 함수가 실행된 후에 TimerStart 함수가 실행되게 한 것.
-		};
-
-	
-	
-    // ## 변수와 카운트 함수 선언
-	
-
-   	var methodcount = 0; 
-	
-	function msg_time() {	// 1초씩 카운트
-
-		m = Math.floor(Timesec % 60);	// 남은 시간 계산
-		
-		var msg = m;
-		
-		document.all.ViewTimer.innerHTML = msg;		// div.t_title_td3 영역에 보여줌 
+			var Timesec_yet2 = document.getElementById("timer_deley").value;  // input에 입력된 값 받는 법.
+				this.Timesec_deley = Timesec_yet2;		
 				
-		Timesec--;					// 1초씩 감소
+				TimerStart(); // getTime 함수가 실행된 후에 TimerStart 함수가 실행되게 한 것.
+		 };
+
+		 // ## 변수와 카운트 함수 선언
+
+	   	var methodcount = 0; 
 		
-		$("#ViewTimer3").text("");
-		
-		
-		if(methodcount < 1 ){			// 음성이 한번만 재생 되도록 카운트! ##
-        	var audio1 = new Audio(URL + 'start.mp3');  // ##-2
-        	audio1.play();	// start.mp3 음성이 나옴. (시작합니다 라는 음성이 나옴)
-        	}
-        	methodcount++;
-		
-        	
-    	if (Timesec < 0) {			// 시간이 종료 되었으면..
-			clearInterval(tid);		// 타이머 해제
-			//SetTime = Timesec;
-			methodcount = 0;
-			$("#ViewTimer").text("");
-			$("#ViewTimer3").text("성공하셨습니다.");
+		function msg_time() {	// 1초씩 카운트
+			m = Math.floor(Timesec % 60);	// 남은 시간 계산
+			var msg = m;
+			document.all.ViewTimer.innerHTML = msg;		// ViewTimer 영역에 보여줌 
+			Timesec--;					// 1초씩 감소
+			$("#ViewTimer3").text("");
+			
+			if(methodcount < 1 ){			// 음성이 한번만 재생 되도록 카운트! ##
+	        	var audio1 = new Audio(URL + 'start.mp3');  // ##-2
+	        	audio1.play();	// start.mp3 음성이 나옴. (시작합니다 라는 음성이 나옴)
+	        	}
+	        	methodcount++;
+			
+	        if (Timesec < 0) {			// 시간이 종료 되었으면..
+				clearInterval(tid);		// 타이머 해제
+				//SetTime = Timesec;
+				methodcount = 0;
+				
+				$("#ViewTimer").text("");
+				$("#ViewTimer3").text("성공하셨습니다.");
+				
 				var audio3 = new Audio(URL + 'con5.mp3');  // ##-3
-	        	audio3.play();				// success.mp3 음성이 나옴. (성공하였습니다 라는 음성이 나옴)
-			}
-		}	
-	    	        	
-			   // 카운트가 느려서 바꿔야 할 것 같음.
-		
-		// 4초 후에 msg_time 함수를 실행하게 하는 함수 선언
-		function TimerStart(){ 
-				tid=setInterval('msg_time()', Timesec_deley*1000);
-			// 5초 후에 시작합니다. 음성 넣기
+		        audio3.play();				// success.mp3 음성이 나옴. (성공하였습니다 라는 음성이 나옴)
+				}
+			}	
+			
+			// 4초 후에 msg_time 함수를 실행하게 하는 함수 선언
+		  function TimerStart(){ 
+			  tid=setInterval('msg_time()', Timesec_deley*1000);
+			// 5초 후에 시작합니다. 음성 넣기 
 	
-				var audio4 = new Audio(URL + 'already.mp3');   // ##-1
-	
-	        	audio4.play();				// success.mp3 음성이 나옴. (성공하였습니다 라는 음성이 나옴) */
+			   var audio4 = new Audio(URL + 'already.mp3');   // ##-1
+	           audio4.play();				// success.mp3 음성이 나옴. (성공하였습니다 라는 음성이 나옴) */
 	        	
-				$("#ViewTimer3").text(Timesec_deley+" 초 후에 시작됩니다.");
+			   $("#ViewTimer3").text(Timesec_deley+" 초 후에 시작됩니다.");
+	        	
 			};
 		
-</script>
+	</script>
   
 </head>
   
@@ -184,7 +166,7 @@
      <!-- 헤더바 시작! -->
 	<nav>
 	   <div class="logo">
-	       <a href="index.do">DO<em>GETHER</em></a>
+	       <a href="../index.do">DO<em>GETHER</em></a>
 	   </div>
 	    <div class="menu-icon">
 	       <span></span>
@@ -198,12 +180,13 @@
 			<div class="row">
 				<div class="main-menu">
 					<ul id="non_padding">
-						<li><a href="runninggoo.do">런닝구</a></li>
-						<li><a href="ai_home_trainer_view/1_aiHT_main.do">온라인 PT</a></li>
-						<li><a href="boast.do">자랑하기</a></li>
-						<li><a href="healthcenter.do">Inbody 측정 보건소</a></li>
-						<li><a href="shoppingmall.do">쇼핑몰</a></li>
-						<li><a href="userMyPage/myPage.do">마이페이지</a></li>
+		                  <li><a href="../runninggoo/">런닝구</a></li>
+		                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+		                  <li><a href="../boast/">자랑하기</a></li>
+		                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+		                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+		                  <li><a href="../sleep/">수면시간계산기</a></li>
+		                  <li><a href="../mypage/">마이페이지</a></li>
 					</ul>
 				</div>
 			</div>
@@ -262,10 +245,9 @@
 						
 				<tr><!-- 5 : 정확도에 관련된 메세지가 출력되는 부분.-->
 					<td style="height: 180px;">
-						<div id="ViewTimer_right" style="font-size:50px; color:blue;"></div>  <!-- '올바른 자세입니다'가 출력 부분. -->
-							<!-- <img src="#"/>  -->					
+						<div id="ViewTimer_right" style="font-size:50px; color:blue;"></div>  <!-- '올바른 자세입니다'가 출력 부분. -->				
 							<div id="ViewTimer_wrong" style="font-size:40px; color:red; "></div>  <!-- '자세에 좀 더 집중해주세요'가 출력 부분. -->		
-							<div id="ViewTimer_wait" style="font-size:50px; color:green; "></div>  <!-- '자세에 좀 더 집중해주세요'가 출력 부분. -->									
+							<div id="ViewTimer_wait" style="font-size:50px; color:green; "></div>  <!-- '시작하세요'가 출력 부분. -->									
 											
 					</td>
 				</tr>					
@@ -302,7 +284,6 @@
 								        maxPredictions = model.getTotalClasses();
 								
 								     // 웹캠 설정을 위한 편의 기능
-								       	//const size = 850; // 사이즈!!!!!!!!!!!!!!!	
 								     	const height = 850;
 								       	const width = 1200;
 								        const flip = true; // 웹캠을 뒤집을지 여부
@@ -340,28 +321,33 @@
 					        					        
 								    // ##############
 						
-									 if(prediction[0].probability.toFixed(2) >= 0.95){
+									if(prediction[0].probability.toFixed(2) >= 0.95){
 										
 											$("#ViewTimer_right").text("올바른 자세입니다");
 											$("#ViewTimer_wrong").text("");	
 											$("#ViewTimer_wait").text("");	
-										 }
+											
+											 if(prediction[0].probability.toFixed(2) < 0.95){		
+													$("#ViewTimer_wrong").text("잘못된 자세입니다");												 
+													$("#ViewTimer_right").text("");
+													$("#ViewTimer_wait").text("");													 
+											  }
+									 }
 							        
-									 else if(prediction[1].probability.toFixed(2) >= 0.95) {
+									 else if(prediction[1].probability.toFixed(2) >= 0.50) {
 								        
 											$("#ViewTimer_wait").text("시작하세요!");											 	
 											$("#ViewTimer_wrong").text("");												 
 											$("#ViewTimer_right").text("");
-					
-									 	}
-									 else if(prediction[0].probability.toFixed(2) < 0.95){
+									 }
+								    
+									 else if(prediction[2].probability.toFixed(2) >= 0.50){
 									        
 											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
 											$("#ViewTimer_right").text("");
 											$("#ViewTimer_wait").text("");	
-									 	}
-		
-							
+									 }
+						
 								        // ##############
 							        
 							        for (let i = 0; i < maxPredictions; i++) {	// ### 4. model.predict 로 결과를 뽑아서 prediction[i].className : prediction[i].probability 을 문장으로 만들어서

@@ -1,23 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<mata http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Star-Jump</title>
+		<title>AI Home Trainer : Tree Pose</title>
 	
-    
     <!--  Favicons ============================================= -->
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Default stylesheets-->
+	<!-- Default stylesheets-->
   	<link href="../resources/aihometrainer/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-    <!-- Template specific stylesheets-->
+  	<!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -33,9 +29,9 @@
     <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
         <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
-   
+    <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	   
  
-<style>
+	<style>
 		    
 	div.module.test_module{ 
 		padding-top: 10px; }
@@ -91,10 +87,10 @@
     	 height : 136.09px;
     }
 		    
-</style>
- 
-
-<script> 
+	</style>
+	 
+	
+	<script> 
  
 	
 	var Timesec = 0; // // getTime함수에서 받아온 변수를 받기 위해 선언한 변수.
@@ -184,7 +180,7 @@
      <!-- 헤더바 시작! -->
 	<nav>
 	   <div class="logo">
-	       <a href="index.do">DO<em>GETHER</em></a>
+	       <a href="../index.do">DO<em>GETHER</em></a>
 	   </div>
 	    <div class="menu-icon">
 	       <span></span>
@@ -198,12 +194,13 @@
 			<div class="row">
 				<div class="main-menu">
 					<ul id="non_padding">
-						<li><a href="runninggoo.do">런닝구</a></li>
-						<li><a href="ai_home_trainer_view/1_aiHT_main.do">온라인 PT</a></li>
-						<li><a href="boast.do">자랑하기</a></li>
-						<li><a href="healthcenter.do">Inbody 측정 보건소</a></li>
-						<li><a href="shoppingmall.do">쇼핑몰</a></li>
-						<li><a href="userMyPage/myPage.do">마이페이지</a></li>
+		                  <li><a href="../runninggoo/">런닝구</a></li>
+		                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+		                  <li><a href="../boast/">자랑하기</a></li>
+		                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+		                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+		                  <li><a href="../sleep/">수면시간계산기</a></li>
+		                  <li><a href="../mypage/">마이페이지</a></li>
 					</ul>
 				</div>
 			</div>
@@ -257,6 +254,7 @@
 					<td style="height: 200px;">
 						<div id="ViewTimer" style="font-size:100px;"></div> <!-- 타이머가 출력되는 부분 -->
 						<div id="ViewTimer3" style="font-size:50px;"></div> <!-- '5초 뒤에 시작됩니다', '종료됩니다'가 뜨는 부분 -->
+					
 					</td>
 				</tr>
 						
@@ -265,6 +263,7 @@
 						<div id="ViewTimer_right" style="font-size:50px; color:blue;"></div>  <!-- '올바른 자세입니다'가 출력 부분. -->
 							<!-- <img src="#"/>  -->					
 						<div id="ViewTimer_wrong" style="font-size:40px; color:red;"></div>  <!-- '자세에 좀 더 집중해주세요'가 출력 부분. -->						
+				 		<div id="ViewTimer_wait" style="font-size:50px; color:green; "></div>  <!-- '자세에 좀 더 집중해주세요'가 출력 부분. -->
 					</td>
 				</tr>					
 						
@@ -300,7 +299,6 @@
 								        maxPredictions = model.getTotalClasses();
 								
 								     // 웹캠 설정을 위한 편의 기능
-								       	//const size = 850; // 사이즈!!!!!!!!!!!!!!!	
 								     	const height = 850;
 								       	const width = 1200;
 								        const flip = true; // 웹캠을 뒤집을지 여부
@@ -338,20 +336,45 @@
 					        					        
 								    // ##############
 						
-									 if(prediction[0].probability.toFixed(2)||prediction[2].probability.toFixed(2) > 0.95){   // 시작 자세
+									 if(prediction[0].probability.toFixed(2) >= 0.95){   // 올바른 자세
 											$("#ViewTimer_wrong").text("");											
 											$("#ViewTimer_right").text("올바른 자세입니다");
+											$("#ViewTimer_wait").text("");	
+										 }
+									 else if(prediction[2].probability.toFixed(2) >= 0.95){   // 올바른 자세
+											$("#ViewTimer_wrong").text("");											
+											$("#ViewTimer_right").text("올바른 자세입니다");
+											$("#ViewTimer_wait").text("");	
 										 }
 							        
-									 else if(prediction[1].probability.toFixed(2) > 0.80) {
+									 else if(prediction[1].probability.toFixed(2) > 0.80) {    // 차렷자세
 								            $("#ViewTimer_wrong").text("");												 
 											$("#ViewTimer_right").text("");
+											$("#ViewTimer_wait").text("시작하세요!");	
 										 }
 								    
-									 else if (prediction[3].probability.toFixed(2)||prediction[4].probability.toFixed(2) > 0.95){
+									 else if (prediction[3].probability.toFixed(2) > 0.95){    // 잘못된 자세
 											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
 											$("#ViewTimer_right").text("");
-					 					};
+											$("#ViewTimer_wait").text("");	
+					 					}
+								    
+									 else if (prediction[4].probability.toFixed(2) > 0.95){    // 잘못된 자세
+											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
+											$("#ViewTimer_right").text("");
+											$("#ViewTimer_wait").text("");	
+					 					}
+									 else if (prediction[0].probability.toFixed(2) < 0.95){    // 잘못된 자세
+											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
+											$("#ViewTimer_right").text("");
+											$("#ViewTimer_wait").text("");	
+					 					}
+									 else if (prediction[1].probability.toFixed(2) < 0.95){    // 잘못된 자세
+											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
+											$("#ViewTimer_right").text("");
+											$("#ViewTimer_wait").text("");	
+					 					}
+								   
 		
 							
 								        // ##############

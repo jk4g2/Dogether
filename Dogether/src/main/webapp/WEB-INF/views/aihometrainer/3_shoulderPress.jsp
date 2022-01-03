@@ -1,23 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<mata http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Star-Jump</title>
+		<title>AI Home Trainer : Shoulder Press</title>
 	
-
-    <!--  Favicons ============================================= -->
+	<!--  Favicons ============================================= -->
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- Default stylesheets-->
+	<!-- Default stylesheets-->
   	<link href="../resources/aihometrainer/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-   
-    <!-- Template specific stylesheets-->
+   	<!-- Template specific stylesheets-->
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
@@ -33,7 +29,7 @@
     <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
         <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
-   
+    <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	   
  
 <style>
 		    
@@ -96,8 +92,9 @@
 
 <script> 
  
-	
 	var count_get = 0; // // getCount함수에서 받아온 변수를 받기 위해 선언한 변수.
+	
+	var count = 0;
 	
 	// ## input에 입력한 값을 받아서 지역변수에서 전역변수로 만드는 과정
 	function getCount(){
@@ -106,13 +103,17 @@
 		
 			this.count_get = count_yet;
 		
-			var audio = new Audio(URL + 'start.mp3');
-    		audio.play();
-    	
-			$("#ViewCount3").text("시작하세요.");
-			$("#ViewCount").text("");			
-    		
-    		console.log(count_get); 		
+		var count_yet2 = document.getElementById("ViewCount").value;
+			
+			this.count = count_yet2;
+			
+			count = 0;
+		
+		var audio = new Audio(URL + 'start.mp3');
+			audio.play();
+		
+		$("#ViewCount3").text("시작하세요.");
+		$("#ViewCount").text("");					
 		};
 
 </script>
@@ -133,7 +134,7 @@
      <!-- 헤더바 시작! -->      
 	<nav>
 	   <div class="logo">
-	       <a href="index.do">DO<em>GETHER</em></a>
+	       <a href="../index.do">DO<em>GETHER</em></a>
 	   </div>
 	    <div class="menu-icon">
 	       <span></span>
@@ -147,12 +148,13 @@
 			<div class="row">
 				<div class="main-menu">
 					<ul id="non_padding">
-						<li><a href="runninggoo.do">런닝구</a></li>
-						<li><a href="ai_home_trainer_view/1_aiHT_main.do">온라인 PT</a></li>
-						<li><a href="boast.do">자랑하기</a></li>
-						<li><a href="healthcenter.do">Inbody 측정 보건소</a></li>
-						<li><a href="shoppingmall.do">쇼핑몰</a></li>
-						<li><a href="userMyPage/myPage.do">마이페이지</a></li>
+		                  <li><a href="../runninggoo/">런닝구</a></li>
+		                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+		                  <li><a href="../boast/">자랑하기</a></li>
+		                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+		                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+		                  <li><a href="../sleep/">수면시간계산기</a></li>
+		                  <li><a href="../mypage/">마이페이지</a></li>
 					</ul>
 				</div>
 			</div>
@@ -289,23 +291,34 @@
 		        
 								// ##############				        
 					        
-								 if(prediction[1].probability.toFixed(2) >= 0.90){
-										 
-							        	if(prediction[4].probability.toFixed(2) == 1.00){
-							        		
-							        		 count = count+1;
-							        		 ViewCount.innerHTML = count;
+								
+								
+							 if(prediction[1].probability.toFixed(2) >= 0.90){
+								 
+						        	if(prediction[4].probability.toFixed(2) == 1.00){
+						        		
+						        		 count = count+1;
+						        		 ViewCount.innerHTML = count;
+
+										
+						     				$("#ViewCount3").text("");
+											$("#ViewTimer_wrong").text("");												 
+											$("#ViewTimer_right").text("잘 하고 계세요");
+											$("#ViewTimer_wait").text("");								     				
+						        		 
+						     				var audio = new Audio(URL + 'sound/' + count%10 + '.mp3');
+						     				var audio_ten = new Audio(URL + 'sound/' + parseInt(count/10) + count%10 + '.mp3');
+					        
+								     				if(parseInt(count)<10){
 	
-											console.log(count);
-											
-							     				$("#ViewCount3").text("");
-							        		 
-								        		var audio = new Audio(URL + count%10 + '.mp3');
-								        		audio.play();
-							        		 
-							        		 
+										        		audio.play();
+								     				}
+										        	else{
+										        		audio_ten.play();	
+										        	}	
+						        		 
+						        		 
 							        		 if(parseInt(count)==parseInt(count_get)){   // 목표숫자가 '  ' 이면  //  inputbox로 바꿈
-							        			 console.log(1);
 							        			 
 							       				count = 0;   // 카운트 초기화 되고,
 							        			 
@@ -313,19 +326,29 @@
 									        	audio.play();				// success2.mp3 음성이 나옴. (목표한 갯수를 완료하였습니다 라는 음성이 나옴)
 												$("#ViewCount").text("");
 												$("#ViewCount3").text("목표한 갯수를 성공하셨습니다.");
+												
+												$("#ViewTimer_wrong").text("");												 
+												$("#ViewTimer_right").text("");
+												$("#ViewTimer_wait").text("");		
+									        	};				
 									        	
-							        			 };							        		 
-							        	}	
-							        	else if(prediction[3].probability.toFixed(2)||prediction[0].probability.toFixed(2) == 1.00){
-											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
-											//$("#ViewTimer2").attr("src", "../resources/aihometrainer/images/3-yaga-3.jpg");
-											$("#ViewTimer_right").text("");
-							        		
-							        	}
-							        	
-
-							        	
-							        };
+									       	
+						        	}	
+						        	else if(prediction[3].probability.toFixed(2)||prediction[0].probability.toFixed(2) >= 1.00){
+										$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");												 
+										$("#ViewTimer_right").text("");
+										$("#ViewTimer_wait").text("");												
+						        	}
+						        	
+						     }
+						     /*   
+							 else if(prediction[2].probability.toFixed(2) >= 0.50){
+							        
+									$("#ViewTimer_wrong").text("");												 
+									$("#ViewTimer_right").text("");
+									$("#ViewTimer_wait").text("시작하세요!");	
+							 }
+							*/	    
 										        
 	         
 										        // ##############
