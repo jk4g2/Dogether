@@ -211,7 +211,7 @@ body {
 <!-- nav상단바--------------------------------------------------------- -->
 	<nav>
 		<div class="logo">
-			<a href="./index.do">DO<em>GETHER</em></a>
+			<a href="../index.do">DO<em>GETHER</em></a>
 		</div>
 		<div class="menu-icon">
 			<span></span>
@@ -259,7 +259,7 @@ body {
 			<p>아이디와 패스워드를 입력하세요.
 		</h4>
 
-		<form name="form" class="adminlogin" action="admin/adminlogin.do"
+		<form name="form" class="adminlogin" action="adminLogin.do"
 			method="post">
 			<table width="300" height="120">
 				<tr>

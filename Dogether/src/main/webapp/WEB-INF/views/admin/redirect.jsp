@@ -10,11 +10,7 @@
 
 <script>
     alert("${msg}");
-    if("${check}" === "1"){
-    	window.location.href="index.do";
-    }else{
-		window.location.href="../index.do";    	
-    }
+	window.location.href="../admin/adminLoginForm.do";
 </script>
 </body>
 </html>

@@ -14,23 +14,31 @@ import com.dogether.service.AdminLoginService;
 
 @Controller
 @RequestMapping("admin")
-public class adminLoginController {
+public class AdminLoginController {
 
 	@Autowired
 	AdminLoginService adminLoginService;
 	
-	@PostMapping(value = "adminlogin.do", produces = "application/text; charset=UTF-8")
+	@RequestMapping("adminLoginForm.do")
+	public void adminLoginForm() {
+		System.out.println("checkpoint!!!");
+	}
+	
+	@RequestMapping("redirect.do")
+	public void redirect() {}
+	
+	@PostMapping(value = "adminLogin.do", produces = "application/text; charset=UTF-8")
 	public String adminlogin(AdminVO vo, HttpSession session ,Model m) {
-		System.out.println(vo.getAdminID());
 		AdminVO result = adminLoginService.adminIdCheck_Login(vo);
-		
+		System.out.println("checkpoint");
 		// 로그인이 됬으면
 		if (result != null) {
 			session.setAttribute("username", result.getAdminID());
 			return "redirect:../admin/";
 		}
 		else {//로그인 안됬을떄
-			return "redirect:../adminLogin.do";
+			m.addAttribute("msg","관리자 아이디 및 비밀번호를 확인해주세요!");
+			return "admin/redirect";
 		}
 	}
 }

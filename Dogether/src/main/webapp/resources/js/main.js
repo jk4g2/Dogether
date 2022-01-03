@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 		
 			}); //click
 			$("#joining").on('click', function(){
-				window.location.href="joinuser.do";
+				window.location.href="joinUserForm.do";
 			});
 			
 			$(document).on('click',"#logout",function(){

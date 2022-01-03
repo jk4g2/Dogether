@@ -18,24 +18,15 @@ import com.dogether.domain.MemberVO;
 import com.dogether.service.TestServiceImpl;
 
 @Controller
-public class testController {
+public class UserController {
 	
 	@Autowired
 	public TestServiceImpl testService;
 	
-	@RequestMapping("test.do")
-	public void test(Model m) {
-		System.out.println("checkpoint1");
-		BoardVO vo = testService.test();
-		System.out.println(vo.getBoardID());
-		System.out.println(vo.getBoardTitle());
-		System.out.println(vo.getMemberID());
-		m.addAttribute("serverTime",new Date());
-	}
 	
-	//
 	@RequestMapping("{step}.do")
 	public String stepDo(@PathVariable String step) {
+		System.out.println(step);
 		return step;
 	}
 	
@@ -80,16 +71,14 @@ public class testController {
 	public String login(MemberVO vo, HttpSession session ,Model m) {
 		//System.out.println(vo.getMemberID());
 		MemberVO result = testService.login(vo);
-		String message = "님 로그인되었습니다.";
 		// 로그인이 됬으면
 		if (result != null) {
 			session.setAttribute("username", result.getMemberID());
-			m.addAttribute("message",message);
 			return "index";
 		} else {
-			message = "존재하지 않는 아이디입니다.";
-			m.addAttribute("message",message);
-			return "/index";
+			m.addAttribute("msg","아이디 및 비밀번호를 확인해주세요");
+			m.addAttribute("check","1");
+			return "redirect";
 		}
 	}
 	

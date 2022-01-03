@@ -95,7 +95,7 @@ h4#font-color_st{
 
 	<div class="login">
 		<h2 id="login_bold">Log-in</h2>
-			<form method="post" action="login.do">
+		<form method="post" action="login.do">
 		<div class="login_id">
 			<h4 id="font-color_st">ID</h4>
 			<input type="text" name="memberID" id="memberID" placeholder="id" autocomplete="off">
@@ -274,7 +274,7 @@ h4#font-color_st{
 			<div class="col-md-12">
 				<p>Copyright &copy; 2018 Company Name | Designed by TemplateMo ||
 				<c:if test="${empty sessionScope}">
-					<a href='adminLogin.do'> Admin</a>
+					<a href='admin/adminLoginForm.do'> Admin</a>
 				</c:if>
 				
 				</p>
