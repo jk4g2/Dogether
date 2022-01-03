@@ -71,6 +71,9 @@
   width:100%;
   transition:800ms ease all;
 }
+.overlay-menu ul li a{
+  font-size : 25px;
+}
 /* ###### 모바일에서 내브바 꽉차게################# */
 @charset "UTF-8";
 @media only screen and (max-width: 992px) {
@@ -87,7 +90,6 @@
 		transition: all 0.5s;
 	}
 }
-
 </style>
 <body>
 	<div>
