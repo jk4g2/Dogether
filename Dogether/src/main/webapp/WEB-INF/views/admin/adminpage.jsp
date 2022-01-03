@@ -96,7 +96,7 @@
 	</nav>
  	<section class="overlay-menu">
       <div class="container" style="background:black;">
-        <div class="row">
+        <div class="row" style="display:contents">
           <div class="main-menu">
               <ul>
                   <li><a href="../runninggoo/">런닝구</a></li>
