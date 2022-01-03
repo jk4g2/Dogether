@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/runninggoo/runninggooMain.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/PhoneCSS.css">
+
 <!-- 폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +20,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" type="text/javascript"></script>
 <script src="resources/js/plugins.js"></script>
 <script src="resources/js/main.js"></script>
-<script type="text/javascript" src="resources/js/bootstrap.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
 <title>런닝구 방만들기</title>
 </head>
 <style>
@@ -258,5 +259,6 @@ textarea{
 	<script src="${pageContext.request.contextPath}/resources/js/runninggoo/RunningGoo.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/runninggoo/plugins.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/runninggoo/main.js"></script>
+	
 </body>
 </html>

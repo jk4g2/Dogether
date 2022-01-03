@@ -71,6 +71,22 @@
   width:100%;
   transition:800ms ease all;
 }
+/* ###### 모바일에서 내브바 꽉차게################# */
+@charset "UTF-8";
+@media only screen and (max-width: 992px) {
+	.overlay-menu {
+		background: rgba(0, 0, 0, 0.95);
+		color: #ffffff;
+		position: fixed;
+		z-index: 100;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		transition: all 0.5s;
+	}
+}
 </style>
 <body>
 	<div>

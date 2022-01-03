@@ -9,7 +9,7 @@
     <script src="${pageContext.request.contextPath}/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <link rel="apple-touch-icon" href="apple-touch-icon.jpg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/templatemo-style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/PhoneCSS.css">
+    <link rel="stylesheet" href="../resources/css/PhoneCSS.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/NAVandFOOTER.css">
     <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +25,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/common-scripts.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/adminpage.js"></script>
-	<script src="${pageContext.request.contextPath}/resources/js/admin/adminvalid.js"></script>
-	
 	
 	<!--상품이미지 미리보기--------------------------------------------------------------------------------------------------------- -->
 	<script> 
@@ -42,6 +40,24 @@
 	</script>
 	<!--상품이미지 미리보기--------------------------------------------------------------------------------------------------------- -->
 </head>
+<style>
+/* ###### 모바일에서 내브바 꽉차게################# */
+@charset "UTF-8";
+@media only screen and (max-width: 992px) {
+	.overlay-menu {
+		background: rgba(0, 0, 0, 0.95);
+		color: #ffffff;
+		position: fixed;
+		z-index: 100;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		text-align: center;
+		transition: all 0.5s;
+	}
+}
+</style>
 <body class="boxed-page" >
     <!--sidebar start-->
     <aside>
