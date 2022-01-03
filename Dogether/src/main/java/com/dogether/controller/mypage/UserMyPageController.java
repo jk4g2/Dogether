@@ -27,7 +27,7 @@ import com.dogether.service.RunningGooService;
 import com.dogether.service.TestService;
 
 @Controller
-@RequestMapping("Mypage")
+@RequestMapping("mypage")
 public class UserMyPageController {
 
 	@Autowired
@@ -50,6 +50,7 @@ public class UserMyPageController {
 			m.addAttribute("msg", "로그인이 필요한 서비스입니다.");
 			return "redirect";
 		}
+		System.out.println("어디냐ㅡㅡ");
 		memberID = session.getAttribute("username").toString();
 		MemberVO result = memberService.getMemberInfo(memberID);// 멤버정보 불러오기
 		List<BoardVO> result2 = memberService.myBoardList(memberID);// 내 게시글 목록 불러오기
@@ -64,8 +65,8 @@ public class UserMyPageController {
 		m.addAttribute("list", result2);
 		m.addAttribute("reply_list", reply_list);
 		m.addAttribute("like_list", like_list);
-
-		return "Mypage/userMypage";
+	
+		return "mypage/userMypage";
 	}
 
 	// 포인트 결제
@@ -140,7 +141,7 @@ public class UserMyPageController {
 	public String updateMyInfo(MemberVO vo) {
 		memberService.updateMemberInfo(vo);
 		System.out.println("내정보 수정 완료!");
-		return "redirect:../Mypage/";
+		return "redirect:../mypage/";
 	}
 	
 	

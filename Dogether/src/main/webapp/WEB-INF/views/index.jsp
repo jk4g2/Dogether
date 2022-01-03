@@ -80,7 +80,7 @@ h4#font-color_st{
 		<c:if test="${not empty sessionScope}">
 			<button id="logout" class="btn btn mainlog" style="float: right;">Logout</button>
 			<c:if test="${sessionScope.username ne 'Admin'}">
-				<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'Mypage/' " style="float: right;">MyPage</button>
+				<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'mypage/' " style="float: right;">MyPage</button>
 			</c:if>
 			<c:if test="${sessionScope.username eq 'Admin'}">
 				<button id="mypage" class="btn btn mainlog" onclick = "location.href = 'admin/' " style="float: right;">AdminPage</button>
@@ -285,56 +285,9 @@ h4#font-color_st{
 	<!-- Modal button -->
 
 	<div class="popup-icon">
-		<!--<button id="modBtn" class="modal-btn"></button>-->
-		<a href="mailto:mickuc0.gmail.com"><img
+		<a href="mailto:jh.kwon19@gmail.com"><img
 			src="./resources/img/imgformain/contact-icon.png" alt=""></a></a>
 	</div>
-
-	<!-- Modal -->
-	<!--<div id="modal" class="modal">-->
-	<!-- Modal Content -->
-	<!--  <div class="modal-content">-->
-	<!-- Modal Header -->
-	<!--
-        <div class="modal-header">
-          <h3 class="header-title">1:1 <em>문의하기</em></h3>
-          <div class="close-btn"><img src="img/close_contact.png" alt=""></div>    
-        </div>
-
-        -->
-	<!-- Modal Body -->
-	<!--<div class="modal-body">
-          <div class="col-md-6 col-md-offset-3">
-            <form id="contact" action="" method="post">
-                <div class="row">
-                    <div class="col-md-12">
-                      <fieldset>
-                        <input name="name" type="text" class="form-control" id="name" placeholder="이름" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="이메일" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="궁금한 문의사항" required></textarea>
-                      </fieldset>
-                    </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="btn">Send Message Now</button>
-                      </fieldset>
-                    </div>
-                </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
--->
-
 
 	<section class="overlay-menu">
 		<div class="container">
@@ -347,7 +300,7 @@ h4#font-color_st{
 						<li><a href="about.html">About Us</a></li>
 						<li><a href="blog.html">Blog Entries</a></li>
 						<li><a href="single-post.html">Single Post</a></li>
-						<li><a href="Mypage">마이페이지</a></li>
+						<li><a href="mypage">마이페이지</a></li>
 					</ul>
 					<p>We create awesome templates for you.</p>
 				</div>
