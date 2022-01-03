@@ -9,6 +9,7 @@ $(document).ready(function() {
 	    $("table").hide();               // 모든 리스트 테이블을 삭제
 	    $("#adminmain").show();			// 런닝구 리스트 테이블만 보임으로 변경
 	       $(".divHide").hide();            // 모든 정렬 안보이게 변경
+	       $(".float-right").hide();            // 상품 추가하기 안보이게 변경
 	  }); //end click
    function adminRNGList(){
       $.ajax({
@@ -72,25 +73,29 @@ $(document).ready(function() {
        $(".divHide").hide();            // 모든 정렬 안보이게 변경
        $(".sortRNG").show();            // 런닝구 정렬만 보이게 변경
        $(".float-right").hide();            // 상품 추가하기 안보이게 변경
-//       $(".sortBST").css("display","none");   // 왼쪽 상단에 sort 콤보박스 안보이게 css 변경
-//       $(".sortRNG").css("display","block");   // 왼쪽 상단에 sort 콤보박스 보이게 css 변경
       adminRNGList();                     // 리스트 출력 함수 호출
     }); //end click 
     
     // ############ 런닝구방 삭제 버튼을 클릭했을 때  ############
     $(document).on("click","#deleteAdminRNG",function(){
-         var deleteRoomNumber = $(this).parent().prev().prev().prev().prev().prev().text();
-       $.ajax({
-          url : "RNGDelete.do",
-          data : { roomNumber : deleteRoomNumber },
-          success : function(result){
-             alert("선택하신 런닝구방을 삭제했습니다.");
-             adminRNGList();
-          },
-          error : function(err){
-             alert("런닝구방 삭제 실패!");
-          }
-       })
+    	// 방삭제 취소를 눌렀을 때
+    	if(!confirm("선택하신 런닝구 방을 삭제할까요?")){
+    		alert("방삭제가 취소되었습니다.");
+    		return ;
+    	}else{		// 방삭제 확인을 눌렀을 때 	
+	         var deleteRoomNumber = $(this).parent().prev().prev().prev().prev().prev().text();
+	       $.ajax({
+	          url : "RNGDelete.do",
+	          data : { roomNumber : deleteRoomNumber },
+	          success : function(result){
+	             alert("선택하신 런닝구방을 삭제했습니다.");
+	             adminRNGList();
+	          },
+	          error : function(err){
+	             alert("런닝구방 삭제 실패!");
+	          }
+	       })	//end ajax
+    	}	//end else
     }); //end click
     
    // ################################################
@@ -163,18 +168,24 @@ $(document).ready(function() {
 
     // ############ 자랑하기 삭제 버튼을 클릭했을 때  ############
     $(document).on("click","#deleteAdminBST",function(){
-         var deleteBoardID = $(this).parent().prev().prev().prev().prev().prev().text();
-       $.ajax({
-          url : "deleteBST.do",
-          data : { boardID : deleteBoardID },
-          success : function(result){
-             alert("선택하신 자랑하기를 삭제했습니다.");
-             adminBSTList();
-          },
-          error : function(err){
-             alert("자랑하기 삭제 실패!");
-          }
-       })
+    	// 아니오 눌렀을 때
+    	if(!confirm("선택하신 자랑하기를 삭제할까요?")){
+    		alert("자랑하기 삭제가 취소되었습니다.");
+    		return;
+    	}else{		// 	확인을 눌렀을 때
+	       var deleteBoardID = $(this).parent().prev().prev().prev().prev().prev().text();
+	       $.ajax({
+	          url : "deleteBST.do",
+	          data : { boardID : deleteBoardID },
+	          success : function(result){
+	             alert("선택하신 자랑하기를 삭제했습니다.");
+	             adminBSTList();
+	          },
+	          error : function(err){
+	             alert("자랑하기 삭제 실패!");
+	          }
+	       }) //end ajax	
+    	} //end else
     }); //end click
     
    // ################################################
@@ -191,7 +202,6 @@ $(document).ready(function() {
             adminMemberList.empty();                        // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
             adminMemberList.append(                           // list 테이블 헤더
                "<tr>"
-               //+ "<th width='200'>프로필사진</th>"
                + "<th width='100'>ID</th>"
                + "<th width='300'>EMAIL</th>"
                + "<th width='100'>닉네임</th>"
@@ -206,9 +216,6 @@ $(document).ready(function() {
             for(row of resultMember){                        // 향상된 for문 (list row : resultOrder) ==> 변수명은 상관없음
                console.log(row);                           // 데이터가 잘 넘어왔는지 확인
                var tr = $("<tr/>");                        // <tr/> 객체 생성
-               // ######### 프로필사진 출력 (디비 완성 전까지는 주석)
-//                     var member_realfname = $("<td id='member_realfname' width='200' />").html("<img src='resources/"+ row.member_realfname +">");
-//                     tr.append(member_realfname);
                var memberID = $("<td id='memberID' width='100' />").html(row.memberID);   // td객체를 생성 ==> memberID를 td에 담는다
                tr.append(memberID);                                           // tr에 memberID를 담은 td를 추가
                var email = $("<td width='300' />").text(row.email);   
@@ -268,18 +275,24 @@ $(document).ready(function() {
 
     // ############ 회원 삭제(탈퇴) 버튼을 클릭했을 때  ############
     $(document).on("click","#deleteAdminMember",function(){
-         var deletememberID = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text();
-       $.ajax({
-          url : "deleteMember.do",
-          data : { memberID : deletememberID },
-          success : function(result){
-             alert("선택하신 회원을 삭제했습니다.");
-             adminMemberList();
-          },
-          error : function(err){
-             alert("회원 삭제 실패!");
-          }
-       })
+    	// 아니오 눌렀을 때
+    	if(!confirm("선택하신 회원을 삭제(탈퇴)할까요?")){
+    		alert("회원 삭제(탈퇴)가 취소되었습니다.");
+    		return;
+    	}else{		// 확인을 눌렀을 때
+	       var deletememberID = $(this).parent().prev().prev().prev().prev().prev().prev().prev().prev().prev().text();
+	       $.ajax({
+	          url : "deleteMember.do",
+	          data : { memberID : deletememberID },
+	          success : function(result){
+	             alert("선택하신 회원을 삭제했습니다.");
+	             adminMemberList();
+	          },
+	          error : function(err){
+	             alert("회원 삭제 실패!");
+	          }
+	       })	//end ajax
+    	}//end else
     }); //end click
    // ################################################
    // 쇼핑몰 주문 리스트를 동적 테이블로 만들기 + ajax로 화면 이동 없이 출력하기
@@ -457,18 +470,24 @@ $(document).ready(function() {
     
     // ############ 상품 삭제 버튼을 클릭했을 때  ############
     $(document).on("click","#deleteProduct",function(){
-         var deleteProductID = $(this).parent().prev().prev().prev().prev().prev().text();
-       $.ajax({
-          url : "productsDelete.do",
-          data : {productID : deleteProductID},
-          success : function(result){
-             alert("선택하신 상품을 삭제했습니다.");
-             adminProductsList();
-          },
-          error : function(err){
-             alert("상품 삭제 실패!");
-          }
-       })
+		// 아니오 눌렀을 때
+		if(!confirm("선택하신 상품을 삭제할까요?")){
+			alert("상품 삭제가 취소되었습니다.");
+			return;
+		}else{		//	확인을 눌렀을 때
+	       var deleteProductID = $(this).parent().prev().prev().prev().prev().prev().text();
+	       $.ajax({
+	          url : "productsDelete.do",
+	          data : {productID : deleteProductID},
+	          success : function(result){
+	             alert("선택하신 상품을 삭제했습니다.");
+	             adminProductsList();
+	          },
+	          error : function(err){
+	             alert("상품 삭제 실패!");
+	          }
+	       })	//end ajax
+		}	//end else
     }); //end click
     
    // ############ 상품 수정 버튼을 클릭했을 때  ############
@@ -506,7 +525,6 @@ $(document).ready(function() {
                     }); //end ajax
                  } //end inner if checkUpdateProduct() 호출
             	else{		// true가 아닐때
-//            		alert("공란 없이 입력하세요.");		
             		return;
             	}
             } //end outer if
@@ -522,14 +540,13 @@ $(document).ready(function() {
                let productContentText = $(this).parent().prev().prev().text();
                let productNameText = $(this).parent().prev().prev().prev().text();
                
-               productPrice.html("<input type='text' name='productPrice' id='productPrice' value="+ productPriceText +">");
-               productName.html("<input type='text' name='productName' id='productName' value="+ productNameText +" >");
-               productContent.html("<input type='text' name='productContent' id='productContent' value="+ productContentText +">");
+               productPrice.html("<input type='number' maxlength='10' oninput='maxLengthCheck(this)' name='productPrice' id='productPrice' value="+ productPriceText +">");
+               productName.html("<input type='text' maxlength='10' oninput='maxLengthCheck(this)' name='productName' id='productName' value="+ productNameText +" >");
+               productContent.html("<input type='text' maxlength='100' oninput='maxLengthCheck(this)' name='productContent' id='productContent' value="+ productContentText +">");
                $(this).attr("class","updateProduct1");		// 수정버튼의 class명 변경
                $(this).text('완료');
             } //end else if
             let checkResult =  checkUpdateProduct();
-//            alert("checkResult = " + checkResult);
             if(checkResult == false){
             	return;
             } //end //유효성검사
@@ -584,7 +601,7 @@ $(document).ready(function() {
 	  	   return false;
 	     }
 	     if($.trim($('#productPrice').val())==''){
-	        alert("상품 가격을입력해주세요.");
+	        alert("상품 가격을 입력해주세요.");
 	        $('#productPrice').focus();
 	        return false;
 	     }
@@ -598,5 +615,6 @@ $(document).ready(function() {
         var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based        
         var dd  = this.getDate().toString();            
         return yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]);
-	}; 
+	}; // end yyyymmdd function
+	
 });   // end ready
