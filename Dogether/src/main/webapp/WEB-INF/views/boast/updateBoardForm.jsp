@@ -22,7 +22,7 @@
 <script src="../resources/js/plugins.js"></script>
 <script src="../resources/js/boast/boast.js"></script>
 <script src="../resources/js/main.js"></script>
-<title>자랑하기 - 글 수정</title>
+<title>자랑하기 - 글 수정 페이지 입니다.</title>
 
 </head>
 <body>

@@ -26,7 +26,7 @@
 <script src="/Dogether/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>admin 로그인</title>
+<title>admin 로그인페이지 입니다.</title>
 
 </head>
 <style>
