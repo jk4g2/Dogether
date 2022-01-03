@@ -15,6 +15,7 @@ $(document).ready(function(){
     		let data1 = $.trim(result);
     		if(data1 === $.trim("0")){
 				alert("로그인이 필요한 서비스입니다.");
+				window.location ="../index.do";
     		}if(data1 !== $.trim("0") ){
 				alert(Name+" "+Cnt+"건 "+result);
     		}
