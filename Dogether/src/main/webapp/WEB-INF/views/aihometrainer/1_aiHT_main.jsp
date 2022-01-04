@@ -171,9 +171,9 @@
       <section id = "padding-test" class="bg-dark-30 showcase-page-header module parallax-bg" data-background="../resources/aihometrainer/images/main3.gif">
         <div id="titanA" class="titan-caption">
           <div class="caption-content">
-	          	<div class="font-alt mb-30 titan-title-size-1">Powerful. More Heathy.</div>
-	            <div class="font-alt mb-40 titan-title-size-4">AI HOME TRANIER</div>
-	            <a class="section-scroll btn btn-border-w btn-round" href="#newnewnew">GO to EXCISE</a>
+	          	<div class="font-alt mb-30 titan-title-size-1">Powerful. More Healthy.</div>
+	            <div class="font-alt mb-40 titan-title-size-4">AI HOME TRAINER </div>
+	            <a class="section-scroll btn btn-border-w btn-round" href="#newnewnew">GO to EXERCISE</a>
           </div>
         </div>
       </section>
@@ -186,7 +186,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6">
-                        	<b class="mb10">AI Home Trainer helps you stay at home safely and achieve your workout goals, and supports your success.</b>
+                        	<b class="mb10">AI Home Trainer helps you to stay at home safely, achieve your workout goals, and supports your success.</b>
                         </div>
                         <div class="col-md-6 text-right">
                             <form class="form-inline subscribe-form" id="subscription-form" role="form"> </form>
@@ -263,7 +263,7 @@
 	        <figure class="effect-bubba">
 	            <img src="../resources/aihometrainer/images/Arm.jpg" alt="img04">
 	            <figcaption>
-	                <h2>great <span>arm & </span>shoulder</h2>
+	                <h2>great <span>arms & </span>shoulders</h2>
 	                <p>For an arm like Captain America!</p>
 	                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
 	            </figcaption>           
@@ -272,7 +272,7 @@
 	        <figure class="effect-bubba">
 	            <img src="../resources/aihometrainer/images/Hip.jpg" alt="img14">
 	            <figcaption>
-	                <h2>handsome <span>LEG&HIP</span></h2>
+	                <h2>handsome <span>LEGS & HIP</span></h2>
 	                <span class="glyphicon glyphicon-star"></span>
 	                <span class="glyphicon glyphicon-heart"></span>
 	                <span class="glyphicon glyphicon-comment"></span>
@@ -361,9 +361,10 @@
      </div><!-- class="main" -->
      
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+      
     </main>
     
-    
+        
     <!--  JavaScripts=============================================-->
     <script src="../resources/aihometrainer/lib/jquery/dist/jquery.js"></script>
     <script src="../resources/aihometrainer/lib/bootstrap/dist/js/bootstrap.min.js"></script>

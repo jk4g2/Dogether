@@ -104,7 +104,7 @@
 	        <div class="container">
 	            <div class="row">
 	              <div class="col-sm-6 col-sm-offset-3">
-	                <h2 class="module-title font-alt">Exercise by body part</h2>
+	                <h2 class="module-title font-alt">Exercise by Type</h2>
 	                <div class="module-subtitle font-serif"></div>
 	              </div>
 	            </div>
@@ -150,7 +150,7 @@
 	                  
 	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_ButterFly.do">
 	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-squrt.jpg" alt="Portfolio"></div>
-	                  <h3 class="content-box-title font-serif">Butter Fly</h3></a></div>
+	                  <h3 class="content-box-title font-serif">ButterFly</h3></a></div>
 	                  
 	              <div class="col-md-4 col-sm-6 col-xs-12 yoga" id="img_margin"><a class="content-box" href="../aihometrainer/3_chairPose.do">
 	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-yoga-1.jpg" alt="Restaurant"></div>
