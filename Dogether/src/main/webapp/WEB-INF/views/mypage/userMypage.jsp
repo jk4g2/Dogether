@@ -103,6 +103,11 @@
 .functionBTN{
 	width : 15px;
 }
+.imgSize{
+	width:200px;
+	height:200px;
+}
+
 </style>
 
 

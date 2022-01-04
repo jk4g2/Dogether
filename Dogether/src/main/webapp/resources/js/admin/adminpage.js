@@ -400,7 +400,7 @@ $(document).ready(function() {
                for(row of resultProducts){                           // 향상된 for문 (list row : resultProducts) ==> 변수명은 상관없음
 //                  console.log(row);
                   var tr = $("<tr/>");                                    // <tr/> 객체 생성
-                  var product_realfname = $("<td class='productInsertImage'/>").html('<img src="../resources/img/imguploadproduct/' + row.product_realfname + '"/>');   
+                  var product_realfname = $("<td class='productInsertImage imgSize'/>").html('<img src="../resources/img/imguploadproduct/' + row.product_realfname + '"/>');   
                   tr.append(product_realfname);
                   var productID = $("<td class='productID'/>").html(row.productID);
                   tr.append(productID);
