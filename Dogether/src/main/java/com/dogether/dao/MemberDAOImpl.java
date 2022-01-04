@@ -28,7 +28,7 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public void updatePoint(String memberID,int price) {
+	public void updatePoint(String memberID,int price) {//멤버아이디와 얼마만큼 포인트를 충전해야하는지 보내야함으로 map형태로 보냄
 		Map<String,Object> mp = new HashMap<>();
 		mp.put("memberID", memberID);
 		mp.put("price", price);

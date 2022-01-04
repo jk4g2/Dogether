@@ -30,6 +30,7 @@ import com.dogether.service.TestService;
 @RequestMapping("mypage")
 public class UserMyPageController {
 
+	//마이페이지 특성상 다른 Service를 사용할 일이 많아서 @Autowired를 통해서 객체의존성주입을 시키고 선언을 해줌
 	@Autowired
 	private MemberService memberService;
 	@Autowired
@@ -43,21 +44,20 @@ public class UserMyPageController {
 	
 	
 	// 마이페이지 메인화면
-	@RequestMapping("/")
+	@RequestMapping("/")//'/'로 url상으로 보이는 폴더명을 없앰
 	public String myPage(String memberID, Model m, HttpSession session, Board_LikeVO vo) {
-		String sessionok = (String) session.getAttribute("username");
-		if (sessionok == null) {
+		String sessionok = (String) session.getAttribute("username");//String 으로 가상의 변수를 넣어준후
+		if (sessionok == null) {//로그인이 되어있는지 확인하기
 			m.addAttribute("msg", "로그인이 필요한 서비스입니다.");
-			return "redirect";
+			return "redirect";//로그인이 되어있지 않다면 밑으로 내려가기전에 return되서 redirect페이지로 넘어감
 		}
-		System.out.println("어디냐ㅡㅡ");
-		memberID = session.getAttribute("username").toString();
+		memberID = session.getAttribute("username").toString();//각각 개개인의 마이페이지를 불러와야 함으로 세션에 저장되있는 username을 세팅
 		MemberVO result = memberService.getMemberInfo(memberID);// 멤버정보 불러오기
 		List<BoardVO> result2 = memberService.myBoardList(memberID);// 내 게시글 목록 불러오기
 		List<Board_ReplyVO> reply_list = boardService.getReplyList();// 댓글 목록 가져오기
-		vo.setLiker(session.getAttribute("username").toString().trim());
-		List<Board_LikeVO> like_list = boardService.getLikeList(vo);
-		if (result2.size() == 0) {
+		vo.setLiker(session.getAttribute("username").toString().trim());//누가 좋아요를 눌렀는지 확인 시키기 위해서 Board_LikeVO 에 아이디를 set해줌
+		List<Board_LikeVO> like_list = boardService.getLikeList(vo);//좋아요 불러오기
+		if (result2.size() == 0) {//만약 내 게시글 목록이 없으면 nullcheck라는 이름을 모델로 보냄
 			m.addAttribute("nullCheck", "작성한 게시글이 존재하지 않습니다.");
 		}
 
@@ -74,8 +74,8 @@ public class UserMyPageController {
 	@ResponseBody
 	public String payPoint(String memberID, int price) {
 		System.out.println("포인트 충전을 시작합니다.");
-		memberService.updatePoint(memberID, price);
-		return "포인트 충전 완료!!!";
+		memberService.updatePoint(memberID, price);//paypoint.do에 들어왔다는건 이미 결제가 성공한 뒤임으로 따로 조건문을 걸지않고 바로 업데이트 실행
+		return "포인트 충전 완료!!!";//ajax사용 컨트롤러임으로 @ResponseBody를 선언해주고 문자열 그자체를 return
 	}
 
 	// 좋아요 업데이트
@@ -86,13 +86,11 @@ public class UserMyPageController {
 		// 이미 좋아요에서 좋아요를 취소할시..
 		if (vo.getLikeY().equals("Y")) {
 			System.out.println(vo.getBoard_like_no());
-			System.out.println();
 			result = boardService.deleteLike(vo);
 
 			// 좋아요를 안한상태에서 좋아요를 눌렀을 때,
 		} else if (vo.getLikeY().equals("N")) {
 			System.out.println(vo.getBoard_like_no());
-			System.out.println();
 			result = boardService.insertLike(vo);
 		}
 
@@ -150,7 +148,7 @@ public class UserMyPageController {
 	@ResponseBody
 	public List<HashMap<String,Object>> Orderlist(String memberID) {		
 		System.out.println("변수로 넘겨받은 memberID----------"+memberID);
-		List<HashMap<String,Object>> odList = orderService.getMyOrderList(memberID);
+		List<HashMap<String,Object>> odList = orderService.getMyOrderList(memberID);//odList이름으로 memberID를 파라미터로 보낸후 해당아이디에 맞는 주문리스트를 가져옴
 		for(HashMap a : odList) {
 			System.out.println(a.get("OrderDate")+"----------------------------");
 		}
@@ -162,9 +160,9 @@ public class UserMyPageController {
 	//구매확정 업데이트
 	@RequestMapping(value="updatebuyingConfirm.do", produces = "application/text; charset=UTF-8")
 	@ResponseBody
-	public String updatebuyingConfirm(OrderVO vo) {
+	public String updatebuyingConfirm(OrderVO vo) {//마이페이지에서 주문확정 버튼을 누르면 여기로 옴
 		System.out.println("구매확정 업데이트-----");
-		orderService.updatebuyingConfirm(vo);
+		orderService.updatebuyingConfirm(vo);//구매확정컬럼을 N에서 Y로 바꿈
 		String message = "구매확정 완료";
 		return message;
 	}
@@ -175,7 +173,7 @@ public class UserMyPageController {
 	@ResponseBody
 	public String OUTmember(MemberVO vo) {
 		System.out.println(vo.getMemberID()+"님의 회원탈퇴가 진행됩니다.");
-		memberService.deleteMember(vo);
+		memberService.deleteMember(vo);//회원을 삭제시킴 그리고 ajax에서 로그아웃시킨후 index로 보내버림
 		return "탈퇴가 완료되었습니다.";
 	}
 	
@@ -184,7 +182,7 @@ public class UserMyPageController {
 	@PostMapping(value="getMyRunninggoList.do")
 	@ResponseBody
 	public List<HashMap<String,Object>>getMyRunninggooList(String memberID){
-		List<HashMap<String,Object>> rgList = memberService.myrunninggooList(memberID);
+		List<HashMap<String,Object>> rgList = memberService.myrunninggooList(memberID);//내가 참가하고 있는 런닝구 목록을 가져옴
 		for(HashMap a : rgList) {
 			System.out.println(a.get("memberID"));
 		}
@@ -196,7 +194,7 @@ public class UserMyPageController {
 	@PostMapping("myhostrunninggooList.do")
 	@ResponseBody
 	public List<HashMap<String,Object>>myhostrunninggooList(String memberID){
-		List<HashMap<String,Object>> hrgList = memberService.myhostrunninggooList(memberID);
+		List<HashMap<String,Object>> hrgList = memberService.myhostrunninggooList(memberID);//내가 호스트인 런닝구 목록을 가져옴 마찬가지로 select만 함으로 memberID만 필요
 		return hrgList;
 	}
 	
