@@ -17,8 +17,23 @@
 	</select>
 	
 	<select id="getRunningGooList" resultType="com.dogether.domain.RunningGooVO">
-		SELECT * FROM runninggoo WHERE hostYN = 'Y' GROUP BY RoomNumber 
-		ORDER BY CurrentMembers = MaxMembers ASC, meetingTime DESC
+		select * from (select * from runninggoo as r, (select false as 'matched' from dual) as b
+		where r.hostyn = 'y' and <![CDATA[r.meetingTime >= now()]]> 
+			and r.CurrentMembers != r.MaxMembers 
+		order by r.roomnumber desc) as a
+		union 
+		select * from (select * from runninggoo r1, (select true as 'matched' from dual) as c 
+		where r1.hostYN ='Y'  and
+		<![CDATA[
+		r1.meetingTime < now()
+ 		]]> or
+		r1.CurrentMembers = r1.MaxMembers 
+		group by r1.RoomNumber 
+		order by r1.CurrentMembers = r1.MaxMembers asc, roomnumber desc) as b
+		order by matched, roomnumber desc;
+		
+		
+
 	</select>
 	
 	<select id="getRunningGooRoomCount" resultType="integer">
