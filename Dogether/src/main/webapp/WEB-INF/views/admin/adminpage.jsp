@@ -25,6 +25,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/common-scripts.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/admin/adminpage.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/admin/admingraph.js"></script>
 	
 	<!--상품 추가 글자수 제한--------------------------------------------------------------------------------------------------------- -->
 	<script type="text/javascript">
@@ -191,16 +192,35 @@
                                 <div class="card-body text-center" style="margin:auto;" style="overflow:scroll;">
 	                                <!-- 여기부터 복사하기 -->
 	                                <!-- 첫페이지 그래프 띄우기 -->
-	                                <table id="adminmain" border="2" style="margin:auto; width: 700px; height:300px;">
+	                                <table id="adminmain" border="2" style="margin:auto; width: 900px; height:300px;">
 	                                    <tr>
 	                                        <th>전체 회원 수</th>
 	                                        <th>전체 런닝구 매칭 건수</th>
 	                                        <th>전체 자랑하기 글 수</th>
 	                                    </tr>
 	                                    <tr>
-											<td align="center">${ memberCount }</td>
-											<td align="center">${ matchedCount }</td>
-											<td align="center">${ boastCount }</td>
+											<td align="center" id="memberCount">${ memberCount }</td>
+												<div id="maleCnt" style="display:none"> ${maleCnt }</div>
+												<div id="femaleCnt" style="display:none"> ${femaleCnt }</div>
+												
+											<td id="matchedCount" align="center">${ matchedCount }</td>
+												<div id="allRNGCnt" style="display:none"> ${allRNGCnt} </div>
+												<div id="maching" style="display:none"> ${allRNGCnt - matchedCount} </div>
+												
+											<td id="boastCount" align="center">${ boastCount }</td>
+												<div id="likeCnt" style="display:none"> ${likeCnt} </div>
+											
+	                                    </tr>
+	                                     <tr>
+											<td align="center"> 
+												<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+												<canvas id="pie-chart" width="300" height="300"></canvas></td>
+											<td align="center">
+												<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+												<canvas id="pie-chart2" width="300" height="300"></canvas></td>
+											<td align="center">
+												<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+												<canvas id="bar-chart" width="300" height="300"></canvas></td>
 	                                    </tr>
 	                                </table>
                                     <!-- 런닝구  -->

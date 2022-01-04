@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dogether.domain.BoardVO;
+import com.dogether.domain.Board_LikeVO;
 import com.dogether.domain.MemberVO;
 import com.dogether.domain.OrderVO;
 import com.dogether.domain.ProductsVO;
@@ -37,15 +38,36 @@ public class AdminMyPageController {
 	
 	// 첫페이지로 이동
 	@RequestMapping("/")
-	public String adminpage(Model m) {
+	public String adminpage(Model m, MemberVO vo, RunningGooVO rVo) {
 		System.out.println("첫페이지로 이동!!");
-		int memberCount = memberService.getMemberCount();		//전체 회원 수 
-		int matchedCount = runningGooService.getMatchedCount();	//전체 매칭 건수
-		int boastCount = boardService.getBoastCount();			//전체 자랑하기 글수
+		int memberCount = memberService.getMemberCount();			//전체 회원 수 
+		int matchedCount = runningGooService.getMatchedCount();		//전체 매칭 건수
+		int boastCount = boardService.getBoastCount();							//전체 자랑하기 글수
 		System.out.println("memberCount" + memberCount + "matchedCount=" + matchedCount + "boastCount=" + boastCount);
 		m.addAttribute("memberCount", memberCount);
 		m.addAttribute("matchedCount", matchedCount);
 		m.addAttribute("boastCount", boastCount);
+		// ######## 회원 성별 
+		List<MemberVO> memList = memberService.getMemberList(vo);
+		int maleCnt = 0;
+		int femaleCnt = 0;
+		for(int i = 0;  i < memList.size(); i++) {
+			if(memList.get(i).getGender() ==1) {
+				maleCnt++;
+			}else {
+				femaleCnt++;
+			}
+		}
+		m.addAttribute("maleCnt",maleCnt);
+		m.addAttribute("femaleCnt",femaleCnt);
+		// ######## 런닝구 매칭
+		List<RunningGooVO> voList = runningGooService.getRNRoomList(rVo);
+		int allRNGCnt = voList.size();
+		m.addAttribute("allRNGCnt", allRNGCnt);
+		// ######## 자랑하기 좋아요수
+		List<Board_LikeVO> likeList = boardService.getLikeList(new Board_LikeVO());
+		int likeCnt = likeList.size();
+		m.addAttribute("likeCnt", likeCnt);
 		return "admin/adminpage";
 	}
 

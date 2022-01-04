@@ -27,7 +27,9 @@
 		resultType="Board_LikeVO">
 		SELECT *
 		FROM board_like
-		WHERE LIKER = #{liker}
+		<if test="liker != null">
+			WHERE LIKER = #{liker}
+		</if>		
 	</select>
 
 	<delete id="deleteLike" parameterType="Board_LikeVO">
