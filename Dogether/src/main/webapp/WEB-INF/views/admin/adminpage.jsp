@@ -105,7 +105,12 @@
                   <li><a href="../shoppingMall/">쇼핑몰</a></li>
                   <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
                   <li><a href="../sleep/">수면시간계산기</a></li>
-                  <li><a href="../mypage/">마이페이지</a></li>
+                  <c:if test="${sessionScope.username eq 'Admin' }">
+                 	 <li><a href="../admin/">마이페이지</a></li>  
+                  </c:if>
+                  <c:if test="${sessionScope.username ne 'Admin' }">
+                  	<li><a href="../mypage/">마이페이지</a></li>
+                  </c:if>
               </ul>
           </div>
         </div>
@@ -116,7 +121,7 @@
     <section id="main-content" >
         <section class="wrapper">
             <!-- 여기부터 내용부 -->
-            <div class="row">
+            <div class="row" style="overflow:scroll;">
                 <div class="col-md-12" >
                     <!-- 상단 메뉴 --> 
                     <section class="card">
@@ -183,7 +188,7 @@
                     <div class="row product-list">
                         <div class="col-md-12">
                             <section class="card">
-                                <div class="card-body text-center" style="margin:auto;">
+                                <div class="card-body text-center" style="margin:auto;" style="overflow:scroll;">
 	                                <!-- 여기부터 복사하기 -->
 	                                <!-- 첫페이지 그래프 띄우기 -->
 	                                <table id="adminmain" border="2" style="margin:auto; width: 700px; height:300px;">
@@ -199,36 +204,36 @@
 	                                    </tr>
 	                                </table>
                                     <!-- 런닝구  -->
-                                    <div class="runninggooManageList">
+                                    <div class="runninggooManageList" style="overflow:scroll;">
 	                                    <!-- ########## 런닝구 리스트  ########## -->
-										<table id="adminRNGList" border="2" style="display:none;">
+										<table id="adminRNGList" border="2" style="display:none; width:700px;">
 	                                    <!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
                                     </div>
                                     <!-- 자랑하기 -->
-                                    <div class="boastManageList">
+                                    <div class="boastManageList" style="overflow:scroll;">
 	                                    <!-- ########## 자랑하기 리스트  ########## -->
-										<table id="adminBSTList" border="2" style="display:none;">
+										<table id="adminBSTList" border="2" style="display:none; width:700px;">
 										<!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
                                     </div>
                                     <!-- 회원  -->
-                                    <div class="memberManageList">
+                                    <div class="memberManageList" style="overflow:scroll;">
 	                                    <!-- ########## 회원 리스트  ########## -->
-										<table id="adminMemberList" border="2" style="display:none;">
+										<table id="adminMemberList" border="2" style="display:none; width:700px;">
 	                                    <!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
                                     </div>
                                     <!-- 쇼핑몰  -->
-                                    <div class="orderManageList">
+                                    <div class="orderManageList" style="overflow:scroll;">
 	                                    <!-- ##########	주문 리스트  ########## -->
-										<table id="adminOrderList" border="2" style="display:none;">
+										<table id="adminOrderList" border="2" style="display:none; width:700px;">
 	                                    <!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
                                     </div>
-                                    <div class="productsManageList">
+                                    <div class="productsManageList" style="overflow:scroll;">
 	                                    <!-- ########## 상품 리스트  ########## -->
-	                                    <table id="adminProductsList" border="2" style="display:none;">
+	                                    <table id="adminProductsList" border="2" style="display:none; width:700px;">
 	                                    <!-- 여기에 ajax에서 동적으로 생성한 tr>td가 들어감 -->                                      
 										</table>		
 										<!--  상품 추가하기 -->
