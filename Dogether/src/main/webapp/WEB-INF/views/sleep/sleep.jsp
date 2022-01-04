@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,6 +23,11 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/sleep/sleep.js"></script>
 	
 </head>
+<style>
+.overlay-menu ul li a{
+  font-size : 25px;
+}
+</style>
 <body>
 ${pageContext.request.contextPath}
 	<!-- 상단 배경이미지 -->
@@ -53,7 +60,12 @@ ${pageContext.request.contextPath}
                   <li><a href="../shoppingMall/">쇼핑몰</a></li>
                   <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
                   <li><a href="../sleep/">수면시간계산기</a></li>
-                  <li><a href="../mypage/">마이페이지</a></li>
+                  <c:if test="${sessionScope.username eq 'Admin' }">
+                 	 <li><a href="../admin/">마이페이지</a></li>  
+                  </c:if>
+                  <c:if test="${sessionScope.username ne 'Admin' }">
+                  	<li><a href="../mypage/">마이페이지</a></li>
+                  </c:if>
               </ul>
           </div>
         </div>

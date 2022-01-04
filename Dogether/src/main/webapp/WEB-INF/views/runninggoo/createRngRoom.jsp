@@ -122,7 +122,12 @@ textarea{
                   <li><a href="../shoppingMall/">쇼핑몰</a></li>
                   <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
                   <li><a href="../sleep/">수면시간계산기</a></li>
-                  <li><a href="../mypage/">마이페이지</a></li>
+                  <c:if test="${sessionScope.username eq 'Admin' }">
+                 	 <li><a href="../admin/">마이페이지</a></li>  
+                  </c:if>
+                  <c:if test="${sessionScope.username ne 'Admin' }">
+                  	<li><a href="../mypage/">마이페이지</a></li>
+                  </c:if>
               </ul>
           </div>
         </div>
