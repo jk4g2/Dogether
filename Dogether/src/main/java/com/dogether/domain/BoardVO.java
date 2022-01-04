@@ -40,7 +40,7 @@ public class BoardVO {
 			//***********************************************
 			// 해당 경로로 변경
 			//b_fname을 b_realfname으로 변경
-			File f = new File("C:\\Users\\KOSMO\\git\\Spring_practice\\Dogether_test\\src\\main\\webapp\\resources\\upload\\board\\" + board_realfname);
+			File f = new File("/home/temp/tomcat8.0/webapps/Dogether/resources/img/imguploadboast/" + board_realfname);
 			//File f = new File("webapp\\resources\\upload\\"+member_realfname);
 			System.out.println(f.getAbsolutePath());
 			//여기 경로를 실제 서버에서 할때는 바꿔야함----@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

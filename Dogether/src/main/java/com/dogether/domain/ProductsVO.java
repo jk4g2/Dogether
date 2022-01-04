@@ -39,7 +39,7 @@ public class ProductsVO {
 	         //***********************************************
 	         // 해당 경로로 변경
 	         //b_fname을 b_realfname으로 변경
-	         File f = new File("D:\\SpringWeb\\Dogether\\src\\main\\webapp\\resources\\img\\shoppingmall\\productimgs\\"+product_realfname);
+	         File f = new File("/home/temp/tomcat8.0/webapps/Dogether/resources/img/imguploadproduct/"+product_realfname);
 	         //여기 경로를 실제 서버에서 할때는 바꿔야함----@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	         try {
 	            file.transferTo(f);

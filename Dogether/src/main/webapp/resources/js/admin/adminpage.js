@@ -37,7 +37,7 @@ $(document).ready(function() {
                var roomNumber = $("<td width='150'/>").html(row['RoomNumber']);   
                tr.append(roomNumber);
                // ######### 프로필사진 출력
-               var member_realfname = $("<td id='member_realfname'/>").html("<img src='../resources/upload/board/"+row['Member_realfname'] +"'>");
+               var member_realfname = $("<td id='member_realfname'/>").html("<img src='../resources/img/imguploadmember/"+row['Member_realfname'] +"'>");
                tr.append(member_realfname);
                // ##### 호스트명, 방설명(호스트한마디), 미팅날짜, 삭제 출력 #####
                var memberID = $("<td width='100' />").html(row['MemberID']);   
@@ -125,7 +125,7 @@ $(document).ready(function() {
                var boardID = $("<td width='150' />").text(row.boardID);   
                tr.append(boardID);
                // ######### 게시글사진 출력 (디비 완성 전까지는 방번호 출력하기)
-               var board_realfname = $("<td id='board_realfname'/>").html("<img src='./resources/img/imgforboard/"+ row.board_realfname +"'>");
+               var board_realfname = $("<td id='board_realfname'/>").html("<img src='../resources/img/imguploadboast/"+ row.board_realfname +"'>");
                tr.append(board_realfname);
                // ##### 작성자, 글내용, 좋아요수, 삭제 출력 #####
                var memberID = $("<td width='100' />").text(row.memberID);   
@@ -329,7 +329,7 @@ $(document).ready(function() {
                var productID = $("<td width='200' />").html(row['ProductID']);
                tr.append(productID);
                // ######### 상품이미지 출력 
-               var product_realfname = $("<td id='product_realfname'/>").html("<img src='./resources/img/shoppingmall/productimgs/"+ row['Product_realfname'] +"'>");
+               var product_realfname = $("<td id='product_realfname'/>").html("<img src='../resources/img/imguploadproduct/"+ row['Product_realfname'] +"'>");
                tr.append(product_realfname);
                var buyingConfirmYN = $("<td width='150' />").html(row['BuyingConfirmYN']);         
                tr.append(buyingConfirmYN);                                        
@@ -400,7 +400,7 @@ $(document).ready(function() {
                for(row of resultProducts){                           // 향상된 for문 (list row : resultProducts) ==> 변수명은 상관없음
 //                  console.log(row);
                   var tr = $("<tr/>");                                    // <tr/> 객체 생성
-                  var product_realfname = $("<td class='productInsertImage'/>").html('<img  src="./resources/img/shoppingmall/productimgs/' + row.product_realfname + '"/>');   
+                  var product_realfname = $("<td class='productInsertImage'/>").html('<img src="../resources/img/imguploadproduct/' + row.product_realfname + '"/>');   
                   tr.append(product_realfname);
                   var productID = $("<td class='productID'/>").html(row.productID);
                   tr.append(productID);

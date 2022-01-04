@@ -180,7 +180,7 @@
 											<!-- 마이페이지 기본화면 -->
 											<div id="profileimage">
 												<img id="profileIMG"
-													src="../resources/img/imgforboard/img.png">
+													src="../resources/img/imguploadmember/${member.member_realfname}">
 											</div>
 											<div id="memberInfo">
 												<div id="memberID" style="display: none">${member.memberID}</div>
@@ -338,8 +338,8 @@
 														<!-- 게시글 div -->
 														<div class="card" style='border: 1px solid black;'>
 															<div id="userdiv" style="display:inline-block;">
-																<img
-																	src="../resources/img/imgforboard/default_person.png"
+															<!-- ************************************************************************************************************************************************ -->
+																<img src="../resources/img/imguploadmember/${member.member_realfname}"
 																	id="userpic"> ${item.memberID}
 															</div>
 															
@@ -356,10 +356,9 @@
 															</c:if>
 															
 															
-															
 															<div id="content">
 																<div id="pic"
-																	style='background-image: url(../resources/img/imgforboard/img.png)'></div>
+																	style='background-image: url(../resources/img/imguploadboast/${item.board_realfname})'></div>
 															</div>
 
 															<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 -->
