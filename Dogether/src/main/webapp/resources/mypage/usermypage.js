@@ -263,7 +263,7 @@ function OrderList(){
                var productID = $("<td  />").html(row['ProductID']);
                tr.append(productID);
                // ######### 상품이미지 출력
-               var product_realfname = $("<td id='product_realfname'/>").html("<img src='../resources/img/imguploadproduct/"+ row['Product_realfname'] +"'>");
+               var product_realfname = $("<td id='product_realfname'/>").html("<img src='../resources/img/imguploadproduct/"+ row['Product_realfname'] +"'style='width:200px; height:200px;'>");
                tr.append(product_realfname);
                if(row['BuyingConfirmYN'] == 'Y'){
                  var buyingConfirmYN = $("<td  />").html(row['BuyingConfirmYN']);//구매확정 완료
@@ -344,7 +344,7 @@ function OrderList(){
                   for(row of resultOrder){
                   console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
                   var tr = $("<tr/>");                                 // <tr/> 객체 생성
-                  var hostIMG = $("<td  />").html("<img src='../resources/img/imguploadmember/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
+                  var hostIMG = $("<td  />").html("<img src='../resources/img/imguploadmember/"+ row['member_realfname'] +"'style='width:200px; height:200px;'>");   // td객체를 생성 ==> orderDate를 td에 담는다
                   tr.append(hostIMG);                                  // tr에 orderDate를 담은 td를 추가
                   var hostID = $("<td  />").text(row['memberID']+"님의 방");
                   tr.append(hostID);
@@ -399,7 +399,7 @@ function OrderList(){
                      for(row of resultOrder){
                      console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
                      var tr = $("<tr />");                                 // <tr/> 객체 생성
-                     var hostIMG = $("<td  />").html("<img src='../resources/upload/"+ row['member_realfname'] +"'>");   // td객체를 생성 ==> orderDate를 td에 담는다
+                     var hostIMG = $("<td  />").html("<img src='../resources/img/imguploadmember/"+ row['member_realfname'] +"'style='width:200px; height:200px;'>");   // td객체를 생성 ==> orderDate를 td에 담는다
                      tr.append(hostIMG);                                  // tr에 orderDate를 담은 td를 추가
                      var hostID = $("<td  />").text(row['memberID']+"님의 방");
                      tr.append(hostID);

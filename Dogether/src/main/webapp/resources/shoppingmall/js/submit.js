@@ -6,16 +6,20 @@ $(document).ready(function(){
     let Cnt = $("#productCnt").val();
     let Name = $("#ProductNameName").text();
     let ID = $("#productIDvalue").text();
+    console.log(Cnt);
+    console.log(Name);
+    console.log(ID);
     $.ajax({
     	type : 'post',
-    	data : {productQuantity : Cnt,productID : ID},
+    	data : {productQuantity : Cnt, productID : ID},
     	contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
     	url : 'shoppingCartInsert.do',
     	success : function(result){
     		let data1 = $.trim(result);
     		if(data1 === $.trim("0")){
 				alert("로그인이 필요한 서비스입니다.");
-				window.location ="../index.do";
+				//window.location ="../index.do";
+				console.log(1);
     		}if(data1 !== $.trim("0") ){
 				alert(Name+" "+Cnt+"건 "+result);
     		}

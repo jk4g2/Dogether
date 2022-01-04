@@ -24,6 +24,11 @@
 <script src="../resources/js/jshealth/search.js"></script>
 <script src="../resources/js/plugins.js"></script>
 <script src="../resources/js/main.js"></script>
+<style>
+	.overlay-menu ul li a{
+  		font-size : 25px;
+	}
+</style>
 </head>
 <body>
 	<nav style="background-color: black">
@@ -35,23 +40,27 @@
 		</div>
 	</nav>
 	<section class="overlay-menu">
-		<div class="container">
-			<div class="row">
-				<div class="main-menu">
-					<ul>
-						<li><a href="runninggoo.do">런닝구</a></li>
-						<li><a href="#">Gym 예약할까</a></li>
-						<li><a href="ai_home_trainer_view/1_aiHT_main.do">온라인 PT</a></li>
-						<li><a href="boast.do">자랑하기</a></li>
-						<li><a href="healthcenter.do">Inbody 측정 보건소</a></li>
-						<li><a href="shoppingmall.do">쇼핑몰</a></li>
-						<li><a href="userMyPage/myPage.do">마이페이지</a></li>
-
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
+      <div class="container" style="background:black;">
+        <div class="row">
+          <div class="main-menu">
+              <ul>
+                  <li><a href="../runninggoo/">런닝구</a></li>
+                  <li><a href="../aihometrainer/">AI홈트레이너</a></li>
+                  <li><a href="../boast/">자랑하기</a></li>
+                  <li><a href="../shoppingMall/">쇼핑몰</a></li>
+                  <li><a href="../healthcenter/">Inbody 측정 보건소</a></li>
+                  <li><a href="../sleep/">수면시간계산기</a></li>
+                  <c:if test="${sessionScope.username eq 'Admin' }">
+                 	 <li><a href="../admin/">마이페이지</a></li>  
+                  </c:if>
+                  <c:if test="${sessionScope.username ne 'Admin' }">
+                  	<li><a href="../mypage/">마이페이지</a></li>
+                  </c:if>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
 	<!-- 검색구간 -->
 	<div id="searchingdiv">

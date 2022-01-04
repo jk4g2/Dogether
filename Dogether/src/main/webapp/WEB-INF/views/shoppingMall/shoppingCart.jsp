@@ -240,7 +240,7 @@
 											<div id="memberZipCode" style="display: none">${memberInfo.zipCode}</div>
 											<tr>
 												<td class="hidden-xs"><a href="#"><img
-														src="../resources/shoppingmall/productimgs/${cart['Product_realfname']}" /></a></td>
+														src="../resources/img/imguploadproduct/${cart['Product_realfname']}" /></a></td>
 												<td>
 													<h5 class="product-title font-alt ProductName" id="ProductName">${cart["ProductName"]}</h5>
 													<div id="PID" style="display : none;">${cart['ProductID']}</div>

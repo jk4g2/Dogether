@@ -137,7 +137,7 @@
 						      <c:forEach items="${productList}" var="product">
 						              <div class="col-sm-6 col-md-4 col-lg-4">
 						                <div class="shop-item">
-						                  <div class="shop-item-image"><img src="../resources/shoppingmall/productimgs/${product.product_realfname}" />
+						                  <div class="shop-item-image"><img src="../resources/img/imguploadproduct/${product.product_realfname}" />
 						                    <div class="shop-item-detail"><a class="btn btn-round btn-b" href="detailProduct.do?ProductID=${product.productID}"><span class="icon-basket">상세보기</span></a></div>
 						                  </div>
 						                  <h4 class="shop-item-title font-alt"><a href="detailProduct.do?ProductID=${product.productID}">${product.productName}</a></h4>${product.productPrice}₩

@@ -140,7 +140,7 @@
             <c:forEach items="${bestProduct}" var="product">
               <div class="col-sm-6 col-md-3 col-lg-3">
 	                <div class="shop-item">
-	                  <div class="shop-item-image"><img src="../resources/shoppingmall/productimgs/${product.product_realfname}" width="262" height="259" />
+	                  <div class="shop-item-image"><img src="../resources/img/imguploadproduct/${product.product_realfname}" width="262" height="259" />
 	                    <div class="shop-item-detail"><a class="btn btn-round btn-b" href="detailProduct.do?ProductID=${product.productID}"><span class="icon-basket">Add To Cart</span></a></div>
 	                  </div>
 	                  <h4 class="shop-item-title font-alt"><a href="detailProduct.do?ProductID=${product.productID}">${product.productName}</a></h4>${product.productPrice}₩

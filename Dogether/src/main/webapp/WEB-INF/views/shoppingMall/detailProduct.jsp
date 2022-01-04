@@ -108,7 +108,7 @@
             <div class="row">
 	
               <div class="col-sm-6 mb-sm-40">
-              		<img src="../resources/shoppingmall/productimgs/${product.product_realfname}" width="665" height="750" alt="상품사진">				
+              		<img src="../resources/img/imguploadproduct/${product.product_realfname}" width="665" height="750" alt="상품사진">				
               </div>
               <div class="col-sm-6">
                 <div class="row">

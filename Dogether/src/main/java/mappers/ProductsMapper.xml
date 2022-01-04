@@ -32,7 +32,7 @@
 
 
 	<insert id="insertIntoCart" parameterType="com.dogether.domain.ProductsVO">
-		INSERT INTO shopping_cart
+		INSERT INTO shopping_cart(MemberID,ProductID,ProductQuantity)
 		VALUES (#{memberID},#{productID},#{productQuantity})
 	</insert>
 
