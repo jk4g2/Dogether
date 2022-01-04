@@ -322,32 +322,41 @@
 					        					        
 								    // ##############
 						
-									if(prediction[2].probability.toFixed(2) >= 0.95){
-										
+									if(prediction[2].probability.toFixed(2) >= 0.50){
+
 											$("#ViewTimer_right").text("올바른 자세입니다");
 											$("#ViewTimer_wrong").text("");	
 											$("#ViewTimer_wait").text("");	
-											
-											 if(prediction[1].probability.toFixed(2) > 0.50){		
-													$("#ViewTimer_wrong").text("잘못된 자세입니다");												 
-													$("#ViewTimer_right").text("");
-													$("#ViewTimer_wait").text("");													 
-											  }
-											 else if(prediction[0].probability.toFixed(2) > 0.50){		
-													$("#ViewTimer_wrong").text("잘못된 자세입니다");												 
-													$("#ViewTimer_right").text("");
-													$("#ViewTimer_wait").text("");													 
-											  }
+									
+									}
+								    
+									if(prediction[0].probability.toFixed(2) >= 0.70){
+											$("#ViewTimer_right").text("올바른 자세입니다");
+											$("#ViewTimer_wrong").text("");	
+											$("#ViewTimer_wait").text("");	
+										
+									}
+								    
+									 if(prediction[1].probability.toFixed(2) > 0.90){		
+											$("#ViewTimer_wrong").text("잘못된 자세입니다");												 
+											$("#ViewTimer_right").text("");
+											$("#ViewTimer_wait").text("");													 
+									  }
+									 
+									 if(prediction[0].probability.toFixed(2) > 0.95){		
+											$("#ViewTimer_wrong").text("잘못된 자세입니다");												 
+											$("#ViewTimer_right").text("");
+											$("#ViewTimer_wait").text("");													 
+									  }
 											 
-									 }
-							        
-									 else if(prediction[3].probability.toFixed(2) >= 0.50) {
+									if(prediction[3].probability.toFixed(2) >= 0.50) {
 								        
 											$("#ViewTimer_wait").text("시작하세요!");											 	
 											$("#ViewTimer_wrong").text("");												 
 											$("#ViewTimer_right").text("");
 									 }
 								    
+									 
 								        // ##############
 							        
 							        for (let i = 0; i < maxPredictions; i++) {	// ### 4. model.predict 로 결과를 뽑아서 prediction[i].className : prediction[i].probability 을 문장으로 만들어서

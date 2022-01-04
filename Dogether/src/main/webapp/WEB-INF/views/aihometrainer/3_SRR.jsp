@@ -292,9 +292,9 @@
 		        
 								// ##############				        
 					        
-								 if(prediction[0].probability.toFixed(2) >= 0.95){
+								 if(prediction[0].probability.toFixed(2) >= 0.40){
 										 
-							        	if(prediction[1].probability.toFixed(2) == 1.00){
+							        	if(prediction[1].probability.toFixed(2) >= 0.40){
 							        		
 							        		 count = count+1;
 							        		 ViewCount.innerHTML = count;
@@ -326,11 +326,8 @@
 														$("#ViewTimer_right").text("");														
 											          }							        		 
 							        	}	
-							        	else if(prediction[2].probability.toFixed(2) == 1.00){
-											$("#ViewTimer_wrong").text("자세에 좀 더 집중해주세요");
-											$("#ViewTimer_right").text("");
-							        	}
-							        };
+					
+							        }
 										        
 	         
 										        // ##############
