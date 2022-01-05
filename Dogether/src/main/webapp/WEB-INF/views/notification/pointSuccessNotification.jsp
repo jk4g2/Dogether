@@ -1,3 +1,4 @@
+<%@page import="org.springframework.http.HttpRequest"%>
 <%@page import="com.google.gson.JsonObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -35,7 +36,7 @@
 	//info.put("title", "my message");   // Notification title
 	//info.put("body", "test"); // Notification body
 	info.addProperty("title", "Dogether"); // Notification title
-	info.addProperty("body", "ㅎㅇㅎㅇ"); // Notification body
+	info.addProperty("body", "포인트 충전이 완료되었습니다."); // Notification body
 	json.add("notification", info);
 	
 	OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
@@ -43,5 +44,7 @@
 	wr.write(json.toString());
 	wr.flush();
 	conn.getInputStream();
+	
+	response.sendRedirect("../mypage/");
 %>
 
