@@ -294,10 +294,9 @@
 		        
 								// ##############				        
 					        
-								 if(prediction[3].probability.toFixed(2) >= 0.30){
+								 if(prediction[2].probability.toFixed(2) >= 0.10){
 										 
-							        	if(prediction[1].probability.toFixed(2) >= 0.30){
-								        	//if(prediction[0].probability.toFixed(2) >= 0.30){   // 테스트 해봐야 함
+							        	if(prediction[1].probability.toFixed(2) >= 0.10){
 							        		
 							        		 count = count+1;
 							        		 ViewCount.innerHTML = count;
@@ -325,11 +324,11 @@
 															$("#ViewCount").text("");
 															$("#ViewCount3").text("목표한 갯수를 성공하셨습니다.");
 												        	
-										        		  };							        		 
-							        		    //  }	
-							        	    }
+										        		  }
+							        	      }
 	        						 }
 										      
+								
 										        // ##############
 									     
 								        for (let i = 0; i < maxPredictions; i++) {	// ### 4. model.predict 로 결과를 뽑아서 prediction[i].className : prediction[i].probability 을 문장으로 만들어서

@@ -278,7 +278,7 @@
 					    }
 					    
 					    //  ######  
-					    var status = "class1";
+					   // var status = "class1";
 					    var count = 0;    					  
 					    //   ####### 
 					    			
@@ -292,9 +292,9 @@
 		        
 								// ##############				        
 					        	// 팔을 핀 버전
-								 if(prediction[0].probability.toFixed(2) >= 0.90){
+								 if(prediction[1].probability.toFixed(2) >= 0.30){
 										 
-							        	if(prediction[1].probability.toFixed(2) >= 0.90){
+							        	if(prediction[2].probability.toFixed(2) >= 0.25){
 							        		
 							        		 count = count+1;
 							        		 ViewCount.innerHTML = count;
@@ -331,55 +331,12 @@
 												$("#ViewCount_right").text("");
 							        		}
 							         }
-								
-								
-								
-								// 팔을 굽힌 버전
-								 if(prediction[2].probability.toFixed(2) >= 0.90){
-									 
-							        	if(prediction[3].probability.toFixed(2) >= 0.90){
-							        		
-							        		 count = count+1;
-							        		 ViewCount.innerHTML = count;
-	
-							     				$("#ViewCount3").text("");
-												$("#ViewCount_right").text("잘 하고 계세요");
-												$("#ViewCount_wrong").text("");								     				
-							        		 
-								     				var audio = new Audio(URL + 'sound/' + count%10 + '.mp3');
-								     				var audio_ten = new Audio(URL + 'sound/' + parseInt(count/10) + count%10 + '.mp3');
-							        
-									     				if(parseInt(count)<10){
-		
-											        		audio.play();
-									     				}
-											        	else{
-											        		audio_ten.play();	
-											        	}	
-							        		 
-							        		 
-								        		 if(parseInt(count)==parseInt(count_get)){   // 목표숫자가 '  ' 이면  //  inputbox로 바꿈
-								        			 
-								       				count = 0;   // 카운트 초기화 되고,
-								        			 
-								        			var audio = new Audio(URL + 'success2.mp3');  
-										        	audio.play();				// success2.mp3 음성이 나옴. (목표한 갯수를 완료하였습니다 라는 음성이 나옴)
-													$("#ViewCount").text("");
-													$("#ViewCount3").text("목표한 갯수를 성공하셨습니다.");
-										        	 };
-										        	 
-											}	
-							        		else if(prediction[5].probability.toFixed(2)>= 1.00){
-												$("#ViewCount_wrong").text("잘못된 자세입니다.");												 
-												$("#ViewCount_right").text("");
-							        		}
-							         }	
-								
-								
+					
 									else {
 										$("#ViewCount_wrong").text("");												 
 										$("#ViewCount_right").text("");
 							         }
+								
 								
 								
 										        // ##############

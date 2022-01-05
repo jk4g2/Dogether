@@ -243,8 +243,8 @@
 					    let model, webcam, ctx, labelContainer, maxPredictions;
 					
 					    async function init() {  // ### 2. init 이라는 함수는 model을 불러오고(31-32), 카메라를 설정해준 다음에(35-40), (40)loop라는 함수를 계속 돌게 된다.
-					        const modelURL = URL + "pushUp_model.json";
-					        const metadataURL = URL + "pushUp_metadata.json";
+					        const modelURL = URL + "pushUp2_model.json";
+					        const metadataURL = URL + "pushUp2_metadata.json";
 					
 								     // 모델 및 메타데이터 로드
 								        // 파일 선택기에서 파일을 지원하려면 API의 tmImage.loadFromFiles()를 참조하십시오.
@@ -294,9 +294,9 @@
 		        
 								// ##############				        
 					        
-								 if(prediction[0].probability.toFixed(2)||prediction[2].probability.toFixed(2) >= 0.80){
+								 if(prediction[0].probability.toFixed(2) >= 0.50){
 										 
-							        	if(prediction[1].probability.toFixed(2) >= 0.80){
+							        	if(prediction[1].probability.toFixed(2) >= 0.50){
 							        		
 							        		 count = count+1;
 							        		 ViewCount.innerHTML = count;
@@ -335,10 +335,11 @@
 								        		   }							        		 
 							             }
 								 }  	
-							        	
-							        	
+
+
+						
 								
-									 if(prediction[3].probability.toFixed(2) >= 0.50) {
+									 if(prediction[2].probability.toFixed(2) >= 0.50) {
 									        
 											$("#ViewTimer_wait").text("시작하세요!");											 	
 											$("#ViewTimer_wrong").text("");												 
