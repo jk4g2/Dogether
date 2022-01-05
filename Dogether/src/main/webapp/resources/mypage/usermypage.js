@@ -235,14 +235,14 @@ function OrderList(){
             userOrderList.empty();                        // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
             userOrderList.append(                        // list 테이블 헤더
                "<tr>"
-               + "<th width='200'>주문일자</th>"
-               + "<th width='300'>주문번호</th>"
-               + "<th width='200'>주문자</th>"
-               + "<th width='200'>상품번호</th>"
-               + "<th width='400'>상품이미지</th>"
-               + "<th width='150'>구매확정여부</th>"
-               + "<th width='150'>반품여부</th>"
-               + "<th width='150'>반품상태</th>"
+               + "<th>주문일자</th>"
+               + "<th>주문번호</th>"
+               + "<th>주문자</th>"
+               + "<th>상품번호</th>"
+               + "<th style='width:200px;'>상품이미지</th>"
+               + "<th>구매확정여부</th>"
+               + "<th>반품여부</th>"
+               + "<th>반품상태</th>"
                +"</tr>");
            if(resultOrder == ""){
 	                var tr = $("<tr/>");
@@ -263,7 +263,7 @@ function OrderList(){
                var productID = $("<td  />").html(row['ProductID']);
                tr.append(productID);
                // ######### 상품이미지 출력
-               var product_realfname = $("<td id='product_realfname'/>").html("<img src='../resources/img/imguploadproduct/"+ row['Product_realfname'] +"'style='width:200px; height:200px;'>");
+               var product_realfname = $("<td id='product_realfname' style='width:200px; height:200px;'/>").html("<img src='../resources/img/imguploadproduct/"+ row['Product_realfname'] +"'style='width:100%; height:100%;'>");
                tr.append(product_realfname);
                if(row['BuyingConfirmYN'] == 'Y'){
                  var buyingConfirmYN = $("<td  />").html(row['BuyingConfirmYN']);//구매확정 완료

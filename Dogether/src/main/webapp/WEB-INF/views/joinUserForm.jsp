@@ -180,10 +180,10 @@
 	    		<div align="center">성별</div>
 	    	</td>
 	    	<td class="normal">
-				<select id="sel">
+				<select id="sel" name="gender">
 					<option value="999">성별 선택</option>
-					<option value="0" name="gender">남</option>	<!-- option에 value 값 없어도 됨 -->
-					<option value="1" name="gender">여</option>
+					<option value="1" >남</option>	<!-- option에 value 값 없어도 됨 -->
+					<option value="2">여</option>
 				</select>
 				<span id="gCheckResult" style="width:150px;color:red"></span>
 			</td>
