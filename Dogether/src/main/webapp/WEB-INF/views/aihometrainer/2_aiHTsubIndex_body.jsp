@@ -194,17 +194,17 @@
             <div class="row">
               <div class="col-sm-12">
                 <ul class="filter font-alt" id="filters2">
-	                  <li><a class="current2 wow fadeInUp" href="#" data-filter2="*">All</a></li>
+	                  <li><a class="current2 wow fadeInUp" id="2_ALL_B"  href="#" data-filter2="*">All</a></li>
 	                  
-	                  <li><a class="wow fadeInUp" id="test_back" value="click" onclick="hello()" href="#" data-filter2=".back" data-wow-delay="0.4s">back</a></li>
+	                  <li><a class="wow fadeInUp" id="2_back" value="click" href="#" data-filter2=".back" data-wow-delay="0.4s">back</a></li>
 	                 
-	                  <li><a class="wow fadeInUp" href="#" data-filter2=".belly" data-wow-delay="0.4s">belly</a></li>
+	                  <li><a class="wow fadeInUp" id="2_ABS"  href="#" data-filter2=".belly" data-wow-delay="0.4s">ABS</a></li>
 	                 
-	                  <li><a class="wow fadeInUp" href="#" data-filter2=".arm" data-wow-delay="0.6s">arm & shoulder</a></li>
+	                  <li><a class="wow fadeInUp" id="2_AnS"  href="#" data-filter2=".arm" data-wow-delay="0.6s">arm & shoulder</a></li>
 	                 
-	                  <li><a class="wow fadeInUp" href="#" data-filter2=".leg" data-wow-delay="0.6s">leg & hip</a></li>
+	                  <li><a class="wow fadeInUp"  id="2_LnH" href="#" data-filter2=".leg" data-wow-delay="0.6s">leg & hip</a></li>
 	                
-	                  <li><a class="wow fadeInUp" href="#" data-filter2=".WholeBody" data-wow-delay="0.6s">whole body & Core</a></li>
+	                  <li><a class="wow fadeInUp"  id="2_WBnC" href="#" data-filter2=".WholeBody" data-wow-delay="0.6s">whole body & Core</a></li>
                 </ul>
               </div>
             </div>

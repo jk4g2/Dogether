@@ -35,56 +35,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" >
     <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	
-    
+ 
+	<style>
+	
+		img#sub_img_size{
+			  width: 100%;
+		 	 height: 465px;
+		 	 object-fit: cover;
+		 	 vertical-align: middle; }
+	    
+		div#img_margin{
+			padding-rignt:30px;
+			padding-left:30px; }   
 
-
- 	<script>
-
-	function Hello(){
-
-	
-	        var demos2   = $('#demos2'),
-	            demos2_mode;
-	
-	        if (demos2.hasClass('demos2-masonry')) {
-	            demos2_mode = 'masonry2';
-	        } else {
-	            demos2_mode = 'fitRows2';
-	        }
-	
-	        demos2.imagesLoaded(function() {
-	            demos2.isotope({
-	                layoutMode: demos2_mode,
-	                itemSelector: '.aaaaa'
-	            });
-	        });
-	
-	
-	
-	
-	        $('#filters2 a').click(function() {
-	            $('#filters2 .current2').removeClass('current2');
-	            $(this).addClass('current2');
-	            var selector2 = $(this).attr('data-filter2');
-	
-	            demos2.isotope({
-	                filter: selector2,
-	                animationOptions: {
-	                    duration: 750,
-	                    easing: 'linear',
-	                    queue: false
-	                }
-	            });
-	
-	            return false;
-	        });
-        
-
-	}
-
-	</script>   
-    
+	.block {display:block;}
+	.hide {display:none;}
+			 
+	 
+	</style>   
   
+     
     
   </head>
  
@@ -130,6 +100,7 @@
 	
 <!-- 1. 헤더 ######### 헤더바  + 사이드바 끝! ########### -->
 
+
 <!-- 2. 상단 화면 ######### 사진 + 중간바 시작! ########### -->
 
       <!-- 상단 gif + 화면 시작!-->
@@ -167,28 +138,31 @@
       
 <!-- 3. 운동 타입 별 메뉴 리스트 ######### 시작! ########### -->     
 		   
-		<section class="container py-5">
-			<div class="row textaa" id="newnewnew" >
+		<section class="container py-5" style="height:720px">
+		    <div class="row textaa" id="newnewnew" >
 		       <div class="col-aa">
 					<img src="../resources/aihometrainer/images/Textaaaa.jpg" class="Textaaaa"></a>		
 		       </div>
 		    </div>  
 		        
 			<div class="row" id="test2">
+				<div id="filters3">				
+			
 		        <div class="col-12 col-md-4 p-5 mt-3">
-		                <a href="../aihometrainer/2_aiHTsubIndex_exercise.do"><img id="rounded-circle" src="../resources/aihometrainer/images/yss.jpg" class="rounded-circle img-fluid border" ></a>
+	                <a class="forCurrent2" data-filter3=".yusanso"><img id="rounded-circle" src="../resources/aihometrainer/images/yss.jpg" class="rounded-circle img-fluid border" ></a>
 		                <h5 class="text-center mt-3 mb-3">유산소<h5>
 		        </div>
 		        
 		        <div class="col-12 col-md-4 p-5 mt-3">
-		                <a href="../aihometrainer/2_aiHTsubIndex_exercise.do"><img src="../resources/aihometrainer/images/grud22.jpg" class="rounded-circle img-fluid border"></a>
+	                <a class="forCurrent2" data-filter3=".grud"><img src="../resources/aihometrainer/images/grud22.jpg" class="rounded-circle img-fluid border"></a>
 		                <h2 class="h5 text-center mt-3 mb-3">근력운동</h2>
 		        </div>
 		        
 		        <div class="col-12 col-md-4 p-5 mt-3">
-		                <a href="../aihometrainer/2_aiHTsubIndex_exercise.do"><img src="../resources/aihometrainer/images/yoga3.jpg" class="rounded-circle img-fluid border"></a>
+	                <a class="forCurrent2" data-filter3=".yoga"><img src="../resources/aihometrainer/images/yoga3.jpg" class="rounded-circle img-fluid border"></a>
 		                <h2 class="h5 text-center mt-3 mb-3">요가</h2>
 		        </div>
+		     </div>
 		     </div>
 		  </section> 
 
@@ -198,12 +172,13 @@
 <!-- 4. 몸 부위 별 메뉴 리스트 ######### 시작! ########### -->     
 	    
 		<div id="gallery" class="grid">
-		
+			<div id="filters2">	
+					
 	        <figure class="effect-bubba">
 	            <img src="../resources/aihometrainer/images/all.jpg" alt="img01">
 	            <figcaption>
 	                <h2>All  <span>exercise</span></h2>
-	                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+	                <a class="forCurrent1" data-filter2="*"></a>
 	            </figcaption>           
 	        </figure>
 	        
@@ -212,16 +187,16 @@
 	            <figcaption>
 	                <h2>for perfect <span>BACK</span></h2>
 	                <p>It is prepared for your healthy posture and <br>core muscles. </p>
-	                <a href="../aihometrainer/2_aiHTsubIndex_body.do" value="click" onclick="hello()">View more</a>
+	                <a class="forCurrent1" data-filter2=".back"></a>
 	            </figcaption>           
 	        </figure>
 	        
 	        <figure class="effect-bubba">
 	            <img src="../resources/aihometrainer/images/belly1.jpg" alt="img07">
 	            <figcaption>
-	                <h2>become good <span>BELLY</span> <i>Now</i></h2>
+	                <h2>become good <span>ABS</span> <i>Now</i></h2>
 	                <p>You will be able to start your day <br>a little lighter today!</p>              
-	                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+	                <a class="forCurrent1" data-filter2=".belly"></a>
 	            </figcaption>           
 	        </figure>
 	        
@@ -230,7 +205,7 @@
 	            <figcaption>
 	                <h2>great <span>arms & </span>shoulders</h2>
 	                <p>For an arm like Captain America!</p>
-	                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+	                <a class="forCurrent1" data-filter2=".arm"></a>
 	            </figcaption>           
 	        </figure>
 	        
@@ -243,7 +218,7 @@
 	                <span class="glyphicon glyphicon-comment"></span>
 	                <p>If you build up your second heart, <br>your leg muscles, you'll be able to spend more energetic days. 
 	                	<br>do it now. </p>
-	                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+	                <a class="forCurrent1" data-filter2=".leg"></a>
 	            </figcaption>           
 	        </figure>
 	        
@@ -252,10 +227,11 @@
 	            <figcaption>
 	                <h2>WHOLE BODY & <span>CORE</span></h2>
 	                <p> A strong core will make your day <br>more comfortable.</p>
-	                <a href="../aihometrainer/2_aiHTsubIndex_body.do">View more</a>
+	                <a class="forCurrent1" data-filter2=".WholeBody"></a>
 	            </figcaption>           
 	        </figure>
 	        
+	        </div>
 	    </div>
 	    
 <!-- 4. 몸 부위 별 메뉴 리스트 ######### 끝! ########### -->    
@@ -308,7 +284,231 @@
    
  <!-- 5. 화면 하단 ######### 페이지 설명 끝! ########### -->      
         
- <!-- 6. 풋터 ######### 시작! ########### -->           
+<div id="forScroll" ></div> <!-- 스크롤 포커스를 위해서 만든 div -->
+        
+<!-- ### 부위별 운동 파트 시작 ### -->  
+
+<div id="part1"  class="part1">   
+      
+	<!-- 6. 부위별 운동 메뉴 리스트 ######### 시작! ########### -->  
+
+   	<section class="module pb-0" id="works">
+        
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h2 class="module-title font-alt">Exercise by body part</h2>
+                <div class="module-subtitle font-serif"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12" >
+                <ul class="filter font-alt" id="filters2">
+	                  <li><a class="current2 wow fadeInUp" href="#" data-filter2="*">All</a></li>
+	                  
+	                  <li><a class="wow fadeInUp" data-filter2=".back" data-wow-delay="0.4s">back</a></li>
+	                 
+	                  <li><a class="wow fadeInUp" data-filter2=".belly" data-wow-delay="0.4s">ABS</a></li>
+	                 
+	                  <li><a class="wow fadeInUp" data-filter2=".arm" data-wow-delay="0.6s">arm & shoulder</a></li>
+	                 
+	                  <li><a class="wow fadeInUp"  data-filter2=".leg" data-wow-delay="0.6s">leg & hip</a></li>
+	                
+	                  <li><a class="wow fadeInUp" data-filter2=".WholeBody" data-wow-delay="0.6s">whole body & Core</a></li>
+                </ul>
+              </div>
+            </div>
+
+	<!-- 6. 부위별 운동 메뉴 리스트 ######### 끝! ########### -->  
+ 
+ 
+ 
+ 
+	<!-- 7. 부위별 운동 운동 리스트 ######### 시작! ########### -->  
+      
+      <div class="main showcase-page">
+      	<section class="module-medium" id="demos">
+           <div class="container">
+             <div class="row multi-columns-row" id="demos2">
+            
+	            <div class="col-md-4 col-sm-6 col-xs-12 WholeBody" id="img_margin"><a class="content-box" href="../aihometrainer/3_starjump.do">
+		              <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/starjump22.gif" alt="Main Demo"></div>
+		           	  <h3 class="content-box-title font-serif">Star Jump</h3></a></div>
+	              
+	              <div class="col-md-4 col-sm-6 col-xs-12 WholeBody" id="img_margin"><a class="content-box" href="../aihometrainer/3_BasicPlank.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/basicPlank.jpg" alt="Main Demo"></div>
+	               	  <h3 class="content-box-title font-serif">Basic Plank</h3></a></div>
+	             	
+	              <div class="col-md-4 col-sm-6 col-xs-12 arm" id="img_margin"><a class="content-box" href="../aihometrainer/3_shoulderPress.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/sholderPress22.gif" alt="Shop"></div>
+	                  <h3 class="content-box-title font-serif">Shoulder Press</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 arm" id="img_margin"><a class="content-box" href="../aihometrainer/3_PushUp.do">
+	                  <div class="content-box-image"><img id="sub_img_size"  src="../resources/aihometrainer/images/pushUpMain.gif" alt="Photography"></div>
+	                  <h3 class="content-box-title font-serif">Push Up</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 back" id="img_margin"><a class="content-box" href="../aihometrainer/3_dumbbellLetpulldown.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/Rllsss.gif" alt="Finance"></div>
+	                  <h3 class="content-box-title font-serif">Dumbbell Let Pull Down</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 leg" id="img_margin"><a class="content-box" href="../aihometrainer/3_Squat.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-squrt.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Squat</h3></a></div>		
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 WholeBody" id="img_margin"><a class="content-box" href="../aihometrainer/3_tree.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/tree_yoga2.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Tree Pose</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 WholeBody" id="img_margin"><a class="content-box" href="../aihometrainer/3_burpeeTest.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/buppeeTest.jpg" alt="Agency"></div>
+	                  <h3 class="content-box-title font-serif">Burpee Test</h3></a></div>
+		                  	                  
+	              <div class="col-md-4 col-sm-6 col-xs-12 leg" id="img_margin"><a class="content-box" href="../aihometrainer/3_SideSquat.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/wideSqurtMain.gif" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Wide Squat</h3></a></div>	
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 arm" id="img_margin"><a class="content-box" href="../aihometrainer/3_ButterFly.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/butterfly22.jpg" alt="Portfolio"></div>
+	                  <h3 class="content-box-title font-serif">Butter Fly</h3></a></div>
+	                  
+	              <div class="col-md-4 col-sm-6 col-xs-12 leg" id="img_margin"><a class="content-box" href="../aihometrainer/3_chairPose.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/chairPose2.jpg" alt="Restaurant"></div>
+	                  <h3 class="content-box-title font-serif">Chair Pose</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 arm" id="img_margin"><a class="content-box" href="../aihometrainer/3_SRR.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/SRR333.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Side Lateral Raise</h3></a></div>
+	
+
+	          
+	           </div>
+            </div>
+         </section> <!-- class="module-medium" -->        
+	 </div><!-- class="main showcase-page" -->
+	 
+   </section> <!-- class="module pb-0" -->
+   
+	<!-- 7. 부위별 운동 운동 리스트 ######### 끝! ########### -->   
+	
+</div> 
+<!-- ### 부위별 운동 파트 끝! ### -->           
+
+
+
+
+<!-- ### 운동 종류 파트 시작 ### --> 
+<div id="part2" class="part2 hide">
+
+
+	<!-- 8. 메뉴 리스트 ######### 시작! ########### -->  
+   
+      <section class="module pb-0" id="works">
+        
+	        <div class="container">
+	            <div class="row">
+	              <div class="col-sm-6 col-sm-offset-3">
+	                <h2 class="module-title font-alt">Exercise by Type</h2>
+	                <div class="module-subtitle font-serif"></div>
+	              </div>
+	            </div>
+	          </div>
+	       
+	         <div class="container">
+	            <div class="row">
+	              <div class="col-sm-12">
+	                <ul class="filter font-alt" id="filters3">
+		                  <li><a class="current2 wow fadeInUp" data-filter2="*">All</a></li>
+		                
+		                  <li><a class="wow fadeInUp"  data-filter3=".yusanso" data-wow-delay="0.4s">유산소</a></li>
+		                
+		                  <li><a class="wow fadeInUp" data-filter3=".grud" data-wow-delay="0.6s">근력운동</a></li>
+		                 
+		                  <li><a class="wow fadeInUp" data-filter3=".yoga" data-wow-delay="0.6s">요가</a></li>
+	                </ul>
+	              </div>
+	           </div>
+
+	<!-- 8. 메뉴 리스트 ######### 끝! ########### -->  
+  
+  
+	<!-- 9. 운동 리스트 ######### 시작! ########### --> 
+      
+      <div class="main showcase-page">
+      	 <section class="module-medium" id="demos">
+            <div class="container">
+              <div class="row multi-columns-row" id="demos3">
+            
+            	 <div class="col-md-4 col-sm-6 col-xs-12 yusanso" id="img_margin"><a class="content-box" href="../aihometrainer/3_starjump.do">
+		              <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/starjump22.gif" alt="Main Demo"></div>
+		           	  <h3 class="content-box-title font-serif">Star Jump</h3></a></div>
+		           	 
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_BasicPlank.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/basicPlank.jpg" alt="Main Demo"></div>
+	               	  <h3 class="content-box-title font-serif">Basic Plank</h3></a></div>
+	
+		         <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_shoulderPress.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/sholderPress22.gif" alt="Shop"></div>
+	                  <h3 class="content-box-title font-serif">Shoulder Press</h3></a></div>	
+                
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_PushUp.do">
+	                  <div class="content-box-image"><img id="sub_img_size"  src="../resources/aihometrainer/images/pushUpMain.gif" alt="Photography"></div>
+	                  <h3 class="content-box-title font-serif">Push Up</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_dumbbellLetpulldown.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/Rllsss.gif" alt="Finance"></div>
+	                  <h3 class="content-box-title font-serif">Dumbbell Let Pull Down</h3></a></div>
+	                  
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_Squat.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-squrt.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Squat</h3></a></div>
+         
+	              <div class="col-md-4 col-sm-6 col-xs-12 yoga" id="img_margin"><a class="content-box" href="../aihometrainer/3_tree.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/tree_yoga2.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Tree Pose</h3></a></div>	    
+ 
+	              <div class="col-md-4 col-sm-6 col-xs-12 yusanso" id="img_margin"><a class="content-box" href="../aihometrainer/3_burpeeTest.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/buppeeTest.jpg" alt="Agency"></div>
+	                  <h3 class="content-box-title font-serif">Burpee Test</h3> </a></div>
+	                  
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_SideSquat.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/wideSqurtMain.gif" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Wide squat</h3></a></div>	                                
+              
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_ButterFly.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/butterfly22.jpg" alt="Portfolio"></div>
+	                  <h3 class="content-box-title font-serif">ButterFly</h3></a></div>
+	                  
+	              <div class="col-md-4 col-sm-6 col-xs-12 yoga" id="img_margin"><a class="content-box" href="../aihometrainer/3_chairPose.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/chairPose2.jpg" alt="Restaurant"></div>
+	                  <h3 class="content-box-title font-serif">Chair Pose</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_SRR.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/SRR333.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Side Lateral Raise</h3></a></div>
+	
+
+           	
+			   </div>
+            </div>
+         </section> <!-- class="module-medium" -->
+      </div><!-- class="main showcase-page" -->
+      
+   </section> <!-- class="module pb-0" -->
+   
+	<!-- 9. 운동 리스트 ######### 끝! ########### -->  
+
+</div>	
+<!-- ### 운동 종류 파트 끝 ### --> 
+
+
+
+        
+        
+        
+ <!-- 10. 풋터 ######### 시작! ########### -->           
       
 			<section class="module-extra-small bg-dark">
 	          <div class="container">
@@ -321,7 +521,9 @@
 				 </div>
 	          </div>
 	        </section>
- <!-- 6. 풋터 ######### 끝! ########### -->     	        
+ <!-- 10. 풋터 ######### 끝! ########### -->     	        
+        
+        
         
      </div><!-- class="main" -->
      

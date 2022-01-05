@@ -276,6 +276,12 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
 
 
         $('#filters2 a').click(function() {
+        
+        	$('.part1').removeClass('hide').addClass('block'); 
+			$('.part2').removeClass('block').addClass('hide'); 
+        
+            $('html, body').animate({ scrollTop: $("#forScroll").offset().top }, 2000);
+        
             $('#filters2 .current2').removeClass('current2');
             $(this).addClass('current2');
             var selector2 = $(this).attr('data-filter2');
@@ -293,11 +299,52 @@ console.log('%c Proudly Crafted with ZiOn.', 'background: #222; color: #bada55')
         });
         
         
-
+	/*------------------ 운동 종류별 분류 파트 -- */
 
         
         
+        var demos3   = $('#demos3'),
+            demos3_mode;
 
+        if (demos3.hasClass('demos3-masonry')) {
+            demos3_mode = 'masonry3';
+           console.log('------------------------------------------')
+        } else {
+            demos3_mode = 'fitRows3';
+        }
+
+        demos3.imagesLoaded(function() {
+            demos3.isotope({
+                layoutMode: 'fitRows3',
+                itemSelector: $("#img_margin")
+            });
+        });
+
+
+
+
+        $('#filters3 a').click(function() {
+        
+			$('.part2').removeClass('hide').addClass('block'); 
+			$('.part1').removeClass('block').addClass('hide'); 
+        
+            $('html, body').animate({ scrollTop: $("#forScroll").offset().top }, 2000);
+        
+            $('#filters3 .current3').removeClass('current3');
+            $(this).addClass('current3');
+            var selector3 = $(this).attr('data-filter3');
+
+            demos3.isotope({
+                filter: selector3,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+
+            return false;
+        });
 
 
 

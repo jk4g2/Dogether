@@ -444,7 +444,7 @@
 
 						<li class="list_menu"><a class="menu_back">back</a></li>
 
-						<li class="list_menu"><a class="menu_belly">belly</a></li>
+						<li class="list_menu"><a class="menu_belly">ABS</a></li>
 
 						<li class="list_menu"><a class="menu_arm">arm & shoulder</a></li>
 

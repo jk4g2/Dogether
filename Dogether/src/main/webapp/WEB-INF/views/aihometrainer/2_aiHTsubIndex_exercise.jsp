@@ -117,11 +117,11 @@
 	                <ul class="filter font-alt" id="filters2">
 		                  <li><a class="current2 wow fadeInUp" href="#" data-filter2="*">All</a></li>
 		                
-		                  <li><a class="wow fadeInUp" href="#" data-filter2=".yusanso" data-wow-delay="0.4s">유산소</a></li>
+		                  <li><a class="wow fadeInUp"  id="2_Yusanso" href="#" data-filter2=".yusanso" data-wow-delay="0.4s">유산소</a></li>
 		                
-		                  <li><a class="wow fadeInUp" href="#" data-filter2=".grud" data-wow-delay="0.6s">근력운동</a></li>
+		                  <li><a class="wow fadeInUp" id="2_Grud  href="#" data-filter2=".grud" data-wow-delay="0.6s">근력운동</a></li>
 		                 
-		                  <li><a class="wow fadeInUp" href="#" data-filter2=".yoga" data-wow-delay="0.6s">요가</a></li>
+		                  <li><a class="wow fadeInUp"  id="2_Yoga" href="#" data-filter2=".yoga" data-wow-delay="0.6s">요가</a></li>
 	                </ul>
 	              </div>
 	           </div>
