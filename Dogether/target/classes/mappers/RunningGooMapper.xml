@@ -103,55 +103,28 @@
 	</select>
    
    <!-- 런닝구방 + 프로필사진 출력 (관리자페이지)-->
- <!--   <select id="getRNGListWithProfile" resultType="hashmap" parameterType="com.dogether.domain.RunningGooVO">
-      SELECT *
-      FROM runninggoo NATURAL JOIN member WHERE hostYN='Y' GROUP BY RoomNumber
-      <choose>
-			<when test="sortTypeRNG==0">ORDER BY RoomNumber DESC</when>
-			<when test="sortTypeRNG==1">ORDER BY meetingTime DESC</when>
-			<otherwise></otherwise>
-		</choose>
-   </select> -->
-   
-     <!-- <select id="getRNGListWithProfile" resultType="hashmap" parameterType="com.dogether.domain.RunningGooVO">
-     	select * from (select * from runninggoo as r, (select false as 'matched' from dual) as b
-		where r.hostyn = 'y' and <![CDATA[r.meetingTime >= now()]]> and r.CurrentMembers != r.MaxMembers
-		group by roomnumber order by r.roomnumber desc) as a natural join member
-		union
-		select * from (select * from runninggoo r1, (select true as 'matched' from dual) as c
-		where r1.hostYN ='Y'  and <![CDATA[r1.meetingTime < now()]]> or r1.CurrentMembers = r1.MaxMembers
-		group by r1.RoomNumber 
-		order by r1.CurrentMembers = r1.MaxMembers asc, roomnumber desc) as b natural join member 
-		group by roomnumber order by matched 
-		
-		<choose>
-		   <when test="sortTypeRNG==1">,meetingTime DESC</when>
-		   <otherwise>,RoomNumber DESC</otherwise>
-		</choose>
-   </select> -->
-   
    <select id="getRNGListWithProfile" resultType="hashmap" parameterType="com.dogether.domain.RunningGooVO">
-     	<choose>
-   <when test="sortTypeRNG==1">
+ 	<choose>
+  		<when test="sortTypeRNG==1">
  		SELECT *
         FROM runninggoo NATURAL JOIN member WHERE hostYN='Y' GROUP BY RoomNumber ORDER BY RoomNumber DESC
-   </when>
-   <when test="sortTypeRNG==2">
-   SELECT *
-      FROM runninggoo NATURAL JOIN member WHERE hostYN='Y' GROUP BY RoomNumber ORDER BY meetingTime DESC
-   </when>
-   <otherwise>
-      select * from (select * from runninggoo as r, (select false as 'matched' from dual) as b
-      where r.hostyn = 'y' and <![CDATA[r.meetingTime >= now()]]> and r.CurrentMembers != r.MaxMembers
-      group by roomnumber order by r.roomnumber desc) as a natural join member
-      union
-      select * from (select * from runninggoo r1, (select true as 'matched' from dual) as c
-      where r1.hostYN ='Y'  and <![CDATA[r1.meetingTime < now()]]> or r1.CurrentMembers = r1.MaxMembers
-      group by r1.RoomNumber 
-      order by r1.CurrentMembers = r1.MaxMembers asc, roomnumber desc) as b natural join member 
-      group by roomnumber order by matched ,RoomNumber DESC
-   </otherwise>
-</choose>
+  		</when>
+	   <when test="sortTypeRNG==2">
+	   SELECT *
+	      FROM runninggoo NATURAL JOIN member WHERE hostYN='Y' GROUP BY RoomNumber ORDER BY meetingTime DESC
+	   </when>
+	   <otherwise>
+	      select * from (select * from runninggoo as r, (select false as 'matched' from dual) as b
+	      where r.hostyn = 'y' and <![CDATA[r.meetingTime >= now()]]> and r.CurrentMembers != r.MaxMembers
+	      group by roomnumber order by r.roomnumber desc) as a natural join member
+	      union
+	      select * from (select * from runninggoo r1, (select true as 'matched' from dual) as c
+	      where r1.hostYN ='Y'  and <![CDATA[r1.meetingTime < now()]]> or r1.CurrentMembers = r1.MaxMembers
+	      group by r1.RoomNumber 
+	      order by r1.CurrentMembers = r1.MaxMembers asc, roomnumber desc) as b natural join member 
+	      group by roomnumber order by matched ,RoomNumber DESC
+	   </otherwise>
+	</choose>
    </select>
    
    <!-- 런닝구방 삭제 (관리자페이지)-->
