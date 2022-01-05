@@ -143,8 +143,8 @@
                             	<div class="sortRNG divHide" style="display:none;">
 	                                <label class="pro-lab">Sort By</label>
 	                                <select class="sortTypeRNG" name="sortTypeRNG">
-	                                    <option id="recentRoom" value="0">작성일 최신순</option>
-	                                    <option id="recentMeeting" value="1">미팅 날짜순</option>
+	                                    <option id="recentRoom" value="1">작성일 최신순</option>
+	                                    <option id="recentMeeting" value="2">미팅 날짜순</option>
 	                                </select>
 	                                <a id="rngSort" href="#rngSort">정렬하기</a>
                                 </div>
