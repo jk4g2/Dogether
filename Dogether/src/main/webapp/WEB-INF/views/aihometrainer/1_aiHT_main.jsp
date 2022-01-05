@@ -170,7 +170,7 @@
 		<section class="container py-5">
 			<div class="row textaa" id="newnewnew" >
 		       <div class="col-aa">
-					<img src="../resources/aihometrainer/images/bbbb.jpg" class="Textaaaa"></a>
+					<img src="../resources/aihometrainer/images/Textaaaa.jpg" class="Textaaaa"></a>		
 		       </div>
 		    </div>  
 		        
