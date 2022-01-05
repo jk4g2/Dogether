@@ -66,6 +66,10 @@ public class RunningGooController {
 		System.out.println(listCount);
 		m.addAttribute("RunningGooList", result);
 		m.addAttribute("rnRoomCNT", listCount);
+		/////// 런닝구에 호스트 프로필 사진 띄우기
+		List<HashMap<String,Object>> hostProfile = runningGooService.getRNGListWithProfile(vo);
+		System.out.println("런닝구 호스트 프로필사진 전달완료!!");
+		m.addAttribute("hostProfile", hostProfile);
 		
 		//헌재 로그인한 멤버 포인트 조회하기
 		if(!isSession.equals("Admin")) {

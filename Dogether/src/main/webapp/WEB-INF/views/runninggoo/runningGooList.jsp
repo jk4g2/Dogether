@@ -131,22 +131,22 @@
 	
 	<!-- DB에서 forEach 돌며 값 불러오기 -->
 	<div class="col-12 rn_room_list_wrap">
-		<c:forEach items="${RunningGooList }" var="runninggoo">
+		<c:forEach items="${hostProfile }" var="runninggoo">
 			<div class="col-12 runninggoo_card_wrap">
 				<div class="col-12 runninggoo_card_inner mb30 box">
 					<h1 class="0"></h1>
 					<div class="isMatched"></div>
 					<div class="col-12 rn_card_user_profile">
-						<div class="rngRoomNum" style="display:none">${runninggoo.roomNumber }</div>
+						<div class="rngRoomNum" style="display:none">${runninggoo.RoomNumber }</div>
 						<div class="col-0 rn_profile_picture">
-							<img src="${pageContext.request.contextPath}/resources/img/runninggooimage/default_profile.png" >
+							<img src="${pageContext.request.contextPath}/resources/img/imguploadmember/'${runninggoo.Member_realfname}'" >
 						</div>
-						<div class="col-0 rn_profile_nickname">${runninggoo.memberID}</div>
+						<div class="col-0 rn_profile_nickname">${runninggoo.MemberID}</div>
 						<div class="col-0 rn_profile_eval">참여인원</div>
 						<div class="col-0 rn_profile_memberCount">
-							<span class="currentMembers">${runninggoo.currentMembers }</span>
+							<span class="currentMembers">${runninggoo.CurrentMembers }</span>
 							 / 
-							 <span class="maxMembers" >${runninggoo.maxMembers }</span>
+							 <span class="maxMembers" >${runninggoo.MaxMembers }</span>
 						</div>
 					</div>
 					<div class="col-12 kakao_map">
@@ -158,7 +158,7 @@
 								<div id="showMeetingTime">${runninggoo.meetingTime }</div>
 							</div>
 							<p class="rn_room_hashtag">#스포츠 종목</p>
-							<c:set var="SportsType" value="${runninggoo.sportsType}"/>
+							<c:set var="SportsType" value="${runninggoo.SportsType}"/>
 							<c:choose>
 								<c:when test="${SportsType == 0}">
 									<input type="checkbox" checked disabled>런닝
@@ -187,22 +187,22 @@
 							<c:choose>
 								<c:when test="${SportsType == 0 }">
 									<p class="rn_room_hashtag">#런닝 뛸 거리</p>
-									<div class="runningDTC">${runninggoo.runningDistance }Km</div>
+									<div class="runningDTC">${runninggoo.RunningDistance }Km</div>
 								</c:when>
 								<c:otherwise>
 									<p class="rn_room_hashtag">#운동시간</p>
-									<div class="exerciseTime">${runninggoo.sportsTime }시간</div>
+									<div class="exerciseTime">${runninggoo.SportsTime }시간</div>
 								</c:otherwise>
 							</c:choose>
 							
 						</div>
 						<div class="col-4 rn_card_sports_location_choice">
 							<p class="rn_room_hashtag">#장소</p>
-							<div id="rngLocation">${ runninggoo.location}</div>
+							<div id="rngLocation">${ runninggoo.Location}</div>
 						</div>
 						<div class="col-4 rn_card_sports_age_choice">
 							<p class="rn_room_hashtag">#선호연령대</p>
-							<c:set var="AgeGeneration" value="${runninggoo.ageGeneration}"/>
+							<c:set var="AgeGeneration" value="${runninggoo.AgeGeneration}"/>
 							<c:choose>
 								<c:when test="${AgeGeneration == 20}">
 									<input type="checkbox" checked disabled>20대
@@ -225,12 +225,12 @@
 					<div class="col-12 rn_card_host_comment_box">
 						<div class="balloon">
 							<p class="rn_room_hashtag">#호스트 코멘트</p>
-							<div class="col-12 rn_card_host_comment">${runninggoo.hostComment }</div>
+							<div class="col-12 rn_card_host_comment">${runninggoo.HostComment }</div>
 						</div>
 					</div>
 					<div class="rngButtons">
 					<c:choose>
-						<c:when test="${ sessionScope.username == runninggoo.memberID }">
+						<c:when test="${ sessionScope.username == runninggoo.MemberID }">
 							<div class="col-12 doJoinBtn btn hostBtn">
 								<p>신청현황</p>
 							</div>
@@ -245,8 +245,8 @@
 						</c:otherwise>
 					</c:choose>
 					</div>
-				<div class="wido" style="display: none">${runninggoo.locationLat}</div>
-				<div class="gyeongdo" style="display: none">${runninggoo.locationLong}</div>
+				<div class="wido" style="display: none">${runninggoo.LocationLat}</div>
+				<div class="gyeongdo" style="display: none">${runninggoo.LocationLong}</div>
 				</div>
 			</div>
 		</c:forEach>
