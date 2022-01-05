@@ -42,77 +42,42 @@
 
 	function Hello(){
 
-		
-        var worksgrid   = $('#works-grid'),
-        worksgrid_mode;
-
-    if (worksgrid.hasClass('works-grid-masonry')) {
-        worksgrid_mode = 'masonry';
-    } else {
-        worksgrid_mode = 'fitRows';
-    }
-
-    worksgrid.imagesLoaded(function() {
-        worksgrid.isotope({
-            layoutMode: worksgrid_mode,
-            itemSelector: '.work-item'
-        });
-    });
-
-    $('#filters a').click(function() {
-        $('#filters .current').removeClass('current');
-        $(this).addClass('current');
-        var selector = $(this).attr('data-filter');
-
-        worksgrid.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-
-        return false;
-    });
-		
-		
-
-        var demos2   = $('#demos2'),
-            demos2_mode;
-
-        if (demos2.hasClass('demos2-masonry')) {
-            demos2_mode = 'masonry2';
-        } else {
-            demos2_mode = 'fitRows2';
-        }
-
-        demos2.imagesLoaded(function() {
-            demos2.isotope({
-                layoutMode: demos2_mode,
-                itemSelector: '.aaaaa'
-            });
-        });
-
-
-
-
-        $('#filters2 a').click(function() {
-            $('#filters2 .current2').removeClass('current2');
-            $(this).addClass('current2');
-            var selector2 = $(this).attr('data-filter2');
-
-            demos2.isotope({
-                filter: selector2,
-                animationOptions: {
-                    duration: 750,
-                    easing: 'linear',
-                    queue: false
-                }
-            });
-
-            return false;
-        });
+	
+	        var demos2   = $('#demos2'),
+	            demos2_mode;
+	
+	        if (demos2.hasClass('demos2-masonry')) {
+	            demos2_mode = 'masonry2';
+	        } else {
+	            demos2_mode = 'fitRows2';
+	        }
+	
+	        demos2.imagesLoaded(function() {
+	            demos2.isotope({
+	                layoutMode: demos2_mode,
+	                itemSelector: '.aaaaa'
+	            });
+	        });
+	
+	
+	
+	
+	        $('#filters2 a').click(function() {
+	            $('#filters2 .current2').removeClass('current2');
+	            $(this).addClass('current2');
+	            var selector2 = $(this).attr('data-filter2');
+	
+	            demos2.isotope({
+	                filter: selector2,
+	                animationOptions: {
+	                    duration: 750,
+	                    easing: 'linear',
+	                    queue: false
+	                }
+	            });
+	
+	            return false;
+	        });
         
 
 	}

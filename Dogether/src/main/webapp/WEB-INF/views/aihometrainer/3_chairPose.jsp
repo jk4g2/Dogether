@@ -31,7 +31,8 @@
         <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
     <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	   
- 
+     <link href="../resources/aihometrainer/css/button.css" rel="stylesheet">
+  
 	<style>
 		    
 	div.module.test_module{ 
@@ -234,7 +235,7 @@
 				 <tr> <!-- 2 : 스타트 버튼 + 타이머 인풋 받는 곳 -->
 				 	<td  style="height: 230px;">
 						<div id="start_button">	<!-- 입력 및 시작버튼 -->
-					        <button type="button" style="height: 100px; width: 200px; font-size:45px;"
+					        <button class="w-btn-neon2" type="button" style="height: 100px; width: 200px; font-size:45px;"
 							onClick="getTime();">Start</button> 
 						</div> 
 					 	<div> <!-- 타이머 시간 인풋받는 박스 -->
