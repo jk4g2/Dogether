@@ -139,7 +139,7 @@
 					<div class="col-12 rn_card_user_profile">
 						<div class="rngRoomNum" style="display:none">${runninggoo.RoomNumber }</div>
 						<div class="col-0 rn_profile_picture">
-							<img src="${pageContext.request.contextPath}/resources/img/imguploadmember/'${runninggoo.Member_realfname}'" >
+							<img src="${pageContext.request.contextPath}/resources/img/imguploadmember/${runninggoo.Member_realfname}" >
 						</div>
 						<div class="col-0 rn_profile_nickname">${runninggoo.MemberID}</div>
 						<div class="col-0 rn_profile_eval">참여인원</div>
