@@ -85,7 +85,13 @@ public class UserController {
 		//System.out.println(vo.getMemberID());
 		MemberVO result = testService.login(vo);
 		// 로그인이 됬으면
+	
 		if (result != null) {
+			if(result.getBlackListYN() =='Y') {
+				m.addAttribute("msg","블랙리스트회원입니다. 다시는 들어오지마세요!");
+				m.addAttribute("check","1");
+				return "redirect";
+			}
 			session.setAttribute("username", result.getMemberID());
 			return "index";
 		} else {
