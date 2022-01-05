@@ -128,12 +128,12 @@ $(".userBtn").click(function(){
 		} else {
         // 확인(예) 버튼 클릭 시 이벤트
         var nowRoomNum = $(this).parent().prev().prev().prev().prev().children(".rngRoomNum").text();
-        alert(nowRoomNum);
+//        alert(nowRoomNum);
         $.ajax({
         	url: "bringBasicRngRoomInfo.do",
         	data : { roomNumber : nowRoomNum},
         	success: function(res){
-		        alert(res);
+//		        alert(res);
 		        location.reload();
         	},
         	error : function(){
@@ -199,7 +199,7 @@ $('.acceptJoin').click(function(){
 		url: "updateJoinMemberInfo.do",
         data : { roomNum : nowRoomNum, joinPendingMember : $("#notYetMemberID").text() },
         success: function(res){
-		    alert(res);
+//		    alert(res);
 		    location.replace("../runninggoo/viewJoinMemberTotalInfo.do?roomNumber=" + nowRoomNum);
 		    isAjax = false;
        	},
@@ -225,7 +225,7 @@ $('.deleteJoin').click(function(){
 		url: "deleteJoinMemberInfo.do",
         data : { roomNum : nowRoomNum, joinPendingMember : $("#notYetMemberID").text() },
         success: function(res){
-		    alert(res);
+//		    alert(res);
 		    location.replace("../runninggoo/viewJoinMemberTotalInfo.do?roomNumber=" + nowRoomNum);
 		    isRun = false;
        	},
