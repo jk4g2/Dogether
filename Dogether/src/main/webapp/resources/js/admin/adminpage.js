@@ -1,27 +1,27 @@
 $(document).ready(function() {
-	//메인페이지  왼쪽 카테고리에서 클릭했을때!!
+	//첫페이지  왼쪽 카테고리에서 클릭했을때!!
 	  $('#adminpage').click(function(evt){
 	    evt.preventDefault();				// a태그 링크 기능 무력화
-	    evt.stopPropagation();			// a태그 링크 기능 무력화
+	    evt.stopPropagation();				// a태그 링크 기능 무력화
 	    $("h1").hide();						// 페이지명 안보이게 변경
-	    $("#h1Admin").show();		// 페이지명 보이게 변경
+	    $("#h1Admin").show();				// 페이지명 보이게 변경
 
-	    $("table").hide();               // 모든 리스트 테이블을 삭제
-	    $("#adminmain").show();			// 런닝구 리스트 테이블만 보임으로 변경
+	    $("table").hide();             		// 모든 리스트 테이블을 삭제
+	    $("#adminmain").show();				// 런닝구 리스트 테이블만 보임으로 변경
 	       $(".divHide").hide();            // 모든 정렬 안보이게 변경
-	       $(".float-right").hide();            // 상품 추가하기 안보이게 변경
+	       $(".float-right").hide();        // 상품 추가하기 안보이게 변경
 	  }); //end click
    function adminRNGList(){
       $.ajax({
          type : 'get',
          url : 'adminRNG.do',
-          dataType : 'json',                                 // db(서버)에서 받을 때 데이터 타입
+          dataType : 'json',                                // db(서버)에서 받을 때 데이터 타입
          data: { sortTypeRNG : $(".sortTypeRNG").val() },
           success : function(resultRNG){
             // ##### 동적으로 런닝구방 리스트 만들기 #####
-            var adminRNGList = $("#adminRNGList");               // adminpage.jsp에 table id를 변수에 저장
+            var adminRNGList = $("#adminRNGList");          // adminpage.jsp에 table id를 변수에 저장
             adminRNGList.empty();                           // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
-            adminRNGList.append(                           // list 테이블 헤더
+            adminRNGList.append(                            // list 테이블 헤더
                "<tr>"
                + "<th >런닝구방번호</th>"
                + "<th >프로필사진</th>"
@@ -31,9 +31,8 @@ $(document).ready(function() {
                + "<th style='width:50px;'>삭제</th>"
                +"</tr>");
             for(row of resultRNG){                           // 향상된 for문 (list row : resultRNG) ==> 변수명은 상관없음
-//                console.log(row);                        // 데이터가 잘 넘어왔는지 확인
-            	console.log(row['meetingTime'].toString());
-               var tr = $("<tr/>");                        // <tr/> 객체 생성
+//                console.log(row);                          // 데이터가 잘 넘어왔는지 확인
+               var tr = $("<tr/>");                          // <tr/> 객체 생성
                var roomNumber = $("<td/>").html(row['RoomNumber']);   
                tr.append(roomNumber);
                // ######### 프로필사진 출력
@@ -61,19 +60,19 @@ $(document).ready(function() {
 
     // ############ 런닝구 관리 메뉴를 클릭했을 때  ############
     $('#adminRNG').click(function(evt){
-       evt.preventDefault();            // a태그 링크 기능 무력화
+       evt.preventDefault();             // a태그 링크 기능 무력화
        evt.stopPropagation();            // a태그 링크 기능 무력화
        //alert("런닝구 관리 클릭");
-       $("h1").hide();               // 페이지명 안보이게 변경
-       $("#h1RNG").show();            // 페이지명 보이게 변경
+       $("h1").hide();              	 // 페이지명 안보이게 변경
+       $("#h1RNG").show();          	 // 페이지명 보이게 변경
        
-       $("table").hide();               // 모든 리스트 테이블을 삭제
-       $("#adminRNGList").show();         // 런닝구 리스트 테이블만 보임으로 변경
+       $("table").hide();                // 모든 리스트 테이블을 삭제
+       $("#adminRNGList").show();        // 런닝구 리스트 테이블만 보임으로 변경
 
-       $(".divHide").hide();            // 모든 정렬 안보이게 변경
-       $(".sortRNG").show();            // 런닝구 정렬만 보이게 변경
-       $(".float-right").hide();            // 상품 추가하기 안보이게 변경
-      adminRNGList();                     // 리스트 출력 함수 호출
+       $(".divHide").hide();             // 모든 정렬 안보이게 변경
+       $(".sortRNG").show();             // 런닝구 정렬만 보이게 변경
+       $(".float-right").hide();         // 상품 추가하기 안보이게 변경
+      adminRNGList();                    // 리스트 출력 함수 호출
     }); //end click 
     
     // ############ 런닝구방 삭제 버튼을 클릭했을 때  ############

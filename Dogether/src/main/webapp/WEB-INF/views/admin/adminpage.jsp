@@ -51,11 +51,9 @@
 	<!--상품이미지 미리보기--------------------------------------------------------------------------------------------------------- -->
 </head>
 <style>
+/* 이미지 규격 통일 */
 .imgSize{
 	width: 200px;
-}
-.imgSize>img{
-	
 }
 /* ###### 모바일에서 내브바 꽉차게################# */
 @charset "UTF-8";
@@ -215,7 +213,6 @@
 												
 											<td id="boastCount" align="center">${ boastCount }</td>
 												<div id="likeCnt" style="display:none"> ${likeCnt} </div>
-											
 	                                    </tr>
 	                                     <tr>
 											<td align="center"> 
@@ -344,6 +341,5 @@
     <script src="${pageContext.request.contextPath}/resources/js/plugins.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
     
-	
 </body>
 </html>

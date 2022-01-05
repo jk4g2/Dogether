@@ -42,8 +42,8 @@ public class AdminMyPageController {
 		System.out.println("첫페이지로 이동!!");
 		int memberCount = memberService.getMemberCount();			//전체 회원 수 
 		int matchedCount = runningGooService.getMatchedCount();		//전체 매칭 건수
-		int boastCount = boardService.getBoastCount();							//전체 자랑하기 글수
-		System.out.println("memberCount" + memberCount + "matchedCount=" + matchedCount + "boastCount=" + boastCount);
+		int boastCount = boardService.getBoastCount();				//전체 자랑하기 글수
+		System.out.println("memberCount=" + memberCount + "matchedCount=" + matchedCount + "boastCount=" + boastCount);
 		m.addAttribute("memberCount", memberCount);
 		m.addAttribute("matchedCount", matchedCount);
 		m.addAttribute("boastCount", boastCount);
