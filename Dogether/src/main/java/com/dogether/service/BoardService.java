@@ -1,5 +1,6 @@
 package com.dogether.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.dogether.domain.BoardVO;
@@ -18,6 +19,7 @@ public interface BoardService {
 	public void deleteBoard(BoardVO vo);
 	public void updateReply(Board_ReplyVO vo);
 	public void updateBoard(BoardVO vo);
+	public List<HashMap<String,Object>>getBoardListWithProfile(BoardVO vo);
 	//자랑하기 삭제(관리자페이지)
 	public void deleteBST(BoardVO vo);
 	//자랑하기 글 수(관리자페이지)

@@ -193,11 +193,11 @@ $(function() {
             $(thiss).parent().before(more);
             //let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">'+ replyer +'</li><li class="reply"> ' + reply +'</li></ul></div>'
             let textt = '<div class="comments" style="display: none;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
-            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
+            '<li class="reply"> ' + reply + ' </li><div style="display:none">'+result+ '</div><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
             $(thiss).parent().before(textt);
           }else{
             let textt = '<div class="comments" style="display: block;"> <ul id="forid"> <li id="commentwriter" class="reply">' + replyer + '</li>' +
-            '<li class="reply"> ' + reply + ' </li><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
+            '<li class="reply"> ' + reply + ' </li><div style="display:none">'+result+ '</div><img src="../resources/img/imgforboard/edit_image.png" class="imageforeditreply" style="width: 15px; height:14px;"> <img src="../resources/img/imgforboard/remove_image.png" class="imagefordeletereply" style="width: 15px; height:14px;">  </ul></div>'
             $(thiss).parent().before(textt);
           }
           //이미 댓글이 한개 일때..

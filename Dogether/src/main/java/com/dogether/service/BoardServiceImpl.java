@@ -1,5 +1,6 @@
 package com.dogether.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,5 +84,10 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void updateBoard(BoardVO vo) {
 		boardDAO.updateBoard(vo);
+	}
+	
+	@Override
+	public List<HashMap<String, Object>> getBoardListWithProfile(BoardVO vo) {
+		return boardDAO.getBoardListWithProfile(vo);
 	}
 }

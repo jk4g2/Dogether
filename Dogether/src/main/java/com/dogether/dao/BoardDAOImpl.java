@@ -1,5 +1,6 @@
 package com.dogether.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -98,5 +99,9 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void updateBoard(BoardVO vo) {
 		mybatis.update("BoardDAO.updateBoard",vo);
+	}
+	@Override
+	public List<HashMap<String, Object>> getBoardListWithProfile(BoardVO vo) {
+		return mybatis.selectList("BoardDAO.getBoardListWithProfile",vo);
 	}
 }

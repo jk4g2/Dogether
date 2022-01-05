@@ -105,4 +105,19 @@
 		order by reply_no desc
 		limit 1;
 	</select>
+	
+	<select id="getBoardListWithProfile" resultType="hashmap" parameterType="BoardVO">
+		select *
+		from board natural join member
+		
+		<if test="memberID!=null">
+			WHERE memberID = #{memberID}
+		</if>
+
+		<choose>
+			<when test="sortTypeBST==0">ORDER BY BoardID DESC</when>
+			<when test="sortTypeBST==1">ORDER BY board_like_count DESC</when>
+		</choose>
+	
+	</select>
 </mapper>

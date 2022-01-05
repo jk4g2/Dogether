@@ -1,5 +1,6 @@
 package com.dogether.controller.boast;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -57,13 +58,14 @@ public class BoastController {
 			m.addAttribute("memberID", memberID);
 		}
 
+		List<HashMap<String,Object>> voList = boardService.getBoardListWithProfile(bVO);
 		List<BoardVO> list = boardService.getBoardList(bVO);
 		List<Board_ReplyVO> reply_list = boardService.getReplyList();
 		List<Board_LikeVO> like_list = boardService.getLikeList(vo);
-
+		m.addAttribute("boardListProf",voList);
 		m.addAttribute("reply_list", reply_list);
-		m.addAttribute("list", list);
 		m.addAttribute("like_list", like_list);
+		m.addAttribute("list", list);
 
 		return "boast/boast";
 	}

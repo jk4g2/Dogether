@@ -81,35 +81,35 @@
 				</div>
 			</div>
 			<c:set var="count" value="0" />
-			<c:if test="${empty list}">
+			<c:if test="${empty boardListProf}">
 				<div style="color: red;">
 					<h3>&nbsp ${memberID} 님의 게시물이 존재하지 않습니다.</h3>
 				</div>
 			</c:if>
 
-			<c:if test="${not empty list and memberID != null}">
+			<c:if test="${not empty boardListProf and memberID != null}">
 				<div style="text-align: right;">
 					<h3 style="margin-bottom: 3px;">${memberID}님의게시물</h3>
 				</div>
 			</c:if>
 
-			<c:forEach var="item" items="${list}">
+			<c:forEach var="item" items="${boardListProf}">
 				<c:set var="count" value="${count + 1}" />
-				<input type="hidden" value="${item.boardID }">
+				<input type="hidden" value="${item.BoardID }">
 
 				<!-- 게시글 div -->
 				<div class="card">
 					<div id="userdiv">
 						<div style="cursor: pointer; display: inline-block;" id="clickID">
-							<img src="../resources/img/imgforboard/default_person.png"
-								id="userpic"> ${item.memberID}
+							<img src="../resources/img/imguploadmember/${item.Member_realfname}"
+								id="userpic"> ${item['MemberID']}
 						</div>
 
 						<!-- 세션스코프 username과 item.memberID 가 같으면 게시글 수정 및 삭제 기능 추가 -->
 						<!-- ************************************************** -->
-						<c:if test="${sessionScope.username eq item.memberID}">
+						<c:if test="${sessionScope.username eq item['MemberID']}">
 							<div style="display: inline-block; float: right;">
-								<div style="display: none;">${item.boardID}</div>
+								<div style="display: none;">${item['BoardID']}</div>
 								<img src="../resources/img/imgforboard/edit_image.png"
 									class="imageforedit"> <img
 									src="../resources/img/imgforboard/remove_image.png"
@@ -119,7 +119,7 @@
 						
 						<c:if test="${sessionScope.username eq 'Admin'}">
 							<div style="display: inline-block; float: right;">
-								<div style="display: none;">${item.boardID}</div>
+								<div style="display: none;">${item['BoardID']}</div>
 								<img src="../resources/img/imgforboard/edit_image.png" class="imageforedit" style="display:none">
 								<img src="../resources/img/imgforboard/remove_image.png" class="imagefordelete">
 							</div>
@@ -128,7 +128,7 @@
 					</div>
 					<div id="content">
 						<div id="pic"
-							style='background-image: url(../resources/img/imgforboard/img.png)'></div>
+							style='background-image: url(../resources/img/imguploadboast/${item.Board_realfname})'></div>
 					</div>
 
 					<!-- 사진 밑으로 좋아요 버튼 및 댓글내용 댓글 -->
@@ -136,7 +136,7 @@
 
 						<c:set var="found" value="0" />
 						<c:forEach var="like" items="${like_list}">
-							<c:if test="${like.boardID eq item.boardID}">
+							<c:if test="${like.boardID eq item['BoardID']}">
 								<c:set var="found" value="1" />
 								<div id='ajaxlikebutton'>
 									<button class="likeButton" value="Y">좋아요♥ 취소</button>
@@ -150,15 +150,15 @@
 							</div>
 						</c:if>
 
-						<p id="usernameforcontent">${item.memberID }</p>
-						<p id="boardContent" style="word-break: break-all;">${item.boardContent }</p>
-						<div id="likeCount">좋아요 ${item.board_like_count}개</div>
+						<p id="usernameforcontent">${item['MemberID']}</p>
+						<p id="boardContent" style="word-break: break-all;">${item.BoardContent}</p>
+						<div id="likeCount">좋아요 ${item.Board_like_count} 개</div>
 
 						<!-- 댓글 불러오는 부분 -->
 						<c:set var="count" value="0" />
 						<c:forEach var="reply" items="${reply_list}">
 							<!-- reply for문시작 -->
-							<c:if test="${reply.boardID eq item.boardID }">
+							<c:if test="${reply.boardID eq item.BoardID }">
 
 								<!-- count가 2보다 작을떄는 모든 게시물 다 싹뜨게함 -->
 								<c:if test="${count lt 2}">
