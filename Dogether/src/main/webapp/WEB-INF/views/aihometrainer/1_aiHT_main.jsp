@@ -28,12 +28,12 @@
     <link href="../resources/aihometrainer/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
     <link href="../resources/aihometrainer/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
     <!-- Main stylesheet and color file-->
-    <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../resources/aihometrainer/css/style.css">
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
-    <link href="../resources/aihometrainer/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../resources/aihometrainer/css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" >
-	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	
     
 

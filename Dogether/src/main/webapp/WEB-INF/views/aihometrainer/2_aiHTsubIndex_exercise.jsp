@@ -30,6 +30,7 @@
     <link href="../resources/aihometrainer/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
     <link href="../resources/aihometrainer/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
     <!-- Main stylesheet and color file-->
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&display=swap" rel="stylesheet">
     <link href="../resources/aihometrainer/css/style.css" rel="stylesheet">
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
