@@ -53,8 +53,7 @@
 		margin-bottom:30px; }    
 	
 	div#label-container{
-		 width: 100px; 
-		 font-size: 50px;}
+		 width: 100px; }
 	
 	img#sub_slider_img{
 		 width: 203.99px; 
@@ -119,7 +118,7 @@
 			$("#ViewTimer3").text("");
 			
 			if(methodcount < 1 ){			// 음성이 한번만 재생 되도록 카운트! ##
-	        	var audio1 = new Audio(URL + 'start.mp3');  // ##-2
+	        	var audio1 = new Audio(URL + 'sound/' +  'start.mp3');  // ##-2
 	        	audio1.play();	// start.mp3 음성이 나옴. (시작합니다 라는 음성이 나옴)
 	        	}
 	        	methodcount++;
@@ -132,7 +131,7 @@
 				$("#ViewTimer").text("");
 				$("#ViewTimer3").text("성공하셨습니다.");
 				
-				var audio3 = new Audio(URL + 'con5.mp3');  // ##-3
+				var audio3 = new Audio(URL + 'sound/' +  'con5.mp3');  // ##-3
 		        audio3.play();				// success.mp3 음성이 나옴. (성공하였습니다 라는 음성이 나옴)
 				}
 			}	
@@ -142,7 +141,7 @@
 			  tid=setInterval('msg_time()', Timesec_deley*1000);
 			// 5초 후에 시작합니다. 음성 넣기 
 	
-			   var audio4 = new Audio(URL + 'already.mp3');   // ##-1
+			   var audio4 = new Audio(URL + 'sound/' +  'already.mp3');   // ##-1
 	           audio4.play();				// success.mp3 음성이 나옴. (성공하였습니다 라는 음성이 나옴) */
 	        	
 			   $("#ViewTimer3").text(Timesec_deley+" 초 후에 시작됩니다.");
@@ -412,24 +411,8 @@
                     <div class="panel-collapse collapse in" id="support1">
                     <div class="panel-body">
                       
-                      <table>
-                      	<tr>
-                    		<td>  <!-- 운동법 gif -->
-                    		 <img src="../resources/aihometrainer/images/exci1.gif" id="img_exs1"/>
-                      		</td>
-                      		
-                      		<td id="test_td">  <!-- 운동법 Text -->
-                                 <h5 id="test_h5">운동법</h5>
-	                  			 <p>- 굽힐떄 어쩌구 저쩌구</p>
-	                  			 <p>- 블라블라 몸을 조심하고</p>
-	                  			 <p>- 굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
-	                  			 <p>- 블라블라 몸을 조심하고</p><br>
-	                  			 <h5 id="test_h5">주의사항</h5>
-	                  			 <p>굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
-                  			</td>
-                      	</tr>
-                      </table> <!-- ## 드롭박스 끝! -->
-                   
+                   		<a href="https://youtu.be/wegbIRFk4Ps"><img src="../resources/aihometrainer/images/basicPlank.gif" style="width:100%" id="img_exs1"/></a>
+                   		
                    	</div>
                   </div>
                 </div>   

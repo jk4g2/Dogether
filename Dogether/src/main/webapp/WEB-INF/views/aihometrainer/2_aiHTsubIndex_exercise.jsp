@@ -136,53 +136,54 @@
               <div class="row multi-columns-row" id="demos2">
             
             	 <div class="col-md-4 col-sm-6 col-xs-12 yusanso" id="img_margin"><a class="content-box" href="../aihometrainer/3_starjump.do">
-		              <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/main3.gif" alt="Main Demo"></div>
+		              <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/starjump22.gif" alt="Main Demo"></div>
 		           	  <h3 class="content-box-title font-serif">Star Jump</h3></a></div>
-	            
+		           	 
 	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_BasicPlank.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/main3.gif" alt="Main Demo"></div>
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/basicPlank.jpg" alt="Main Demo"></div>
 	               	  <h3 class="content-box-title font-serif">Basic Plank</h3></a></div>
+	
+		         <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_shoulderPress.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/sholderPress22.gif" alt="Shop"></div>
+	                  <h3 class="content-box-title font-serif">Shoulder Press</h3></a></div>	
+                
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_PushUp.do">
+	                  <div class="content-box-image"><img id="sub_img_size"  src="../resources/aihometrainer/images/pushUpMain.gif" alt="Photography"></div>
+	                  <h3 class="content-box-title font-serif">Push Up</h3></a></div>
+
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_dumbbellLetpulldown.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/Rllsss.gif" alt="Finance"></div>
+	                  <h3 class="content-box-title font-serif">Dumbbell Let Pull Down</h3></a></div>
 	                  
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_Squat.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-squrt.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Squat</h3></a></div>
+         
+	              <div class="col-md-4 col-sm-6 col-xs-12 yoga" id="img_margin"><a class="content-box" href="../aihometrainer/3_tree.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/tree_yoga2.jpg" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Tree Pose</h3></a></div>	    
+ 
 	              <div class="col-md-4 col-sm-6 col-xs-12 yusanso" id="img_margin"><a class="content-box" href="../aihometrainer/3_burpeeTest.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/all.jpg" alt="Agency"></div>
-	                  <h3 class="content-box-title font-serif">Burpee Test</h3>
-	                  </a></div>
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/buppeeTest.jpg" alt="Agency"></div>
+	                  <h3 class="content-box-title font-serif">Burpee Test</h3> </a></div>
 	                  
+	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_SideSquat.do">
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/wideSqurtMain.gif" alt="One Page"></div>
+	                  <h3 class="content-box-title font-serif">Wide squat</h3></a></div>	                                
+              
 	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_ButterFly.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-squrt.jpg" alt="Portfolio"></div>
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/butterfly22.jpg" alt="Portfolio"></div>
 	                  <h3 class="content-box-title font-serif">ButterFly</h3></a></div>
 	                  
 	              <div class="col-md-4 col-sm-6 col-xs-12 yoga" id="img_margin"><a class="content-box" href="../aihometrainer/3_chairPose.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-yoga-1.jpg" alt="Restaurant"></div>
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/chairPose2.jpg" alt="Restaurant"></div>
 	                  <h3 class="content-box-title font-serif">Chair Pose</h3></a></div>
-	                  
-	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_dumbbellLetpulldown.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/main3.gif" alt="Finance"></div>
-	                  <h3 class="content-box-title font-serif">Dumbbell Let Pull Down</h3></a></div>
-	                  
-	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_PushUp.do">
-	                  <div class="content-box-image"><img id="sub_img_size"  src="../resources/aihometrainer/images/3-squrt.jpg" alt="Photography"></div>
-	                  <h3 class="content-box-title font-serif">Push Up</h3></a></div>
-	                  
-	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_shoulderPress.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-pushup.jpg" alt="Shop"></div>
-	                  <h3 class="content-box-title font-serif">Shoulder Press</h3></a></div>
-	                  
-	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_SideSquat.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
-	                  <h3 class="content-box-title font-serif">Wide squat</h3></a></div>
-	
-	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_Squat.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
-	                  <h3 class="content-box-title font-serif">Squat</h3></a></div>
-	
+
 	              <div class="col-md-4 col-sm-6 col-xs-12 grud" id="img_margin"><a class="content-box" href="../aihometrainer/3_SRR.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
+	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/SRR333.jpg" alt="One Page"></div>
 	                  <h3 class="content-box-title font-serif">Side Lateral Raise</h3></a></div>
 	
-	              <div class="col-md-4 col-sm-6 col-xs-12 yoga" id="img_margin"><a class="content-box" href="../aihometrainer/3_tree.do">
-	                  <div class="content-box-image"><img id="sub_img_size" src="../resources/aihometrainer/images/3-lungy.jpg" alt="One Page"></div>
-	                  <h3 class="content-box-title font-serif">Tree Pose</h3></a></div>
+
            	
 			   </div>
             </div>

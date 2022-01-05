@@ -111,7 +111,7 @@
 			
 			count = 0;
 		
-		var audio = new Audio(URL + 'start.mp3');
+		var audio = new Audio(URL + 'sound/' +  'start.mp3');
 			audio.play();
 		
 		$("#ViewCount3").text("시작하세요.");
@@ -321,7 +321,7 @@
 								        			 
 								       				count = 0;   // 카운트 초기화 되고,
 								        			 
-								        			var audio = new Audio(URL + 'success2.mp3');  
+								        			var audio = new Audio(URL + 'sound/' +  'success2.mp3');  
 										        	audio.play();				// success2.mp3 음성이 나옴. (목표한 갯수를 완료하였습니다 라는 음성이 나옴)
 													$("#ViewCount").text("");
 													$("#ViewCount3").text("목표한 갯수를 성공하셨습니다.");
@@ -403,26 +403,10 @@
                     
                     <div class="panel-collapse collapse in" id="support1">
                     <div class="panel-body">
-                      
-                      <table>
-                      	<tr>
-                    		<td>  <!-- 운동법 gif -->
-                      		 <img src="../resources/aihometrainer/images/exci1.gif" id="img_exs1"/>
-                      		</td>
-                      		
-                      		<td id="test_td">  <!-- 운동법 Text -->
-                                <h5 id="test_h5">운동법</h5>
-	                  			 <p>- 굽힐떄 어쩌구 저쩌구</p>
-	                  			 <p>- 블라블라 몸을 조심하고</p>
-	                  			 <p>- 굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
-	                  			 <p>- 블라블라 몸을 조심하고</p><br>
-	                  			  <h5 id="test_h5">주의사항</h5>
-	                  			 <p>굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
-                  		    </td>
-                      	</tr>
-                      </table>
-                   
-                     </div>
+                                            	
+                        <a href="https://youtu.be/xoWKLNwNva0"><img src="../resources/aihometrainer/images/dumbbellLPD.gif"  style="width:100%" id="img_exs1"/></a>
+
+                   	</div>
                    </div>
                 </div>   
            	</div>   <!-- ## 드롭박스 끝! -->

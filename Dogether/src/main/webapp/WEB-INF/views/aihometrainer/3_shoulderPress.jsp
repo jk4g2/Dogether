@@ -53,8 +53,7 @@
 		margin-bottom:30px; }    
 	
 	div#label-container{
-		 width: 100px; 
-		 font-size: 50px;}
+		 width: 100px; }
 	
 	img#sub_slider_img{
 		 width: 203.99px; 
@@ -110,7 +109,7 @@
 			
 			count = 0;
 		
-		var audio = new Audio(URL + 'start.mp3');
+		var audio = new Audio(URL + 'sound/' +  'start.mp3');
 			audio.play();
 		
 		$("#ViewCount3").text("시작하세요.");
@@ -323,7 +322,7 @@
 							        			 
 							       				count = 0;   // 카운트 초기화 되고,
 							        			 
-							        			var audio = new Audio(URL + 'success2.mp3');  
+							        			var audio = new Audio(URL + 'sound/' +  'success2.mp3');  
 									        	audio.play();				// success2.mp3 음성이 나옴. (목표한 갯수를 완료하였습니다 라는 음성이 나옴)
 												$("#ViewCount").text("");
 												$("#ViewCount3").text("목표한 갯수를 성공하셨습니다.");
@@ -406,24 +405,8 @@
                     <div class="panel-collapse collapse in" id="support1">
                     <div class="panel-body">
                       
-                      <table>
-                      	<tr>
-                    		<td>  <!-- 운동법 gif -->
-                      		 <img src="../resources/aihometrainer/images/exci1.gif" id="img_exs1"/>
-                      		</td>
-                      		
-                      		<td id="test_td">  <!-- 운동법 Text -->
-                                <h5 id="test_h5">운동법</h5>
-	                  			 <p>- 굽힐떄 어쩌구 저쩌구</p>
-	                  			 <p>- 블라블라 몸을 조심하고</p>
-	                  			 <p>- 굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
-	                  			 <p>- 블라블라 몸을 조심하고</p><br>
-	                  			  <h5 id="test_h5">주의사항</h5>
-	                  			 <p>굽힐떄 어쩌구 저쩌구 블라블라 몸을 조심하고</p>
-                  		    </td>
-                      	</tr>
-                      </table>
-                   
+                       <a href="https://youtu.be/zmRRuvNAKGo"><img src="../resources/aihometrainer/images/shoulderPress.gif" style="width:100%"  id="img_exs1"/></a>
+                      
                      </div>
                    </div>
                 </div>   
@@ -472,41 +455,8 @@
     
  <!-- 3. 하단############# 하단 메뉴 리스트 끝!! ########## --> 
     
-    
-    
-    
-<!-- 4. 하단 메뉴 ############# 하단 메뉴 리스트 시작! ########## -->
-
-		<div class="container width_size" id="works" style="width: 1200px;">
-			<div class="row">
-				<div class="col-sm-12">
-					<ul class="filter font-alt test_filter">
-
-						<li class="list_menu"><a class="menu_all">All</a></li>	
-						<li>||</li>
-						<li class="list_menu"><a class="menu_yusanso">유산소</a></li>
-						<li class="list_menu"><a class="menu_grud">근력운동</a></li>
-						<li class="list_menu"><a class="menu_yoga">요가</a></li>
-						<li>||</li>
-
-						<li class="list_menu"><a class="menu_back">back</a></li>
-
-						<li class="list_menu"><a class="menu_belly">belly</a></li>
-
-						<li class="list_menu"><a class="menu_arm">arm & shoulder</a></li>
-
-						<li class="list_menu"><a class="menu_leg">leg & hip</a></li>
-
-						<li class="list_menu"><a class="menu_Core">whole body & core</a></li>
-
-					</ul>
-				</div>
-			</div>
-		</div>
    
- <!-- 4. 하단 메뉴  ############# 하단 메뉴 리스트 끝!! ########## --> 
-    
-    
+
    
  <!-- 5. 하단  ############# 하단 메뉴 요소 시작!! ########## -->     
              
