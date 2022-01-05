@@ -23,30 +23,30 @@ $(document).ready(function() {
             adminRNGList.empty();                           // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
             adminRNGList.append(                           // list 테이블 헤더
                "<tr>"
-               + "<th width='150'>런닝구방번호</th>"
-               + "<th width='200'>프로필사진</th>"
-               + "<th width='100'>호스트명</th>"
-               + "<th width='400'>방설명</th>"
-               + "<th width='150'>미팅날짜</th>"
-               + "<th width='100'>삭제</th>"
+               + "<th >런닝구방번호</th>"
+               + "<th >프로필사진</th>"
+               + "<th >호스트명</th>"
+               + "<th>방설명</th>"
+               + "<th >미팅날짜</th>"
+               + "<th style='width:50px;'>삭제</th>"
                +"</tr>");
             for(row of resultRNG){                           // 향상된 for문 (list row : resultRNG) ==> 변수명은 상관없음
 //                console.log(row);                        // 데이터가 잘 넘어왔는지 확인
             	console.log(row['meetingTime'].toString());
                var tr = $("<tr/>");                        // <tr/> 객체 생성
-               var roomNumber = $("<td width='150'/>").html(row['RoomNumber']);   
+               var roomNumber = $("<td/>").html(row['RoomNumber']);   
                tr.append(roomNumber);
                // ######### 프로필사진 출력
-               var member_realfname = $("<td id='member_realfname'/>").html("<img src='../resources/img/imguploadmember/"+row['Member_realfname'] +"'>");
+               var member_realfname = $("<td id='member_realfname' style='width:200px; height:200px;'/>").html("<img src='../resources/img/imguploadmember/"+row['Member_realfname'] +"' style='width:100%; height:100%;'>");
                tr.append(member_realfname);
                // ##### 호스트명, 방설명(호스트한마디), 미팅날짜, 삭제 출력 #####
-               var memberID = $("<td width='100' />").html(row['MemberID']);   
+               var memberID = $("<td  />").html(row['MemberID']);   
                tr.append(memberID);
-               var hostComment = $("<td width='400' />").html(row['HostComment']);
+               var hostComment = $("<td  />").html(row['HostComment']);
                tr.append(hostComment);
-               var meetingTime = $("<td width='150' />").text(new Date(row['meetingTime']).yyyymmdd());
+               var meetingTime = $("<td  />").text(new Date(row['meetingTime']).yyyymmdd());
                tr.append(meetingTime);
-               var deleteAdminRNG = $("<td width='100' />").html("<button id='deleteAdminRNG'>삭제</button>");
+               var deleteAdminRNG = $("<td />").html("<button id='deleteAdminRNG'>삭제</button>");
                tr.append(deleteAdminRNG);
                
                adminRNGList.append(tr);      // 모든 컬럼 정보를 append한 tr을 list에 append
@@ -112,30 +112,30 @@ $(document).ready(function() {
             adminBSTList.empty();                           // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
             adminBSTList.append(                           // list 테이블 헤더
                "<tr>"
-               + "<th width='150'>글번호</th>"
-               + "<th width='200'>게시글사진</th>"
-               + "<th width='100'>작성자</th>"
-               + "<th width='400'>글내용</th>"
-               + "<th width='150'>좋아요수</th>"
-               + "<th width='100'>삭제</th>"
+               + "<th >글번호</th>"
+               + "<th >게시글사진</th>"
+               + "<th >작성자</th>"
+               + "<th >글내용</th>"
+               + "<th>좋아요수</th>"
+               + "<th style='width:50px;'>삭제</th>"
                +"</tr>");
             for(row of resultBST){                           // 향상된 for문 (list row : resultBST) ==> 변수명은 상관없음
                console.log(row);                           // 데이터가 잘 넘어왔는지 확인
                var tr = $("<tr/>");                        // <tr/> 객체 생성
-               var boardID = $("<td width='150' />").text(row.boardID);   
+               var boardID = $("<td  />").text(row.boardID);   
                tr.append(boardID);
                // ######### 게시글사진 출력 (디비 완성 전까지는 방번호 출력하기)
-               var board_realfname = $("<td id='board_realfname'/>").html("<img src='../resources/img/imguploadboast/"+ row.board_realfname +"'>");
+               var board_realfname = $("<td id='board_realfname' style='width:200px; height:200px;'/>").html("<img src='../resources/img/imguploadboast/"+ row.board_realfname +"' style='width:100%; height:100%;'>");
                tr.append(board_realfname);
                // ##### 작성자, 글내용, 좋아요수, 삭제 출력 #####
-               var memberID = $("<td width='100' />").text(row.memberID);   
+               var memberID = $("<td  />").text(row.memberID);   
                tr.append(memberID);
-               var boardContent = $("<td width='400' />").html(row.boardContent);
+               var boardContent = $("<td  />").html(row.boardContent);
                tr.append(boardContent);
-               var board_like_count = $("<td width='150' />").html(row.board_like_count);
+               var board_like_count = $("<td  />").html(row.board_like_count);
                tr.append(board_like_count);
                // ########## 삭제 버튼 추가  ##########
-               var deleteAdminBST = $("<td width='100' />").html("<button id='deleteAdminBST'>삭제</button>");
+               var deleteAdminBST = $("<td  />").html("<button id='deleteAdminBST'>삭제</button>");
                tr.append(deleteAdminBST);
                
                adminBSTList.append(tr);   // 모든 컬럼 정보를 append한 tr을 list에 append
@@ -202,48 +202,48 @@ $(document).ready(function() {
             adminMemberList.empty();                        // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
             adminMemberList.append(                           // list 테이블 헤더
                "<tr>"
-               + "<th width='100'>ID</th>"
-               + "<th width='300'>EMAIL</th>"
-               + "<th width='100'>닉네임</th>"
-               + "<th width='100'>회원명</th>"
-               + "<th width='200'>이동전화번호</th>"
-               + "<th width='150'>생년월일</th>"
-               + "<th width='100'>성별</th>"
-               + "<th width='450'>주소</th>"
-               + "<th width='150'>블랙리스트</th>"
-               + "<th width='100'>삭제</th>"
+               + "<th style='width:100px;'>ID</th>"
+               + "<th >EMAIL</th>"
+               + "<th style='width:100px;'>닉네임</th>"
+               + "<th style='width:50px;'>회원명</th>"
+               + "<th>이동전화번호</th>"
+               + "<th style='width:100px;'>생년월일</th>"
+               + "<th style='width:50px;'>성별</th>"
+               + "<th  style='width:500px;'>주소</th>"
+               + "<th style='width:100px;'>블랙리스트</th>"
+               + "<th style='width:50px;'>삭제</th>"
                +"</tr>");
             for(row of resultMember){                        // 향상된 for문 (list row : resultOrder) ==> 변수명은 상관없음
                console.log(row);                           // 데이터가 잘 넘어왔는지 확인
                var tr = $("<tr/>");                        // <tr/> 객체 생성
-               var memberID = $("<td id='memberID' width='100' />").html(row.memberID);   // td객체를 생성 ==> memberID를 td에 담는다
+               var memberID = $("<td id='memberID'  />").html(row.memberID);   // td객체를 생성 ==> memberID를 td에 담는다
                tr.append(memberID);                                           // tr에 memberID를 담은 td를 추가
-               var email = $("<td width='300' />").text(row.email);   
+               var email = $("<td  />").text(row.email);   
                tr.append(email);
-               var nickName = $("<td width='100' />").html(row.nickName);
+               var nickName = $("<td  />").html(row.nickName);
                tr.append(nickName);
-               var userName = $("<td width='100' />").html(row.userName);
+               var userName = $("<td  />").html(row.userName);
                tr.append(userName);
-               var phoneNumber = $("<td width='200' />").html(row.phoneNumber);         
+               var phoneNumber = $("<td />").html(row.phoneNumber);         
                tr.append(phoneNumber);                                        
-               var birthday = $("<td width='150' />").text(row.birthday);   
+               var birthday = $("<td />").text(row.birthday);   
                tr.append(birthday);
                // 성별 int ==> String으로 변경
                if(row.gender==1) {
                   row.gender = '남자';
-                  var gender = $("<td width='100' />").html(row.gender);
+                  var gender = $("<td />").html(row.gender);
                } else {
                   row.gender = '여자';
-                  var gender = $("<td width='100' />").html(row.gender);
+                  var gender = $("<td />").html(row.gender);
                }
                tr.append(gender);
                
-               var fullAddress = $("<td width='450' />").html(row.zipCode + "&nbsp;" + row.basicAddress + "&nbsp;" + row.restAddress);
+               var fullAddress = $("<td />").html(row.zipCode + "&nbsp;" + row.basicAddress + "&nbsp;" + row.restAddress);
                tr.append(fullAddress);
-               var blackListYN = $("<td width='150' />").html(row.blackListYN);
+               var blackListYN = $("<td  />").html(row.blackListYN);
                tr.append(blackListYN);
                // ########## 삭제 버튼 추가  ##########
-               var deleteAdminMember = $("<td width='100' />").html("<button id='deleteAdminMember'>삭제</button>");
+               var deleteAdminMember = $("<td  />").html("<button id='deleteAdminMember'>삭제</button>");
                tr.append(deleteAdminMember);
                
                adminMemberList.append(tr);         // 모든 컬럼 정보를 append한 tr을 list에 append
@@ -308,46 +308,46 @@ $(document).ready(function() {
             adminOrderList.empty();                        // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
             adminOrderList.append(                        // list 테이블 헤더
                "<tr>"
-               + "<th width='200'>주문일자</th>"
-               + "<th width='300'>주문번호</th>"
-               + "<th width='200'>주문자</th>"
-               + "<th width='200'>상품번호</th>"
-               + "<th width='400'>상품이미지</th>"
-               + "<th width='150'>구매확정여부</th>"
-               + "<th width='150'>반품여부</th>"
-               + "<th width='150'>반품상태</th>"
+               + "<th>주문일자</th>"
+               + "<th>주문번호</th>"
+               + "<th>주문자</th>"
+               + "<th>상품번호</th>"
+               + "<th >상품이미지</th>"
+               + "<th>구매확정여부</th>"
+               + "<th>반품여부</th>"
+               + "<th>반품상태</th>"
                +"</tr>");
             for(row of resultOrder){                                 // 향상된 for문 (list row : resultMember) ==> 변수명은 상관없음
                console.log(row);                                  	  // 데이터가 잘 넘어왔는지 확인
                var tr = $("<tr/>");                                 // <tr/> 객체 생성
-               var orderDate = $("<td width='200' />").html(new Date(row['OrderDate']).yyyymmdd());   // td객체를 생성 ==> orderDate를 td에 담는다
+               var orderDate = $("<td/>").html(new Date(row['OrderDate']).yyyymmdd());   // td객체를 생성 ==> orderDate를 td에 담는다
                tr.append(orderDate);                                  // tr에 orderDate를 담은 td를 추가
-               var orderID = $("<td width='300' />").text(row['OrderID']);   
+               var orderID = $("<td />").text(row['OrderID']);   
                tr.append(orderID);
-               var memberID = $("<td width='200' />").html(row['MemberID']);
+               var memberID = $("<td/>").html(row['MemberID']);
                tr.append(memberID);
-               var productID = $("<td width='200' />").html(row['ProductID']);
+               var productID = $("<td />").html(row['ProductID']);
                tr.append(productID);
                // ######### 상품이미지 출력 
-               var product_realfname = $("<td id='product_realfname'/>").html("<img src='../resources/img/imguploadproduct/"+ row['Product_realfname'] +"'>");
+               var product_realfname = $("<td id='product_realfname' style='width:200px; height:200px;'/>").html("<img src='../resources/img/imguploadproduct/"+ row['Product_realfname'] +"' style='width:100%; height:100%;'>");
                tr.append(product_realfname);
-               var buyingConfirmYN = $("<td width='150' />").html(row['BuyingConfirmYN']);         
+               var buyingConfirmYN = $("<td />").html(row['BuyingConfirmYN']);         
                tr.append(buyingConfirmYN);                                        
-               var returnYN = $("<td width='150' />").text(row['ReturnYN']);   
+               var returnYN = $("<td />").text(row['ReturnYN']);   
                tr.append(returnYN);
                // 반품상태 int ==> String 변경
                if(row['returnstatus']==0) {
             	   row['returnstatus'] = '주문완료';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td  />").html(row['returnstatus']);
                } else if (row['returnstatus']==1) {
                   row['returnstatus'] = '반품신청';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td />").html(row['returnstatus']);
                } else if (row['returnstatus']==2) {
                   row['returnstatus'] = '반품진행중';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td />").html(row['returnstatus']);
                } else {
                   row['returnstatus'] = '반품처리완료';
-                  var returnStatus = $("<td width='150' />").html(row['returnstatus']);
+                  var returnStatus = $("<td />").html(row['returnstatus']);
                }
                tr.append(returnStatus);
                
@@ -389,18 +389,18 @@ $(document).ready(function() {
                adminProductsList.empty();                           // 비워놓고 시작 ==> 다른 리스트가 있을 수 있으니까
                adminProductsList.append(                           // list 테이블 헤더
                   "<tr>"
-                  + "<th>상품이미지</th>"
+                  + "<th >상품이미지</th>"
                   + "<th>상품ID</th>"
                   + "<th>상품명</th>"
                   + "<th>상품상세설명</th>"
                   + "<th>상품가격</th>"
-                  + "<th>상품수정</th>"
-                  + "<th>상품삭제</th>"
+                  + "<th style='width:50px;'>수정</th>"
+                  + "<th style='width:50px;'>삭제</th>"
                   +"</tr>");
                for(row of resultProducts){                           // 향상된 for문 (list row : resultProducts) ==> 변수명은 상관없음
 //                  console.log(row);
                   var tr = $("<tr/>");                                    // <tr/> 객체 생성
-                  var product_realfname = $("<td class='productInsertImage imgSize'/>").html('<img src="../resources/img/imguploadproduct/' + row.product_realfname + '"/>');   
+                  var product_realfname = $("<td class='productInsertImage imgSize' style='width:200px; height:200px;'/>").html('<img src="../resources/img/imguploadproduct/' + row.product_realfname + '" style="width:100%; height:100%;">');   
                   tr.append(product_realfname);
                   var productID = $("<td class='productID'/>").html(row.productID);
                   tr.append(productID);
