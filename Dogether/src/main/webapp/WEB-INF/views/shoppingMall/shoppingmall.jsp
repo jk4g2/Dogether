@@ -170,57 +170,57 @@
               <div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/단백칩.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct/prochip.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">통밀당 단백칩 9종</a></h4>2,000₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/초코파이.PNG" width="160" height="160"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct//chocopie.PNG" width="160" height="160"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">수제 통밀당 초코파이</a></h4>13,500₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/두부스콘.PNG" width="160" height="160"/></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct//tofubread.PNG" width="160" height="160"/></a>
                       <h4 class="shop-item-title font-alt"><a href="#">두부스콘 2종</a></h4>2,500₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/그릭요거트.PNG" width="160" height="160" /></a>
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct/grik.PNG" width="160" height="160" /></a>
                       <h4 class="shop-item-title font-alt"><a href="#">수제 그릭 요거트</a></h4>8,500₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/곤약팝콘.PNG" width="160" height="160" /></a>
-                      <h4 class="shop-item-title font-alt"><a href="#">곤약 팝콘 3종</a></h4>1,300₩
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct/gonyakpopcorn.PNG" width="160" height="160" /></a>
+                      <h4 class="shop-item-title font-alt"><a href="#">곤약 팝콘 3종</a></h4>9,900₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/어묵바.PNG" width="160" height="160" /></a>
-                      <h4 class="shop-item-title font-alt"><a href="#">닭가슴살 어묵바</a></h4>4,500₩
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct//fishcakebar.PNG" width="160" height="160" /></a>
+                      <h4 class="shop-item-title font-alt"><a href="#">어묵바</a></h4>7,900₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/곤약떡.PNG" width="160" height="160" /></a>
-                      <h4 class="shop-item-title font-alt"><a href="#">곤약 현미떡</a></h4>1,000₩
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct/gonyakdduk.PNG" width="160" height="160" /></a>
+                      <h4 class="shop-item-title font-alt"><a href="#">곤약떡</a></h4>9,900₩
                     </div>
                   </div>
                 </div>
                 <div class="owl-item">
                   <div class="col-sm-12">
-                    <div class="ex-product"><a href="#"><img src="../resources/shoppingmall/productimgs/곤약떡볶이.PNG" width="160" height="160" /></a>
-                      <h4 class="shop-item-title font-alt"><a href="#">곤약 떡볶이</a></h4>3,200₩
+                    <div class="ex-product"><a href="#"><img src="../resources/img/imguploadproduct/gonyakddukbbokki.PNG" width="160" height="160" /></a>
+                      <h4 class="shop-item-title font-alt"><a href="#">곤약떡볶이</a></h4>9,900₩
                     </div>
                   </div>
                 </div>
