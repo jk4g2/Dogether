@@ -390,10 +390,10 @@ $(document).ready(function() {
                adminProductsList.append(                           // list 테이블 헤더
                   "<tr>"
                   + "<th >상품이미지</th>"
-                  + "<th>상품ID</th>"
-                  + "<th>상품명</th>"
+                  + "<th style='width:100px;'>상품ID</th>"
+                  + "<th style='width:100px;'>상품명</th>"
                   + "<th>상품상세설명</th>"
-                  + "<th>상품가격</th>"
+                  + "<th style='width:100px;'>상품가격</th>"
                   + "<th style='width:50px;'>수정</th>"
                   + "<th style='width:50px;'>삭제</th>"
                   +"</tr>");
