@@ -33,6 +33,14 @@
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
     <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	   
     <link href="../resources/aihometrainer/css/button.css" rel="stylesheet">
+
+<script type="text/javascript">
+	function openPop(){
+	    var popup = window.open("popupTimer.do", 'AI Home Tranier 사용법', 'width=1500px, height=2000px, scrollbars=yes');
+	}
+</script>
+
+
   
 	<style>
 		    
@@ -229,7 +237,9 @@
 						</td>
 						
 						<td>   <!-- 1 : 운동 종목 -->
-							<div id="t_title">Chair Pose</div>
+							<div id="t_title">Chair Pose
+								&nbsp; &nbsp; &nbsp; &nbsp;<button id="q_button" type="button" style="height: 30px; width: 30px; font-size:15px;" target="_blank" onclick="openPop()">?</button>  <!--  도움말 버튼 부분 -->
+							</div>
 							<div>의자 자세</div>
 						</td>
 				 </tr>

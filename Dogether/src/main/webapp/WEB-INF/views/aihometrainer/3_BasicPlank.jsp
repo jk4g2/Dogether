@@ -92,6 +92,14 @@
 		    
 	</style>
  
+<script type="text/javascript">
+	function openPop(){
+	    var popup = window.open("popupTimer.do", 'AI Home Tranier 사용법', 'width=1500px, height=2000px, scrollbars=yes');
+	}
+</script>
+ 
+ 
+ 
 
 	<script> 
  
@@ -214,7 +222,9 @@
 						</td>
 						
 						<td>   <!-- 1 : 운동 종목 -->
-							<div id="t_title">Basic Plank</div>
+							<div id="t_title">Basic Plank
+								&nbsp; &nbsp; &nbsp; &nbsp;<button id="q_button" type="button" style="height: 30px; width: 30px; font-size:15px;" target="_blank" onclick="openPop()">?</button>  <!--  도움말 버튼 부분 -->
+							</div>
 							<div>베이직 플랭크</div>
 						</td>
 				 </tr>

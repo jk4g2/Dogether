@@ -32,6 +32,14 @@
     <link id="color-scheme" href="../resources/aihometrainer/css/colors/default.css" rel="stylesheet">
     <link href="../resources/css/PhoneCSS.css" rel="stylesheet">	   
     <link href="../resources/aihometrainer/css/button.css" rel="stylesheet">
+ 
+
+
+<script type="text/javascript">
+	function openPop(){
+	    var popup = window.open("popupCount.do", 'AI Home Tranier 사용법', 'width=1500px, height=2000px, scrollbars=yes');
+	}
+</script>
    
 	<style>
 		    
@@ -180,7 +188,8 @@
 						</td>
 						
 						<td>   <!-- 1 : 운동 종목 -->
-							<div id="t_title">Star Jump</div>
+							<div id="t_title">Star Jump&nbsp; &nbsp; &nbsp; &nbsp;<button id="q_button" type="button" style="height: 30px; width: 30px; font-size:15px;" target="_blank" onclick="openPop()">?</button>  <!--  도움말 버튼 부분 --></div>
+								
 							<div>팔벌려뛰기</div>
 						</td>
 			   	</tr>
