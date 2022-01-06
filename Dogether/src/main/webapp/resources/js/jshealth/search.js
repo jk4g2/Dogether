@@ -1,8 +1,8 @@
 $(function(){
 
 	 //엘라스틱서치 basepath와 index 지정.
-	  var basePath = 'http://3.34.199.196:9200';
-	  var index = 'healthcarecenterlist'
+	  var basePath = 'http://3.34.199.196:9200';	//키바나접속url	
+	  var index = 'healthcarecenterlist'	//테이블
 
 	  var noresults = $('#noresults');
 	  var resultdiv = $('tbody');

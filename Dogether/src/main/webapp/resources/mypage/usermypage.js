@@ -480,7 +480,7 @@ function OrderList(){
 
 	$(document).on('click', '#sincheongStatus', function(){
 		let roomNumber = $(this).parent().prev().text();
-		alert(roomNumber);
+//		alert(roomNumber);
 		window.open('viewJoinMemberTotalInfo.do?roomNumber=' + roomNumber, 'popup01',
 		 			'width=600, height=400, scrollbars= 0, toolbar=0, menubar=no');
 	})

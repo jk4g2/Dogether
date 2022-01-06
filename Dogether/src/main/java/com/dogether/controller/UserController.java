@@ -43,6 +43,7 @@ public class UserController {
 		
 		if (memberidcheck != null)
 			return "중복된 아이디입니다";
+		
 		return message;
 	}
 	
@@ -64,7 +65,7 @@ public class UserController {
 	
 	//회원가입 submit 버튼 눌렀을 때  action = userInsert.do
 	@PostMapping(value = "userInsert.do", produces = "application/text; charset=UTF-8")
-	public String userinsert(MemberVO vo) {
+	public String userinsert(MemberVO vo, Model m) {
 		System.out.println("TQ");
 		if(vo.getMember_fname()=="" || vo.getMember_fname()==null) {
 			vo.setMember_fname("default_person.png");
@@ -74,9 +75,15 @@ public class UserController {
 		int result = testService.memberinsert(vo);
 		System.out.println("디비에 사진 인설트 완료");
 		String message = "가입 실패하였습니다.";
-		if (result == 1)
+		if (result == 1) {
 			message = "가입을 축하드립니다";
-		return "index";
+			m.addAttribute("msg",message);
+			m.addAttribute("check", "1");
+			return "redirect";
+		} else {
+			m.addAttribute("msg", message);
+			return "redirect";
+		}
 	}
 	
 	//로그인이 되었을 때 로그아웃버튼 있는 index, 로그인 되지 않았을 때 login버튼 있는 index, Mapper에 id=memberLogin

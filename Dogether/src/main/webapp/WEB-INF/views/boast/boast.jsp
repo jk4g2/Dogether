@@ -67,6 +67,7 @@
 	<div id="ontheside">
 		<div class="mainContainer">
 			<div class="plusdiv">
+				<!-- 세션이 Admin이 아닐 때만 글 등록(+) 생성됨  -->
 				<c:if test="${sessionScope.username ne 'Admin'}">
 					<img src="../resources/img/imgforboard/plus_icon.png"
 						alt="plus.png" class="plusButton" style="cursor: pointer;">
@@ -89,7 +90,7 @@
 
 			<c:if test="${not empty boardListProf and memberID != null}">
 				<div style="text-align: right;">
-					<h3 style="margin-bottom: 3px;">${memberID}님의게시물</h3>
+					<h3 style="margin-bottom: 3px;">${memberID}님의 게시물</h3>
 				</div>
 			</c:if>
 
@@ -175,6 +176,7 @@
 												<img src="../resources/img/imgforboard/remove_image.png"
 													class="imagefordeletereply">
 											</c:if>
+											
 											<c:if test="${sessionScope.username eq 'Admin'}">
 												<div style="display: none">${reply.reply_no}</div>
 												<img src="../resources/img/imgforboard/edit_image.png"
@@ -182,6 +184,7 @@
 												<img src="../resources/img/imgforboard/remove_image.png"
 													class="imagefordeletereply">
 											</c:if>
+											
 										</ul>
 									</div>
 								</c:if>
@@ -193,6 +196,7 @@
 										<span class="more" style="cursor: pointer; color: gray;">더보기...</span>
 										<br>
 									</c:if>
+									
 									<div class="comments" style="display: none;">
 										<ul id="forid">
 											<li id="commentwriter" class="reply" style="cursor: pointer">${reply.replyer}</li>
