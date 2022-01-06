@@ -46,7 +46,7 @@ function submitstuff(){
 
 function updatestuff(){
   let boardID = document.getElementById("boardID").value;
-  alert(boardID);
+  //alert(boardID);
 
   let fileName = document.getElementById("fileName").value;
   if(! $('#content').val().replace(/(^\s*)|(\s*$)/gi, "") && fileName =='') {
