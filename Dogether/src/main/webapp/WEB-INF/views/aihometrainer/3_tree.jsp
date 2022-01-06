@@ -162,6 +162,7 @@
 	        	audio4.play();				// success.mp3 음성이 나옴. (성공하였습니다 라는 음성이 나옴) */
 	        	
 				$("#ViewTimer3").text(Timesec_deley+" 초 후에 시작됩니다.");
+				$("#ViewTimer").text("");
 			};
 		
 </script>
