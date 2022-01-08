@@ -12,7 +12,7 @@
  -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"
 	type="text/javascript"></script>
-<title>Insert title here</title>
+<title>참여신청 현황</title>
 </head>
 <style>
 	table,tr,td,th{
