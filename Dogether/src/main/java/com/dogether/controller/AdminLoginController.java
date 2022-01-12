@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dogether.domain.AdminVO;
-import com.dogether.domain.MemberVO;
 import com.dogether.service.AdminLoginService;
 
 @Controller
